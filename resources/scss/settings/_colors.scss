@@ -1,0 +1,103 @@
+////
+/// Set up and define colors.
+///
+/// @group  Settings
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+// Black, White, and Grays
+$black:							black;
+$white:							white;
+$gray-darkest:					#231F20;
+$gray-darker:					#30353A;
+$gray-dark:						#4A4A4A;
+$gray:							#666B6F;
+$gray-light:					#9FA4A8;
+$gray-lighter:					#C2C8CC;  
+$gray-lightest:					#F8F9F9; 
+
+// Colors
+$blue:							#2DA3ED;
+$blue-dark:						#1C222E;
+$blue-light:					#EBF5F2;
+$purple:						#A85ECE;
+$red:							#a00;
+$green:         				#7ad03a;
+
+
+// Page
+$body-background:        		$gray-lightest;
+$alt-body-background:			$gray-lightest;
+
+// Text
+$text-color:             		$gray-dark;
+$headings-color:				$blue-dark;
+
+
+// Links 
+$link-color:             		$blue;
+$link-color-hover:        		darken($link-color, 15%);
+
+// Borders
+$border-color:					$gray-lighter;
+$nav-border-color:				rgba($blue, .75);
+
+/// Returns an map of colors in name-value format. This function also merges
+/// with the `block-colors()` map to create a map of all colors.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function colors() {
+
+	$colors : (
+		white : #fff,
+		black : #000
+	);
+
+	@return map-merge( $colors, block-colors() );
+}
+
+/// Returns an map of block colors in name-value format. These are the colors
+/// defined via the `editor-color-palette` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function block-colors() {
+
+	@return (
+		charcoal  : #282c34,
+		regent    : #8c97a7,
+		husk      : #b9a364,
+		red-stage : #b15330
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function color( $name ) {
+
+	@return map-get( colors(), $name );
+}
+
+/// Returns a single block color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function block-color( $name ) {
+
+	@return map-get( block-colors(), $name );
+}

@@ -1,0 +1,22 @@
+////
+/// Customize controls style.
+///
+/// This is the primary style for the customize controls panel. Use this for
+/// importing styles for custom panels, sections, and controls.
+///
+/// @group  Styles
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+/// Uncomment any of the below to import styles for Hybrid Core's built-in
+/// controls if your theme is using them.
+
+// @import '~hybrid/scss/customize-controls/palette';
+// @import '~hybrid/scss/customize-controls/radio-image';
+
+/// Import customize partials.
+
+@import 'customize-controls/index';
+
+

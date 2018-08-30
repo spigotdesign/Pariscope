@@ -1,0 +1,47 @@
+////
+/// Set up and define fonts.
+///
+/// @group  Settings
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+$fontURI: '../../dist/fonts/';
+
+@font-face {
+    font-family: 'acherusgrotesque-regular';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'acherusgrotesque-regularitalic';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regularitalic-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regularitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'acherusgrotesque-medium';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-medium-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'acherusgrotesque-bold';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
