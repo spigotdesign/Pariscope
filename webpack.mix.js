@@ -208,17 +208,20 @@ mix.webpackConfig( {
 	]
 } );
 
-/*
- * Monitor files for changes and inject your changes into the browser.
- *
- * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
- */
-mix.browserSync( {
-	proxy : 'https://pariscopews.local',
-	files : [
-		'dist/**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
-		`${devPath}/views/**/*.php`,
-		'app/**/*.php',
-		'functions.php'
-	]
-} );
+if ( process.env.sync ) {
+
+	/*
+	 * Monitor files for changes and inject your changes into the browser.
+	 *
+	 * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+	 */
+	mix.browserSync( {
+		proxy : 'localhost',
+		files : [
+			'dist/**/*',
+			`${devPath}/views/**/*.php`,
+			'app/**/*.php',
+			'functions.php'
+		]
+	} );
+}
