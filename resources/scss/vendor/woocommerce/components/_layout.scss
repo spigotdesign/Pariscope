@@ -1,40 +1,48 @@
 // WooCommerce Layout
 
-.woocommerce, .woocommerce-page {
+.woocommerce-page {
 
-  .woocommerce-message,
-  .woocommerce-error,
-  .woocommerce-info {
-    .button {
-      float: right;
+  // Cart Layout
+  &.woocommerce-cart {
+    .woocommerce {
+      min-height: 50vh;
+
+      @include mq(tablet-landscape-up) {
+        display: flex;
+        flex-flow: row wrap;
+      }
+    }
+
+    .woocommerce-cart-form {
+      width: 100%;
+
+      @include mq(tablet-landscape-up) {
+        flex: 0 1 calc(100% - 420px);
+      }
+    }
+
+    .cart-collaterals {
+      @include mq(tablet-landscape-up) {
+        flex: 0 1 420px;
+      }
     }
   }
 
-  /**
-   * General layout styles
-   */
+  // General Layout
+
   .col2-set {
-    @include clearfix();
-    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 
-    .col-1 {
-      float: left;
-      width: 48%;
+    .col-1, col-2 {
+      flex: 0 1 50%;
+      width: 50%;
     }
-    .col-2 {
-      float: right;
-      width: 48%;
-    }
+
   }
 
-  img {
-    height: auto;
-    max-width: 100%;
-  }
-
-  /**
-   * Product page
-   */
+  // Product Page
   div.product,
   #content div.product {
     div.images {
@@ -43,7 +51,7 @@
     }
 
     div.thumbnails {
-      @include clearfix();
+      @include clearfix;
 
       a {
         float: left;
@@ -97,13 +105,13 @@
       clear: both;
 
       ul.tabs {
-        @include menu();
+        @include menu;
       }
     }
 
     #reviews {
       .comment {
-        @include mediaright();
+        @include mediaright;
       }
     }
   }
@@ -113,7 +121,8 @@
    */
   ul.products {
     clear: both;
-    @include clearfix();
+
+    @include clearfix;
 
     li.product {
       float: left;
@@ -140,21 +149,25 @@
         margin-right: 0;
       }
     }
+
     &.columns-2 {
       li.product {
         width: 48%;
       }
     }
+
     &.columns-3 {
       li.product {
         width: 30.75%;
       }
     }
+
     &.columns-5 {
       li.product {
         width: 16.95%;
       }
     }
+
     &.columns-6 {
       li.product {
         width: 13.5%;
@@ -206,44 +219,25 @@
   .woocommerce-result-count {
     float: left;
   }
+
   .woocommerce-ordering {
     float: right;
   }
 
   .woocommerce-pagination {
     ul.page-numbers {
-      @include menu();
+      @include menu;
     }
   }
 
-  /**
-   * Cart page
-   */
+  // Cart Page
+
   table.cart,
-  #content table.cart {
-    img {
-      height: auto;
-    }
-
-    td.actions {
-      text-align: right;
-
-      .input-text {
-        width: 80px;
-      }
-
-      .coupon {
-        float: left;
-
-        label {
-          display: none;
-        }
-      }
-    }
-  }
+  #content table.cart {}
 
   .cart-collaterals {
-    @include clearfix();
+    @include clearfix;
+
     width: 100%;
 
     .related {
@@ -266,7 +260,9 @@
 
     .shipping_calculator {
       width: 48%;
-      @include clearfix();
+
+      @include clearfix;
+
       clear: right;
       float: right;
 
@@ -277,11 +273,6 @@
         }
       }
     }
-
-    .cart_totals {
-      float: right;
-      width: 48%;
-    }
   }
 
   /**
@@ -290,7 +281,7 @@
   ul.cart_list,
   ul.product_list_widget {
     li {
-      @include mediaright();
+      @include mediaright;
     }
   }
 
@@ -299,7 +290,7 @@
    */
   form {
     .form-row {
-      @include clearfix();
+      @include clearfix;
 
       label {
         display: block;
@@ -352,7 +343,7 @@
     .wc-terms-and-conditions, .terms {
       text-align: left;
       padding: 0 1em 0 0;
-      float:left;
+      float: left;
     }
 
     #place_order {
@@ -362,7 +353,7 @@
 
   .woocommerce-billing-fields,
   .woocommerce-shipping-fields {
-    @include clearfix();
+    @include clearfix;
   }
 
   .woocommerce-terms-and-conditions {
@@ -376,16 +367,16 @@
   .woocommerce-oembed {
     position: relative;
   }
-}
 
-.woocommerce-account {
-  .woocommerce-MyAccount-navigation {
-    float: left;
-    width: 30%;
-  }
+  .woocommerce-account {
+    .woocommerce-MyAccount-navigation {
+      float: left;
+      width: 30%;
+    }
 
-  .woocommerce-MyAccount-content {
-    float: right;
-    width: 68%;
+    .woocommerce-MyAccount-content {
+      float: right;
+      width: 68%;
+    }
   }
 }

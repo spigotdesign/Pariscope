@@ -1,0 +1,28 @@
+// Cart Layout
+.woocommerce-page {
+  &.woocommerce-cart {
+    .woocommerce {
+      min-height: 50vh;
+
+      @include mq(tablet-landscape-up) {
+        display: flex;
+        flex-flow: row wrap;
+      }
+    }
+
+    .woocommerce-cart-form {
+      width: 100%;
+
+      @include mq(tablet-landscape-up) {
+        flex: 0 1 calc(100% - 420px);
+      }
+    }
+
+    .cart-collaterals {
+
+      @include mq(tablet-landscape-up) {
+        flex: 0 1 420px;
+      }
+    }
+  }
+}

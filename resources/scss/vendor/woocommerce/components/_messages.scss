@@ -1,39 +1,15 @@
-p.demo_store,
-.woocommerce-store-notice {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: 0;
-	width: 100%;
-	font-size: 1em;
-	padding: 1em 0;
-	text-align: center;
-	background-color: $primary;
-	color: $primarytext;
-	z-index: 99998;
-	box-shadow: 0 1px 1em rgba(0, 0, 0, 0.2);
-	display: none;
-
-	a {
-		color: $primarytext;
-		text-decoration: underline;
-	}
-}
-
-.admin-bar p.demo_store {
-	top: 32px;
-}
+// WooCommerce Messages
 
 .woocommerce-message,
 .woocommerce-error,
 .woocommerce-info {
+	flex: 0 1 100%;
 	padding: 1em 2em 1em 3.5em;
 	margin: 0 0 2em;
 	position: relative;
 	background-color: lighten($secondary, 5%);
 	color: $secondarytext;
-	border-top: 3px solid $primary;
+	//border-top: 3px solid $primary;
 	list-style: none outside;
 	@include clearfix();
 	width: auto;
@@ -57,15 +33,20 @@ p.demo_store,
 		padding-left: 0 !important; // Required for default theme compatibility
 		margin-left: 0 !important; // Required for default theme compatibility
 	}
+
+	.woocommerce-cart & {
+		margin-bottom: 0;
+	}
 }
 
 
 .woocommerce-message {
-	border-top-color: #8fae1b;
+	background-color: $primary-color;
+	color: $white;
 
 	&::before {
 		content: '\e015';
-		color: #8fae1b;
+		color: $white;
 	}
 }
 

@@ -2,12 +2,23 @@
 /// WooCommerce Component imports.
 ///
 ///
-/// @author Bryan Hoffman <bryan@spigotdesign.com>
-/// @link   https:spigotdesign.com
+/// @author Bryan Hoffman <bryan@cinchws.com>
+/// @link   https:cinchws.com
 ////
 
 
+
+
+
+
 @import 'layout';
+// @import 'layout-cart';
+@import 'buttons';
+
+@import 'cart-actions';
+@import 'cart-collaterals';
+
+@import 'shipping-calculator';
 
 
 @import 'tables';
@@ -18,10 +29,12 @@
 @import 'star-ratings';
 @import 'forms';
 @import 'password';
-@import 'buttons';
+
 @import 'terms-conditions';
 @import 'pagination';
 @import 'product-loops';
+@import 'quantity-increment';
+@impott 'store-notice';
 
 
 @import 'reviews';

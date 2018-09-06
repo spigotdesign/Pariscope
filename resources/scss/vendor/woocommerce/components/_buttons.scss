@@ -16,8 +16,8 @@ input.button,
   font-family: $bold-font-family;
   border-radius: 3px;
   left: auto;
-  color: $secondarytext;
-  background-color: $secondary;
+  color: $white;
+  background-color: $primary-color;
   border: 0;
   display: inline-block;
   background-image: none;
@@ -70,9 +70,15 @@ input.button,
     &.disabled:hover,
     &:disabled:hover,
     &:disabled[disabled]:hover {
-      background-color: $primary;
-      color: $primarytext;
+      background-color: $gray-lighter;
+      color: $white;
     }
+  }
+
+  &[name="update_cart"],
+  &[name="apply_coupon"] {
+    background-color: $gray-lighter;
+    color: $gray;
   }
 
   &:disabled,
@@ -85,7 +91,7 @@ input.button,
 
     &:hover {
       color: inherit;
-      background-color: $secondary;
+      background-color: $gray-lighter;
     }
   }
 }
