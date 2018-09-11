@@ -1,6 +1,6 @@
 # Pariscope
 
-Pariscope is a starter theme for WordPress.
+Pariscope is a starter theme by Spigot Desgin. It is built on Justin Tadlock's Hybrid Core version 5. 
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
 
@@ -14,6 +14,19 @@ There's a few requirements in order to develop a new theme or contribute back to
 * [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/en/) (your choice) for managing JS dependencies.
 
 You should feel reasonably comfortable using the command line. The theme tries to keep this as simple as possible, but some command line knowledge is necessary in modern development.
+
+## Installation
+
+### Composer dependencies
+Run: `composer install`
+
+### Build dependencies
+Run `npm install`
+
+### Rename theme
+The theme uses the theme name for namespace and other name related items. 
+Run `npm run rename`
+
 
 ## Documentation
 
