@@ -1,0 +1,41 @@
+////
+/// Pagination component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.pagination {
+
+	// Header/Title element.
+	&__title {}
+
+	// The list of items.
+	&__items {
+		list-style: none;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// Individual items.
+	&__item {
+
+		flex: 0 1 auto;
+
+		&--prev {}
+		&--next {}
+		&--current {}
+		&--dots {}
+	}
+
+	// The link or span element.
+	&__anchor {
+		&--link {}
+		&--current {}
+		&--dots {}
+	}
+}
+
