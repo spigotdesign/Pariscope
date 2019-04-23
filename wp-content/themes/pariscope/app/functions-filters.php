@@ -7,7 +7,7 @@
  * @package    Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2018, Bryan Hoffman
+ * @copyright  Copyright (c) 2019, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -36,11 +36,20 @@ add_filter( 'get_search_form', function( $form ) {
 
 add_filter('body_class', function( $classes ) {
 
-    $classes[] = 'no-js';
+    if ( is_active_sidebar('primary') ) {
+        $classes[] = 'has-sidebar';
+    }
+
+    if ( has_post_thumbnail() ) {
+        $classes[] = 'has-featured-img';
+    }
+
+	$classes[] = 'no-js';
 
     return $classes;
 
 }, 0 );
+
 
 
 
