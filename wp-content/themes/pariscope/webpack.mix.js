@@ -13,65 +13,24 @@
  * @link      https://spigotdesign.com/
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-
 // Import required packages.
 const { mix }           = require( 'laravel-mix' );
 const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
-const rimraf            = require( 'rimraf' );
 
 /*
  * -----------------------------------------------------------------------------
- * Theme Bundle Process
+ * Theme Export Process
  * -----------------------------------------------------------------------------
- * Creates a bundle of the production-ready theme with only the files and
- * folders needed for uploading to a site or zipping. Edit the `files` or
- * `folders` variables if you need to change something.
+ * Configure the export process in `webpack.mix.export.js`. This bit of code
+ * should remain at the top of the file here so that it bails early when the
+ * `export` command is run.
  * -----------------------------------------------------------------------------
  */
 
-if ( process.env.bundle ) {
-
-	// Folder name to bundle the files in.
-	let bundlePath = 'pariscope';
-
-	// Theme root-level files to include.
-	let files = [
-		'style.css',
-		'functions.php',
-		'index.php',
-		'license.md',
-		'readme.md',
-		'screenshot.png'
-	];
-
-	// Folders to include.
-	let folders = [
-		'app',
-		'dist',
-		'resources/lang',
-	//	'resources/js',      // Required for WordPress.org.
-	//	'resources/scss',    // Required for WordPress.org.
-		'resources/views',
-		'vendor'
-	];
-
-	// Delete the previous bundle to start clean.
-	rimraf.sync( bundlePath );
-
-	// Loop through the root files and copy them over.
-	files.forEach( file => {
-		mix.copy( file, `${bundlePath}/${file}` );
-	} );
-
-	// Loop through the folders and copy them over.
-	folders.forEach( folder => {
-		mix.copyDirectory( folder, `${bundlePath}/${folder}` );
-	} );
-
-	// Bail early because we don't need to do anything else after this point.
-	// Everything else following below is for the build process.
+if ( process.env.export ) {
+	const exportTheme = require( './webpack.mix.export.js' );
 	return;
 }
 
@@ -171,9 +130,9 @@ mix.webpackConfig( {
 	externals   : { jquery : 'jQuery' },
 	resolve     : {
 		alias : {
-			// Alias for Hybrid Core assets.
-			// Import from `hybrid/js` or `~hybrid/scss`.
-			hybrid : path.resolve( __dirname, 'vendor/justintadlock/hybrid-core/src/resources/' )
+			// Alias for Hybrid Customize assets.
+			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
+			'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' )
 		}
 	},
 	plugins     : [
