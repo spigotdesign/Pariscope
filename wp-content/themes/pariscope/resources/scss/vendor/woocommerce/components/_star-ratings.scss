@@ -1,0 +1,124 @@
+/**
+   * Star ratings
+   */
+/**
+   * Star ratings
+   */
+  .star-rating {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    height: 1em;
+    line-height: 1;
+    font-size: 1em;
+    width: 5.4em;
+    font-family: "star";
+
+    &::before {
+      content: "\73\73\73\73\73";
+      color: $red;
+      float: left;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    span {
+      overflow: hidden;
+      float: left;
+      top: 0;
+      left: 0;
+      position: absolute;
+      padding-top: 1.5em;
+    }
+
+    span::before {
+      content: "\53\53\53\53\53";
+      top: 0;
+      position: absolute;
+      left: 0;
+      color: $red;
+    }
+  }
+
+  .woocommerce-product-rating {
+
+    @include clearfix();
+    line-height: 2;
+    display: block;
+
+    .star-rating {
+      margin: 0.5em 4px 0 0;
+      float: left;
+    }
+  }
+
+  .products .star-rating {
+    display: block;
+    margin: 0 0 0.5em;
+    float: none;
+  }
+
+  .hreview-aggregate .star-rating {
+    margin: 10px 0 0;
+  }
+
+p.stars {
+
+  a {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    text-indent: -999em;
+    display: inline-block;
+    text-decoration: none;
+    color: $gray-lighter;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      line-height: 1;
+      font-family: 'star';
+      content: '\73';
+      text-indent: 0;
+      font-size: 18px;
+    }
+    &:hover {
+      color: $red;
+    }
+
+    &:hover ~ a::before {
+      
+      color: $gray-lighter;
+    }
+  }
+
+  &:hover a::before {
+    content: '\73';
+
+  }
+
+  &.selected {
+    a.active {
+      &::before {
+        color: $red;
+        
+      }
+
+      ~ a::before {
+        content: '\73';
+        color: $gray-lighter;
+      }
+    }
+
+    a:not(.active)::before {
+      
+      color: $red;
+
+    }
+  }
+}

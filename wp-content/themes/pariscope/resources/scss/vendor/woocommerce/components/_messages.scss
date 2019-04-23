@@ -1,0 +1,133 @@
+// WooCommerce Messages
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+  flex: 0 1 100%;
+  padding: 1em 2em 1em 3.5em;
+  margin: 0;
+  position: relative;
+  background-color: lighten($secondary, 5%);
+  color: $secondarytext;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  //border-top: 3px solid $primary;
+  list-style: none outside;
+
+  @include clearfix;
+
+  width: auto;
+  word-wrap: break-word;
+
+  &::before {
+    font-family: 'WooCommerce';
+    content: '\e028';
+    display: inline-block;
+    position: absolute;
+    //top: 1em;
+    left: 1.5em;
+  }
+
+  .button {
+    border: 2px solid $white;
+
+    &:hover {
+      background-color: $white;
+      color: $red;
+    }
+  }
+
+ 
+  .button, .showlogin, .restore-item {
+    order: 2;
+  }
+
+  .showlogin, .restore-item {
+  	@extend .button;
+  }
+
+  li {
+    list-style: none outside !important;
+  }
+
+  .woocommerce-cart & {
+    margin-bottom: 0;
+  }
+}
+
+.woocommerce-message,
+.woocommerce-info {
+  background-color: $primary-color;
+  color: $white;
+
+  &::before {
+    content: '\e015';
+    color: $white;
+  }
+
+  .button, .restore-item {
+    background-color: $woo-message-button-bg;
+      &:hover {
+        background-color: $white;
+        color: $red;
+      }
+  }
+}
+
+.woocommerce-error {
+   background-color: $red;
+  color: $white;
+}
+
+.woocommerce-NoticeGroup,
+.stripe-source-errors {
+  width: 100%;
+ 
+}
+
+.stripe-source-errors {
+  .woocommerce-error {
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+.woocommerce-checkout {
+  .woocommerce-form-login-toggle {
+    //margin: -$margin;
+    //margin-bottom: $margin;
+
+    .showlogin {
+      background-color: $woo-message-bg;
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+
+    .logged-in & {
+      display: none;
+    }
+  }
+}
+
+.logged-in {
+  .woocommerce-form-login-toggle {
+    display: none;
+  }
+}
+
+.woocommerce-notices-wrapper {
+  flex: 0 1 100%;
+
+}
+
+.woocommerce-error {
+  border-top-color: #b81c23;
+
+  &::before {
+    content: '\e016';
+    color: #b81c23;
+  }
+}

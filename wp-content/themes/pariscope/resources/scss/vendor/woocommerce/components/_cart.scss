@@ -1,0 +1,55 @@
+// WooCommerce Cart
+
+
+.woocommerce-cart,
+.woocommerce-checkout,
+#add_payment_method {
+  table.cart {
+    .product-thumbnail {
+      min-width: 64px;
+      padding: $margin/4;
+    }
+
+    img {
+      width: 64px;
+      box-shadow: none;
+    }
+
+    th,
+    td {
+      vertical-align: middle;
+    }
+
+    input {
+      margin: 0;
+      vertical-align: middle;
+    }
+  }
+
+  .wc-proceed-to-checkout {
+    @include clearfix;
+
+    padding: $margin 0;
+
+    a.checkout-button {
+      display: block;
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 1.25em;
+      padding: 1em;
+    }
+  }
+  
+}
+
+.cart-empty {
+  flex: 0 1 100%;
+  text-align: center;
+  //padding-top: $margin * 3;
+  margin-bottom: $margin * 2 !important;
+}
+
+.return-to-shop {
+  flex: 0 1 100%;
+  text-align: center;
+}

@@ -1,0 +1,66 @@
+.woocommerce {
+  .blockUI.blockOverlay {
+    position: relative;
+
+    @include loader;
+  }
+}
+
+.loader {
+  @include loader;
+}
+
+a.remove {
+  display: flex;
+  align-conent: center;
+  justify-content: center;
+
+  @include font-size(24px);
+
+  height: 26px;
+  width: 26px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+  color: red !important;
+
+  // Required for default theme compatibility
+  text-decoration: none;
+  font-weight: 300;
+  border: 0;
+
+  &:hover {
+    color: #fff !important;
+
+    // Required for default theme compatibility
+    background: red;
+  }
+}
+
+small.note {
+  display: block;
+  color: $subtext;
+  font-size: 0.857em;
+  margin-top: 10px;
+}
+
+.quantity .qty {
+  width: 3.631em;
+  text-align: center;
+}
+
+// No js
+
+.woocommerce-no-js {
+  form.woocommerce-form-login,
+  form.woocommerce-form-coupon {
+    display: block !important;
+  }
+
+  .woocommerce-form-login-toggle,
+  .woocommerce-form-coupon-toggle,
+  .showcoupon {
+    display: none !important;
+  }
+}
