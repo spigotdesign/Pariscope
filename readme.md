@@ -2,11 +2,11 @@
 
 Pariscope is a starter theme by Spigot Desgin. It is built on Justin Tadlock's Hybrid Core version 5. 
 
-The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
+
 
 ## Requirements
 
-There's a few requirements in order to develop a new theme or contribute back to the project:
+There's a few requirements in order to develop a new theme or contribute back to the project. Here are some general setup guidelines, but the best place to learn and understand about this theme is to follow the [install instructions here](https://github.com/justintadlock/mythic/wiki/Installation).
 
 * PHP 5.6+ (preferably 7+).
 * [Git](https://git-scm.com/) for version control.
@@ -30,7 +30,7 @@ Run `npm run rename`
 
 ## Documentation
 
-Check out the [project wiki](https://github.com/justintadlock/pariscope/wiki) to learn how to install and set up the theme.
+Check out the [project wiki](https://github.com/justintadlock/wiki) to learn how to install and set up the theme.
 
 ## Copyright and License
 
