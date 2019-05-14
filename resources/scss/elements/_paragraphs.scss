@@ -1,0 +1,12 @@
+// Paragraphs
+
+p {
+  margin-bottom:      $base-spacing-unit;
+
+  .entry__content & {
+
+  	&:last-child {
+  		margin-bottom: 0;
+  	}
+  }
+}

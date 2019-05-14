@@ -1,0 +1,172 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.entry {
+    // Type of entry/post.
+    
+    &--type-post {
+        margin: 0 auto $margin auto;
+        max-width: $post-width;
+        background-color: $white;
+        padding: ($margin * 2) $margin 0 $margin;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 3px 3px;
+
+        .plural & {
+            border-radius: 3px;
+            padding-top: $margin;
+        }
+
+        .single-post.fl-builder & {
+            max-width: 100%;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+
+    &--error {
+        min-height: 100vh;
+        background-image: url(../img/sylwia-bartyzel-442-unsplash.jpg);
+        background-size: cover;
+        background-position: center;
+
+        .entry__content {
+            max-width: 1200px;
+            padding: ($margin * 4) $margin;
+            margin: 0 auto;
+            text-align: center;
+
+            h1, p {
+                color: $white;
+            }
+
+            .searchform {
+                margin: ($margin * 2) auto;
+
+                .search-text {
+                    background-color: rgba($blue-dark, 0.25);
+                }
+            }
+
+            .app-404 {
+                fill: $white;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    &--type-page {
+        margin: 0 auto $margin auto;
+        max-width: $post-width;
+        background-color: $white;
+        padding: $margin;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 3px 3px;
+
+        .plural & {
+            border-radius: 3px;
+            padding-top: $margin;
+        }
+
+        .fl-builder & {
+            max-width: 100%;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+    }
+
+    // Sticky posts.
+    &.sticky {}
+
+    // Featured image.
+    &__image {}
+
+    // Header wrapper.
+    &__header {}
+
+    // Entry title.
+    &__title {}
+
+    // Full entry content.
+    &__content {}
+
+    // Summary/Excerpt.
+    &__summary {
+        margin-bottom: $margin * 1.5;
+        line-height: 1.5;
+
+        @include font-size(14px);
+
+        //padding: 0 24px;
+   
+    }
+
+    // Meta wrappers.
+    &__byline {}
+
+    &__footer {
+        border-top: 1px solid $border-color;
+
+        .single-post & {
+            margin: $margin (-$margin);
+            padding: $margin;
+            display: flex;
+            align-items: center;
+        }
+
+        .post-list & {
+            position: absolute;
+            bottom: 0;
+            margin-left: -$margin;
+            padding: 12px 24px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include font-size(12px);
+
+            svg {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Individual metadata items.
+    &__author {}
+
+    &__published {}
+
+    &__comments {}
+
+    &__terms {
+        .single-post & {
+            @include font-size(12px);
+
+            text-transform: uppercase;
+            margin-left: $margin / 3;
+            margin-right: $margin;
+
+            a {
+                color: $gray-dark;
+
+                &:hover {
+                    color: $link-color;
+                }
+            }
+        }
+    }
+}

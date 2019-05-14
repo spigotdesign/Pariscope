@@ -1,0 +1,38 @@
+////
+/// Component imports.
+///
+/// Components make up the bulk of the actual theme design. Nearly every piece
+/// of the design is some type of component, whether it's a one-off or reusable
+/// block of code.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https:spigotdesign.com
+////
+
+@import 'app';
+@import 'app-content';
+@import 'app-footer';
+@import 'app-header';
+@import 'app-main';
+@import 'app-search';
+@import 'archive-header';
+@import 'buttons';
+@import 'cards';
+@import 'comments';
+@import 'comment';
+@import 'comment-respond';
+@import 'custom-header';
+@import 'entry';
+@import 'gallery';
+@import 'media-meta';
+@import 'images';
+@import 'links';
+@import 'nav-menu';
+@import 'nav-pagination';
+@import 'nav-toggle';
+@import 'page-head';
+@import 'post-list';
+@import 'post-nav';
+@import 'sidebar';
+@import 'widget';

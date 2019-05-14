@@ -1,0 +1,285 @@
+//
+// Primary menu
+//
+
+.app-header__nav {
+    display: flex;
+    align-items: center;
+    height: 75px;
+
+    svg {
+        //position: relative;
+        //top: 2px;
+        //margin: 0 ($margin / 4);
+    }
+
+    .detached & {
+      height: 50px;
+    }
+}
+
+.menu--primary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    @include mq(mobile-nav) {
+        position: fixed;
+        visibility: hidden;
+        top: 200px;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        background-color: $mobile-background;
+        transition: all .3s ease-in-out;
+        height: 100vh;
+        padding: ($margin / 3) 0;
+
+        .nav-open & {
+            visibility: visible;
+            opacity: 1;
+            top: 115px;
+            display: block;
+        }
+
+        .nav-open.detached & {
+            top: 75px;
+        }
+
+        .admin-bar .nav-open & {
+            top: 120px;
+        }
+    }
+
+
+    .menu__items {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        font-family: $nav-font-family;
+        align-items: center;
+        padding-right: $margin;
+
+        @include mq(mobile-nav) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .menu__item {
+        position: relative;
+        text-transform: uppercase;
+
+        @include font-size(15px);
+
+        @include mq(mobile-nav) {
+            border-bottom: 1px solid rgba($white, 0.1);
+            width: 100%;
+        }
+
+
+        @include mq(tablet-portrait-up) {
+            &:hover {
+                > ul {
+                    z-index: 0;
+                    visibility: visible;
+                    opacity: 1;
+                    height: auto;
+                    max-height: 600px;
+                }
+            }
+        }
+
+
+        &--current {
+            > .menu__link {
+                color: $nav-color-current;
+            }
+        }
+
+        &.btn {
+            padding: 5px 20px;
+
+            > .menu__link {
+                background: $nav-btn-bg;
+                color: $nav-btn-color;
+                border-radius: 200px;
+                padding: 5px 20px;
+                border: 1px solid $nav-btn-border;
+
+                .nav-open & {
+                    padding: $margin / 2;
+                }
+
+                &:hover {
+                    color: $nav-btn-color-hover;
+                    background: $nav-btn-bg-hover;
+                    border: 1px solid $nav-btn-border-hover;
+                }
+            }
+
+            @include mq(mobile-nav) {
+                background-color: transparent;
+                border-radius: 0;
+                padding: 0;
+            }
+        }
+
+        /* After Chevron */
+        &.has-children {
+            > .menu__link {
+                @include mq(mobile-nav) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+
+                &:after {
+                    @include mq(mobile-nav) {
+                        border-style: solid;
+                        border-width: 0.125em 0.125em 0 0;
+                        content: '';
+                        display: inline-block;
+                        height: 0.45em;
+                        right: 0.15em;
+                        position: relative;
+                        top: 10px;
+                        transform: rotate(45deg);
+                        vertical-align: top;
+                        width: 0.45em;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+
+            &.subnav-open {
+                > .menu__link {
+                    &:after {
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+        }
+
+        /* // End After Chevron */
+    }
+
+    .menu__link {
+        color: $nav-color;
+        padding: ($margin / 2) ($margin / 4);
+        padding-bottom: $margin;
+
+        .nav-open & {
+            padding: $margin / 2;
+        }
+
+        @include mq(tablet-landscape-up) {
+            padding: $margin / 2;
+        }
+
+
+        &:hover {
+            color: $nav-color-hover;
+        }
+
+        @include mq(mobile-nav) {
+            display: block;
+            color: $nav-color-mobile;
+            font-size: 110%;
+            padding-bottom: $margin / 2;
+
+            &:hover {
+              color: $nav-color-mobile-hover;
+              background-color: $nav-bg-mobile-hover;
+            }
+        }
+    }
+
+    .menu__sub-menu {
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        transition: all .3s ease-in-out;
+
+        @include mq(tablet-portrait-up) {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background-color: $subnav-bg;
+            top: 49px;
+            width: 229px;
+            left: -5px;
+            box-shadow: 0 20px 25px 0 rgba($boxshadow-color, 0.08);
+            transition: all .3s ease-in-out;
+            border-radius: 0 0 3px 3px;
+
+            .detached & {
+                top: 37px;
+            }
+        }
+
+
+        .menu__item {
+            padding: 0;
+
+            @include mq(mobile-nav) {
+                padding: 0;
+                border: none;
+            }
+
+
+            &:last-child {
+                @include mq(mobile-nav) {
+                    padding-bottom: $margin/2;
+
+                    .menu__link {
+                        border-radius: 0;
+                    }
+                }
+
+                .menu__link {
+                    border-radius: 0 0 3px 3px;
+                }
+            }
+        }
+
+        .menu__link {
+            display: block;
+            padding: 10px 12px;
+            color: $subnav-color;
+
+            @include mq(mobile-nav) {
+                @include font-size(15px);
+                color:$subnav-color-mobile;
+                padding: 10px 24px;
+                &:hover {
+                  background-color: $subnav-bg-mobile-hover;
+                  color: $subnav-color-mobile-hover;
+                }
+            }
+
+
+            &:hover {
+                @include mq(tablet-portrait-up) {
+                    background-color: $subnav-bg-hover;
+                    color: $subnav-color-hover;
+                }
+            }
+        }
+
+        
+    }
+
+    .subnav-open .menu__sub-menu {
+            z-index: 0;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            max-height: 600px;
+        }
+}

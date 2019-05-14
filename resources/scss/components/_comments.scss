@@ -1,0 +1,43 @@
+////
+/// Comments component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.comments-template {
+  max-width: $post-width;
+  margin: 0 auto;
+  background-color: $white;
+  padding: 24px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  border-top: none;
+  border-radius: 3px;
+  margin-bottom: $margin;
+}
+
+.comments {
+  // Header/title for the comments section.
+  &__title {
+    text-align: center;
+    @include font-size(21px);
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $margin;
+  }
+
+  // Comments list wrapper.
+  &__list {
+    list-style: none;
+
+    .children {
+      padding-left: $margin * 2;
+      margin-top: $margin * 2;
+      list-style: none;
+    }
+  }
+
+  // Comments closed message.
+  &__closed {}
+}
+

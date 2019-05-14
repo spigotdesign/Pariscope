@@ -1,0 +1,84 @@
+////
+/// Pagination component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.pagination {
+    margin: ($margin * 2) 0;
+
+    // Header/Title element.
+    &__title {}
+
+    // The list of items.
+    &__items {
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Individual items.
+    &__item {
+        flex: 0 1 auto;
+        font-family: $bold-font-family;
+        @include font-size(14px);
+
+        &:first-child {
+
+        	.pagination__anchor{
+        	border-radius: 40px 0 0 40px;
+        	padding-left: $margin * 1.5;
+        }
+        }
+
+        &:last-child {
+
+        	.pagination__anchor{
+        	border-radius: 0 40px 40px 0;
+        	padding-right: $margin * 1.5;
+        }
+        }
+
+
+
+        &--prev {}
+
+        &--next {}
+
+        &--current {}
+
+        &--dots {}
+    }
+
+    // The link or span element.
+    &__anchor {
+        padding: ($margin / 1.5) $margin;
+        background-color: $blue-dark;
+        display: block;
+        color: $white;
+        border-right: 1px solid lighten($blue-dark, 5%);
+
+
+        &:hover {
+        	background-color: darken($blue-dark, 10%);
+        	color: $white;
+        }
+
+
+
+
+
+        &--link {}
+
+        &--current {
+            background-color: darken($blue-dark, 10%);
+        }
+
+        &--dots {}
+    }
+}
+

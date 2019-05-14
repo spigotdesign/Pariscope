@@ -1,0 +1,22 @@
+// Dimensions
+
+$base-font-size:    	16px;
+$base-line-height:  	24px;
+
+$base-radius:       	3px;
+
+$base-spacing-unit: 	$base-line-height;
+$margin:				$base-spacing-unit;
+
+$site-max-width:		1200px;
+$site-width:			$site-max-width;
+
+$post-width:			900px;
+
+$app-header-height:		75px;
+
+$border-radius:			3px;
+
+@function content-width() {
+	@return 750;
+}

@@ -1,0 +1,59 @@
+////
+/// App Search component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.app-search {
+    margin: 0;
+    position: absolute;
+    right: 0;
+
+    @include placeholder {
+        color: $white;
+        font-family: $bold-font-family;
+        font-weight: normal;
+    }
+
+    input[type="submit"] {
+        display: none;
+    }
+
+    input[type="search"] {
+    	border-radius: 200px;
+        width: 32px;
+        height: 100%;
+        text-indent: 20px;
+        cursor: pointer;
+        border: none;
+        padding: 5px;
+        padding-left: 15px;
+        font-family: $bold-font-family;
+        font-weight: normal;
+        background: $white url(../svg/search.svg) 10px 50% no-repeat;
+        background-size: 16px 16px;
+        color: $blue-dark;
+        outline: none;
+        height: 33px;
+        transition: all .3s ease-in-out;
+        @include font-size(14px);
+    }
+
+    input[type="search"]:focus {
+        width: 320px;
+        outline: none;
+        color: $white;
+        background-image: url(../svg/search-white.svg);
+        background-color: $blue;
+        box-shadow: inset 0 0 2px rgba($black, 0.2);
+        cursor: text;
+
+        @include mq(phone-only) {
+        	width: 280px;
+        }
+
+
+    }
+}

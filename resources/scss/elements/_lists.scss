@@ -1,0 +1,10 @@
+// Lists
+
+ul, ol {
+
+	.entry__content & {
+
+		padding-left: $margin;
+		margin-bottom: $margin;
+	}
+}

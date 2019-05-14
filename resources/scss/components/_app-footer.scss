@@ -1,0 +1,52 @@
+////
+/// App footer component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.app-footer {
+	border-top: 1px solid $border-color;
+	padding: $margin 0;
+
+
+	&__credit {
+		@include font-size(12px);
+		text-align: center;
+	}
+
+	&__branding {
+		display: flex;
+		justify-content: center;
+		
+		&-link {
+            svg {
+                width: 152px;
+                height: 23px;
+            }
+        }
+	}
+}
+
+.menu--footer {
+	margin: $margin 0;
+	.menu__items {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+	}
+
+	.menu__item {
+
+	}
+
+	.menu__link {
+		color: $gray;
+		padding: $margin / 2;
+
+		&:hover {
+			color: $link-color-hover;
+		}
+	}
+}
