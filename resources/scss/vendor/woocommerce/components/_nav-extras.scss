@@ -1,0 +1,25 @@
+// Nav header extras
+
+.app-header__nav {
+    &-extras {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        @include mq(phone-only) {
+            div {
+                margin: 0 5px;
+
+                &.app-search {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    .cart {
+        a {
+            position: relative;
+        }
+    }
+}

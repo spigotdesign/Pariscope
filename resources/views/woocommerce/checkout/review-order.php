@@ -111,3 +111,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</tfoot>
 </table>
+
+<?php $order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Place order', 'woocommerce' ) ); ?>
+

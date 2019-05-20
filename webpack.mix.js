@@ -89,8 +89,9 @@ mix.version();
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 mix.js( `${devPath}/js/app.js`,                'js' )
-   .js( `${devPath}/js/customize-controls.js`, 'js' )
-   .js( `${devPath}/js/customize-preview.js`,  'js' );
+	.js( `${devPath}/js/wc-quantity-increment.js`, 	'js' )
+	.js( `${devPath}/js/customize-controls.js`, 'js' )
+	.js( `${devPath}/js/customize-preview.js`,  'js' );
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions

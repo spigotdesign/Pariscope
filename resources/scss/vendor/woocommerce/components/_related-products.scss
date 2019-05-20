@@ -1,6 +1,6 @@
 // Related Products
 
-.related {
+.related, .upsells {
     h2 {
         @include font-size(24px);
     }

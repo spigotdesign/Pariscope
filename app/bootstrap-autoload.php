@@ -37,8 +37,8 @@ array_map( function( $file ) {
 	require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 }, [
 	'functions-assets',
+	'functions-woocommerce',
 	'functions-filters',
 	'functions-setup',
-	'functions-template',
-	'functions-woocommerce'
+	'functions-template'
 ] );

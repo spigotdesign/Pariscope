@@ -60,82 +60,80 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/customize-preview.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header__ = __webpack_require__("./resources/js/customize-preview/custom-header.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header__);
-/**
- * Customize preview script.
- *
- * This file handles the JavaScript for the live preview frame in the customizer.
- * Any includes or imports should be handled in this file. The final result gets
- * saved back into `dist/js/customize-preview.js`.
- *
- * @package   Pariscope
- * @author    Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright Copyright (c) 2019, Bryan Hoffman
- * @link      https://spigotdesign.com/
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
-
-
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/custom-header.js":
+/***/ "./resources/js/wc-quantity-increment.js":
 /***/ (function(module, exports) {
 
+jQuery(function ($) {
 
-// Site title.
-wp.customize('blogname', function (value) {
-	value.bind(function (to) {
-		document.querySelector('.app-header__title a').textContent = to;
-	});
-});
-
-// Site description.
-wp.customize('blogdescription', function (value) {
-	value.bind(function (to) {
-		document.querySelector('.app-header__description').textContent = to;
-	});
-});
-
-// Header text color.
-wp.customize('header_textcolor', function (value) {
-	value.bind(function (to) {
-		var headerItems = document.querySelectorAll('.app-header__title a, .app-header__description');
-
-		headerItems.forEach(function (text) {
-
-			if ('blank' === to) {
-				text.style.clip = 'rect(0 0 0 0)';
-				text.style.position = 'absolute';
-			} else {
-				text.style.clip = null;
-				text.style.position = null;
-				text.style.color = to;
+	if (!String.prototype.getDecimals) {
+		String.prototype.getDecimals = function () {
+			var num = this,
+			    match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+			if (!match) {
+				return 0;
 			}
-		});
+			return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
+		};
+	}
+
+	function wcqi_refresh_quantity_increments() {
+		$('div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)').addClass('buttons_added').append('<input type="button" value="+" class="plus" />').prepend('<input type="button" value="-" class="minus" />');
+	}
+
+	$(document).on('updated_wc_div', function () {
+		wcqi_refresh_quantity_increments();
 	});
+
+	$(document).on('click', '.plus, .minus', function () {
+		// Get values
+		var $qty = $(this).closest('.quantity').find('.qty'),
+		    currentVal = parseFloat($qty.val()),
+		    max = parseFloat($qty.attr('max')),
+		    min = parseFloat($qty.attr('min')),
+		    step = $qty.attr('step');
+
+		// Format values
+		if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
+		if (max === '' || max === 'NaN') max = '';
+		if (min === '' || min === 'NaN') min = 0;
+		if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = 1;
+
+		// Change the value
+		if ($(this).is('.plus')) {
+			if (max && currentVal >= max) {
+				$qty.val(max);
+			} else {
+				$qty.val((currentVal + parseFloat(step)).toFixed(step.getDecimals()));
+			}
+		} else {
+			if (min && currentVal <= min) {
+				$qty.val(min);
+			} else if (currentVal > 0) {
+				$qty.val((currentVal - parseFloat(step)).toFixed(step.getDecimals()));
+			}
+		}
+
+		// Trigger change event
+		$qty.trigger('change');
+	});
+
+	wcqi_refresh_quantity_increments();
 });
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/js/customize-preview.js");
+module.exports = __webpack_require__("./resources/js/wc-quantity-increment.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=customize-preview.js.map
+//# sourceMappingURL=wc-quantity-increment.js.map

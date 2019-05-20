@@ -37,8 +37,8 @@ add_action( 'wp_enqueue_scripts', function() {
 	}
 
 	wp_enqueue_script( 'pariscope-app', asset( 'js/app.js' ), null, null, true );
-
 	wp_enqueue_style( 'pariscope-screen', asset( 'css/screen.css' ), null, null );
+	wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
 
 } );
 

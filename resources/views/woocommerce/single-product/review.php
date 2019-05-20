@@ -13,7 +13,6 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.6.0
  */
@@ -22,47 +21,53 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+<li <?php Hybrid\Attr\display( 'comment' ) ?>>
 
-	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
+	<header class="comment__meta">
+        
+        <div class="comment__meta-author">
+            <?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>
+            <?php Hybrid\Comment\display_author() ?>
+        </div>
 
-		<?php
-		/**
-		 * The woocommerce_review_before hook
-		 *
-		 * @hooked woocommerce_review_display_gravatar - 10
-		 */
-		do_action( 'woocommerce_review_before', $comment );
-		?>
+        <div class="comment__meta-permalink">
+            <?php Hybrid\Comment\display_permalink( [
+                'text' => sprintf(
+                    // Translators: 1 is the comment date and 2 is the time.
+                    esc_html__( '%1$s at %2$s' ),
+                    Hybrid\Comment\render_date()
+                    
+                )
+            ] ) ?>
 
-		<div class="comment-text">
+            <?php global $comment;
+				$rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
-			<?php
-			/**
-			 * The woocommerce_review_before_comment_meta hook.
-			 *
-			 * @hooked woocommerce_review_display_rating - 10
-			 */
-			do_action( 'woocommerce_review_before_comment_meta', $comment );
+				if ( $rating && wc_review_ratings_enabled() ) {
+					echo wc_get_rating_html( $rating ); // WPCS: XSS ok.
+				} 
+			?>
+        </div>
+        
+    </header>
+	
 
-			/**
-			 * The woocommerce_review_meta hook.
-			 *
-			 * @hooked woocommerce_review_display_meta - 10
-			 * @hooked WC_Structured_Data::generate_review_data() - 20
-			 */
-			do_action( 'woocommerce_review_meta', $comment );
+	<div class="comment__content">
 
-			do_action( 'woocommerce_review_before_comment_text', $comment );
+        <?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 
-			/**
-			 * The woocommerce_review_comment_text hook
-			 *
-			 * @hooked woocommerce_review_display_comment_text - 10
-			 */
-			do_action( 'woocommerce_review_comment_text', $comment );
+            <p class="comment__moderation">
+                <?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+            </p>
 
-			do_action( 'woocommerce_review_after_comment_text', $comment ); ?>
+        <?php endif ?>
 
-		</div>
-	</div>
+        <?php comment_text() ?>
+    </div>
+
+    <footer class="comment__footer">
+        
+        <?php Hybrid\Comment\display_edit_link() ?>
+
+    </footer>
+	

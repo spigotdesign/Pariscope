@@ -13,6 +13,8 @@
  */
 
 
+
+
 /**
  * Locate search form
  *
@@ -111,6 +113,21 @@ add_filter('pre_get_posts', function( $query ) {
 // Gravity Forms Confirmation anchor
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
+
+/**
+ * Update cart icon count
+ *
+ */
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'cinch_cart_count_fragments', 10, 1 );
+
+function cinch_cart_count_fragments( $fragments ) {
+    
+    $fragments['.cart-count'] = '<span class="cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
+    
+    return $fragments;
+    
+};
 
 
 

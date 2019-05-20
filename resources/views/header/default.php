@@ -17,12 +17,12 @@
 						</a>
 					</div>
 					<div class="app-header__nav">
+
 						<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'name' => 'primary' ] ) ?>
-						<button class="toggle-menu" type="button">
-						<span class="toggle-menu-box">
-							<span class="toggle-menu-inner"></span>
-						</span>
-						</button>
+
+						<?php Hybrid\View\display( 'nav/menu', 'cart', [ 'name' => 'cart' ] ) ?>
+
+		
 					</div>
 				</div>
 			</header>
