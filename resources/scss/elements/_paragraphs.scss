@@ -1,12 +1,16 @@
 // Paragraphs
 
 p {
-  margin-bottom:      $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
 
   .entry__content & {
 
   	&:last-child {
   		margin-bottom: 0;
   	}
+  }
+
+  strong {
+  	font-family: $bold-font-family;
   }
 }

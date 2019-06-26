@@ -27,6 +27,30 @@
 	font-style: normal;
 }
 
+.alignleft,
+.left {
+	float: left;
+	margin-right: 24px;
+}
+
+.alignright,
+.right {
+	float: right;
+	margin-left: 24px;
+}
+
+.aligncenter,
+.center {
+	display: block;
+	margin: 0 auto 24px auto;
+}
+
+.alignnone,
+.block {
+	clear: both;
+	margin: 0 0 24px 0;
+}
+
 .edit-post-visual-editor {
 	/* Text meant only for screen readers. */
 }
@@ -221,6 +245,10 @@
 
 .entry__content .edit-post-visual-editor p:last-child {
 	margin-bottom: 0;
+}
+
+.edit-post-visual-editor p strong {
+	font-family: "acherusgrotesque-bold", sans-serif;
 }
 
 .edit-post-visual-editor blockquote {
@@ -696,6 +724,32 @@
 
 .edit-post-visual-editor .wp-block-video video {
 	width: 100%;
+}
+
+.edit-post-visual-editor .alignleft {
+	float: left;
+	margin-right: 24px;
+}
+
+.edit-post-visual-editor .alignright {
+	float: right;
+	margin-left: 24px;
+}
+
+.edit-post-visual-editor .aligncenter {
+	display: block;
+	margin: 0 auto 24px auto;
+}
+
+.edit-post-visual-editor .alignnone,
+.edit-post-visual-editor .block {
+	clear: both;
+	margin: 0 0 24px 0;
+}
+
+.edit-post-visual-editor img.alignleft,
+.edit-post-visual-editor img.alignright {
+	display: inline;
 }
 
 @media (max-width: 600px) {

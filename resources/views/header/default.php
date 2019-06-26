@@ -20,7 +20,13 @@
 
 						<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
-						<?php Hybrid\View\display( 'nav/menu', 'cart', [ 'name' => 'cart' ] ) ?>
+						<?php Hybrid\View\display( 'nav/menu', 'extras', [ 'name' => 'extras' ] ) ?>
+
+						<button class="toggle-menu" type="button">
+							<span class="toggle-menu-box">
+								<span class="toggle-menu-inner"></span>
+							</span>
+						</button>
 
 		
 					</div>

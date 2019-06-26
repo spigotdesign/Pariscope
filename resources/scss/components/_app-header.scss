@@ -22,13 +22,13 @@
         position: fixed;
         transition: transform 0.3s, height 0.3s, background 0.4s, opacity 0.3s;
         top: 0;
-        height: 50px;
+        height: $app-header-height-detatched;
 
         .admin-bar & {
-            top: 32px;
+           top: 32px;
 
             @include mq(wp-mobile) {
-                top: 46px;
+               top: 0;
             }
         }
     }
@@ -64,39 +64,40 @@
         }
 
         &-link {
-            width: 150px;
-            height: 35px;
+            width: $logo-width-mobile;
+            height: $logo-height-mobile;
 
-            @include mq(table-portrait-up) {
-                width: 200px;
-                height: 47px;
+            @include mq(tablet-portrait-up) {
+                width: $logo-width;
+                height: $logo-height;
             }
 
 
             .detached & {
-                
-                width: 150px;
-                height: 35px;
+                width: $logo-width-detached;
+                height: $logo-height-detached;
             }
 
             svg {
-                width: 150px;
-                height: 35px;
+                width: $logo-width-mobile;
+                height: $logo-height-mobile;
                 transition: all .3s ease-in-out;
 
-                @include mq(table-portrait-up) {
-                width: 200px;
-                height: 47px;;
-            }
+                @include mq(tablet-portrait-up) {
+                    width: $logo-width;
+                    height: $logo-height;
+                }
+
 
                 // Small version
                 .detached & {
-                    width: 150px;
-                    height: 35px;
+                    width: $logo-width-detached;
+                    height: $logo-height-detached;
                     padding-top: 3px;
                 }
             }
         }
+
     }
 
     // Transparent Header

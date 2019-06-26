@@ -27,6 +27,30 @@
 	font-style: normal;
 }
 
+.alignleft,
+.left {
+	float: left;
+	margin-right: 24px;
+}
+
+.alignright,
+.right {
+	float: right;
+	margin-left: 24px;
+}
+
+.aligncenter,
+.center {
+	display: block;
+	margin: 0 auto 24px auto;
+}
+
+.alignnone,
+.block {
+	clear: both;
+	margin: 0 0 24px 0;
+}
+
 /**
  * More sensible default box-sizing:
  * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
@@ -714,6 +738,10 @@ p {
 	margin-bottom: 0;
 }
 
+p strong {
+	font-family: "acherusgrotesque-bold", sans-serif;
+}
+
 blockquote {
 	quotes: "\201C" "\201D";
 }
@@ -872,7 +900,7 @@ table {
 
 @media (max-width: 782px) {
 	.admin-bar .app-header.detached {
-		top: 46px;
+		top: 0;
 	}
 }
 
@@ -928,6 +956,13 @@ table {
 	height: 35px;
 }
 
+@media (min-width: 600px) {
+	.app-header__branding-link {
+		width: 200px;
+		height: 47px;
+	}
+}
+
 .detached .app-header__branding-link {
 	width: 150px;
 	height: 35px;
@@ -938,6 +973,13 @@ table {
 	height: 35px;
 	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
+}
+
+@media (min-width: 600px) {
+	.app-header__branding-link svg {
+		width: 200px;
+		height: 47px;
+	}
 }
 
 .detached .app-header__branding-link svg {
@@ -1986,14 +2028,20 @@ h2.entry__title a {
 	.nav-open .menu--primary {
 		visibility: visible;
 		opacity: 1;
-		top: 115px;
+		top: 75px;
 		display: block;
 	}
 	.nav-open.detached .menu--primary {
 		top: 75px;
 	}
 	.admin-bar .nav-open .menu--primary {
-		top: 120px;
+		top: 107px;
+	}
+}
+
+@media (max-width: 899px) and (max-width: 782px) {
+	.admin-bar .nav-open .menu--primary {
+		top: 121px;
 	}
 }
 
@@ -2040,7 +2088,7 @@ h2.entry__title a {
 	}
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
 	.menu--primary .menu__item:hover > ul {
 		z-index: 0;
 		visibility: visible;
@@ -2169,7 +2217,7 @@ h2.entry__title a {
 	transition: all .3s ease-in-out;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
 	.menu--primary .menu__sub-menu {
 		opacity: 0;
 		visibility: hidden;
@@ -2233,7 +2281,7 @@ h2.entry__title a {
 	}
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
 	.menu--primary .menu__sub-menu .menu__link:hover {
 		background-color: #004071;
 		color: white;
@@ -7977,6 +8025,32 @@ small.note {
 		float: none;
 		margin-right: 0;
 	}
+}
+
+.alignleft {
+	float: left;
+	margin-right: 24px;
+}
+
+.alignright {
+	float: right;
+	margin-left: 24px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px auto;
+}
+
+.alignnone,
+.block {
+	clear: both;
+	margin: 0 0 24px 0;
+}
+
+img.alignleft,
+img.alignright {
+	display: inline;
 }
 
 @media (max-width: 600px) {
