@@ -1,8 +1,18 @@
 // Embed Block
 
+.embed-youtube, .embed-vimeo {
+    margin-bottom: $margin;
+    margin-left: -$margin;
+    margin-right: -$margin;
+
+    @include mq(tablet-landscape-up) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 .wp-block-embed {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 40%;
 
     /* 16:9 */
     padding-top: 0px;

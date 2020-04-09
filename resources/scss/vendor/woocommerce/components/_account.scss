@@ -2,29 +2,8 @@
  * Account page
  */
 .woocommerce-account {
-    .app-content {
-        //padding-top: 200px;
-   
-    }
-
     .page-head {
-        background-color: $woo-account-header-bg;
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        flex-flow: row wrap;
-        position: relative;
-        padding: 80px 0 60px;
-
-        &:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba($black, .4);
-        }
+        background-color: $blue-darkest;
 
         &__content {
             color: $white;
@@ -33,38 +12,20 @@
             max-width: $site-width;
             width: 100%;
             align-items: flex-start;
-            display: flex;
-            flex-flow: row wrap;
+
         }
 
         &__title {
             color: $white;
-            flex: 0 1 100%;
         }
 
         p {
             padding: 0;
-            color: $white;
-            flex: 0 1 100%;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    .entry {
-        &__title {
-            text-align: center;
-
-            @include font-size(30px);
-
-            text-transform: uppercase;
         }
     }
 
     .woocommerce-MyAccount-navigation {
-        background-color: $gray-darkest;
+        background-color: $blue-dark;
         display: flex;
         justify-content: center;
         border-top: 1px solid rgba($white, 0.1);
@@ -73,8 +34,6 @@
             list-style: none;
             display: flex;
             flex-flow: row wrap;
-            margin: 0;
-            padding: 0;
 
             li {
                 text-transform: uppercase;
@@ -89,8 +48,8 @@
                     border-right: 1px solid rgba($white, 0.1);
 
                     &:hover {
-                        background-color: $red;
-                        color: $white;
+                        background-color: $blue;
+                        color: $blue-dark;
                     }
                 }
 
@@ -106,16 +65,11 @@
     .woocommerce-MyAccount-content {
         padding: $margin;
         margin: 0 auto;
-        max-width: 960px;
+        max-width: $site-width;
         background-color: $white;
         box-shadow: 0 1px 3px rgba($black, 0.1);
         border-radius: 0 0 3px 3px;
         min-height: calc(100vh - 700px);
-    }
-
-    fieldset {
-        padding: 0;
-        margin-top: 24px;
     }
 
     .addresses .title {

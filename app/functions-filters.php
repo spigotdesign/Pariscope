@@ -129,6 +129,32 @@ function cinch_cart_count_fragments( $fragments ) {
     
 };
 
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'cinchws_filter_dropdown_args', 10 );
+
+function cinchws_filter_dropdown_args( $args ) {
+    $var_tax = get_taxonomy( $args['attribute'] );
+    $args['show_option_none'] = apply_filters( 'the_title', $var_tax->labels->name );
+    return $args;
+}
+
+// Add new stock status to select
+add_filter( 'woocommerce_stock_status_options', function( $stock_statuses ) {
+
+    $stock_statuses['discontinued'] = 'Discontinued';
+    return $stock_statuses;
+
+} );
+
+
+add_filter( 'woocommerce_register_post_type_product', 'cinch_add_revision_support' );
+
+function cinch_add_revision_support( $supports ) {
+     $supports['supports'][] = 'revisions';
+
+     return $supports;
+}
+
+
 
 
 

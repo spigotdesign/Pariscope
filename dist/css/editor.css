@@ -623,13 +623,6 @@
 	}
 }
 
-.edit-post-visual-editor .wp-block-image {
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
-	max-width: 100%;
-}
-
 .edit-post-visual-editor .wp-block-image img {
 	max-width: 100%;
 }
@@ -655,6 +648,11 @@
 
 .edit-post-visual-editor .wp-block-image.is-resized img {
 	max-width: none;
+}
+
+.edit-post-visual-editor .wp-block-image figcaption {
+	font-size: 80%;
+	font-style: italic;
 }
 
 .edit-post-visual-editor .wp-block-latest-posts.alignleft {
@@ -714,6 +712,50 @@
 .edit-post-visual-editor .wp-block-pullquote cite,
 .edit-post-visual-editor .wp-block-pullquote footer {
 	position: relative;
+}
+
+.edit-post-visual-editor .wp-block-quote {
+	quotes: "\201C" "\201D";
+	padding-left: 24px;
+	position: relative;
+	margin-bottom: 24px;
+}
+
+.edit-post-visual-editor .wp-block-quote:before {
+	content: open-quote;
+	font-size: 60px;
+	font-size: 3.75rem;
+	line-height: 1.2;
+	position: absolute;
+	left: -5px;
+	top: -15px;
+}
+
+.edit-post-visual-editor .wp-block-quote:after {
+	content: no-close-quote;
+}
+
+.edit-post-visual-editor .wp-block-quote p {
+	font-size: 20px;
+	line-height: 1.5;
+	font-family: "acherusgrotesque-regularitalic", sans-serif;
+	color: #004071;
+}
+
+.edit-post-visual-editor .wp-block-quote p:last-child {
+	margin-bottom: 0;
+}
+
+.edit-post-visual-editor .wp-block-quote cite {
+	display: block;
+	font-family: "acherusgrotesque-medium", sans-serif;
+	font-style: normal;
+	padding-left: 48px;
+	color: #004071;
+}
+
+.edit-post-visual-editor .wp-block-quote cite:before {
+	content: "~ ";
 }
 
 .edit-post-visual-editor .wp-block-subhead {

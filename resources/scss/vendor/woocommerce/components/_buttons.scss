@@ -12,10 +12,9 @@ input.button,
   position: relative;
   text-decoration: none;
   overflow: visible;
-  padding: 12px 24px;
+  padding: 0.618em 1em;
   font-family: $bold-font-family;
-  font-weight: $bold-font-weight;
-  border-radius: 16px;
+  border-radius: 3px;
   left: auto;
   color: $white;
   background-color: $primary-color;
@@ -49,10 +48,10 @@ input.button,
   }
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: $secondary;
     text-decoration: none;
     background-image: none;
-    color: $white;
+    color: $secondarytext;
   }
 
   &.alt {
@@ -61,8 +60,8 @@ input.button,
     -webkit-font-smoothing: antialiased;
 
     &:hover {
-      background-color: darken($primary-color, 10%);
-      color: $white;
+      background-color: $primary;
+      color: $primarytext;
     }
 
     &.disabled,

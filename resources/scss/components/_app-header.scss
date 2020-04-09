@@ -13,22 +13,26 @@
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
 
     &.invisible {
-        transform: translate(0, -116px);
-        transition: transform 0.2s;
-        opacity: 0;
+        @include mq(desktop-nav) {
+            transform: translate(0, -116px);
+            transition: transform 0.2s;
+            opacity: 0;
+        }
     }
 
     &.detached {
-        position: fixed;
-        transition: transform 0.3s, height 0.3s, background 0.4s, opacity 0.3s;
-        top: 0;
-        height: $app-header-height-detatched;
+        @include mq(desktop-nav) {
+            position: fixed;
+            transition: transform 0.3s, height 0.3s, background 0.4s, opacity 0.3s;
+            top: 0;
+            height: $app-header-height-detatched;
 
-        .admin-bar & {
-           top: 32px;
+            .admin-bar & {
+                top: 32px;
 
-            @include mq(wp-mobile) {
-               top: 0;
+                @include mq(wp-mobile) {
+                    top: 0;
+                }
             }
         }
     }
@@ -42,8 +46,8 @@
     }
 
     .admin-bar.fl-builder-edit & {
-            top: 0;
-        }
+        top: 0;
+    }
 
     &__wrap {
         display: flex;
@@ -97,7 +101,6 @@
                 }
             }
         }
-
     }
 
     // Transparent Header

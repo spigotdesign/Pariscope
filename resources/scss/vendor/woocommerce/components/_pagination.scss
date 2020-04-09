@@ -1,48 +1,41 @@
 nav.woocommerce-pagination {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  margin: $margin 0;
 
   ul {
-    display: flex;
-    flex-flow: row nowrap;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both;
+    border: 1px solid darken($secondary, 10%);
+    border-right: 0;
+    margin: 1px;
 
     li {
-      flex: 0 1 auto;
+      border-right: 1px solid darken($secondary, 10%);
       padding: 0;
       margin: 0;
       float: left;
       display: inline;
       overflow: hidden;
-      background-color: $gray-dark;
-
-      &:first-child {
-        border-radius: 16px 0 0 16px;
-        //padding-left: $margin * 1.5;
-      }
-
-      &:last-child {
-        border-radius: 0 16px 16px 0;
-      }
 
       a,
       span {
         margin: 0;
         text-decoration: none;
+        padding: 0;
         line-height: 1;
         font-size: 1em;
         font-weight: normal;
-        padding: $margin/2;
+        padding: 0.5em;
+        min-width: 1em;
         display: block;
-        color: $white;
       }
 
       span.current,
       a:hover,
       a:focus {
-        background: $gray-darker;
-        color: $white;
+        background: $secondary;
+        color: darken($secondary, 40%);
       }
     }
   }

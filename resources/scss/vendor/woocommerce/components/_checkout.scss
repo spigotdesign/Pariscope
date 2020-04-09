@@ -1,32 +1,34 @@
 // WooCommerce Checkout
 
 .woocommerce-checkout {
-    @include placeholder {
-        //color: transparent;
-    }
+    display: flex;
+    flex-flow: row wrap;
 
-
-    .create-account small {
-        font-size: 11px;
-        color: $subtext;
-        font-weight: normal;
-    }
-
-    div.shipping-address {
-        padding: 0;
-        clear: left;
+    &__customer-details {
         width: 100%;
-    }
+        flex: 0 1 100%;
 
-    .shipping_address {
-        clear: both;
+        @include mq(tablet-landscape-up) {
+            flex: 0 1 calc(100% - 420px);
+        }
     }
 
     // Review Order
 
     &__review-order {
-        background-color: $cart-sidebar-bg;
+        background-color: $blue-darkest;
         padding: $margin;
+        flex: 0 1 100%;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid rgba($white, .1);
+
+        @include mq(tablet-landscape-up) {
+            flex: 0 1 420px;
+            border: none;
+
+        }
+
 
         h2, h3 {
             color: $white;
@@ -34,11 +36,30 @@
             @include font-size(30px);
         }
 
+        h3 {
+            @include mq(phone-only) {
+                order: 2;
+            }
+        }
+
+        .shop_table {
+            width: 100%;
+            @include mq(phone-only) {
+                order: 3;
+            }
+        }
+
+        .place-order {
+            @include mq(phone-only) {
+                order: 1;
+                margin-bottom: $margin * 2;
+            }
+        }
+
         table {
             border-collapse: separate;
             margin: 0 0 6px;
             padding: 0;
-            background-color: transparent;
 
             tr:first-child {
                 th,
@@ -73,11 +94,17 @@
                 &.cart_item {
                     font-size: 75%;
                     border-bottom: none;
+                    padding: 5px 0 0;
+
+                    &:last-child {
+                        border-bottom: 1px solid rgba($white, 0.2);
+                        padding-bottom: 5px;
+                    }
                 }
             }
 
             td {
-                &[data-title="Total"] {
+                &[data-title="Total"], &[data-title="Recurring total"] {
                     text-align: right;
                 }
 
@@ -110,6 +137,27 @@
         }
     }
 
+    &-payment {
+        width: 100%;
+        margin: $margin 4px 4px;
+    }
+
+    .create-account small {
+        font-size: 11px;
+        color: $subtext;
+        font-weight: normal;
+    }
+
+    div.shipping-address {
+        padding: 0;
+        clear: left;
+        width: 100%;
+    }
+
+    .shipping_address {
+        clear: both;
+    }
+
     // Customer Details
 
     &__customer-details {
@@ -121,17 +169,15 @@
     }
 }
 
-.woocommerce-shipping-fields {
-
-    h3 {
-        @include font-size(20px);
-    }
-}
-
 #payment {
     background: $white;
     border: 1px solid $border-color;
     border-radius: 5px;
+
+    @include mq(phone-only) {
+        border: none;
+    }
+
 
     .methods {
         .payment_method_stripe label[for=payment_method_stripe] {
@@ -139,21 +185,24 @@
             text-transform: uppercase;
             font-size: 75%;
             display: flex;
+            justify-content: space-between;
             flex-flow: row wrap;
+
+            @include mq(phone-only) {
+                background-color: $gray-lightest;
+                margin: 0;
+                padding: 0 0 $margin;
+            }
+
+
+            .cc-icons {
+                display: flex;
+                flex-direction: row;
+            }
 
             img {
                 height: 25px;
-
-                &:first-child {
-                    margin-left: $margin;
-                }
             }
-        }
-
-        .payment_box {
-            border: 1px solid $border-color;
-            border-radius: 3px;
-            padding: $margin/2;
         }
     }
 
@@ -169,6 +218,11 @@
         padding: $margin;
         margin: 0;
         list-style: none outside;
+
+        @include mq(phone-only) {
+            padding: 0;
+        }
+
 
         li {
             line-height: 2;
@@ -200,9 +254,13 @@
 
     div.form-row {
         padding: ($margin / 2) $margin;
+
+        @include mq(phone-only) {
+            padding: 0;
+        }
     }
 
-    div.payment_box {
+    .payment_box {
         position: relative;
         box-sizing: border-box;
         width: 100%;
@@ -212,6 +270,14 @@
         line-height: 1.5;
         background-color: $gray-lightest;
         color: $secondarytext;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+
+        @include mq(phone-only) {
+            margin: 0;
+            border: none;
+        }
+
 
         input.input-text, textarea {
             border-color: $border-color;
@@ -229,6 +295,14 @@
 
             &:last-of-type {
                 margin-bottom: 0;
+
+                @include mq(phone-only) {
+                    margin-bottom: $margin;
+                }
+            }
+
+            @include mq(phone-only) {
+                padding: 0;
             }
         }
 
@@ -322,16 +396,6 @@
     }
 
     .payment_method_paypal {
-
-        &.payment_box {
-            p {
-                padding: 0;
-            }
-        }
-
-        img {
-            float: right;
-        }
         .about_paypal {
             float: right;
             line-height: 52px;
@@ -346,22 +410,24 @@
 }
 
 .woocommerce-checkout__review-order {
-
-
     .button {
         width: 100%;
         padding: $margin;
+
         @include font-size(20px);
+
         text-transform: uppercase;
     }
 
     .woocommerce-privacy-policy-text {
         p {
             color: #9FA4A8;
+
             @include font-size(13px);
 
             a {
                 //color: $purple;
+           
             }
         }
     }

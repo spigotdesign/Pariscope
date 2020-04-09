@@ -3,38 +3,45 @@
 ///
 ///
 /// @author Bryan Hoffman <bryan@cinchws.com>
-
+/// @link   https:cinchws.com
 ////
 
 
 
-@import 'account';
-@import 'breadcrumbs';
+
+
+
+@import 'layout';
+// @import 'layout-cart';
 @import 'buttons';
-@import 'cart';
+
 @import 'cart-actions';
 @import 'cart-collaterals';
-@import 'cart-count';
-@import 'checkout';
-@import 'forms';
-@import 'layout';
-@import 'messages';
-@import 'nav-extras';
-@import 'order-page';
-@import 'pagination';
-@import 'password';
-@import 'product-loops';
-@import 'product-page';
-@import 'product-gallery';
-@import 'quantity-increment';
-@import 'related-products';
-@import 'remove-product';
-@import 'reviews';
-@import 'select2';
+
 @import 'shipping-calculator';
-@import 'star-ratings';
-@import 'store-notice';
+
+
 @import 'tables';
-@import 'tabs';
+@import 'messages';
+
+@import 'breadcrumbs';
+@import 'remove-product';
+@import 'star-ratings';
+@import 'forms';
+@import 'password';
+
 @import 'terms-conditions';
-@import 'term-desc';
+@import 'pagination';
+@import 'product-loops';
+@import 'quantity-increment';
+@impott 'store-notice';
+
+
+@import 'reviews';
+@import 'account';
+@import 'cart';
+@import 'checkout';
+@import 'product-page';
+@import 'order-page';
+
+@import 'select2';

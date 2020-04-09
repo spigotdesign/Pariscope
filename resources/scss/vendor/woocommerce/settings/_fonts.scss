@@ -1,28 +1,27 @@
 // WooCommerce Fonts
 
 
-$fontURI: '../../dist/fonts';
+$fontURI: '../../dist/fonts/';
 
 
 @font-face {
-  font-family: 'star';
-  src:
-    url('#{$fontURI}/woocommerce/star.ttf?w9pgvh') format('truetype'),
-    url('#{$fontURI}/woocommerce/star.woff?w9pgvh') format('woff'),
-    url('#{$fontURI}/woocommerce/star.svg?w9pgvh#star') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'star';
+    src: url('#{$fontURI}/woocommerce/star.eot');
+    src: url('#{$fontURI}/woocommerce/star.eot?#iefix') format('embedded-opentype'),
+        url('#{$fontURI}/woocommerce/star.woff') format('woff'),
+        url('#{$fontURI}/woocommerce/star.ttf') format('truetype'),
+        url('#{$fontURI}/woocommerce/star.svg#star') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-
 
 @font-face {
     font-family: 'WooCommerce';
     src: url('#{$fontURI}/woocommerce/WooCommerce.eot');
     src: url('#{$fontURI}/woocommerce/WooCommerce.eot?#iefix') format('embedded-opentype'),
-         url('#{$fontURI}/woocommerce/WooCommerce.woff') format('woff'),
-         url('#{$fontURI}/woocommerce/WooCommerce.ttf') format('truetype'),
-         url('#{$fontURI}/woocommerce/WooCommerce.svg#WooCommerce') format('svg');
+        url('#{$fontURI}/woocommerce/WooCommerce.woff') format('woff'),
+        url('#{$fontURI}/woocommerce/WooCommerce.ttf') format('truetype'),
+        url('#{$fontURI}/woocommerce/WooCommerce.svg#WooCommerce') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-
