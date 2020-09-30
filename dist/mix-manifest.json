@@ -1,16 +1,14 @@
 {
-    "/js/app.js": "/js/app.js?id=e8f1b70d78bfc2044464",
-    "/css/editor.css": "/css/editor.css?id=578035ccf14232fc8e55",
+    "/js/app.js": "/js/app.js?id=273d2d98f63218fd941b",
+    "/css/editor.css": "/css/editor.css?id=d9f05074325dd4057daf",
     "/css/customize-controls.css": "/css/customize-controls.css?id=d74b1e8c2959e859334f",
-    "/js/app.js.map": "/js/app.js.map?id=2790802239b944a5a974",
-    "/css/editor.css.map": "/css/editor.css.map?id=d3d440b58225a8faf45a",
+    "/js/app.js.map": "/js/app.js.map?id=60f1720764255bf7ce3d",
+    "/css/editor.css.map": "/css/editor.css.map?id=7b0d642d4aa1a2fa8d42",
     "/css/customize-controls.css.map": "/css/customize-controls.css.map?id=087ad168216892d54c38",
-    "/js/customize-preview.js": "/js/customize-preview.js?id=15d568fd2adbf9d30f2a",
-    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=f4ccb4a125e4e170882c",
-    "/js/wc-quantity-increment.js": "/js/wc-quantity-increment.js?id=43e73dc9b7f0daf1d72d",
-    "/js/wc-quantity-increment.js.map": "/js/wc-quantity-increment.js.map?id=86f70679d29f9c04dbb4",
-    "/js/customize-controls.js": "/js/customize-controls.js?id=af097e17c14bf8dfe016",
-    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=fb726ec9018936047135",
-    "/css/screen.css": "/css/screen.css?id=3e0b200d9038eed1981f",
-    "/css/screen.css.map": "/css/screen.css.map?id=e65892a79b40f49161b2"
+    "/js/customize-preview.js": "/js/customize-preview.js?id=acc070829b93f6d50ad0",
+    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=7b0442c9903d40d2d72a",
+    "/js/customize-controls.js": "/js/customize-controls.js?id=24ef668cf655240ed3a3",
+    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=2913c331e1dee42c95ed",
+    "/css/screen.css": "/css/screen.css?id=754a34bd7b04d705194d",
+    "/css/screen.css.map": "/css/screen.css.map?id=0edf04f3b7abaad4a467"
 }

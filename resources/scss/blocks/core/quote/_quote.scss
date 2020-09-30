@@ -1,0 +1,77 @@
+////
+/// Quote block.
+///
+/// @group  Blocks
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+.wp-block-quote {
+	margin-bottom: $margin * 1.5;
+	border-left: 8px solid $yellow;
+	padding-left: $margin * 1.5;
+
+	quotes: "“" "”";
+
+    p {
+        //text-indent: -0.42em;
+        line-height: 1.2;
+        font-size: 1.25em;
+		font-weight: $bold-font-weight;
+		font-style: italic;
+		color: $gray-darker;
+		margin-bottom: 1rem;
+
+        &:first-of-type {
+            &:before {
+                content: open-quote;
+            }
+        }
+
+        &:before {
+            content: no-open-quote;
+        }
+
+        &:after {
+            content: no-close-quote;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+
+            &:after {
+                content: close-quote;
+            }
+
+        }
+
+    }
+
+	&.is-style-large {
+		font-size: 1.375em;
+		line-height: 1.5;
+		margin-bottom: $margin * 1.5;
+
+		cite {
+			font-size: .7em;
+			font-style: normal;
+		}
+	}
+
+	> cite {
+		display:  block;
+		text-align: right;
+		font-size: 90%;
+		font-style: normal;
+		padding-right: 10%;
+
+		&:before {
+			content: "~ ";
+		}
+	}
+}
+
+.wp-block-quote__citation {
+	text-align: left;
+	font-style: normal;
+}

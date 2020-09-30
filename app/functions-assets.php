@@ -5,7 +5,7 @@
  * This file holds some setup actions for scripts and styles as well as a helper
  * functions for work with assets.
  *
- * @package    Pariscope
+ * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright  Copyright (c) 2019, Bryan Hoffman
@@ -36,9 +36,11 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'pariscope-app', asset( 'js/app.js' ), null, null, true );
+	wp_enqueue_script( 'pariscope-app', asset( 'js/app.js' ), array( 'jquery' ), null, true );
 	wp_enqueue_style( 'pariscope-screen', asset( 'css/screen.css' ), null, null );
 	wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
+
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i|Nunito+Sans:400,400i,700&display=swap', false ); 
 
 } );
 
@@ -89,3 +91,16 @@ function asset( $path ) {
 
 	return get_theme_file_uri( 'dist' . $path );
 }
+
+// Register Custom Templates
+
+add_action( 'hybrid/templates/register', function( $templates ) {
+
+	$templates->add(
+		'page-templates/page-template-past-exhibits.php',
+		[
+			'label'      => __( 'Past Exhibits' ),
+			'post_types' => [ 'page', 'another_type' ]
+		]
+	);
+} );

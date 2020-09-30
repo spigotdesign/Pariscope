@@ -9,8 +9,10 @@
 /// @link   https:spigotdesign.com
 ////
 
-@import 'media-queries';
-@import 'colors';
-@import 'dimensions';
-@import 'fonts';
-@import 'type';
+@import "spacing";
+@import "colors";
+@import "dimensions";
+//@import 'fonts';
+@import "border";
+@import "type";
+@import "woocommerce";

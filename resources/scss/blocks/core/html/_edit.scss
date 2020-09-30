@@ -1,0 +1,15 @@
+////
+/// Heading HTML block.
+///
+/// @group  Editor
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+.wp-block[data-type=core\/html] {
+	max-width: 100%;
+
+	.editor-plain-text {
+		tab-size: 4;
+	}
+}

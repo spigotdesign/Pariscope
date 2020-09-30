@@ -5,7 +5,7 @@
  * This file holds some setup actions for scripts and styles as well as a helper
  * functions for work with WooCommerce.
  *
- * @package   Homdoor
+ * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright  Copyright (c) 2018, Bryan Hoffman
@@ -13,7 +13,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Homdoor;
+namespace Pariscope;
 
 use function Hybrid\Template\path;
 
@@ -88,54 +88,57 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * @return aray
  */
 
-add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
-
-	// Remove billing fields
-	unset($fields['billing']['billing_company']);
-	unset($fields['shipping']['shipping_company']);
-	//unset($fields['billing']['billing_country']);
-	//unset($fields['billing']['billing_city']);
-	//unset($fields['billing']['billing_state']);
-	//unset($fields['billing']['billing_phone']);
-
-	//unset($fields['order']['order_comments']);
-
-	// Class names
-	$fields['billing']['billing_address_1']['class'] 		= array('form-row-first address-field');
-	$fields['billing']['billing_address_2']['class'] 		= array('form-row-last address-field');
-	$fields['billing']['billing_address_2']['label_class'] 	= '';
-	$fields['billing']['billing_postcode']['class'] 		= array('form-row-quarter address-field');
-	$fields['billing']['billing_country']['class'] 			= array('form-row-quarter address-field');
-	$fields['billing']['billing_email']['class'] 			= array('form-row-quarter');
-	$fields['billing']['billing_phone']['class'] 			= array('form-row-quarter');
-	$fields['billing']['billing_city']['class'] 			= array('form-row-quarter address-field');
-	$fields['billing']['billing_state']['class'] 			= array('form-row-quarter address-field');
-	$fields['account']['account_password']['class'] 		= array('form-row-last');
-
-	$fields['shipping']['shipping_address_1']['class'] 		= array('form-row-first');
-	$fields['shipping']['shipping_address_2']['class'] 		= array('form-row-last');
-	//$fields['shipping']['shipping_address_2']['label_class'] = '';
-	$fields['shipping']['shipping_postcode']['class'] 		= array('form-row-quarter');
-	$fields['shipping']['shipping_country']['class'] 		= array('form-row-quarter');
-	$fields['shipping']['shipping_email']['class'] 			= array('form-row-quarter');
-	$fields['shipping']['shipping_phone']['class'] 			= array('form-row-quarter');
-	$fields['shipping']['shipping_city']['class'] 			= array('form-row-quarter');
-	$fields['shipping']['shipping_state']['class'] 			= array('form-row-quarter');
-
-	// Labels
-	$fields['billing']['billing_address_2']['label'] = 'Address Line 2';
-	$fields['shipping']['shipping_email']['label'] = 'Shipping Email';
-	$fields['shipping']['shipping_phone']['label'] = "Shipping Phone";
-
-	// Priority
-	$fields['billing']['billing_country']['priority'] = 100;
-	$fields['shipping']['shipping_country']['priority'] = 100;
-
-	  
-	
-	return $fields;
-
-} );
+ add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
+  
+	  // Remove billing fields
+	  unset($fields['billing']['billing_company']);
+	  unset($fields['shipping']['shipping_company']);
+	  unset($fields['billing']['billing_city']);
+	  unset($fields['billing']['billing_state']);
+	  unset($fields['billing']['billing_phone']);
+  
+	  //unset($fields['order']['order_comments']);
+  
+	  // Class names
+	  $fields['billing']['billing_address_1']['class'] 			= array('form-row-quarter');
+	  $fields['billing']['billing_address_2']['class'] 			= array('form-row-quarter');
+	  $fields['billing']['billing_state']['class']				= array('form-row-quarter');
+	  $fields['billing']['billing_city']['class']					= array('form-row-quarter');
+	  $fields['billing']['billing_address_2']['label_class'] 		= '';
+	  $fields['billing']['billing_postcode']['class'] 			= array('form-row-quarter');
+	  $fields['billing']['billing_country']['class'] 				= array('form-row-quarter');
+	  $fields['billing']['billing_email']['class'] 				= array('form-row-quarter');
+	  $fields['billing']['billing_phone']['class'] 				= array('form-row-quarter');
+	  $fields['account']['account_password']['class'] 			= array('form-row-last');
+  
+	  $fields['shipping']['shipping_address_1']['class'] 			= array('form-row-quarter');
+	  $fields['shipping']['shipping_address_2']['class'] 			= array('form-row-quarter');
+	  $fields['shipping']['shipping_state']['class']				= array('form-row-quarter');
+	  $fields['shipping']['shipping_city']['class']					= array('form-row-quarter');
+	  $fields['shipping']['shipping_address_2']['label_class'] 		= '';
+	  $fields['shipping']['shipping_postcode']['class'] 			= array('form-row-quarter');
+	  $fields['shipping']['shipping_country']['class'] 				= array('form-row-quarter');
+	  $fields['shipping']['shipping_email']['class'] 				= array('form-row-quarter');
+	  $fields['shipping']['shipping_phone']['class'] 				= array('form-row-quarter');
+	  $fields['account']['account_password']['class'] 			= array('form-row-last');
+  
+  
+	  // Labels
+	  $fields['billing']['billing_address_2']['label'] 			= 'Address Line 2';
+	  $fields['billing']['billing_state']['label'] 				= 'State';
+	  $fields['billing']['billing_city']['label'] 				= 'Town / City';
+	  $fields['billing']['billing_phone']['label'] 				= 'Phone';
+	  $fields['shipping']['shipping_address_2']['label'] 			= 'Address Line 2';
+	  $fields['shipping']['shipping_email']['label'] 				= 'Email Address';
+	  $fields['shipping']['shipping_phone']['label'] 				= 'Phone';
+  
+	  // Priority
+	  $fields['billing']['billing_country']['priority'] 			= 100;
+	  $fields['shipping']['shipping_country']['priority'] 		= 100;
+	    
+	  return $fields;
+  
+  } );
 
 
 /**
@@ -175,29 +178,6 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 
 //remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
 //add_action( 'woocommerce_before_cart_table', 'wc_print_notices', 10 );
-
-
-// Free shipping on certain products
-
-function wcs_my_free_shipping( $is_available ) {
-	global $woocommerce;
- 
-	// set the product ids that are eligible
-	$eligible = array( '411' );
- 
-	// get cart contents
-	$cart_items = $woocommerce->cart->get_cart();
-	// loop through the items looking for one in the eligible array
-	foreach ( $cart_items as $key => $item ) {
-		if( in_array( $item['product_id'], $eligible ) ) {
-			return true;
-		}
-	}
- 
-	// nothing found return the default value
-	return $is_available;
-}
-add_filter( 'woocommerce_shipping_free_shipping_is_available', 'wcs_my_free_shipping', 20 );
 
 
 
@@ -293,8 +273,6 @@ class WooCommerce_Quantity_Increment {
 }
 
 add_action( 'plugins_loaded', array( 'WooCommerce_Quantity_Increment', 'get_instance' ), 0 );
-
-
 
 
 

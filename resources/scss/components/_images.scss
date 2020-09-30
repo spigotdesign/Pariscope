@@ -6,18 +6,22 @@
 
 ////
 
-
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  position: relative; 
-
-  &.emoji {
-  	width: 16px;
-  	height: 16px;
-  	display: inline;
-  	top: 3px;
-  }
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
 }
 
+img.wp-smiley,
+img.emoji {
+    display: inline;
+    width: 1em;
+    height: 1em;
+    margin: 0 .07em;
+    padding: 0;
+    vertical-align: -0.1em;
+    background: none;
+    border: none;
+    box-shadow: none;
+}

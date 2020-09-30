@@ -1,0 +1,46 @@
+// Accordion Blocks
+// https://wordpress.org/plugins/accordion-blocks/
+
+.c-accordion__title {}
+
+.wp-block-pb-accordion-item {
+    background-color: $white;
+    padding: ($margin * 0.75) ($margin * 0.5);
+    border-radius: 3px;
+    margin-bottom: $margin;
+    box-shadow: 0 1px 3px 0 rgba($shadow-blue, 0.2);
+
+    .c-accordion {
+        &__title {
+            margin-bottom: 0;
+
+            &:focus {
+                outline: 0;
+            }
+
+            &:after {
+                color: $blue-dark;
+                font-weight: $bold-font-weight;
+            }
+        }
+
+        &__content {
+            margin-top: $margin / 2;
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+
+            ol {
+                ol {
+                    list-style-type: lower-latin;
+                    
+
+                    ol {
+                        list-style-type: lower-roman;
+                    }
+                }
+            }
+        }
+    }
+}

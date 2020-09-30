@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<?php the_post_thumbnail( 'pariscope-medium', [ 'class' => 'entry__image' ] ) ?>
+	<?php Hybrid\Carbon\Image::display( ['featured','attached'], ['size' =>'post-thumb', 'link' => true] ); ?>
 
 	<header class="entry__header">
 		<?php Hybrid\Post\display_title() ?>

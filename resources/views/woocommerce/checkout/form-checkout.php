@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
+	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'cinch' ) ) );
 	return;
 }
 
@@ -36,10 +36,15 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div class="woocommerce-checkout__customer-details" id="customer_details">
+
+			<?php foreach( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+      			// Check if there are non-virtual products
+      			if ( ! $cart_item['data']->is_virtual() ) $only_virtual = false;   
+   			} ?>
+
+			<?php if($only_virtual == false) { do_action( 'woocommerce_checkout_shipping' ); } ?>
 			
 			<?php do_action( 'woocommerce_checkout_billing' ); ?>
-
-			<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			
 		</div>
 
@@ -51,14 +56,14 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<div id="order_review" class="woocommerce-checkout__review-order">
 
-		<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+		<h3 id="order_review_heading"><?php _e( 'Your order', 'cinch' ); ?></h3>
 
 		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 
 		<div class="form-row place-order">
 			<noscript>
-				<?php esc_html_e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?>
-				<br/><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>"><?php esc_html_e( 'Update totals', 'woocommerce' ); ?></button>
+				<?php esc_html_e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'cinch' ); ?>
+				<br/><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'cinch' ); ?>"><?php esc_html_e( 'Update totals', 'cinch' ); ?></button>
 			</noscript>
 
 			<?php wc_get_template( 'checkout/terms.php' ); ?>

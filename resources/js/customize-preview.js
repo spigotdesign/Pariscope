@@ -5,7 +5,7 @@
  * Any includes or imports should be handled in this file. The final result gets
  * saved back into `dist/js/customize-preview.js`.
  *
- * @package   Pariscope
+ * @package   AmericanAcadameyOfInnovation
  * @author    Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright Copyright (c) 2019, Bryan Hoffman
  * @link      https://spigotdesign.com/

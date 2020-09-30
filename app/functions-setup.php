@@ -10,7 +10,7 @@
  * things in this file. Those APIs should be used instead of attempting to use
  * `remove_action()`.
  *
- * @package    Pariscope
+ * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright  Copyright (c) 2019, Bryan Hoffman
@@ -66,24 +66,24 @@ add_action( 'after_setup_theme', function() {
 	// Editor color palette.
 	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => __( 'Charcoal' ),
-			'slug'  => 'charcoal',
-			'color' => '#282c34'
+			'name'  => __( 'White' ),
+			'slug'  => 'white',
+			'color' => '#ffffff'
 		],
 		[
-			'name'  => __( 'Regent' ),
-			'slug'  => 'regent',
-			'color' => '#8c97a7',
+			'name'  => __( 'Blue Dark' ),
+			'slug'  => 'blue-dark',
+			'color' => '#193F57',
 		],
 		[
-			'name'  => __( 'Husk' ),
-			'slug'  => 'husk',
-			'color' => '#B9A364',
+			'name'  => __( 'Blue' ),
+			'slug'  => 'blue',
+			'color' => '#3C9DE6',
 		],
 		[
-			'name'  => __( 'Red Stage' ),
-			'slug'  => 'red-stage',
-			'color' => '#b15330',
+			'name'  => __( 'Red' ),
+			'slug'  => 'red',
+			'color' => '#812d31',
 		]
 	] );
 
@@ -134,11 +134,15 @@ add_action( 'init', function() {
 	] );
 
 	register_nav_menus( [
-		'supernav' => esc_html_x( 'Supernav', 'nav menu location' )
+		'secondary' => esc_html_x( 'Secondary', 'nav menu location' )
 	] );
 
 	register_nav_menus( [
-		'footer' => esc_html_x( 'Footer', 'nav menu location' )
+		'footer_1' => esc_html_x( 'Footer 1', 'nav menu location' )
+	] );
+
+	register_nav_menus( [
+		'footer_2' => esc_html_x( 'Footer 2', 'nav menu location' )
 	] );
 
 }, 5 );
@@ -162,7 +166,7 @@ add_action( 'init', function() {
 	set_post_thumbnail_size( 480, 300, true );
 
 	// Post Thumbnails
-	add_image_size( 'post-thumb', 480, 300, array( 'center', 'center' ));
+	add_image_size( 'post-thumb', 720, 500, array( 'center', 'center' ));
 
 }, 5 );
 
@@ -190,6 +194,4 @@ add_action( 'widgets_init', function() {
 	] + $args );
 
 }, 5 );
-
-
 

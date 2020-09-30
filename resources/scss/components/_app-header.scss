@@ -6,54 +6,27 @@
     background-color: $header-background;
     height: $app-header-height;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    box-shadow: 0 0 4px 0 rgba($black, 0.17);
 
-    &.invisible {
+    .page-template-landing & {
+
         @include mq(desktop-nav) {
-            transform: translate(0, -116px);
-            transition: transform 0.2s;
-            opacity: 0;
-        }
+        position: absolute;
+        background-color: transparent;
+        box-shadow: none;
+        background: linear-gradient(180deg, rgba(0,0,0,0.51) 0%, transparent 99%);
+    }
     }
 
-    &.detached {
-        @include mq(desktop-nav) {
-            position: fixed;
-            transition: transform 0.3s, height 0.3s, background 0.4s, opacity 0.3s;
-            top: 0;
-            height: $app-header-height-detatched;
-
-            .admin-bar & {
-                top: 32px;
-
-                @include mq(wp-mobile) {
-                    top: 0;
-                }
-            }
-        }
-    }
-
-    .admin-bar & {
-        top: 32px;
-
-        @include mq(wp-mobile) {
-            top: 46px;
-        }
-    }
-
-    .admin-bar.fl-builder-edit & {
-        top: 0;
-    }
-
-    &__wrap {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding: 0 $margin;
+    .page-template-landing.admin-bar & {
+        @include mq(desktop-nav) { top: 32px; }
     }
 
     &__branding {
@@ -62,10 +35,26 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+        justify-content: flex-start;
+        padding-left: $margin / 2;
+        flex: 0 1 $nav-width;
+        //background-color: $blue-darker;
 
-        .detached & {
-            margin-top: 0;
+        @include mq(phone-only) {
+            flex-basis: 100%;
+            order: 2;
+            justify-content: flex-start;
+            padding-left: $margin / 2;
         }
+
+        .page-template-landing & {
+            .logotype {
+                @include mq(desktop-nav) {
+                fill: $white !important;
+            }
+            }
+        }
+
 
         &-link {
             width: $logo-width-mobile;
@@ -86,6 +75,7 @@
                 width: $logo-width-mobile;
                 height: $logo-height-mobile;
                 transition: all .3s ease-in-out;
+                fill: $white;
 
                 @include mq(tablet-portrait-up) {
                     width: $logo-width;
@@ -95,23 +85,11 @@
 
                 // Small version
                 .detached & {
-                    width: $logo-width-detached;
-                    height: $logo-height-detached;
-                    padding-top: 3px;
+                    // width: $logo-width-detached;
+                    //height: $logo-height-detached;
+                    margin-top: 3px;
                 }
             }
-        }
-    }
-
-    // Transparent Header
-
-    .transparent_header & {
-        background-color: transparent;
-        box-shadow: none;
-
-        &.detached {
-            background-color: $header-background;
-            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
         }
     }
 }

@@ -10,7 +10,17 @@
 
 		<h1 class="page-head__title"><span><?php the_title(); ?></span></h1>
 
-		<?php Hybrid\Post\display_author() ?> <?php Hybrid\Post\display_date(); ?>
+		<?php $post_author_id = get_post_field( 'post_author', $post_id ); ?>
+
+		<span class="entry__author">
+			<?php if ( function_exists( 'coauthors_posts_links' ) ) {
+    				coauthors_posts_links();
+			} else {
+    				the_author_posts_link();
+			} ?>
+		</span> 
+
+		<?php Hybrid\Post\display_date() ?>
 
 	</div>
 
@@ -18,7 +28,7 @@
 
 <?php } else { ?>
 
-<div class="page-head no-bg">
+<div class="page-head page-head--no-bg">
 
 	<div class="page-head__content">
 
@@ -26,7 +36,17 @@
 
 		<h1 class="page-head__title"><span><?php the_title(); ?></span></h1>
 
-		<?php Hybrid\Post\display_author(); ?> <?php Hybrid\Post\display_date(); ?>
+		<?php $post_author_id = get_post_field( 'post_author', $post_id ); ?>
+
+		<span class="entry__author">
+			<?php if ( function_exists( 'coauthors_posts_links' ) ) {
+    				coauthors_posts_links();
+			} else {
+    				the_author_posts_link();
+			} ?>
+		</span> 
+
+		<?php Hybrid\Post\display_date() ?>
 
 	</div>
 

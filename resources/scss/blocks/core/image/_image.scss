@@ -1,0 +1,48 @@
+////
+/// Image block.
+///
+/// @group  Blocks
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+.wp-block-image {
+	margin-top: $spacing-global;
+
+	img {
+	//	display: block;
+	}
+
+	&.alignfull img {
+		border-radius: 0;
+	}
+
+	&.alignfull img,
+	&.alignwide img {
+		margin-left:  auto;
+		margin-right: auto;
+		display:      block;
+	}
+
+	&.is-resized {
+		width: min-content;
+
+		// Emulate min-content for Edge and IE11
+		display: -ms-inline-grid;
+		-ms-grid-columns: min-content;
+
+		figcaption {
+			-ms-grid-row: 2;
+		}
+
+		img {
+			max-width: none;
+		}
+	}
+
+	figcaption {
+		padding: $margin / 6;
+		font-size: 90%;
+		font-style: italic;
+	}
+}

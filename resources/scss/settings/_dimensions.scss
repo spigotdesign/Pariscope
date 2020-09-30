@@ -1,32 +1,46 @@
 // Dimensions
 
-$base-font-size:    			16px;
-$base-line-height:  			24px;
+$spacing-global:	1.5rem;
+$margin:			$spacing-global;
+$base-line-height:  $spacing-global;
 
-$base-radius:       			3px;
 
-$base-spacing-unit: 			$base-line-height;
-$margin:						$base-spacing-unit;
 
-$site-max-width:				1200px;
+$width-alignwide : 56rem;
+$width-alignfull : 100vw;
+
+$content-width: (900 / 16) * 1rem;
+
+$content-width-padded : $content-width + ( $spacing-global * 2 );
+
+$alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
+
+
+$site-max-width:				(1200 / 16) * 1rem;
 $site-width:					$site-max-width;
 
-$post-width:					900px;
+$post-width:					(960 / 16) * 1rem;
 
-$app-header-height:				75px;
-$app-header-height-detatched:	50px;
+$app-header-height:				(94 / 16) * 1rem;
+$app-header-height-detatched:	(125 / 16) * 1rem;
 
-$border-radius:					3px;
+
+
+// Global Transition
+$transition:					all .3s ease-in-out;
+
 
 // Logo dimensions
-$logo-width:            		200px;
-$logo-height:           		47px;
-$logo-width-mobile:     		150px;
-$logo-height-mobile:    		35px;
-$logo-width-detached:   		$logo-width-mobile;
-$logo-height-detached:  		$logo-height-mobile;
+$logo-width:            		(250 / 16) * 1rem;
+$logo-height:           		(76 / 16) * 1rem;
+$logo-width-mobile:     		(200 / 16) * 1rem;
+$logo-height-mobile:    		(64 / 16) * 1rem;
+$logo-width-detached:   		$logo-width;
+$logo-height-detached:  		$logo-height;
+
+$nav-width:						(350/ 16) * 1rem;
 
 
 @function content-width() {
-	@return 750;
+	@return $content-width;
 }

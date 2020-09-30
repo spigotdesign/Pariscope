@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -79,7 +79,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * Any includes or imports should be handled in this file. The final result gets
  * saved back into `dist/js/customize-preview.js`.
  *
- * @package   Pariscope
+ * @package   AmericanAcadameyOfInnovation
  * @author    Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright Copyright (c) 2019, Bryan Hoffman
  * @link      https://spigotdesign.com/
@@ -129,7 +129,7 @@ wp.customize('header_textcolor', function (value) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./resources/js/customize-preview.js");

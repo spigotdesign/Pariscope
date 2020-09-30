@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -75,7 +75,7 @@
  * Any includes or imports should be handled in this file. The final result gets
  * saved back into `dist/js/customize-controls.js`.
  *
- * @package   Pariscope
+ * @package   AmericanAcadameyOfInnovation
  * @author    Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright Copyright (c) 2019, Bryan Hoffman
  * @link      https://spigotdesign.com/
@@ -95,7 +95,7 @@
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./resources/js/customize-controls.js");

@@ -1,30 +1,74 @@
 // Cards
 
 .post-list {
-  &__card {
-    background-color: $white;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px 0 rgba(53, 69, 88, 0.2);
-    padding: $margin;
-    overflow: hidden;
+    &__card {
+        background-color: $white;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px 0 rgba($shadow-blue, 0.2);
+        padding: $margin;
+        overflow: hidden;
 
-    img {
-      margin-right: -$margin;
-      margin-left: -$margin;
-      margin-top: -$margin;
-      margin-bottom: $margin;
+        img {
+            margin-right: -$margin;
+            margin-left: -$margin;
+            margin-top: -$margin;
+            margin-bottom: $margin;
+            max-width: calc(100% + #{$margin * 2.2});
+        }
 
-      max-width: calc(100% + #{$margin * 2.2});
+        .entry {
+            &__summary {
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fl-module-callout.card {
+    .fl-callout-title {
+        padding: 0 $margin ($margin / 2) $margin;
+
+        @include font-size(20px);
     }
 
-    .entry {
-      &__summary {
-        p {
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
+    .fl-callout-text-wrap {
+      padding: 0 $margin $margin $margin;
+      @include font-size(16px);
+
+      p {
+        @include font-size(16px);
       }
     }
-  }
+
+    .fl-photo-img {
+        border-radius: 3px 3px 0 0;
+    }
+}
+
+.pp-content-post {
+    .pp-content-grid-title {
+        a {
+            color: $headings-color;
+        }
+    }
+
+    .pp-more-link-button {
+        background: transparent !important;
+        color: $link-color !important;
+        font-weight: $mid-font-weight;
+        padding: 0 !important;
+        padding-right: $margin;
+
+        &:after {
+            content: " › ";
+        }
+
+        &:hover {
+            color: $link-color-hover;
+        }
+    }
 }

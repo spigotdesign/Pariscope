@@ -3,9 +3,7 @@
 	<main id="main" class="app-main">
 
 		<?php woocommerce_content() ?>
-
+		
 	</main>
-
-	<?php Hybrid\View\display( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 
 </div>

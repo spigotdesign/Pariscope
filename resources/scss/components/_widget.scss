@@ -30,3 +30,40 @@
 	// Widget titles.
 	&__title {}
 }
+
+
+// Board Meetng Widget
+
+#pmnWidget {
+	width: 100% !important;
+	height: 435px !important;
+	border: none !important;
+	background: $white;
+	padding: $margin !important;
+	border-radius: 3px !important;
+	box-shadow: 0 1px 3px 0 rgba(53, 69, 88, 0.2);
+
+	.pmnWidgetHeader {
+		padding-bottom: $margin / 2;
+	}
+}
+
+#pmnWidgetContent {
+	height: 400px !important;
+
+	hr {
+		display: none;
+	}
+
+	> div {
+		border-bottom: 1px solid $border-color;
+		padding-top: $margin;
+	}
+
+	> div[style^="clear:both;"] {
+		border: none !important;
+		padding: 0;
+	}
+
+	
+}

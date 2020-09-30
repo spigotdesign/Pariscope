@@ -7,102 +7,102 @@
 ////
 
 // Black, White, and Grays
-$black:							black;
-$white:							white;
-$gray-darkest:					#231F20;
-$gray-darker:					#30353A;
-$gray-dark:						#4A4A4A;
-$gray:							#666B6F;
-$gray-light:					#9FA4A8;
-$gray-lighter:					#C2C8CC;  
-$gray-lightest:					#F8F9F9; 
+$black: black;
+$white: white;
+$gray-darkest: #231f20;
+$gray-darker: #30353a;
+$gray-dark: #4a4a4a;
+$gray: #515d67;
+$gray-light: #9fa4a8;
+$gray-lighter: #c2c8cc;
+$gray-lightest: #f8f9f9;
 
 // Colors
-$blue:							#2DA3ED;
-$blue-dark:						#004071; // set
-$blue-light:					#EBF5F2;
+$blue: #1c5589; // set  1C5589
+$blue-light: #1f67a3; // set  1F67A3
+$blue-lightest: #f3f9fa;
+$blue-dark: #0b3356; // set
+$blue-darker: #05233f; // set
+$blue-darkest: #05233f; // set
+$teal: #419db9; // Set
+$teal-light: #52c0e3;
+$shadow-blue: #354558; // set
+$purple: #a85ece;
+$red: #c51b0b; // set
+$red-dark: #812d31; // set
+$green: #3aaa47;
+$green-dark: #2c8e44;
+$yellow: #f9c626; // set
 
-$purple:						#A85ECE;
-$red:							#a00;
-$green:         				#789165; // set
-
-// Fix these colors
-$blue-darkest:					#EBF5F2;
-$purple-dark:					purple;
-$purple-darkest:				purple;
+$tan: #f2ddb8; // #ccc7b9
+$tan-light: #fefdf8;
 
 // Corporate Colors
-$woocommerce-purple:			#a46497;
-$insta-pink:					#cd486b;
-$insta-purple:					#8a3ab9;
-$twitter-blue:					#55acee;
-$facebook-blue:					#3b5998;
-$pinterest:						#cb2027;
-$instagram-color:				#cd486b;
-
-// WooCommerce Colors
-$primary-color:					$red;
-$cart-sidebar-bg:				$gray-darkest;
-$woo-message-button-bg:			$red;
-$woo-message-bg:				$red;
-$woo-account-header-bg:			$red;
-$star-rating-yellow:			#F5A623;
-
-
 
 // Page
-$body-background:        		$gray-lightest;
-$alt-body-background:			$gray-lightest;
+$body-background: $blue-lightest;
+$alt-body-background: $gray-lightest;
 
 // Text
-$text-color:             		$gray-dark;
-$headings-color:				$blue-dark;
+$text-color: $gray;
+$headings-color: $blue-dark;
+$footer-text: #557882;
 
 // Header Colors
-$header-background:				$white;
+$header-background: $white;
 
 // Main Nav Colors
-$nav-color:						$blue-dark;
-$nav-color-hover:				$red;
-$nav-color-current:				$nav-color-hover;
+$nav-color: $blue-darker;
+$nav-color-hover: $blue-darker;
+$nav-color-current: $nav-color-hover;
 
 // Main Nav Button
-$nav-btn-bg:					$blue-dark;
-$nav-btn-bg-hover:				$green;
-$nav-btn-color:					$white;
-$nav-btn-color-hover:			$white;
-$nav-btn-border:				$blue-dark;
-$nav-btn-border-hover:			$green;
+$nav-btn-bg: transparent;
+$nav-btn-bg-hover: $green;
+$nav-btn-color: $white;
+$nav-btn-color-hover: $white;
+$nav-btn-border: $blue-dark;
+$nav-btn-border-hover: $green;
 
 // Subnav Colors
-$subnav-bg:						$white;
-$subnav-bg-hover:				$blue-dark;
-$subnav-color:					$blue-dark;
-$subnav-color-hover:			$white;
-
+$subnav-bg: $white;
+$subnav-bg-hover: $blue-dark;
+$subnav-color: $blue-dark;
+$subnav-color-hover: $white;
 
 // Mobile Nav Colors
-$mobile-background:				$blue-dark;
-$nav-color-mobile:				$white;
-$nav-color-mobile-hover:		$green;
-$nav-bg-mobile:					transparent;
-$nav-bg-mobile-hover:			transparent;
-$subnav-color-mobile:			$white;
-$subnav-bg-mobile-hover:		transparent;
-$subnav-color-mobile-hover:		$green;
+$mobile-background: $blue-dark;
+$nav-color-mobile: $white;
+$nav-color-mobile-hover: $yellow;
+$nav-bg-mobile: transparent;
+$nav-bg-mobile-hover: $blue-darker;
+$subnav-bg-mobile: transparent;
+$subnav-color-mobile: $white;
+$subnav-bg-mobile-hover: $blue-darker;
+$subnav-color-mobile-hover: $blue-light;
 
+// Buttons
+$button-text-color: $blue-dark;
+$button-text-color-hover: $white;
+$button-bg-color: transparent;
+$button-color-hover: $yellow;
+$button-border-color: $yellow;
 
+// Links
+$link-color: $teal-light;
+$link-color-hover: $teal;
+$footer-link-color: $white;
+$footer-link-color-hover: $blue-light;
 
-// Links 
-$link-color:             		$blue;
-$link-color-hover:        		darken($link-color, 15%);
+// Footer
+$footer-copyright-color: #71889d;
 
 // Borders
-$border-color:					darken($gray-lightest, 5%);
-$nav-border-color:				rgba($blue, .75);
+$border-color: darken($gray-lightest, 5%);
+$nav-border-color: rgba($blue, 0.75);
 
 // Miss
-$boxshadow-color:				$black;
+$boxshadow-color: $black;
 
 /// Returns an map of colors in name-value format. This function also merges
 /// with the `block-colors()` map to create a map of all colors.
@@ -112,13 +112,12 @@ $boxshadow-color:				$black;
 /// @return {map}  Map of defined colors.
 
 @function colors() {
+  $colors: (
+    white: #fff,
+    black: #000,
+  );
 
-	$colors : (
-		white : #fff,
-		black : #000
-	);
-
-	@return map-merge( $colors, block-colors() );
+  @return map-merge($colors, block-colors());
 }
 
 /// Returns an map of block colors in name-value format. These are the colors
@@ -130,13 +129,13 @@ $boxshadow-color:				$black;
 /// @return {map}  Map of defined colors.
 
 @function block-colors() {
-
-	@return (
-		charcoal  : #282c34,
-		regent    : #8c97a7,
-		husk      : #b9a364,
-		red-stage : #b15330
-	);
+  @return (
+    white: $white,
+    blue: $blue,
+    blue-dark: $blue-dark,
+    red: $red-dark,
+    red-stage: #b15330
+  );
 }
 
 /// Returns a single color value by name.
@@ -146,9 +145,8 @@ $boxshadow-color:				$black;
 /// @param  {string}  $name  Color name.
 /// @return {string}         Color value.
 
-@function color( $name ) {
-
-	@return map-get( colors(), $name );
+@function color($name) {
+  @return map-get(colors(), $name);
 }
 
 /// Returns a single block color value by name.
@@ -158,7 +156,6 @@ $boxshadow-color:				$black;
 /// @param  {string}  $name  Color name.
 /// @return {string}         Color value.
 
-@function block-color( $name ) {
-
-	@return map-get( block-colors(), $name );
+@function block-color($name) {
+  @return map-get(block-colors(), $name);
 }

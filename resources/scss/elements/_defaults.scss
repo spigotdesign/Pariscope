@@ -1,0 +1,21 @@
+// Defaults
+
+
+html {
+	font-size: $base-font-size;
+}
+
+
+body {
+  font-family: $base-font-family;
+  color: $text-color;
+  line-height: $base-line-height;
+  font-style: normal;
+  min-height: 100%;
+  background-color: $body-background;
+
+  @include mq(phone-only) {
+  	overflow-x: hidden;
+  }
+  
+}

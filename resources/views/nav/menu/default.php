@@ -2,7 +2,7 @@
 
 	<nav <?php Hybrid\Attr\display( 'menu', $data->name ) ?>>
 
-		<h3 class="menu__title screen-reader-text">
+		<h3 class="menu__title">
 			<?php Hybrid\Menu\display_name( $data->name ) ?>
 		</h3>
 

@@ -1,16 +1,23 @@
 // Paragraphs
 
 p {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: 1.5rem;
+  font-family: $sans-font-family;
+  @include font-size(18px);
 
   .entry__content & {
 
   	&:last-child {
-  		margin-bottom: 0;
+  		//margin-bottom: 0;
   	}
   }
 
   strong {
-  	font-family: $bold-font-family;
+  	font-weight: bold;
+  }
+
+  em, i {
+    font-family: $serif-font-family;
+    font-style: italic;
   }
 }

@@ -6,48 +6,175 @@
 
 ////
 
-.fl-module-heading {
-    &.section_header {
-        h3.fl-heading {
-            @include font-size(20px);
+// Small page width override
 
-            &:after {
-                content: ' ';
-                display: block;
-                width: 100px;
-                border: 0.5px solid $gray-lighter;
-                margin: ($margin / 2) auto;
-            }
+@media (max-width: 768px) {
+    .fl-row-content .fl-col-small {
+        max-width: 600px;
+    }
+}
+
+// Chevrons
+
+.chevron {
+    &.center {
+        .fl-html {
+            display: flex;
+            justify-content: center;
         }
     }
 }
 
-.fl-module-rich-text {
-    &.no-margin {
-        p {
-            margin: 0;
+.bp-flipbox-wrapper {
+    .bp-flipbox-back-content, .bp-flipbox-front-content {
+        top: 80% !important;
+    }
+}
+
+.fl-module-callout {
+    .fl-callout-text {
+        *:last-child {
+            margin-bottom: 0;
         }
     }
 }
 
-// Guide List - Made to look like Blog post cards
-
-.guide-list {
-    .fl-callout {
+.fl-accordion {
+    .fl-accordion-item {
         background-color: $white;
+        border: 0;
         border-radius: 3px;
-        box-shadow: 0 1px 3px 0 rgba(53, 69, 88, 0.2);
-        padding: $margin / 2;
-        padding-bottom: $margin;
-        overflow: hidden;
+        box-shadow: 0 1px 3px 0 rgba($shadow-blue, 0.2);
+    }
 
-        img {
-            margin-right: -$margin;
-            margin-left: -$margin;
-            margin-top: -$margin;
-            margin-bottom: $margin;
-            max-width: calc(100% + #{$margin * 2.2});
-            border-radius: 3px 3px 0 0;
+    .fl-accordion-button-label {
+        color: $headings-color;
+        font-weight: $bold-font-weight;
+
+        &:focus {
+            outline: 1px solid transparent;
         }
     }
+}
+
+.home-marquee {
+    .fl-rich-text {
+        p {
+            font-weight: 800;
+            color: $white;
+            line-height: 1.2;
+        }
+
+        span {
+            display: block;
+        }
+    }
+}
+
+.hero-grid {
+    position: relative;
+
+    .fl-row-content-wrap:after {
+        background-image: url("../svg/aai-icon-white.svg");
+        background-position: 50% 120%;
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.15;
+
+        @include mq(tablet-portrait-up) {
+            background-position: 50% 113%;
+        }
+
+
+        @include mq(tablet-landscape-up) {
+            background-position: 50% 137%;
+        }
+    }
+
+    .fl-col-group {
+        @include mq(phone-only) {
+            justify-content: center;
+        }
+    }
+
+    .fl-col {
+        background-color: rgba($white, 0.4);
+        box-shadow: 0px 10px 24px rgba($black, 0.12);
+        margin: .25rem;
+        width: 80%;
+        padding-top: 80%;
+        border-radius: 300px;
+        position: relative;
+        flex: 0 1 80%;
+
+        @include mq(tablet-portrait-up) {
+            width: 49.5%;
+            flex-basis: 47.5%;
+            padding-top: 47.5%;
+        }
+
+
+        @include mq(tablet-landscape-up) {
+            width: 23.5%;
+            flex-basis: 24%;
+            padding-top: 24%;
+        }
+    }
+
+    .fl-col-content {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        padding: $margin;
+    }
+
+    .fl-callout-title {
+        font-size: 20vw;
+
+        @include mq(tablet-portrait-up) {
+            font-size: 10vw;
+        }
+
+
+        @include mq(tablet-landscape-up) {
+            font-size: 4.5vw;
+        }
+    }
+
+    .fl-callout-text {
+        p {
+            font-weight: $mid-font-weight;
+        }
+    }
+}
+
+
+// Boxed columns
+.fl-col {
+    &.boxed {
+        .fl-col-content {
+            box-shadow: 0 1px 3px 0 rgba($shadow-blue, 0.2);
+            //margin: .5rem;
+            padding-top: 1rem;
+        }
+       
+
+    }
+
+    &.schedule {
+        .fl-col-content { 
+
+            background-color: $white;
+        }
+        .uabb-business-hours-container {
+            padding: 0 !important;
+        }
+    }
+
+
 }

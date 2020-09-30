@@ -4,7 +4,7 @@
  *
  * This file holds WordPress filter functions
  *
- * @package    Pariscope
+ * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
  * @copyright  Copyright (c) 2019, Bryan Hoffman
@@ -55,13 +55,14 @@ add_filter('body_class', function( $classes ) {
 
 add_filter('post_class', function( $attr ) {
 
-	if ( is_archive() || is_home() || is_search() ) {
+	if ( is_archive() && !tribe_is_month() || is_home() || is_search() ) {
     	$attr[] = 'post-list__card';
     }
     
     return $attr;
 
 }, 0 );
+
 
 /**
  * Change Excerpt length
@@ -92,7 +93,7 @@ add_filter('excerpt_more', function( $more ) {
 
 
 /**
- * Show all posts
+ * Pre Get Posts
  *
  */
 
@@ -102,9 +103,10 @@ add_filter('pre_get_posts', function( $query ) {
 
 	if ( $query->is_main_query() ) {
 	    
-        $query->set( 'posts_per_page', 40 );
+        $query->set( 'posts_per_page', 32 );
         
     }
+    
     return $query;
 
 
@@ -129,21 +131,36 @@ function cinch_cart_count_fragments( $fragments ) {
     
 };
 
-add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'cinchws_filter_dropdown_args', 10 );
+// Font Awesome Kit support
 
-function cinchws_filter_dropdown_args( $args ) {
-    $var_tax = get_taxonomy( $args['attribute'] );
-    $args['show_option_none'] = apply_filters( 'the_title', $var_tax->labels->name );
-    return $args;
+add_action( 'wp_enqueue_scripts', function() {
+	wp_dequeue_style( 'font-awesome' );
+	wp_dequeue_style( 'font-awesome-5' );
+	wp_deregister_style( 'font-awesome' );
+	wp_deregister_style( 'font-awesome-5' );
+	wp_enqueue_script( 'fa5-kit', 'https://kit.fontawesome.com/6a7cb3278e.js' ); // replace with actual kit url
+}, 99999 );
+add_filter( 'fl_enable_fa5_pro', '__return_true' );
+
+
+// SEO Framework Titles
+
+add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
+	
+	if ( is_post_type_archive( 'exhibit' ) ) {
+		$title = 'Past Exhibits | Park City Museum ';
+	}
+
+	return $title;
+}, 10, 2 );
+
+add_filter( 'redirect_canonical', 'exibits_disable_redirect_canonical' );
+function exibits_disable_redirect_canonical( $redirect_url ) {
+    if ( is_post_type_archive( 'exhibit' ) ) {
+        $redirect_url = false;
+    }
+    return $redirect_url;
 }
-
-// Add new stock status to select
-add_filter( 'woocommerce_stock_status_options', function( $stock_statuses ) {
-
-    $stock_statuses['discontinued'] = 'Discontinued';
-    return $stock_statuses;
-
-} );
 
 
 add_filter( 'woocommerce_register_post_type_product', 'cinch_add_revision_support' );
@@ -153,10 +170,4 @@ function cinch_add_revision_support( $supports ) {
 
      return $supports;
 }
-
-
-
-
-
-
 

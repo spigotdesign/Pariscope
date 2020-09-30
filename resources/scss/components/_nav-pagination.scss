@@ -24,7 +24,7 @@
     // Individual items.
     &__item {
         flex: 0 1 auto;
-        font-family: $bold-font-family;
+        font-weight: bold;
         @include font-size(14px);
 
         &:first-child {

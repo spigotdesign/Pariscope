@@ -3,9 +3,16 @@ blockquote {
 
     p {
         text-indent: -0.42em;
+        line-height: 1.2;
+
+        &:first-of-type {
+            &:before {
+                content: open-quote;
+            }
+        }
 
         &:before {
-            content: open-quote;
+            content: no-open-quote;
         }
 
         &:after {

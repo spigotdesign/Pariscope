@@ -33,5 +33,10 @@
       flex-basis: calc(16.66667% - #{$margin});
       width: calc(16.66667% - #{$margin});
     }
+
+    &.entry--type-tribe_events {
+      //flex-basis: 100% !important;
+      //width: 100%;
+    }
   }
 }

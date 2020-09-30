@@ -2,7 +2,7 @@
 
 	<div class="archive-header">
 
-		<h1 class="archive-header__title"><?php the_archive_title() ?></h1>
+		<h1 class="archive-header__title"><?php if (is_author()) {?>Posts by <?php } ?><?php the_archive_title() ?></h1>
 
 		<?php if ( ! is_paged() && get_the_archive_description() ) : ?>
 

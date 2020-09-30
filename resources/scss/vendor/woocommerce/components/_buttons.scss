@@ -13,7 +13,7 @@ input.button,
   text-decoration: none;
   overflow: visible;
   padding: 0.618em 1em;
-  font-family: $bold-font-family;
+  //font-family: $bold-font-family;
   border-radius: 3px;
   left: auto;
   color: $white;
@@ -29,8 +29,8 @@ input.button,
     padding-right: 2.618em;
 
     &::after {
-      font-family: 'WooCommerce';
-      content: '\e01c';
+      font-family: "WooCommerce";
+      content: "\e01c";
       vertical-align: top;
       font-weight: 400;
       position: absolute;
@@ -41,8 +41,8 @@ input.button,
   }
 
   &.added::after {
-    font-family: 'WooCommerce';
-    content: '\e017';
+    font-family: "WooCommerce";
+    content: "\e017";
     margin-left: 0.53em;
     vertical-align: bottom;
   }

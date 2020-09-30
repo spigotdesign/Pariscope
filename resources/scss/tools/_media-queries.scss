@@ -1,0 +1,26 @@
+//
+// Media Queries
+//
+
+@mixin mq($mq) {
+  
+  // https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.ucbl3zzee
+
+  @if $mq == phone-only             { @media (max-width: 37.4375em)   { @content; } }   // 599px
+  @if $mq == tablet-portrait-up     { @media (min-width: 37.5em)      { @content; } }   // 600px
+  @if $mq == tablet-landscape-up    { @media (min-width: 56.25em)     { @content; } }   // 900px
+  @if $mq == desktop-up             { @media (min-width: 75em)        { @content; } }   // 1200px
+  @if $mq == big-desktop-up         { @media (min-width: 112.5em)      { @content; } }  // 1800px;
+  @if $mq == super-desktop-up       { @media (min-width: 137.5em)      { @content; } }
+
+   // Mobile breakpoints
+  @if $mq == mobile-nav             { @media (max-width: 56.1875em)   { @content; } }
+  @if $mq == desktop-nav            { @media (min-width: 56.25em)   { @content; } }
+
+   // WP breakpoints
+  @if $mq == wp-mobile              { @media (max-width: 48.875em)   { @content; } }
+
+
+  @if $mq == lsp { @media only screen and (min-device-width: 20em) and (max-device-width: 35.5em) and (orientation: landscape)  { @content; } } // Landscape Phone
+
+}

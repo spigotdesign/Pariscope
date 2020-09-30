@@ -1,37 +1,76 @@
 h1, h2, h3, h4, h5, h6 {
   font-family:      $headings-font-family;
-  font-weight:      normal;
+  font-weight:      $headings-font-weight;
   color:            $headings-color;
   text-rendering:   optimizelegibility;
-  margin-bottom:    $base-spacing-unit;
-  line-height:      $base-line-height;
+  margin-bottom:    1.25rem;
+  line-height:      1.25rem;
 }
 
 h1 {
-  @include font-size(47px);
+  @include font-size(57px);
+
+  &.page-head__title {
+    @include mq(phone-only) {
+      font-size: 2.0625rem;
+    }
+  }
+
+  @include mq(phone-only) {
+    @include font-size(40px);
+  }
 }
 
 h2 {
-  @include font-size(37px);
+  @include font-size(47px);
 
   &.entry__title {
     @include font-size(20px);
+  }
+
+  @include mq(phone-only) {
+    @include font-size(35px);
   }
 }
 
 h3 {
   @include font-size(27px);
   line-height: 1.25;
+
+  @include mq(phone-only) {
+    @include font-size(23px);
+  }
 }
 
 h4 {
   @include font-size(23px);
+
+  @include mq(phone-only) {
+    @include font-size(20px);
+  }
 }
 
 h5 {
   @include font-size(20px);
+
+  @include mq(phone-only) {
+    @include font-size(18px);
+  }
 }
 
 h6 {
   @include font-size(18px);
+}
+
+
+.fl-module-heading  {
+
+  .fl-heading {
+    margin-bottom: $margin !important;
+
+  }
+
+  h5.fl-heading {
+    margin-bottom: 5px !important;
+  }
 }

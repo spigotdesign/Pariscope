@@ -1,0 +1,28 @@
+////
+/// WooCommerce settings
+///
+/// @group  Settings
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+$woocommerce-purple: #a46497;
+
+// WooCommerce Colors
+$primary-color: $red;
+$secondary-color: $blue;
+
+$woo-account-header-bg: $red;
+$star-rating-yellow: #f5a623;
+
+// Cart/Checkout Settings
+$cart-sidebar-bg: $blue;
+$cart-sidebar-text-color: $white;
+$cart-sidebar-header-color: $cart-sidebar-text-color;
+$cart-sidebar-border-color: rgba($white, 0.2);
+$cart-sidebar-link-color: $link-color;
+$cart-sidebar-link-color-hover: $link-color-hover;
+
+// Messages
+$woo-message-button-bg: $red;
+$woo-message-bg: $red;
