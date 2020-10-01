@@ -9,10 +9,10 @@
   line-height: 1;
   font-size: 1em;
   width: 5.4em;
-  font-family: 'star';
+  font-family: "star";
 
   &::before {
-    content: '\73\73\73\73\73';
+    content: "\73\73\73\73\73";
     color: darken($secondary, 10%);
     float: left;
     top: 0;
@@ -30,7 +30,7 @@
   }
 
   span::before {
-    content: '\53\53\53\53\53';
+    content: "\53\53\53\53\53";
     top: 0;
     position: absolute;
     left: 0;
@@ -38,8 +38,6 @@
 }
 
 .woocommerce-product-rating {
-  @include clearfix;
-
   line-height: 2;
   display: block;
 
@@ -100,33 +98,33 @@ p.stars {
       width: 1em;
       height: 1em;
       line-height: 1;
-      font-family: 'WooCommerce';
-      content: '\e021';
+      font-family: "WooCommerce";
+      content: "\e021";
       text-indent: 0;
     }
 
     &:hover ~ a::before {
-      content: '\e021';
+      content: "\e021";
     }
   }
 
   &:hover a::before {
-    content: '\e020';
+    content: "\e020";
   }
 
   &.selected {
     a.active {
       &::before {
-        content: '\e020';
+        content: "\e020";
       }
 
       ~ a::before {
-        content: '\e021';
+        content: "\e021";
       }
     }
 
     a:not(.active)::before {
-      content: '\e020';
+      content: "\e020";
     }
   }
 }

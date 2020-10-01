@@ -1,112 +1,111 @@
-/**
-	 * Reviews
-	 */
-	#reviews {
-		h2 small {
-			float: right;
-			color: $subtext;
-			font-size: 15px;
-			margin: 10px 0 0;
+// Reviews
 
-			a {
-				text-decoration: none;
-				color: $subtext;
-			}
-		}
+#reviews {
+  h2 small {
+    float: right;
+    color: $subtext;
+    font-size: 15px;
+    margin: 10px 0 0;
 
-		h3 {
-			margin: 0;
-		}
+    a {
+      text-decoration: none;
+      color: $subtext;
+    }
+  }
 
-		#respond {
-			margin: 0;
-			border: 0;
-			padding: 0;
-		}
+  h3 {
+    margin: 0;
+  }
 
-		#comment {
-			height: 75px;
-		}
+  #respond {
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
 
-		#comments {
-			.add_review {
-				@include clearfix();
-			}
+  #comment {
+    height: 75px;
+  }
 
-			h2 {
-				clear: none;
-			}
+  #comments {
+    .add_review {
+      @include clearfix();
+    }
 
-			ol.commentlist {
-				@include clearfix();
-				margin: 0;
-				width: 100%;
-				background: none;
-				list-style: none;
+    h2 {
+      clear: none;
+    }
 
-				li {
-					padding: 0;
-					margin: 0 0 20px;
-					border: 0;
-					position: relative;
-					background: 0;
-					border: 0;
+    ol.commentlist {
+      @include clearfix();
+      margin: 0;
+      width: 100%;
+      background: none;
+      list-style: none;
 
-					.meta {
-						color: $subtext;
-						font-size: 0.75em;
-					}
+      li {
+        padding: 0;
+        margin: 0 0 20px;
+        border: 0;
+        position: relative;
+        background: 0;
+        border: 0;
 
-					img.avatar {
-						float: left;
-						position: absolute;
-						top: 0;
-						left: 0;
-						padding: 3px;
-						width: 32px;
-						height: auto;
-						background: $secondary;
-						border: 1px solid darken( $secondary, 3% );
-						margin: 0;
-						box-shadow: none;
-					}
+        .meta {
+          color: $subtext;
+          font-size: 0.75em;
+        }
 
-					.comment-text {
-						margin: 0 0 0 50px;
-						border: 1px solid darken( $secondary, 3% );
-						border-radius: 4px;
-						padding: 1em 1em 0;
-						@include clearfix();
+        img.avatar {
+          float: left;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 3px;
+          width: 32px;
+          height: auto;
+          background: $secondary;
+          border: 1px solid darken($secondary, 3%);
+          margin: 0;
+          box-shadow: none;
+        }
 
-						p {
-							margin: 0 0 1em;
-						}
+        .comment-text {
+          margin: 0 0 0 50px;
+          border: 1px solid darken($secondary, 3%);
+          border-radius: 4px;
+          padding: 1em 1em 0;
+          @include clearfix();
 
-						p.meta {
-							font-size: 0.83em;
-						}
-					}
-				}
+          p {
+            margin: 0 0 1em;
+          }
 
-				ul.children {
-					list-style: none outside;
-					margin: 20px 0 0 50px;
+          p.meta {
+            font-size: 0.83em;
+          }
+        }
+      }
 
-					.star-rating {
-						display: none;
-					}
-				}
+      ul.children {
+        list-style: none outside;
+        margin: 20px 0 0 50px;
 
-				#respond {
-					border: 1px solid darken( $secondary, 3% );
-					border-radius: 4px;
-					padding: 1em 1em 0;
-					margin: 20px 0 0 50px;
-				}
-			}
+        .star-rating {
+          display: none;
+        }
+      }
 
-			.commentlist > li::before {
-				content: '';
-			}
-		}
-	}
+      #respond {
+        border: 1px solid darken($secondary, 3%);
+        border-radius: 4px;
+        padding: 1em 1em 0;
+        margin: 20px 0 0 50px;
+      }
+    }
+
+    .commentlist > li::before {
+      content: "";
+    }
+  }
+}

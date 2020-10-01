@@ -1,0 +1,69 @@
+// Related
+
+.related.products, .cross-sells {
+    width: 100%;
+
+    .products {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .post-list{
+        
+            .entry {
+                &--type-product {
+                    min-height: 0 !important;
+                    display: block;
+                    flex-basis: 25%;
+                    padding: $margin;
+                    display: flex;
+                    justify-content: center;
+                    flex-flow: row wrap;
+                    margin: 0;
+                    max-width: 270px;
+
+                    @include mq(phone-only) {
+                        flex-basis: 50%;
+                    }
+
+
+                    .woocommerce-loop-product__title {
+                        @include font-size(18px);
+                        text-align: center;
+                    }
+
+                    .price {
+                    	flex-basis: 100%;
+                    	text-align: center;
+                    }
+
+                    .attachment-woocommerce_thumbnail {
+                        max-width: 200px;
+                        max-height: 200px;
+                        margin-bottom: $margin;
+                    }
+
+                    .button {
+                        padding: 5px 10px;
+                        font-size: 13px;
+                        height: 30px;
+                    }
+
+                    .woocommerce-loop-product__link {
+                    	display: flex;
+                        justify-content: center;
+                        flex-flow: row wrap;
+
+                        img, .woocommerce-loop-product__title {
+                            flex-basis: 100%;
+                        }
+                    }
+                }
+            }
+        
+    }
+}
+
+.cross-sells {
+    padding: $margin;
+}

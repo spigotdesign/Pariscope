@@ -55,7 +55,7 @@ add_filter('body_class', function( $classes ) {
 
 add_filter('post_class', function( $attr ) {
 
-	if ( is_archive() && !tribe_is_month() || is_home() || is_search() ) {
+	if ( is_archive() && !is_post_type_archive('product') || is_home() || is_search() ) {
     	$attr[] = 'post-list__card';
     }
     

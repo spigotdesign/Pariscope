@@ -1,9 +1,8 @@
 // WooCommerce Forms
 
-
 form .form-row {
   padding: $margin / 5;
-  margin: 0 0 $margin / 4;
+  margin: 0 0 ($margin / 4);
   position: relative;
 
   label {
@@ -26,7 +25,7 @@ form .form-row {
       color: #fff;
       border-radius: 3px;
       padding: 1em;
-      margin: .5em 0 0;
+      margin: 0.5em 0 0;
       clear: both;
       display: none;
       position: relative;
@@ -67,7 +66,6 @@ form .form-row {
     visibility: hidden;
 
     // Only show optional by default.
- 
   }
 
   .optional {
@@ -128,7 +126,6 @@ form .form-row {
   }
 }
 
-form.login,
 form.checkout_coupon,
 form.register {
   border: 1px solid $border-color;
@@ -139,38 +136,39 @@ form.register {
   border-radius: 5px;
 }
 
-ul#shipping_method {
-  list-style: none outside;
-  margin: 0;
-  padding: 0;
-
-  li {
-    margin: 0;
-    padding: 0.25em 0 0.25em 22px;
-    text-indent: -22px;
-    list-style: none outside;
-
-    input {
-      margin: 3px 0.5ex;
-    }
-
-    label {
-      display: inline;
-    }
-  }
-
-  .amount {
-    font-weight: 700;
-  }
-}
-
 p.woocommerce-shipping-contents {
   margin: 0;
 }
 
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected],
+.select2-container--default
+  .select2-results__option--highlighted[data-selected] {
+  background-color: $primary-color !important;
+  color: #fff;
+}
 
-.select2-container--default .select2-results__option--highlighted[aria-selected], 
-.select2-container--default .select2-results__option--highlighted[data-selected] {
-background-color: $primary-color !important;
-color: #fff;
+.woocommerce-order-pay {
+  #order_review {
+    max-width: 960px;
+    margin: 40px auto;
+
+    th {
+      //font-family: $bold-font-family;
+    }
+
+    th.product-total,
+    td.product-subtotal,
+    td.product-total {
+      text-align: right;
+    }
+    .product-quantity {
+      text-align: center;
+    }
+  }
+
+  .woocommerce-info {
+    display: flex;
+    justify-content: center;
+  }
 }

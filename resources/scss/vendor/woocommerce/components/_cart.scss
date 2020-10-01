@@ -1,6 +1,10 @@
 // WooCommerce Cart
 
-
+form.woocommerce-cart-form {
+  @include mq(desktop-up) {
+    min-height: 68vh;
+  }
+}
 .woocommerce-cart,
 .woocommerce-checkout,
 #add_payment_method {
@@ -43,11 +47,24 @@
       padding: 1em;
     }
   }
-  
+}
+
+.woocommerce-cart {
+  .coupon {
+    input.input-text {
+      border-radius: 100px 0 0 100px;
+      margin-right: -1px;
+      padding-left: 15px;
+    }
+
+    button {
+      border-radius: 0 100px 100px 0;
+    }
+  }
 }
 
 .cart-empty {
- // flex: 0 1 100%;
+  // flex: 0 1 100%;
   //text-align: center;
   //padding-top: $margin * 3;
 }
@@ -55,4 +72,15 @@
 .return-to-shop {
   flex: 0 1 100%;
   text-align: center;
+  margin-top: $margin * 3;
+  min-height: 600px;
+}
+
+#wc-stripe-payment-request-button-separator {
+  color: $white;
+  font-size: 12px;
+}
+
+#wc-stripe-payment-request-wrapper {
+  padding-top: 0 !important;
 }

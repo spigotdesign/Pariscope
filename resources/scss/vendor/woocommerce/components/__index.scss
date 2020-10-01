@@ -6,42 +6,39 @@
 /// @link   https:cinchws.com
 ////
 
-
-
-
-
-
-@import 'layout';
+@import "layout";
 // @import 'layout-cart';
-@import 'buttons';
+@import "buttons";
 
-@import 'cart-actions';
-@import 'cart-collaterals';
+@import "cart-actions";
+@import "cart-collaterals";
+@import "shipping-calculator";
 
-@import 'shipping-calculator';
+@import "table-shop";
+@import "tables";
+@import "messages";
 
+@import "breadcrumbs";
+@import "remove-product";
+@import "star-ratings";
+@import "tabs";
+@import "forms";
+@import "password";
 
-@import 'tables';
-@import 'messages';
+@import "terms-conditions";
+@import "login";
+@import "pagination";
+@import "product-loops";
+@import "quantity-increment";
+@import "related-products";
+@import "store-notice";
+@import "thankyou";
 
-@import 'breadcrumbs';
-@import 'remove-product';
-@import 'star-ratings';
-@import 'forms';
-@import 'password';
+@import "reviews";
+@import "account";
+@import "cart";
+@import "checkout";
+@import "product-page";
+@import "product-gallery";
 
-@import 'terms-conditions';
-@import 'pagination';
-@import 'product-loops';
-@import 'quantity-increment';
-@impott 'store-notice';
-
-
-@import 'reviews';
-@import 'account';
-@import 'cart';
-@import 'checkout';
-@import 'product-page';
-@import 'order-page';
-
-@import 'select2';
+@import "select2";

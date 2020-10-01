@@ -25,8 +25,6 @@
 
     // Checkout
 
-   
-
     // Cart Page
 
     table.cart,
@@ -72,9 +70,7 @@
         }
     }
 
-    /**
-     * Forms
-     */
+    // Forms
     form {
         .form-row {
             @include clearfix;
@@ -149,11 +145,6 @@
             display: flex;
             flex-flow: row wrap;
         }
-    }
-
-    .woocommerce-terms-and-conditions {
-        margin-bottom: 1.618em;
-        padding: 1.618em;
     }
 
     /**
