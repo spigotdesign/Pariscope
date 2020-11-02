@@ -7,7 +7,7 @@
  *
  * @package   Pariscope
  * @author    Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright Copyright (c) 2019, Bryan Hoffman
+ * @copyright Copyright (c) 2020, Bryan Hoffman
  * @link      https://spigotdesign.com/
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -22,8 +22,8 @@ namespace Pariscope;
 # file exists in case someone's using Composer to load their dependencies in
 # a different directory.
 
-if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
-	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
+if (file_exists(get_parent_theme_file_path('vendor/autoload.php'))) {
+    require_once get_parent_theme_file_path('vendor/autoload.php');
 }
 
 # ------------------------------------------------------------------------------
@@ -33,12 +33,16 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 # Load any functions-files from the `/app` folder that are needed. Add additional
 # files to the array without the `.php` extension.
 
-array_map( function( $file ) {
-	require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
-}, [
-	'functions-assets',
-	'functions-woocommerce',
-	'functions-filters',
-	'functions-setup',
-	'functions-template'
-] );
+array_map(
+    function ($file) {
+        require_once get_parent_theme_file_path("app/{$file}.php");
+    },
+    [
+        'functions-assets',
+        'functions-woocommerce',
+        'functions-filters',
+        'functions-page-builder',
+        'functions-setup',
+        'functions-template',
+    ]
+);
