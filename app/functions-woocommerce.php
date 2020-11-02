@@ -169,7 +169,16 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 
 // Move Payment
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-add_action( 'woocommerce_before_order_notes', 'woocommerce_checkout_payment', 20 );
+
+if ( is_user_logged_in() ) {
+	
+	add_action( 'woocommerce_after_checkout_billing_form', 'woocommerce_checkout_payment', 20 );
+
+} else {
+	
+	add_action( 'woocommerce_after_checkout_registration_form', 'woocommerce_checkout_payment', 20 );
+}
+
 
 // Remove Related Products
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
@@ -274,5 +283,14 @@ class WooCommerce_Quantity_Increment {
 
 add_action( 'plugins_loaded', array( 'WooCommerce_Quantity_Increment', 'get_instance' ), 0 );
 
+// Wrap around Stripe CC icons
+add_filter( 'woocommerce_gateway_icon', function( $icon ) {
+
+	return sprintf(
+		'<div class="cc-icons">%s</div>',
+		$icon 
+	);
+
+}, PHP_INT_MAX ); 
 
 

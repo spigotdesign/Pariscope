@@ -1,23 +1,30 @@
-<?php if (is_cart() || is_checkout() || is_account_page() ) { ?>
+<?php if (class_exists('WooCommerce')) { ?>
 
-	<?php the_content() ?>
+	<?php if (is_cart() || is_checkout() || is_account_page()) { ?>
+
+		<?php the_content(); ?>
+		
+	<?php } ?>
 
 <?php } else { ?>
 
-	<article <?php Hybrid\Attr\display( 'entry' )?>>
+	<article <?php Hybrid\Attr\display('entry'); ?>>
 
-		<?php if ( class_exists( 'FLBuilderModel' ) && !FLBuilderModel::is_builder_enabled() ) : ?>
+		<?php if (
+      class_exists('FLBuilderModel') &&
+      !FLBuilderModel::is_builder_enabled()
+  ): ?>
 
-			<?php if(!has_post_thumbnail()) { ?>
+			<?php if (!has_post_thumbnail()) { ?>
 				<header class="entry__header">
-					<h1 class="entry__title"><?php single_post_title() ?></h1>
+					<h1 class="entry__title"><?php single_post_title(); ?></h1>
 				</header>
 			<?php } ?>
 
 		<?php endif; ?>
 
 		<div class="entry__content">
-			<?php the_content() ?>
+			<?php the_content(); ?>
 		</div>
 
 	</article>
