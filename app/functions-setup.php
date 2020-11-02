@@ -13,7 +13,7 @@
  * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2019, Bryan Hoffman
+ * @copyright  Copyright (c) 2020, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -53,6 +53,9 @@ add_action( 'after_setup_theme', function() {
 
 	// Wide and full alignment.
 	add_theme_support( 'align-wide' );
+	
+	// Responsive embeds
+	add_theme_support( 'responsive-embeds' );
 
 	// Outputs HTML5 markup for core features.
 	add_theme_support( 'html5', [
