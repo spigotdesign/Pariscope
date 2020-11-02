@@ -8,7 +8,7 @@
  * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2019, Bryan Hoffman
+ * @copyright  Copyright (c) 2020, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'pariscope-screen', asset( 'css/screen.css' ), null, null );
 	wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i|Nunito+Sans:400,400i,700&display=swap', false ); 
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i|Nunito+Sans:400,400i,700&display=swap', false );  
 
 } );
 
@@ -94,13 +94,3 @@ function asset( $path ) {
 
 // Register Custom Templates
 
-add_action( 'hybrid/templates/register', function( $templates ) {
-
-	$templates->add(
-		'page-templates/page-template-past-exhibits.php',
-		[
-			'label'      => __( 'Past Exhibits' ),
-			'post_types' => [ 'page', 'another_type' ]
-		]
-	);
-} );
