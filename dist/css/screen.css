@@ -750,11 +750,12 @@ p {
 }
 
 p strong {
-	font-weight: bold;
+	font-weight: 800;
 }
 
-p em, p i {
-	font-family: "Lora", serif;
+p em,
+p i {
+	font-family: "Nunito sans", sans-serif;
 	font-style: italic;
 }
 
@@ -1811,7 +1812,7 @@ input.button:hover,
 
 .entry__author {
 	color: white;
-	font-family: "Lora", serif;
+	font-family: "Nunito sans", sans-serif;
 	margin-bottom: 0.75rem;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -2033,7 +2034,7 @@ img.emoji {
 	            -ms-flex-pack: end;
 	        justify-content: flex-end;
 	align-items: center;
-	padding: 0.375rem 0.75rem;
+	padding: 0.375rem 0 0.75rem;
 }
 
 @media (max-width: 56.1875em) {
@@ -2045,8 +2046,8 @@ img.emoji {
 		opacity: 0;
 		width: 100%;
 		background-color: #0b3356;
-		-webkit-transition: all .3s ease-in-out;
-		transition: all .3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
 		height: 100vh;
 		padding: 0;
 	}
@@ -2069,7 +2070,6 @@ img.emoji {
 	            -ms-flex-align: center;
 	        align-items: center;
 	font-weight: 700;
-	padding-right: 3rem;
 }
 
 @media (max-width: 56.1875em) {
@@ -2081,37 +2081,13 @@ img.emoji {
 		-webkit-box-align: start;
 		            -ms-flex-align: start;
 		        align-items: flex-start;
-	}
-}
-
-@media (max-width: 56.1875em) {
-	.menu--primary .menu__items {
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		background-color: #0b3356;
 		padding-right: 0;
 	}
 }
 
 .menu--primary .menu__items > .menu__item > .menu__link {
 	position: relative;
-}
-
-.menu--primary .menu__items > .menu__item > .menu__link:after {
-	content: "";
-	background: #f9c626;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 3px;
-	-webkit-transition: width .3s ease-in-out;
-	transition: width .3s ease-in-out;
-	width: 0;
-}
-
-@media (max-width: 56.1875em) {
-	.menu--primary .menu__items > .menu__item > .menu__link:after {
-		background: transparent;
-	}
 }
 
 .menu--primary .menu__items > .menu__item:hover .menu__link:after {
@@ -2131,7 +2107,7 @@ img.emoji {
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
-	padding: 0.5rem 1rem;
+	padding: 0;
 	/* After Chevron */
 	/* // End After Chevron */
 }
@@ -2174,7 +2150,7 @@ img.emoji {
 	.menu--primary .menu__item.has-children > .menu__link:after {
 		border-style: solid;
 		border-width: 0.125em 0.125em 0 0;
-		content: '';
+		content: "";
 		display: inline-block;
 		height: 0.45em;
 		right: 0.15em;
@@ -2184,8 +2160,8 @@ img.emoji {
 		        transform: rotate(45deg);
 		vertical-align: top;
 		width: 0.45em !important;
-		-webkit-transition: all .2s ease-in-out;
-		transition: all .2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 }
 
@@ -2214,10 +2190,6 @@ img.emoji {
 	color: white;
 }
 
-.nav-open .menu--primary .menu__link {
-	padding: 0.375rem;
-}
-
 @media (min-width: 56.25em) {
 	.menu--primary .menu__link {
 		padding: 0.5rem 0;
@@ -2228,19 +2200,17 @@ img.emoji {
 	color: #05233f;
 }
 
-.page-template-landing .menu--primary .menu__link:hover {
-	color: white;
-}
-
 @media (max-width: 56.1875em) {
 	.menu--primary .menu__link {
 		display: block;
 		color: white;
+		background-color: transparent;
 		font-size: 110%;
-		padding-bottom: 0.75rem;
+		padding: 0.5rem 1rem;
 	}
 	.menu--primary .menu__link:hover {
 		color: #f9c626;
+		background-color: #05233f;
 	}
 }
 
@@ -2257,8 +2227,8 @@ img.emoji {
 	opacity: 0;
 	visibility: hidden;
 	max-height: 0;
-	-webkit-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 56.25em) {
@@ -2272,8 +2242,8 @@ img.emoji {
 		left: 0.75rem;
 		-webkit-box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.08);
 		        box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.08);
-		-webkit-transition: all .3s ease-in-out;
-		transition: all .3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
 		border-radius: 0 0 3px 3px;
 	}
 	.page-template-landing .menu--primary .menu__sub-menu {
@@ -2301,14 +2271,7 @@ img.emoji {
 	}
 }
 
-.page-template-landing .menu--primary .menu__sub-menu .menu__item:first-child .menu__link {
-	border-radius: 3px 3px 0 0;
-}
-
 @media (max-width: 56.1875em) {
-	.menu--primary .menu__sub-menu .menu__item:last-child {
-		padding-bottom: 0.75rem;
-	}
 	.menu--primary .menu__sub-menu .menu__item:last-child .menu__link {
 		border-radius: 0;
 	}
@@ -2364,7 +2327,7 @@ img.emoji {
 	-webkit-box-pack: end;
 	            -ms-flex-pack: end;
 	        justify-content: flex-end;
-	padding: 0.375rem 0;
+	padding: 0.75rem 0 0;
 	-webkit-box-align: center;
 	            -ms-flex-align: center;
 	        align-items: center;
@@ -2393,12 +2356,11 @@ img.emoji {
 	-webkit-box-direction: normal;
 	            -ms-flex-direction: row;
 	        flex-direction: row;
-	padding-right: 1.5rem;
 }
 
 @media (min-width: 56.25em) {
 	.menu--secondary .menu__items {
-		padding-right: 1.5rem;
+		padding-right: 0.75rem;
 	}
 }
 
@@ -2414,26 +2376,6 @@ img.emoji {
 	line-height: 2.18181818;
 	text-transform: uppercase;
 	margin-left: 0.75rem;
-}
-
-.menu--secondary .menu__item.chevron.blue-dark {
-	background: transparent url(../svg/chevron-blue-dark.svg) 0 30% no-repeat;
-}
-
-.menu--secondary .menu__item.chevron.blue-light {
-	background: transparent url(../svg/chevron-blue-light.svg) 0 30% no-repeat;
-}
-
-.menu--secondary .menu__item.chevron.red {
-	background: transparent url(../svg/chevron-red.svg) 0 30% no-repeat;
-}
-
-.menu--secondary .menu__item.chevron.yellow {
-	background: transparent url(../svg/chevron-yellow.svg) 0 30% no-repeat;
-}
-
-.menu--secondary .menu__item.chevron.green {
-	background: transparent url(../svg/chevron-green.svg) 0 30% no-repeat;
 }
 
 @media (max-width: 37.4375em) {
@@ -3152,6 +3094,11 @@ img.emoji {
 	}
 }
 
+#dwpb {
+	font-family: "Nunito sans", sans-serif !important;
+	font-weight: 700;
+}
+
 @media (max-width: 56.1875em) {
 	.dwpb-push-page:not(.dwpb-allow-close):not(.dwpb-open):not(.admin-bar) .menu--secondary {
 		padding-right: 2.25rem;
@@ -3164,7 +3111,8 @@ img.emoji {
 	}
 }
 
-.fl-builder-edit .dwpb-action, .fl-builder-edit #dwpb {
+.fl-builder-edit .dwpb-action,
+.fl-builder-edit #dwpb {
 	display: none;
 }
 

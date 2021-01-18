@@ -22,7 +22,7 @@
     @include placeholder {
         color: $white;
         font-weight: normal;
-        font-family: $sans-font-family;
+        font-family: $font-family;
     }
 
 
@@ -39,7 +39,7 @@
         border: none;
         padding: 5px;
         padding-left: 15px;
-        font-family: $sans-font-family;
+        font-family: $font-family;
         font-weight: normal;
         background: transparent url(../svg/search.svg) 10px 50% no-repeat;
         background-size: 16px 16px;

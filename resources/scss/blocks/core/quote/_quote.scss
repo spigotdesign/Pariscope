@@ -7,71 +7,89 @@
 ////
 
 .wp-block-quote {
-	margin-bottom: $margin * 1.5;
-	border-left: 8px solid $yellow;
-	padding-left: $margin * 1.5;
+  margin-bottom: $margin * 1.5;
+  border-left: 8px solid $yellow;
+  padding-left: $margin * 1.5;
 
-	quotes: "“" "”";
+  quotes: "“" "”";
 
-    p {
-        //text-indent: -0.42em;
-        line-height: 1.2;
-        font-size: 1.25em;
-		font-weight: $bold-font-weight;
-		font-style: italic;
-		color: $gray-darker;
-		margin-bottom: 1rem;
+  p {
+    //text-indent: -0.42em;
+    line-height: 1.2;
+    font-size: 1.25em;
+    font-weight: $bold-font-weight;
+    font-style: italic;
+    color: $gray-darker;
+    margin-bottom: 1rem;
 
-        &:first-of-type {
-            &:before {
-                content: open-quote;
-            }
-        }
-
-        &:before {
-            content: no-open-quote;
-        }
-
-        &:after {
-            content: no-close-quote;
-        }
-
-        &:last-of-type {
-            margin-bottom: 0;
-
-            &:after {
-                content: close-quote;
-            }
-
-        }
-
+    &:first-of-type {
+      &:before {
+        content: open-quote;
+      }
     }
 
-	&.is-style-large {
-		font-size: 1.375em;
-		line-height: 1.5;
-		margin-bottom: $margin * 1.5;
+    &:before {
+      content: no-open-quote;
+    }
 
-		cite {
-			font-size: .7em;
-			font-style: normal;
-		}
-	}
+    &:after {
+      content: no-close-quote;
+    }
 
-	> cite {
-		display:  block;
-		text-align: right;
-		font-size: 90%;
-		font-style: normal;
-		padding-right: 10%;
+    &:last-of-type {
+      margin-bottom: 0;
 
-		&:before {
-			content: "~ ";
-		}
-	}
+      &:after {
+        content: close-quote;
+      }
+    }
+  }
+
+  &.is-style-large {
+    font-size: 1.375em;
+    line-height: 1.5;
+    margin-bottom: $margin * 1.5;
+
+    cite {
+      font-size: 0.7em;
+      font-style: normal;
+    }
+  }
+
+  > cite {
+    display: block;
+    text-align: right;
+    font-size: 90%;
+    font-style: normal;
+    padding-right: 10%;
+
+    &:before {
+      content: "~ ";
+    }
+  }
+
+  &.has-text-align-center {
+    border-left: none;
+    border-top: 8px solid $yellow;
+    border-bottom: 8px solid $yellow;
+
+    padding: $margin;
+
+    p {
+      text-align: center;
+
+      &:last-of-type {
+        margin-bottom: $margin / 3;
+      }
+    }
+
+    cite {
+      text-align: center;
+    }
+  }
 }
 
 .wp-block-quote__citation {
-	text-align: left;
-	font-style: normal;
+  text-align: left;
+  font-style: normal;
 }

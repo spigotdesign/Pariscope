@@ -7,42 +7,61 @@
 ////
 
 .wp-block-image {
-	margin-top: $spacing-global;
+  margin-top: $spacing-global;
 
-	img {
-	//	display: block;
-	}
+  img {
+    //	display: block;
+  }
 
-	&.alignfull img {
-		border-radius: 0;
-	}
+  figure {
+    &.aligncenter {
+      img {
+        margin: 0 auto;
+      }
 
-	&.alignfull img,
-	&.alignwide img {
-		margin-left:  auto;
-		margin-right: auto;
-		display:      block;
-	}
+      figcaption {
+        text-align: center;
+      }
+    }
 
-	&.is-resized {
-		width: min-content;
+    &.alignwide {
+    }
+  }
 
-		// Emulate min-content for Edge and IE11
-		display: -ms-inline-grid;
-		-ms-grid-columns: min-content;
+  &.alignfull {
+    img {
+      width: 100%;
+    }
 
-		figcaption {
-			-ms-grid-row: 2;
-		}
+    figcaption {
+      text-align: center;
+    }
+  }
+  &.alignwide img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 
-		img {
-			max-width: none;
-		}
-	}
+  &.is-resized {
+    width: min-content;
 
-	figcaption {
-		padding: $margin / 6;
-		font-size: 90%;
-		font-style: italic;
-	}
+    // Emulate min-content for Edge and IE11
+    display: -ms-inline-grid;
+    -ms-grid-columns: min-content;
+
+    figcaption {
+      -ms-grid-row: 2;
+    }
+
+    img {
+      max-width: none;
+    }
+  }
+
+  figcaption {
+    padding: $margin / 6;
+    font-size: 90%;
+    font-style: italic;
+  }
 }
