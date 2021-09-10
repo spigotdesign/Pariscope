@@ -1,4 +1,4 @@
-<?php $image = get_the_post_thumbnail_url( $ID, 'full'); ?>
+<?php $image = get_the_post_thumbnail_url( get_the_ID(), 'full'); ?>
 
 <?php if( $image ) { ?>
 

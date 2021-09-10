@@ -78,27 +78,58 @@ add_filter( 'woocommerce_template_path', function( $path ) {
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
+/**
+ * Change number or products per row to 3
+ */
+
+
+
+/**
+ * WooCommerce Reorder Product Archive Content
+ *********************/
+ 
+// Add short description
+add_action( 'woocommerce_before_shop_loop_item_title', function() {
+	echo '<p class="m_desc"> ' . get_field('product_mini_description') . '</p>';
+}, 6 );
+
+// Move title above image
+remove_action('woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title');
+add_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_title', 0);
+
+// Move Price above image
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price');
+add_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_price', 7);
+
+// Move Rating above image
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating');
+add_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_rating', 8);
+
+remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description');
+
+
+// Moving Single Product notices above orignial location
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices');
 
 
 /**
  * WooCommerce Checkout field changes
- *
  * @since  1.0.0
  * @access public
  * @return aray
  */
 
  add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
-  
+
 	  // Remove billing fields
 	  unset($fields['billing']['billing_company']);
 	  unset($fields['shipping']['shipping_company']);
 	  unset($fields['billing']['billing_city']);
 	  unset($fields['billing']['billing_state']);
 	  unset($fields['billing']['billing_phone']);
-  
+
 	  //unset($fields['order']['order_comments']);
-  
+
 	  // Class names
 	  $fields['billing']['billing_address_1']['class'] 			= array('form-row-quarter');
 	  $fields['billing']['billing_address_2']['class'] 			= array('form-row-quarter');
@@ -110,7 +141,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 	  $fields['billing']['billing_email']['class'] 				= array('form-row-quarter');
 	  $fields['billing']['billing_phone']['class'] 				= array('form-row-quarter');
 	  $fields['account']['account_password']['class'] 			= array('form-row-last');
-  
+
 	  $fields['shipping']['shipping_address_1']['class'] 			= array('form-row-quarter');
 	  $fields['shipping']['shipping_address_2']['class'] 			= array('form-row-quarter');
 	  $fields['shipping']['shipping_state']['class']				= array('form-row-quarter');
@@ -121,8 +152,8 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 	  $fields['shipping']['shipping_email']['class'] 				= array('form-row-quarter');
 	  $fields['shipping']['shipping_phone']['class'] 				= array('form-row-quarter');
 	  $fields['account']['account_password']['class'] 			= array('form-row-last');
-  
-  
+
+
 	  // Labels
 	  $fields['billing']['billing_address_2']['label'] 			= 'Address Line 2';
 	  $fields['billing']['billing_state']['label'] 				= 'State';
@@ -131,13 +162,13 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 	  $fields['shipping']['shipping_address_2']['label'] 			= 'Address Line 2';
 	  $fields['shipping']['shipping_email']['label'] 				= 'Email Address';
 	  $fields['shipping']['shipping_phone']['label'] 				= 'Phone';
-  
+
 	  // Priority
 	  $fields['billing']['billing_country']['priority'] 			= 100;
 	  $fields['shipping']['shipping_country']['priority'] 		= 100;
-	    
+
 	  return $fields;
-  
+
   } );
 
 
@@ -145,17 +176,13 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * Change number or products per row to 3
  */
 
-add_filter( 'loop_shop_columns' , function() {
-
-	return 3;
-
-}, 999 );
+remove_filter( 'loop_shop_columns', 'filter_loop_shop_columns', 10, 1 );
 
 // Remove sale badge
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
 // Remove WooCommerce Page Titles
-add_filter('woocommerce_show_page_title', create_function('$result', 'return false;'), 20);
+add_filter('woocommerce_show_page_title', '__return_false' );
 
 // Remove Order Notes
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
@@ -169,13 +196,12 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 
 // Move Payment
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-
 if ( is_user_logged_in() ) {
-	
+
 	add_action( 'woocommerce_after_checkout_billing_form', 'woocommerce_checkout_payment', 20 );
 
 } else {
-	
+
 	add_action( 'woocommerce_after_checkout_registration_form', 'woocommerce_checkout_payment', 20 );
 }
 
@@ -184,9 +210,29 @@ if ( is_user_logged_in() ) {
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 // Move Cart notices
-
 //remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
 //add_action( 'woocommerce_before_cart_table', 'wc_print_notices', 10 );
+
+
+// enable gutenberg for woocommerce
+function activate_gutenberg_product( $can_edit, $post_type ) {
+ if ( $post_type == 'product' ) {
+		$can_edit = true;
+	}
+	return $can_edit;
+}
+
+add_filter( 'use_block_editor_for_post_type', 'Pariscope'. '\activate_gutenberg_product', 10, 2 );
+
+// enable taxonomy fields for woocommerce with gutenberg on
+function enable_taxonomy_rest( $args ) {
+	$args['show_in_rest'] = true;
+	return $args;
+}
+
+add_filter( 'woocommerce_taxonomy_args_product_cat', 'Pariscope'. '\enable_taxonomy_rest' );
+add_filter( 'woocommerce_taxonomy_args_product_tag', 'Pariscope' . '\enable_taxonomy_rest' );
+
 
 
 
@@ -195,29 +241,10 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
  * WooCommerce_Quantity_Increment main class.
  */
 class WooCommerce_Quantity_Increment {
-
-	/**
-	 * Plugin version.
-	 *
-	 * @var string
-	 */
 	const VERSION = '1.1.0';
-
-	/**
-	 * Instance of this class.
-	 *
-	 * @var object
-	 */
 	protected static $instance = null;
-
-	/**
-	 * Initialize the plugin.
-	 */
 	private function __construct() {
-		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-
-		// Checks with WooCommerce is installed.
 		if ( self::is_wc_version_gte_2_3() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		} else {
@@ -225,11 +252,6 @@ class WooCommerce_Quantity_Increment {
 		}
 	}
 
-	/**
-	 * Return an instance of this class.
-	 *
-	 * @return object A single instance of this class.
-	 */
 	public static function get_instance() {
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
@@ -238,40 +260,20 @@ class WooCommerce_Quantity_Increment {
 		return self::$instance;
 	}
 
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @return void
-	 */
 	public function load_plugin_textdomain() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'woocommerce-quantity-increment' );
 		load_textdomain( 'woocommerce-quantity-increment', trailingslashit( WP_LANG_DIR ) . 'woocommerce-quantity-increment/woocommerce-quantity-increment-' . $locale . '.mo' );
 		load_plugin_textdomain( 'woocommerce-quantity-increment', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
-	/**
-	 * Helper method to get the version of the currently installed WooCommerce
-	 *
-	 * @since 1.0.0
-	 * @return string woocommerce version number or null
-	 */
 	private static function get_wc_version() {
 		return defined( 'WC_VERSION' ) && WC_VERSION ? WC_VERSION : null;
 	}
 
-	/**
-	 * Returns true if the installed version of WooCommerce is 2.3 or greater
-	 *
-	 * @since 1.0.0
-	 * @return boolean true if the installed version of WooCommerce is 2.3 or greater
-	 */
 	public static function is_wc_version_gte_2_3() {
 		return self::get_wc_version() && version_compare( self::get_wc_version(), '2.3', '>=' );
 	}
 
-	/**
-	 * Enqueue scripts
-	 */
 	public function enqueue_scripts() {
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_script( 'wcqi-js', plugins_url( 'assets/js/wc-quantity-increment' . $min . '.js', __FILE__ ), array( 'jquery' ) );
@@ -282,15 +284,61 @@ class WooCommerce_Quantity_Increment {
 }
 
 add_action( 'plugins_loaded', array( 'WooCommerce_Quantity_Increment', 'get_instance' ), 0 );
+add_filter( 'woocommerce_add_to_cart_fragments', 'Pariscope' . '\cinch_cart_count_fragments', 10, 1 );
+
+function cinch_cart_count_fragments( $fragments ) {
+
+	$fragments['.cart-count'] = '<span class="cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
+
+	return $fragments;
+
+};
 
 // Wrap around Stripe CC icons
 add_filter( 'woocommerce_gateway_icon', function( $icon ) {
 
 	return sprintf(
 		'<div class="cc-icons">%s</div>',
-		$icon 
+		$icon
 	);
 
-}, PHP_INT_MAX ); 
+}, PHP_INT_MAX );
+
+
+/**
+ * Change several of the breadcrumb defaults
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'Pariscope' . '\change_woocommerce_breadcrumbs' );
+function change_woocommerce_breadcrumbs() {
+	return array(
+			'delimiter'   => ' &rsaquo; ',
+			'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+			'wrap_after'  => '</nav>',
+			'before'      => '',
+			'after'       => '',
+			'home'        => _x( 'Shop', 'breadcrumb', 'woocommerce' ),
+		);
+}
+
+/**
+ * Replace the breadcrumb home link URL
+ */
+add_filter( 'woocommerce_breadcrumb_home_url', 'Pariscope' . '\woo_custom_breadrumb_home_url' );
+function woo_custom_breadrumb_home_url() {
+	return get_bloginfo('url'). '/shop';
+}
+
+// Pagination 
+
+add_filter( 'woocommerce_pagination_args', 	'Pariscope' . '\custom_pagination' );
+function custom_pagination( $args ) {
+	$args['prev_text'] = '← Previous';
+	$args['next_text'] = 'Next →';
+	
+	//$args['type'] = 'array';
+	
+	return $args;
+}
+
 
 

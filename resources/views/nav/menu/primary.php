@@ -15,8 +15,6 @@
 			'item_spacing'   => 'discard'
 		] ) ?>
 
-		<?php get_search_form(); ?>
-
 	</nav>
 
 <?php endif ?>

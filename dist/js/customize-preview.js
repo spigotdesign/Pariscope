@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,6 +79,7 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
@@ -66,12 +87,16 @@
 /******/ ({
 
 /***/ "./resources/js/customize-preview.js":
+/*!*******************************************!*\
+  !*** ./resources/js/customize-preview.js ***!
+  \*******************************************/
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header__ = __webpack_require__("./resources/js/customize-preview/custom-header.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__customize_preview_custom_header__);
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _customize_preview_custom_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customize-preview/custom-header */ "./resources/js/customize-preview/custom-header.js");
+/* harmony import */ var _customize_preview_custom_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_customize_preview_custom_header__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * Customize preview script.
  *
@@ -87,52 +112,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
-
 /***/ }),
 
 /***/ "./resources/js/customize-preview/custom-header.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/customize-preview/custom-header.js ***!
+  \*********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
-
 
 // Site title.
 wp.customize('blogname', function (value) {
-	value.bind(function (to) {
-		document.querySelector('.app-header__title a').textContent = to;
-	});
-});
+  value.bind(function (to) {
+    document.querySelector('.app-header__title a').textContent = to;
+  });
+}); // Site description.
 
-// Site description.
 wp.customize('blogdescription', function (value) {
-	value.bind(function (to) {
-		document.querySelector('.app-header__description').textContent = to;
-	});
-});
+  value.bind(function (to) {
+    document.querySelector('.app-header__description').textContent = to;
+  });
+}); // Header text color.
 
-// Header text color.
 wp.customize('header_textcolor', function (value) {
-	value.bind(function (to) {
-		var headerItems = document.querySelectorAll('.app-header__title a, .app-header__description');
-
-		headerItems.forEach(function (text) {
-
-			if ('blank' === to) {
-				text.style.clip = 'rect(0 0 0 0)';
-				text.style.position = 'absolute';
-			} else {
-				text.style.clip = null;
-				text.style.position = null;
-				text.style.color = to;
-			}
-		});
-	});
+  value.bind(function (to) {
+    var headerItems = document.querySelectorAll('.app-header__title a, .app-header__description');
+    headerItems.forEach(function (text) {
+      if ('blank' === to) {
+        text.style.clip = 'rect(0 0 0 0)';
+        text.style.position = 'absolute';
+      } else {
+        text.style.clip = null;
+        text.style.position = null;
+        text.style.color = to;
+      }
+    });
+  });
 });
 
 /***/ }),
 
 /***/ 2:
+/*!*************************************************!*\
+  !*** multi ./resources/js/customize-preview.js ***!
+  \*************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/js/customize-preview.js");
+module.exports = __webpack_require__(/*! /Users/bryan/Documents/Work/Sites/neemtreefarms/app/public/wp-content/themes/pariscope/resources/js/customize-preview.js */"./resources/js/customize-preview.js");
 
 
 /***/ })

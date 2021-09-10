@@ -1,14 +1,14 @@
 {
-    "/js/app.js": "/js/app.js?id=6b05e4d143b7d133f12f",
+    "/js/app.js": "/js/app.js?id=5a974b7de254388adc39",
+    "/css/screen.css": "/css/screen.css?id=3216b5575f1681c0bd8b",
+    "/css/editor.css": "/css/editor.css?id=ea8cd30c051f909445db",
     "/css/customize-controls.css": "/css/customize-controls.css?id=d74b1e8c2959e859334f",
-    "/js/app.js.map": "/js/app.js.map?id=4046b81ac70969bab655",
+    "/js/app.js.map": "/js/app.js.map?id=f5f32201c27cdd6fac77",
+    "/css/screen.css.map": "/css/screen.css.map?id=a365b065c9899c8a0a7f",
+    "/css/editor.css.map": "/css/editor.css.map?id=a5493f8f808cfab94d51",
     "/css/customize-controls.css.map": "/css/customize-controls.css.map?id=087ad168216892d54c38",
-    "/js/customize-preview.js": "/js/customize-preview.js?id=a048d7adcdfa321b5e1d",
-    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=f0932e88eac9a45f8316",
-    "/js/customize-controls.js": "/js/customize-controls.js?id=d825f85517a645106372",
-    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=825029396733ff85c5be",
-    "/css/screen.css": "/css/screen.css?id=b4ef272adb4626e17adc",
-    "/css/editor.css": "/css/editor.css?id=ccec32b921cd45d6d8d8",
-    "/css/screen.css.map": "/css/screen.css.map?id=a15beb76b09c9b01b04b",
-    "/css/editor.css.map": "/css/editor.css.map?id=495e648a816f9b5e7c34"
+    "/js/customize-controls.js": "/js/customize-controls.js?id=a778c56cde49092e565c",
+    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=4f77ed0ae1e1b988228e",
+    "/js/customize-preview.js": "/js/customize-preview.js?id=f038bb86599e5929141f",
+    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=64c4d8de6858385814bd"
 }

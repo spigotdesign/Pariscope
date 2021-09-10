@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,6 +79,7 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
@@ -66,6 +87,10 @@
 /******/ ({
 
 /***/ "./resources/js/customize-controls.js":
+/*!********************************************!*\
+  !*** ./resources/js/customize-controls.js ***!
+  \********************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 /**
@@ -81,12 +106,10 @@
  * @link      https://spigotdesign.com/
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-
 // Hybrid Core controls.
 //
 // Uncomment any of the below to import scripts for Hybrid Core's built-in
 // controls if your theme is using them.
-
 // import checkboxMultiple from 'hybrid/js/customize-controls/checkbox-multiple.js';
 // import palette          from 'hybrid/js/customize-controls/palette.js';
 // import radioImage       from 'hybrid/js/customize-controls/radio-image.js';
@@ -96,9 +119,13 @@
 /***/ }),
 
 /***/ 1:
+/*!**************************************************!*\
+  !*** multi ./resources/js/customize-controls.js ***!
+  \**************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/js/customize-controls.js");
+module.exports = __webpack_require__(/*! /Users/bryan/Documents/Work/Sites/neemtreefarms/app/public/wp-content/themes/pariscope/resources/js/customize-controls.js */"./resources/js/customize-controls.js");
 
 
 /***/ })

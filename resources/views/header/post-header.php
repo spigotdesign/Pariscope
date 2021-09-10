@@ -1,6 +1,6 @@
 <?php if ( has_post_thumbnail() ) { ?>
 
-<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+<?php $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
 
 <div class="page-head page-head--bgimg" style="background-image: url(<?php echo $url; ?>);">
 
@@ -10,7 +10,7 @@
 
 		<h1 class="page-head__title"><span><?php the_title(); ?></span></h1>
 
-		<?php $post_author_id = get_post_field( 'post_author', $post_id ); ?>
+		<?php $post_author_id = get_post_field( 'post_author', get_the_ID() ); ?>
 
 		<span class="entry__author">
 			<?php if ( function_exists( 'coauthors_posts_links' ) ) {
@@ -36,7 +36,7 @@
 
 		<h1 class="page-head__title"><span><?php the_title(); ?></span></h1>
 
-		<?php $post_author_id = get_post_field( 'post_author', $post_id ); ?>
+		<?php $post_author_id = get_post_field( 'post_author', get_the_ID() ); ?>
 
 		<span class="entry__author">
 			<?php if ( function_exists( 'coauthors_posts_links' ) ) {

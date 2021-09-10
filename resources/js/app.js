@@ -69,8 +69,27 @@ window.addEventListener('touchstart', function() {
 
 });
 
+jQuery(document).ready(function(){
+   jQuery('.menu--shop-by-category .menu__item--ancestor > .menu__link').parent().addClass('subnav-open');
+});
 
-// Scroll header
+
+// Sidebar Toggle
+
+(function sidebarToggle() {
+  var items = document.querySelectorAll('.menu--shop-by-category .has-children > .menu__link');
+
+  for (var i=0; i < items.length; i++) {
+    items[i].addEventListener('click', function() {
+        event.preventDefault();
+        this.parentNode.classList.toggle('subnav-open');
+
+    });
+
+
+  }
+})();
+
 
 
 

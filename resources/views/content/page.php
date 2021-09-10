@@ -2,13 +2,9 @@
 
 	<main id="main" class="app-main">
 		
-		<?php if (class_exists('WooCommerce')) { ?>
+		<?php if ( class_exists( 'WooCommerce' ) && is_cart() || is_checkout() || is_account_page() ) { ?>
 		
-			<?php if (is_cart() || is_checkout() || is_account_page()) { ?>
-		
-				<?php the_content(); ?>
-				
-			<?php } ?>
+			<?php the_content(); ?>
 		
 		<?php } else { ?>
 
