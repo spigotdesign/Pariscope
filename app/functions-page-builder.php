@@ -12,7 +12,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace HealthLine;
+namespace Pariscope;
 
 use function Hybrid\Template\path;
 

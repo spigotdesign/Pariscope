@@ -8,7 +8,7 @@
  * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2020, Bryan Hoffman
+ * @copyright  Copyright (c) 2021, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -38,9 +38,20 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script( 'pariscope-app', asset( 'js/app.js' ), array( 'jquery' ), null, true );
 	wp_enqueue_style( 'pariscope-screen', asset( 'css/screen.css' ), null, null );
+
+    // Quantity increment - WooCommerce only
 	wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i|Nunito+Sans:400,400i,700&display=swap', false );  
+    /* Google fonts
+     *  Add fonts to WP Editor here: resources/scss/editor.scss
+     */
+
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Rubik:wght@400;500&display=swap', [], null, false );
+
+
+
+
+
 
 } );
 
@@ -93,4 +104,16 @@ function asset( $path ) {
 }
 
 // Register Custom Templates
+
+add_action( 'hybrid/templates/register', function( $templates ) {
+    /*
+    $templates->add(
+        'page-templates/page-template-past-exhibits.php',
+        [
+            'label'      => __( 'Past Exhibits' ),
+            'post_types' => [ 'page', 'another_type' ]
+        ]
+    );
+    */
+} );
 

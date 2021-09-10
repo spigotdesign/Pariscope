@@ -13,7 +13,7 @@
  * @package   Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2020, Bryan Hoffman
+ * @copyright  Copyright (c) 2021, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -53,7 +53,7 @@ add_action( 'after_setup_theme', function() {
 
 	// Wide and full alignment.
 	add_theme_support( 'align-wide' );
-	
+
 	// Responsive embeds
 	add_theme_support( 'responsive-embeds' );
 
@@ -74,14 +74,14 @@ add_action( 'after_setup_theme', function() {
 			'color' => '#ffffff'
 		],
 		[
-			'name'  => __( 'Blue Dark' ),
-			'slug'  => 'blue-dark',
-			'color' => '#193F57',
+			'name'  => __( 'Green' ),
+			'slug'  => 'green',
+			'color' => '#5C9A0A',
 		],
 		[
-			'name'  => __( 'Blue' ),
-			'slug'  => 'blue',
-			'color' => '#3C9DE6',
+			'name'  => __( 'Green Dark' ),
+			'slug'  => 'green-dark',
+			'color' => '#172E26',
 		],
 		[
 			'name'  => __( 'Red' ),
@@ -135,18 +135,24 @@ add_action( 'init', function() {
 	register_nav_menus( [
 		'primary' => esc_html_x( 'Primary', 'nav menu location' )
 	] );
-
+	/*
 	register_nav_menus( [
 		'secondary' => esc_html_x( 'Secondary', 'nav menu location' )
 	] );
+	*/
 
 	register_nav_menus( [
-		'footer_1' => esc_html_x( 'Footer 1', 'nav menu location' )
+		'footer_1' => esc_html_x( 'Footer Menu 1', 'nav menu location' )
 	] );
 
 	register_nav_menus( [
-		'footer_2' => esc_html_x( 'Footer 2', 'nav menu location' )
+		'footer_2' => esc_html_x( 'Footer Menu 2', 'nav menu location' )
 	] );
+
+	register_nav_menus( [
+		'footer_3' => esc_html_x( 'Footer Menu 3', 'nav menu location' )
+	] );
+
 
 }, 5 );
 
@@ -169,7 +175,7 @@ add_action( 'init', function() {
 	set_post_thumbnail_size( 480, 300, true );
 
 	// Post Thumbnails
-	add_image_size( 'post-thumb', 720, 500, array( 'center', 'center' ));
+	add_image_size( 'post-thumb', 600, 300, array( 'center', 'center' ));
 
 }, 5 );
 
@@ -195,6 +201,31 @@ add_action( 'widgets_init', function() {
 		'id'   => 'primary',
 		'name' => esc_html_x( 'Primary', 'sidebar' )
 	] + $args );
+	
+	register_sidebar( [
+		'id'   => 'shop',
+		'name' => esc_html_x( 'Shop', 'sidebar' )
+	] + $args );
 
 }, 5 );
+
+/**
+ * Advanced Custom Fields Options
+ *
+ */
+
+if(function_exists('acf_add_options_page')) {
+
+	 acf_add_options_page(array(
+		 'page_title'    => 'Site Options',
+		 'menu_slug' 	=> 'site-options',
+	 ));
+
+	 acf_add_options_sub_page(array(
+		 'page_title' 	=> 'Footer Disclaimer',
+		 'parent_slug'	=> 'site-options',
+	 ));
+
+}
+
 

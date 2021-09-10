@@ -4,16 +4,14 @@
  *
  * This file holds WordPress filter functions
  *
- * @package   Pariscope
+ * @package    Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2020, Bryan Hoffman
+ * @copyright  Copyright (c) 2021, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-
-
-
+ 
 
 /**
  * Locate search form
@@ -33,7 +31,7 @@ add_filter( 'get_search_form', function( $form ) {
 
 /**
  * Filter 'body' class
- * 
+ *
  */
 
 add_filter('body_class', function( $classes ) {
@@ -58,7 +56,7 @@ add_filter('post_class', function( $attr ) {
 	if ( is_archive() && !is_post_type_archive('product') || is_home() || is_search() ) {
     	$attr[] = 'post-list__card';
     }
-    
+
     return $attr;
 
 }, 0 );
@@ -71,8 +69,8 @@ add_filter('post_class', function( $attr ) {
 
 add_filter('excerpt_length', function( $length ) {
 
-	$length = 24; 
-	
+	$length = 24;
+
 	return $length;
 
 }, 0 );
@@ -85,8 +83,8 @@ add_filter('excerpt_length', function( $length ) {
 
 add_filter('excerpt_more', function( $more ) {
 
-	$more = '...'; 
-	
+	$more = '...';
+
 	return $more;
 
 }, 0 );
@@ -102,11 +100,11 @@ add_filter('pre_get_posts', function( $query ) {
 	if ( is_admin() ) { return; }
 
 	if ( $query->is_main_query() ) {
-	    
+
         $query->set( 'posts_per_page', 32 );
-        
+
     }
-    
+
     return $query;
 
 
@@ -116,20 +114,7 @@ add_filter('pre_get_posts', function( $query ) {
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
 
-/**
- * Update cart icon count
- *
- */
 
-add_filter( 'woocommerce_add_to_cart_fragments', 'cinch_cart_count_fragments', 10, 1 );
-
-function cinch_cart_count_fragments( $fragments ) {
-    
-    $fragments['.cart-count'] = '<span class="cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
-    
-    return $fragments;
-    
-};
 
 // Font Awesome Kit support
 
@@ -146,7 +131,7 @@ add_filter( 'fl_enable_fa5_pro', '__return_true' );
 // SEO Framework Titles
 
 add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
-	
+
 	if ( is_post_type_archive( 'exhibit' ) ) {
 		$title = 'Past Exhibits | Park City Museum ';
 	}
@@ -162,12 +147,33 @@ function exibits_disable_redirect_canonical( $redirect_url ) {
     return $redirect_url;
 }
 
+// BB Custom Fonts
 
-add_filter( 'woocommerce_register_post_type_product', 'cinch_add_revision_support' );
+function my_bb_custom_fonts ( $system_fonts ) {
 
-function cinch_add_revision_support( $supports ) {
-     $supports['supports'][] = 'revisions';
+      $system_fonts[ 'IBM Plex Serif' ] = array(
+        'fallback' => ' serif',
+        'weights' => array(
+          '400', '600',
+        ),
+      );
 
-     return $supports;
-}
+      $system_fonts[ 'Rubik' ] = array(
+          'fallback' => 'Helvetica, sans-serif',
+          'weights' => array(
+            '400', '500',
+          ),
+        );
+
+    return $system_fonts;
+
+    }
+//Add to Beaver Builder Theme Customizer
+add_filter( 'fl_theme_system_fonts', 'my_bb_custom_fonts' );
+
+//Add to Beaver Builder modules
+add_filter( 'fl_builder_font_families_system', 'my_bb_custom_fonts' );
+
+
+
 
