@@ -52,7 +52,7 @@ table.shop_table {
       }
 
       td {
-        padding: ($margin / 2) 0;
+        padding: ($margin * 0.5) 0;
         border-bottom: 1px solid $border-color;
 
         @include mq(phone-only) {
@@ -60,7 +60,7 @@ table.shop_table {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: $margin / 2;
+          padding: $margin * 0.5;
           border-bottom: 1px solid $border-color;
 
           &:before {
@@ -77,10 +77,10 @@ table.shop_table {
 
         &.product-remove {
           padding-left: $margin;
-          padding-right: $margin / 2;
+          padding-right: $margin * 0.5;
 
           @include mq(phone-only) {
-            padding: $margin / 2;
+            padding: $margin * 0.5;
 
             &:before {
               content: "Remove item: ";

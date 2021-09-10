@@ -1,6 +1,12 @@
 // Borders 
 
-$border-radius: 		0;
-$base-radius:       	0;
+$base-radius:       	3px;
+$border-radius: 		$base-radius;
 
-$button-border-radius:  200px;
+$button-border-radius:  $base-radius;
+$button-border-width: 0;
+$button-border-style: solid;
+
+
+// Pagination buttons
+$pagination-button-border-radius: 100px;

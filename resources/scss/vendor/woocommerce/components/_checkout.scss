@@ -211,7 +211,7 @@
 
   .wc-stripe-elements-field {
     border-radius: 3px;
-    padding: $margin / 2;
+    padding: $margin * 0.5;
   }
 
   ul.payment_methods {
@@ -255,7 +255,7 @@
   }
 
   div.form-row {
-    padding: ($margin / 2) $margin;
+    padding: ($margin * 0.5) $margin;
 
     @include mq(phone-only) {
       padding: 0;

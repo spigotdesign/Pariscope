@@ -1,11 +1,11 @@
 .post-list {
   display: flex;
   flex-flow: row wrap;
-  padding: 0 $margin / 2;
+  padding: 0 $margin * 0.5;
 
   &__card {
-    margin: $margin / 2;
-    padding-bottom: 30px;
+    margin: $margin * 0.5;
+    padding-bottom: $margin * .5;
     flex: 0 1 100%;
     position: relative;
 
@@ -14,29 +14,24 @@
       width: calc(50% - #{$margin});
     }
 
-    @include mq(tablet-landscape-up) {
+    @include mq(desktop-up) {
       flex-basis: calc(33.33333334% - #{$margin});
       width: calc(33.33333334% - #{$margin});
     }
 
-    @include mq(desktop-up) {
+    @include mq(big-desktop-up) {
       flex-basis: calc(25% - #{$margin});
       width: calc(25% - #{$margin});
     }
 
-    @include mq(big-desktop-up) {
+    @include mq(super-desktop-up) {
       flex-basis: calc(20% - #{$margin});
       width: calc(20% - #{$margin});
     }
 
     @include mq(super-desktop-up) {
-      flex-basis: calc(16.66667% - #{$margin});
-      width: calc(16.66667% - #{$margin});
-    }
-
-    &.entry--type-tribe_events {
-      //flex-basis: 100% !important;
-      //width: 100%;
+      //flex-basis: calc(16.66667% - #{$margin});
+      //width: calc(16.66667% - #{$margin});
     }
   }
 }

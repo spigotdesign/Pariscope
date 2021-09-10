@@ -6,6 +6,8 @@
 
 ////
 
+@use "sass:math";
+
 .pagination {
     margin: ($margin * 2) 0;
 
@@ -24,26 +26,25 @@
     // Individual items.
     &__item {
         flex: 0 1 auto;
-        font-weight: bold;
+        font-weight: normal;
         @include font-size(14px);
+        font-family: $alt-font-family;
 
         &:first-child {
 
-        	.pagination__anchor{
-        	border-radius: 40px 0 0 40px;
-        	padding-left: $margin * 1.5;
-        }
+            .pagination__anchor {
+                border-radius: $pagination-button-border-radius 0 0 $pagination-button-border-radius;
+                padding-left: $margin * 1.5;
+            }
         }
 
         &:last-child {
 
-        	.pagination__anchor{
-        	border-radius: 0 40px 40px 0;
-        	padding-right: $margin * 1.5;
+            .pagination__anchor {
+                border-radius: 0 $pagination-button-border-radius $pagination-button-border-radius 0;
+                padding-right: $margin * 1.5;
+            }
         }
-        }
-
-
 
         &--prev {}
 
@@ -56,16 +57,16 @@
 
     // The link or span element.
     &__anchor {
-        padding: ($margin / 1.5) $margin;
-        background-color: $blue-dark;
+        padding: math.div($margin, 1.5) $margin;
+        background-color: $pagination-bg-color;
         display: block;
-        color: $white;
-        border-right: 1px solid lighten($blue-dark, 5%);
+        color: $pagination-text-color;
+        border-right: 1px solid $pagination-border-color;
 
 
         &:hover {
-        	background-color: darken($blue-dark, 10%);
-        	color: $white;
+            background-color: darken($green-dark, 10%);
+            color: $white;
         }
 
 
@@ -75,10 +76,9 @@
         &--link {}
 
         &--current {
-            background-color: darken($blue-dark, 10%);
+            background-color: darken($green-dark, 10%);
         }
 
         &--dots {}
     }
 }
-

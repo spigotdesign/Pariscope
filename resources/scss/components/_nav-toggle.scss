@@ -8,8 +8,8 @@
 
 $toggle-width: 30px;
 $toggle-height: 3px;
-$toggle-color: $blue-darker;
-$toggle-color-active: $blue-darker;
+$toggle-color: $green-dark;
+$toggle-color-active: $green-dark;
 
 .toggle-menu {
   display: flex;
@@ -27,12 +27,8 @@ $toggle-color-active: $blue-darker;
   font-family: $font-family;
 
   position: absolute;
-  right: $margin/2;
-  top: 45px;
-
-  @include mq(phone-only) {
-    top: 45px;
-  }
+  right: .25rem;
+  top: math.div(57, 16) * 1rem;
 
   @include mq(desktop-nav) {
     display: none;
@@ -48,7 +44,7 @@ $toggle-color-active: $blue-darker;
     content: "Menu";
     text-transform: uppercase;
 
-    @include font-size($toggle-width / 2);
+    @include font-size($toggle-width * 0.5);
 
     padding-right: 10px;
     color: $toggle-color;

@@ -15,7 +15,7 @@ $gray-dark: #4a4a4a;
 $gray: #515d67;
 $gray-light: #9fa4a8;
 $gray-lighter: #c2c8cc;
-$gray-lightest: #f8f9f9;
+$gray-lightest: #F9F9F9;
 
 // Colors
 $blue: #1c5589;
@@ -31,31 +31,43 @@ $purple: #a85ece;
 $purple-darkest: #0f0b2e;
 $red: #c51b0b;
 $red-dark: #812d31;
-$green: #3aaa47;
-$green-dark: #2c8e44;
+
+$green: #5C9A0A;  // set
+$green-dark: #172E26;  // set
+$green-lightest: #F0F1F0;
+$olive-light: #6D817A; // set
 $yellow: #f9c626;
 
+
+$orange: $yellow;
 $tan: #f2ddb8;
 $tan-light: #fefdf8;
 
 // Corporate Colors
 
+
 // Page
-$body-background: $blue-lightest;
-$alt-body-background: $gray-lightest;
+$body-background: $gray-lightest;
+$alt-body-background: $white;
+$page-head-bg-color: $green-dark;
 
 // Text
-$text-color: $gray;
-$headings-color: $blue-dark;
+$text-color: $green-dark;
+$headings-color: $green-dark;
 $footer-text: #557882;
+
+// Links
+$link-color: $green;
+$link-color-hover: $yellow;
+
 
 // Header Colors
 $header-background: $white;
 
 // Main Nav Colors
-$nav-color: $blue-darker;
-$nav-color-hover: $blue-darker;
-$nav-color-current: $nav-color-hover;
+$nav-text-color: $green-dark;
+$nav-text-color-hover: $green;
+$nav-text-color-current: $nav-text-color-hover;
 
 // Main Nav Button
 $nav-btn-bg: transparent;
@@ -67,36 +79,33 @@ $nav-btn-border-hover: $green;
 
 // Subnav Colors
 $subnav-bg: $white;
-$subnav-bg-hover: $blue-dark;
-$subnav-color: $blue-dark;
-$subnav-color-hover: $white;
+$subnav-bg-hover: $green-dark;
+$subnav-text-color: $green-dark;
+$subnav-text-color-hover: $white;
 
 // Mobile Nav Colors
-$mobile-background: $blue-dark;
+$mobile-background: $green-dark;
 $nav-color-mobile: $white;
-$nav-color-mobile-hover: $yellow;
+$nav-color-mobile-hover: $green-dark;
 $nav-bg-mobile: transparent;
-$nav-bg-mobile-hover: $blue-darker;
+$nav-bg-mobile-hover: $green-dark;
 $subnav-bg-mobile: transparent;
 $subnav-color-mobile: $white;
-$subnav-bg-mobile-hover: $blue-darker;
-$subnav-color-mobile-hover: $blue-light;
+$subnav-bg-mobile-hover: $green;
+$subnav-color-mobile-hover: $green-dark;
 
 // Buttons
-$button-text-color: $blue-dark;
+$button-text-color: $white;
 $button-text-color-hover: $white;
-$button-bg-color: transparent;
-$button-color-hover: $yellow;
-$button-border-color: $yellow;
-
-// Links
-$link-color: $teal-light;
-$link-color-hover: $teal;
-$footer-link-color: $white;
-$footer-link-color-hover: $blue-light;
+$button-bg-color: $link-color;
+$button-bg-color-hover: $link-color-hover;
+$button-border-color: $link-color;
+$button-border-color-hover: $link-color-hover;
 
 // Footer
-$footer-copyright-color: #71889d;
+$footer-copyright-color: $olive-light;
+$footer-link-color: $green;
+$footer-link-color-hover: $yellow;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);
@@ -106,8 +115,31 @@ $nav-border-color: rgba($blue, 0.75);
 $tooltip-color: $white;
 $tooltip-bg-color: $purple-darkest;
 
-// Misc
+// Pagination
+$pagination-bg-color: $green-dark;
+$pagination-bg-color-active: darken($green-dark, 10%);
+$pagination-text-color: $white;
+$pagination-text-color-active: $white;
+$pagination-border-color: lighten($pagination-bg-color, 5%);
+
+// Boxshadow
 $boxshadow-color: $black;
+
+
+
+// Search
+$search-bg-color: $green-dark;
+
+
+
+
+/* Event Calendar Pro Colors
+***************************************/
+$ecp-button-bg-color: $link-color;
+$ecp-button-text-color: $button-text-color;
+$ecp-button-border-color: $button-border-color;
+$ecp-link-color: $link-color;
+
 
 /// Returns an map of colors in name-value format. This function also merges
 /// with the `block-colors()` map to create a map of all colors.

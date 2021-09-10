@@ -1,5 +1,7 @@
 // Dimensions
 
+@use "sass:math";
+
 $spacing-global:	1.5rem;
 $margin:			$spacing-global;
 $base-line-height:  $spacing-global;
@@ -9,20 +11,20 @@ $base-line-height:  $spacing-global;
 $width-alignwide : 56rem;
 $width-alignfull : 100vw;
 
-$content-width: (900 / 16) * 1rem;
+$content-width: math.div(900, 16) * 1rem;
 
 $content-width-padded : $content-width + ( $spacing-global * 2 );
 
 $alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
 
 
-$site-max-width:				(1200 / 16) * 1rem;
+$site-max-width:				math.div(1200, 16) * 1rem;
 $site-width:					$site-max-width;
 
-$post-width:					(960 / 16) * 1rem;
+$post-width:					math.div(960, 16) * 1rem;
 
-$app-header-height:				(94 / 16) * 1rem;
-$app-header-height-detatched:	(125 / 16) * 1rem;
+$app-header-height:				math.div(100, 16) * 1rem;
+$app-header-height-detatched:	math.div(125, 16) * 1rem;
 
 
 
@@ -31,14 +33,15 @@ $transition:					all .3s ease-in-out;
 
 
 // Logo dimensions
-$logo-width:            		(250 / 16) * 1rem;
-$logo-height:           		(76 / 16) * 1rem;
-$logo-width-mobile:     		(200 / 16) * 1rem;
-$logo-height-mobile:    		(64 / 16) * 1rem;
+$logo-width:            		math.div(372, 16) * 1rem;
+$logo-height:           		math.div(54, 16) * 1rem;
+$logo-width-mobile:     		math.div(264, 16) * 1rem;
+$logo-height-mobile:    		math.div(39, 16) * 1rem;
 $logo-width-detached:   		$logo-width;
 $logo-height-detached:  		$logo-height;
 
-$nav-width:						(350/ 16) * 1rem;
+$nav-width:						math.div(420, 16) * 1rem;
+$branding-width:				math.div(500, 16) * 1rem;
 
 
 @function content-width() {

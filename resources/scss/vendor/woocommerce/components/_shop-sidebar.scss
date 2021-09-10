@@ -1,0 +1,116 @@
+// Shop sidebar
+
+@use "sass:math";
+.shop-sidebar {
+	flex: 0 1 100%;
+	order: 1;
+	background-color: $green-lightest;
+	padding: 0;
+	
+	@include mq(tablet-portrait-up) {
+		flex-basis: 20rem;
+	}
+	
+	.widget__title {
+		@include font-size(14px);
+		  text-transform: uppercase;
+		  margin: $margin;
+		  color: #85918D;
+	}
+	
+	.menu {
+
+		&:first-child {
+			//margin-bottom: $margin * 3;
+		}
+
+		&__items {
+			list-style: none;
+		}
+
+		&__item--current {
+			.menu__link {
+				background-color: $green-dark;
+				color: $white;
+			}
+		}
+		
+		&__item {
+			font-family: $alt-font-family;
+			font-weight: $normal-font-weight;
+			@include font-size(21px);
+		}
+
+		&__link {
+			color: $green-dark;
+			padding: math.div($margin, 3) $margin;
+			&:hover {
+				background-color: $green-dark;
+				color: $white;
+			}
+		}
+
+		
+	}
+	
+	.menu__sub-menu {
+		list-style: none;
+		display: flex;
+		flex-flow: column;
+		margin: 0;
+		opacity: 0;
+		visibility: hidden;
+		max-height: 0;
+		transition: all 0.3s ease-in-out;
+		//margin-top: $margin * .4;
+
+		.menu__item {
+			@include font-size(18px);
+			font-family: $alt-font-family;
+			
+		}
+		.menu__link {
+			background-image: none !important;
+			padding: math.div($margin, 4) $margin math.div($margin, 4) $margin * 1.5 ;
+			display: block;
+		}
+	}
+
+	.subnav-open .menu__sub-menu {
+		z-index: 0;
+		visibility: visible;
+		opacity: 1;
+		height: auto;
+		max-height: 600px;
+	}
+
+	.has-children {
+		>.menu__link {
+			display: flex;
+			justify-content: space-between;
+
+			&:after {
+				border-style: solid;
+				border-width: 0.125em 0.125em 0 0;
+				content: "";
+				display: inline-block;
+				height: 0.45em;
+				right: 0.15em;
+				position: relative;
+				top: .3125rem;
+				transform: rotate(45deg);
+				vertical-align: top;
+				width: 0.45em !important;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+
+		&.subnav-open {
+			>.menu__link {
+			  &:after {
+				transform: rotate(135deg);
+			  }
+			}
+		  }
+	}
+}

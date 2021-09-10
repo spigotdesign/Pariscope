@@ -1,6 +1,8 @@
 /**
 	 * Star ratings
 	 */
+   
+
 .star-rating {
   float: right;
   overflow: hidden;
@@ -13,7 +15,7 @@
 
   &::before {
     content: "\73\73\73\73\73";
-    color: darken($secondary, 10%);
+    color: $star-rating;
     float: left;
     top: 0;
     left: 0;
@@ -69,6 +71,7 @@
 
   p {
     margin: 0 0 10px;
+    flex-basis: 100%;
   }
 
   .form-submit input {

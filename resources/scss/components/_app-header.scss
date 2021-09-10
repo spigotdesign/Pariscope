@@ -13,21 +13,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 0 0 4px 0 rgba($black, 0.17);
-
-    .page-template-landing & {
-
-        @include mq(desktop-nav) {
-        position: absolute;
-        background-color: transparent;
-        box-shadow: none;
-        background: linear-gradient(180deg, rgba(0,0,0,0.51) 0%, transparent 99%);
-    }
-    }
-
-    .page-template-landing.admin-bar & {
-        @include mq(desktop-nav) { top: 32px; }
-    }
 
     &__branding {
         //margin-top: -36px;
@@ -36,39 +23,26 @@
         flex-flow: row nowrap;
         align-items: center;
         justify-content: flex-start;
-        padding-left: $margin / 2;
-        flex: 0 1 $nav-width;
+
+        flex: 0 1 $branding-width;
         //background-color: $blue-darker;
 
         @include mq(phone-only) {
             flex-basis: 100%;
             order: 2;
             justify-content: flex-start;
-            padding-left: $margin / 2;
+            padding-left: $margin * 0.5;
         }
-
-        .page-template-landing & {
-            .logotype {
-                @include mq(desktop-nav) {
-                fill: $white !important;
-            }
-            }
-        }
-
 
         &-link {
             width: $logo-width-mobile;
             height: $logo-height-mobile;
 
+
             @include mq(tablet-portrait-up) {
                 width: $logo-width;
                 height: $logo-height;
-            }
-
-
-            .detached & {
-                width: $logo-width-detached;
-                height: $logo-height-detached;
+                padding-left: $margin * 0.5;
             }
 
             svg {
@@ -82,13 +56,6 @@
                     height: $logo-height;
                 }
 
-
-                // Small version
-                .detached & {
-                    // width: $logo-width-detached;
-                    //height: $logo-height-detached;
-                    margin-top: 3px;
-                }
             }
         }
     }

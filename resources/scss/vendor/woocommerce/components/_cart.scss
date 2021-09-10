@@ -11,7 +11,7 @@ form.woocommerce-cart-form {
   table.cart {
     .product-thumbnail {
       min-width: 64px;
-      padding: $margin/4;
+      padding: $margin*0.25;
 
       @include mq(phone-only) {
         display: none;
@@ -34,6 +34,7 @@ form.woocommerce-cart-form {
     }
   }
 
+
   .wc-proceed-to-checkout {
     @include clearfix;
 
@@ -45,6 +46,13 @@ form.woocommerce-cart-form {
       margin-bottom: 1em;
       font-size: 1.25em;
       padding: 1em;
+      color: $cart-checkout-button-text-color;
+      background-color: $cart-checkout-button-bg-color;
+      
+      &:hover {
+        color: $cart-checkout-button-text-color-hover;
+        background-color: $cart-checkout-button-bg-color-hover;
+      }
     }
   }
 }

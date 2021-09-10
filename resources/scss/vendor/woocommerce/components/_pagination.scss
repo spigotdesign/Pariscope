@@ -1,41 +1,55 @@
+// WooCommerce Pagination
+
+@use "sass:math";
+
 nav.woocommerce-pagination {
   text-align: center;
+  margin: ($margin * 2) 0;
 
   ul {
-    display: inline-block;
-    white-space: nowrap;
-    padding: 0;
-    clear: both;
-    border: 1px solid darken($secondary, 10%);
-    border-right: 0;
-    margin: 1px;
+    display: flex;
+    list-style: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 
     li {
-      border-right: 1px solid darken($secondary, 10%);
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
+      flex: 0 1 auto;
+      font-weight: normal;
+      @include font-size(14px);
+      font-family: $alt-font-family;
+
+      &:first-child {
+        a,
+        span {
+          border-radius: $pagination-button-border-radius 0 0 $pagination-button-border-radius;
+          padding-left: $margin * 1.5;
+        }
+      }
+
+      &:last-child {
+        a,
+        span {
+          border-radius: 0 $pagination-button-border-radius $pagination-button-border-radius 0;
+          padding-right: $margin * 1.5;
+        }
+      }
 
       a,
       span {
-        margin: 0;
-        text-decoration: none;
-        padding: 0;
-        line-height: 1;
-        font-size: 1em;
-        font-weight: normal;
-        padding: 0.5em;
-        min-width: 1em;
-        display: block;
+        padding: math.div($margin, 1.5) $margin;
+        color: $pagination-text-color;
+        border-right: 1px solid lighten($green-dark, 5%);
+        @include font-size(14px);
+        background-color: $pagination-bg-color;
+        border-right: 1px solid $pagination-border-color;
       }
 
       span.current,
       a:hover,
       a:focus {
-        background: $secondary;
-        color: darken($secondary, 40%);
+        background: $pagination-bg-color-active;
+        color: $pagination-text-color-active;
       }
     }
   }

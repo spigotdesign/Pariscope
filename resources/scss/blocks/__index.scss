@@ -21,10 +21,15 @@
 @import 'core/pullquote/pullquote.scss';
 @import 'core/quote/quote.scss';
 @import 'core/rss/rss.scss';
-@import 'core/search/search.scss';
 @import 'core/separator/separator.scss';
 @import 'core/table/table.scss';
 @import 'core/verse/verse.scss';
+@import 'core/widget/widget.scss';
+
+// Widgets
+@import 'widgets/categories/categories';
+@import 'widgets/search/search';
+@import 'widgets/tag-cloud/tag-cloud';
 
 // Vendor
 @import 'vendor/accordion/accordion.scss';

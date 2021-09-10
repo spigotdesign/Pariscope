@@ -1,0 +1,12 @@
+// Term Descriptions
+
+.term-description {
+	max-width: $site-max-width;
+
+	padding: 30px;
+	//column-count: 2;
+
+	@include mq(tablet-portrait-up) {
+		column-count: 2;
+	}
+}

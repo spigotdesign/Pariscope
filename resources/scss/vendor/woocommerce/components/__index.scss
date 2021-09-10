@@ -6,39 +6,40 @@
 /// @link   https:cinchws.com
 ////
 
-@import "layout";
-// @import 'layout-cart';
-@import "buttons";
-
-@import "cart-actions";
-@import "cart-collaterals";
-@import "shipping-calculator";
-
-@import "table-shop";
-@import "tables";
-@import "messages";
-
-@import "breadcrumbs";
-@import "remove-product";
-@import "star-ratings";
-@import "tabs";
-@import "forms";
-@import "password";
-
-@import "terms-conditions";
-@import "login";
-@import "pagination";
-@import "product-loops";
-@import "quantity-increment";
-@import "related-products";
-@import "store-notice";
-@import "thankyou";
-
-@import "reviews";
-@import "account";
-@import "cart";
-@import "checkout";
-@import "product-page";
-@import "product-gallery";
-
-@import "select2";
+@import 'account';
+@import 'app-content';
+@import 'breadcrumbs';
+@import 'buttons';
+@import 'cart';
+@import 'cart-actions';
+@import 'cart-collaterals';
+@import 'checkout';
+@import 'forms';
+@import 'layout';
+@import 'messages';
+@import 'order-page';
+@import 'pagination';
+@import 'password';
+@import 'price';
+@import 'product-card';
+@import 'product-grid';
+@import 'products';
+@import 'product-page';
+@import 'product-gallery';
+@import 'quantity-increment';
+@import 'related-products';
+@import 'remove-product';
+@import 'reviews';
+@import 'select2';
+@import 'shipping-calculator';
+@import 'shop-content';
+@import 'shop-head';
+@import 'shop-main';
+@import 'shop-sidebar';
+@import 'sidebar-woocommerce';
+@import 'star-ratings';
+@import 'store-notice';
+@import 'tables';
+@import 'tabs';
+@import 'terms-conditions';
+@import 'term-desc';

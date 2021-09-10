@@ -6,21 +6,24 @@
 /// @link   https://spigotdesign.com/
 ////
 
+@use "sass:math";
+
 .wp-block-quote {
   margin-bottom: $margin * 1.5;
-  border-left: 8px solid $yellow;
+  border-left: 8px solid $green;
   padding-left: $margin * 1.5;
 
   quotes: "“" "”";
 
   p {
     //text-indent: -0.42em;
-    line-height: 1.2;
-    font-size: 1.25em;
-    font-weight: $bold-font-weight;
-    font-style: italic;
-    color: $gray-darker;
-    margin-bottom: 1rem;
+    
+    @include font-size(25px);
+    line-height: 1.5;
+    font-weight: $normal-font-weight;
+    font-style: normal;
+    color: $green-dark;
+    //margin-bottom: 1rem;
 
     &:first-of-type {
       &:before {
@@ -37,7 +40,7 @@
     }
 
     &:last-of-type {
-      margin-bottom: 0;
+      margin-bottom: $margin;
 
       &:after {
         content: close-quote;
@@ -56,12 +59,13 @@
     }
   }
 
-  > cite {
+  cite {
     display: block;
-    text-align: right;
+    // text-align: right;
     font-size: 90%;
     font-style: normal;
-    padding-right: 10%;
+    //padding-right: 10%;
+    font-family: $alt-font-family;
 
     &:before {
       content: "~ ";
@@ -79,7 +83,7 @@
       text-align: center;
 
       &:last-of-type {
-        margin-bottom: $margin / 3;
+        margin-bottom: math.div($margin, 3);
       }
     }
 

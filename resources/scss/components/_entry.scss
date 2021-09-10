@@ -6,6 +6,8 @@
 
 ////
 
+@use "sass:math";
+
 .entry {
   // Type of entry/post.
 
@@ -82,29 +84,37 @@
 
   &--error {
     min-height: 100vh;
-    background-image: url(../img/sylwia-bartyzel-442-unsplash.jpg);
+    background-image: url(../img/daniel-gonzalez-KeiUIl9Lzo4-unsplash.jpg);
     background-size: cover;
     background-position: center;
-
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($black, .4);
+      z-index: 1;
+    }
     .entry__content {
       max-width: 1200px;
       padding: ($margin * 4) $margin;
       margin: 0 auto;
       text-align: center;
-
+      position: relative;
+      z-index: 2;
       h1,
       p {
         color: $white;
       }
-
       .searchform {
         margin: ($margin * 2) auto;
-
         .search-text {
           background-color: rgba($blue-dark, 0.25);
         }
       }
-
       .app-404 {
         fill: $white;
         width: 50px;
@@ -112,7 +122,6 @@
       }
     }
   }
-
   &--type-page {
     margin: 0 auto $margin auto;
     max-width: $post-width;
@@ -158,11 +167,17 @@
 
   // Summary/Excerpt.
   &__summary {
-    margin-bottom: $margin * 1.5;
+    // margin-bottom: $margin * 1.5;
     line-height: 1.5;
 
     @include font-size(14px);
-
+    
+    .readmore {
+      display: block;
+      text-transform: uppercase;
+      margin-top: $margin * .5;
+      font-family: $alt-font-family;
+    }
     //padding: 0 24px;
   }
 
@@ -185,7 +200,7 @@
       position: absolute;
       bottom: 0;
       //margin-left: -$margin;
-      padding: ($margin/2) $margin;
+      padding: ($margin*0.5) $margin;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -205,7 +220,7 @@
   &__author {
     color: $white;
     font-family: $alt-font-family;
-    margin-bottom: $margin / 2;
+    margin-bottom: $margin * 0.5;
     @include font-size(18px);
 
     a,
@@ -249,7 +264,7 @@
       @include font-size(12px);
 
       text-transform: uppercase;
-      margin-left: $margin / 3;
+      margin-left: math.div($margin, 3);
       margin-right: $margin;
 
       a {

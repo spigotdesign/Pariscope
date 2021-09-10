@@ -26,4 +26,11 @@ td.actions {
   button.button {
   	float: right;
   }
+  
+  button:disabled {
+    background-color: $gray-light;
+    border-color: $gray-light;
+    cursor: not-allowed;
+    opacity: .7;
+  }
 }

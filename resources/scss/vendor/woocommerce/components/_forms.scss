@@ -1,12 +1,12 @@
 // WooCommerce Forms
 
 form .form-row {
-  padding: $margin / 5;
-  margin: 0 0 ($margin / 4);
+  padding: $margin * 0.2;
+  margin: 0 0 ($margin * 0.25);
   position: relative;
 
   label {
-    color: $gray-light;
+    color: $form-label-text-color;
     font-size: 75%;
     text-transform: uppercase;
   }
@@ -144,7 +144,7 @@ p.woocommerce-shipping-contents {
   .select2-results__option--highlighted[aria-selected],
 .select2-container--default
   .select2-results__option--highlighted[data-selected] {
-  background-color: $primary-color !important;
+  background-color: $woocommerce-select2;
   color: #fff;
 }
 

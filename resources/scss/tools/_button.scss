@@ -9,20 +9,24 @@
     text-decoration: none;
     overflow: visible;
     padding: 10px 40px;
-    font-weight: $bold-font-weight;
-    border: 3px solid $button-border-color;
+    font-weight: $mid-font-weight;
+    border-color: $button-border-color;
+    border-width: $button-border-width;
+    border-style: $button-border-style;
     border-radius: $button-border-radius;
     font-family: $button-font-family;
     color: $button-text-color;
     background-color: $button-bg-color;
     display: inline-block;
     text-transform: uppercase;
+    transition: all .3s ease-in-out;
 
     &:hover {
-        background-color: $button-color-hover;
+        background-color: $button-bg-color-hover;
         text-decoration: none;
         background-image: none;
         color: $button-text-color-hover;
+        border-color: $button-border-color-hover;
     }
 }
 

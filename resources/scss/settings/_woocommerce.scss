@@ -1,31 +1,71 @@
-////
-/// WooCommerce settings
-///
-/// @group  Settings
-/// @author Bryan Hoffman <bryan@spigotdesign.com>
+// WooCommerce settings and variables
 
-////
-
-$woocommerce-purple: #a46497;
-
-// WooCommerce Colors
-$primary-color: $red;
-$secondary-color: $blue;
+/* WooCommerce Colors
+***************************************/
+$primary-color: $green-dark;   // Kill this when we can
+$secondary-color: $green;
 
 $woo-account-header-bg: $red;
 $star-rating-yellow: #f5a623;
 
+$price-color: $primary-color;
+$stock-color: $price-color;
+
 // Cart/Checkout Sidebar Settings
-$cart-sidebar-bg: $blue;
+$cart-sidebar-bg: $green-dark;
 $cart-sidebar-text-color: $white;
-$cart-sidebar-header-color: $cart-sidebar-text-color;
+$cart-sidebar-header-color: $white;
 $cart-sidebar-border-color: rgba($white, 0.2);
 $cart-sidebar-link-color: $link-color;
 $cart-sidebar-link-color-hover: $link-color-hover;
 $cart-sidebar-highlight-color: $white;
+$cart-checkout-button-bg-color: $green;
+$cart-checkout-button-text-color: $button-text-color;
+$cart-checkout-button-bg-color-hover: $yellow;
+$cart-checkout-button-text-color-hover: $button-text-color-hover;
 
 // Messages
-$woo-message-button-bg: $red;
-$woo-message-bg: $red;
+$message-bg-color: $green;
+$message-text-color: $white;
+$message-button-bg-color: $green-dark;
+$message-button-bg-color-hover: $yellow;
+$message-button-border-color: $message-button-bg-color;
+$message-button-border-color-hover: $message-button-bg-color-hover;
+$message-button-text-color-hover: $green-dark;
+$error-bg-color: $red;
+$error-text-color: $white;
+$message-icon-color: $white;
 
-// Buttons
+// Forms
+$form-label-text-color: $gray;
+
+// Select2 forms
+$woocommerce-select2: $red;
+
+// Ratings
+$star-rating: $red;
+
+// Tabs
+$wc-tab-bg-color: transparent;
+$wc-tab-bg-color-active: $body-background;
+$wc-tab-border-color: $olive-light;
+
+// Pagination
+$wc-pagination-border-color: $green;
+$wc-pagination-bg-color: $green-lightest;
+$wc-pagination-text-color: $green-dark;
+
+
+
+// Legacy variables
+$primary:           $primary-color;                             // Primary color for buttons (alt)
+$primarytext:       desaturate(lighten($primary, 50%), 18%);    // Text on primary color bg
+
+$secondary:         $secondary-color;    // Secondary buttons
+$secondarytext:     desaturate(darken($secondary, 60%), 21%);   // Text on secondary color bg
+
+$highlight:         adjust-hue($primary, 150deg);               // Prices, In stock labels, sales flash
+$highlightext:      desaturate(lighten($highlight, 50%), 18%);  // Text on highlight color bg
+
+$contentbg:         #fff;                                       // Content BG - Tabs (active state)
+$subtext:           #777;                                       // small, breadcrumbs etc

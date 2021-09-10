@@ -65,15 +65,7 @@
 
 
 
-// Editor post title.
 
-// Add Google fonts here
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i|Nunito+Sans:400,400i,700&display=swap');
-
-.editor-post-title__block .editor-post-title__input,
-.editor-post-title__block .editor-post-title__input:focus {
-	font-family: $headings-font-family;
-}
 
 
 
@@ -93,7 +85,7 @@
 // Overwrite core styles dropped into the footer.
 
 .edit-post-visual-editor .wp-block-paragraph {
-	margin: $spacing-global 0 0;
+	margin: $spacing-global auto;
 }
 
 .edit-post-visual-editor .block-library-list ul,

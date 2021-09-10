@@ -5,6 +5,8 @@
 
 
 // Identify controls by their labels
+@use "sass:math";
+
 label {
   display: block;
   margin-bottom: 5px;
@@ -24,7 +26,7 @@ input[type="url"],
 input[type="password"]   {
   display: inline-block;
   height: auto;
-  padding: ($margin / 3) ($margin / 2);
+  padding: math.div($margin, 3) ($margin * 0.5);
   @include font-size(16px);
   border-radius: $border-radius;
   font-family: $font-family;

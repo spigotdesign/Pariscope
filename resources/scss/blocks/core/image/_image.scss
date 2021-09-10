@@ -6,41 +6,24 @@
 /// @link   https://spigotdesign.com/
 ////
 
+@use "sass:math";
+
 .wp-block-image {
   margin-top: $spacing-global;
 
   img {
-    //	display: block;
+  //	display: block;
   }
 
-  figure {
-    &.aligncenter {
-      img {
-        margin: 0 auto;
-      }
-
-      figcaption {
-        text-align: center;
-      }
-    }
-
-    &.alignwide {
-    }
+  &.alignfull img {
+    border-radius: 0;
   }
 
-  &.alignfull {
-    img {
-      width: 100%;
-    }
-
-    figcaption {
-      text-align: center;
-    }
-  }
+  &.alignfull img,
   &.alignwide img {
-    margin-left: auto;
+    margin-left:  auto;
     margin-right: auto;
-    display: block;
+    display:      block;
   }
 
   &.is-resized {
@@ -60,7 +43,7 @@
   }
 
   figcaption {
-    padding: $margin / 6;
+    padding: math.div($margin, 6);
     font-size: 90%;
     font-style: italic;
   }

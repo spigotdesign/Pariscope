@@ -6,36 +6,15 @@
 
 ////
 
+@use "sass:math";
+
 .app-footer {
   //border-top: 1px solid $border-color;
   padding: $margin;
-  background-color: $blue-dark;
+  background-color: $white;
   position: relative;
   padding-top: $margin * 2;
-
-  &:before {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    content: "";
-    height: 12px;
-    background-image: linear-gradient(
-      90deg,
-      rgba(65, 157, 185, 1) 0%,
-      rgba(65, 157, 185, 1) 20%,
-      rgba(17, 96, 158, 1) 20%,
-      rgba(17, 96, 158, 1) 40%,
-      rgba(249, 198, 38, 1) 40%,
-      rgba(249, 198, 38, 1) 60%,
-      rgba(215, 39, 45, 1) 60%,
-      rgba(215, 39, 45, 1) 80%,
-      rgba(58, 170, 71, 1) 80%,
-      rgba(58, 170, 71, 1) 100%
-    );
-  }
+  box-shadow: inset 0px 2px 4px rgba($green-dark, .1);
 
   a {
     color: $footer-link-color;
@@ -53,98 +32,126 @@
   }
 
   &__branding {
-    flex: 0 1 60%;
+    flex: 0 1 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: $margin;
+    align-items: center;
+    font-family: $alt-font-family;
 
-    @include mq(phone-only) {
-      flex-basis: 100%;
+    @include mq(tablet-landscape-up) {
+      flex-basis: 33.333334%;
     }
 
     &-link {
-      margin-bottom: $margin / 2;
+      margin-bottom: $margin * 0.5;
 
       svg {
-        width: 157px;
-        height: 74px;
+        width: 316px;
+        height: 178px;
       }
     }
   }
 
   &__connect {
-    @include font-size(15px);
 
-    &-loc {
-      margin-bottom: $margin / 2;
-
-      a {
+    &-social {
+      ul {
+        list-style: none;
         display: flex;
-        align-items: flex-start;
+        justify-content: center;
 
-        svg {
-          margin-right: 5px;
-          position: relative;
-          top: 4px;
-        }
-      }
-    }
+        li {
 
-    &-contact {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
+          margin: math.div($margin, 4);
 
-      li {
-        @include mq(phone-only) {
-        }
-
-        margin-right: $margin;
-
-        a {
-          display: flex;
-          align-items: center;
+          a {
+            display: flex;
+          }
         }
 
         svg {
-          margin-right: 5px;
-        }
-      }
-    }
-  }
-
-  &__social {
-    flex: 0 1 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    ul {
-      display: flex;
-      list-style: none;
-
-      li {
-        margin: 0 ($margin / 3);
-
-        a {
-          background-color: $blue-darker;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: $margin / 1.25;
-          border-radius: $margin * 3;
+          fill: $link-color;
 
           &:hover {
-            background-color: darken($blue-darker, 10%);
+            fill: $link-color-hover;
           }
         }
       }
     }
   }
 
+  &__content {
+    @include font-size(15px);
+    flex: 0 1 100%;
+
+    @include mq(tablet-landscape-up) {
+      flex-basis: 66.666667%;
+    }
+
+  }
+
+  &__nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: $margin;
+    
+    @include mq(tablet-portrait-up) {
+      justify-content: space-between;
+    }
+
+    .menu {
+      flex: 0 1 50%;
+      margin-bottom: $margin;
+
+      @include mq(tablet-portrait-up) {
+        flex-basis: 33.33333%;
+        margin-bottom: 0;
+      }
+
+      &__items {
+        list-style: none;
+        text-align: center;
+
+        @include mq(tablet-portrait-up) {
+          text-align: left;
+        }
+
+      }
+
+      &__title {
+        @include font-size(18px);
+        text-align: center;
+        margin-bottom: math.div($margin, 3);
+
+        @include mq(tablet-portrait-up) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__disclaimer {
+    border-top: 1px solid $green-dark;
+    border-bottom: 1px solid $green-dark;
+    padding: math.div($margin, 2) 0;
+    margin-bottom: $margin;
+
+    p {
+      @include font-size(13px);
+      color: $olive-light;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+
   &__copyright {
     flex: 0 1 100%;
     color: $footer-copyright-color;
+
 
     @include font-size(14px);
 
@@ -153,6 +160,7 @@
     p {
       display: flex;
       align-items: center;
+      font-family: $alt-font-family;
 
       @include font-size(14px);
 
@@ -160,25 +168,17 @@
         display: block;
         text-align: center;
         margin-bottom: 0;
-        @include font-size(11px);
+        @include font-size(12px);
       }
     }
 
-    a {
-      color: $footer-copyright-color;
-      display: inline-block;
-      padding-left: $margin / 2;
-      text-decoration: underline;
-    }
-
     .siteby {
-      width: 16px;
-      height: 16px;
-      margin-left: $margin/3;
+
+      margin-left: $margin * .5;
       display: flex;
 
       @include mq(phone-only) {
-        margin: ($margin / 2) auto 0 auto;
+        margin: ($margin * 0.5) auto 0 auto;
         display: block;
         padding-left: 0;
       }
@@ -189,7 +189,7 @@
 
       svg {
         path {
-          fill: $footer-copyright-color;
+          fill: $green;
         }
 
         &:hover {

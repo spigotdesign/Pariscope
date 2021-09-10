@@ -25,7 +25,7 @@
         }
 
         &__content {
-            margin-top: $margin / 2;
+            margin-top: $margin * 0.5;
 
             *:last-child {
                 margin-bottom: 0;

@@ -3,34 +3,19 @@
 .page-head {
     padding: ($margin * 2) 0 0 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
     z-index: 10;
     width: 100%;
-    background-color: transparent;
-
-    h1 {
-        //font-size: 21px;
-        text-align: center;
-    }
-
-    p {
-        //font-family: 'Proxima Nova';
-        text-align: center;
-        padding: 0 24px;
-    }
+    background-color: $page-head-bg-color;
 
     &--bgimg {
         min-height: 269px;
         background-size: cover;
         background-position: center;
         padding-bottom: $margin * 2;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        background-color: $blue;
-        margin-bottom: $margin * 2;
 
         &:after {
             content: "";
@@ -44,32 +29,18 @@
             width: 100%;
             height: 100%;
         }
-
-        .page-head__title {
-            color: $white;
-            text-align: center;
-            margin-bottom: $margin;
-            z-index: 10;
-
-            @include font-size(33px);
-        }
-
-        p {
-            color: $white;
-            z-index: 10;
-        }
     }
 
     &--no-bg {
         padding: ($margin * 2.666666666666) 0 ($margin * 2) 0;
-        
 
         @include mq(phone-only) {
-            padding: $margin 0 ($margin  * .5) 0;
+            padding: $margin 0 ($margin * .5) 0;
         }
 
         .page-head__title {
             margin: 0;
+            color: $white;
         }
 
         .page-head__content {
@@ -85,20 +56,39 @@
                 color: $text-color;
             }
         }
+
+    }
+
+    &__title {
+        color: $white;
+        text-align: left;
+        margin-bottom: $margin;
+        z-index: 10;
+        @include font-size(56px);
+        
+        @include mq(tablet-landscape-up) {
+            @include font-size(80px);
+        }
+    }
+
+    &__description {
+        p {
+            color: $white;
+        }
     }
 
     &__content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: $post-width;
-        padding: 0 20px;
-
-        @include mq(800) {
-            padding: 0;
-        }
+       position: relative;
+       z-index: 2;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       max-width: $site-width;
+       padding: 0 20px;
+   
+       @include mq(big-desktop-up) {
+           margin-left: 20rem;
+       }
 
 
         .entry__terms {
@@ -114,87 +104,8 @@
         .event__date {
             color: $white;
             @include font-size(16px);
-            
+
         }
     }
 
-    &__headline {
-        //background-color: red;
-        width: 100%;
-        padding: 0;
-        margin-bottom: 0;
-        //text-transform: uppercase;
-    }
-
-    &__desc {
-        //color: $white;
-        //@include font-size(13px);
-        max-width: $post-width;
-        text-align: center;
-        margin-top: 12px;
-        color: $gray-dark;
-
-
-        &--post {
-            color: $white;
-        }
-    }
-
-    &__icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 24px;
-    }
-
-    &.no-bg {
-        .entry__terms {
-            //margin-bottom: $margin;
-            //margin: 0 0 $margin 0;
-
-            a {
-                color: $link-color !important;
-
-                //text-transform: uppercase;
-           
-            }
-        }
-
-        .entry__published {
-            color: $text-color;
-        }
-    }
-
-    &.map {
-        padding: 0 0 48px 0;
-    }
-    &__section-title {
-        color: $white;
-        text-transform: uppercase;
-        margin-bottom: $margin;
-        @include font-size(14px);
-    }
-
-    .exhibit-date {
-        color: $white;
-    }
-}
-
-.archive-header {
-    padding: ($margin * 2) 0 $margin 0;
-
-    &__title {
-        text-align: center;
-
-        @include font-size(30px);
-
-        //text-transform: uppercase;
-        margin: 0;
-    }
-
-    &__description {
-        max-width: $post-width;
-        margin: $margin auto;
-        text-align: center;
-        padding: 0 20px;
-    }
 }

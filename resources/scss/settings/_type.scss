@@ -1,5 +1,5 @@
-$font-family: "Nunito sans", sans-serif;
-$alt-font-family: "Nunito sans", sans-serif;
+$font-family:     "IBM Plex Serif", sans-serif;
+$alt-font-family: "Rubik", sans-serif;
 
 //$med-font-family:			'acherusgrotesque-medium', sans-serif;
 //$bold-font-family:		'acherusgrotesque-bold', sans-serif;
@@ -13,14 +13,14 @@ $base-font-style: normal;
 $base-font-weight: 400;
 
 // Font Weights
-$bold-font-weight: 800;
-$mid-font-weight: 700;
+$bold-font-weight: 600;
+$mid-font-weight: 500;
 $normal-font-weight: 400;
-$light-font-weight: 300;
+$light-font-weight: $normal-font-weight;
 
 // Headings
 $headings-font-family: $alt-font-family;
-$headings-font-weight: $bold-font-weight;
+$headings-font-weight: $mid-font-weight;
 
 // Body
 $body-font-family: $font-family;
@@ -32,3 +32,8 @@ $button-font-family: $alt-font-family;
 // Navigation
 $nav-font-family: $alt-font-family;
 $nav-font-weight: $mid-font-weight;
+
+
+// WooCommerce
+$price-font-family: $alt-font-family;
+$price-font-weight: $mid-font-weight;
