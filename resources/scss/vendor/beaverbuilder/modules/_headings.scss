@@ -1,0 +1,19 @@
+// BB Headings
+
+.section-heading {
+	text-transform: uppercase;
+
+	&.fancy {
+		
+
+		.fl-heading {
+			@include font-size(14px);
+			&-text {
+				border-top: 3px solid $red;
+				border-bottom: 3px solid $blue-dark;
+				padding-top: convert(2);
+				padding-bottom: convert(2);
+			}
+		}
+	}
+}
