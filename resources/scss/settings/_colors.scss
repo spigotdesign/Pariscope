@@ -77,6 +77,12 @@ $nav-btn-color-hover: $white;
 $nav-btn-border: $blue-dark;
 $nav-btn-border-hover: $green;
 
+// Secondary Nav
+$nav-secondary-bg-color: $blue-dark;
+$nav-secondary-bg-color-hover: $red;
+$nav-secondary-text-color: $white;
+$nav-secondary-text-color-hover: $white;
+
 // Subnav Colors
 $subnav-bg: $white;
 $subnav-bg-hover: $green-dark;
@@ -84,15 +90,15 @@ $subnav-text-color: $green-dark;
 $subnav-text-color-hover: $white;
 
 // Mobile Nav Colors
-$mobile-background: $green-dark;
-$nav-color-mobile: $white;
-$nav-color-mobile-hover: $green-dark;
-$nav-bg-mobile: transparent;
-$nav-bg-mobile-hover: $green-dark;
-$subnav-bg-mobile: transparent;
-$subnav-color-mobile: $white;
-$subnav-bg-mobile-hover: $green;
-$subnav-color-mobile-hover: $green-dark;
+// $mobile-background: $blue-dark;
+$nav-mobile-text-color: $white;
+$nav-mobile-text-color-hover: $white;
+$nav-mobile-bg-color: $blue-dark;
+$nav-mobile-bg-color-hover: $red;
+$subnav-mobile-bg-color: transparent;
+$subnav-mobile-bg-color-hover: $red;
+$subnav-mobile-text-color: $white;
+$subnav-mobile-text-color-hover: $white;
 
 // Buttons
 $button-text-color: $white;
@@ -106,6 +112,7 @@ $button-border-color-hover: $link-color-hover;
 $footer-copyright-color: $olive-light;
 $footer-link-color: $green;
 $footer-link-color-hover: $yellow;
+$footer-text-color: $white;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);

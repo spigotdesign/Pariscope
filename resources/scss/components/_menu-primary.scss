@@ -6,6 +6,7 @@
 	  position: relative;
 	  display: flex;
 	  align-items: center;
+	  background: $white;
 
 	  //height: 75px;
 	  display: flex;
@@ -19,7 +20,7 @@
 		left: 0;
 		opacity: 0;
 		width: 100%;
-		background-color: $mobile-background;
+		background-color: $nav-mobile-bg-color;
 		transition: all 0.3s ease-in-out;
 		height: 100vh;
 		padding: 0;
@@ -64,6 +65,8 @@
 		  &.menu__item--current,
 		  &.menu__item--ancestor {
 			> .menu__link {
+				background-color: $nav-bg-color-hover;
+				color: $nav-text-color-hover;
 			  &:after {
 				width: 100%;
 			  }
@@ -78,11 +81,11 @@
 
 	  .menu__item {
 		position: relative;
-		@include font-size(15px);
-		padding: math.div($margin, 2);
+		@include font-size(17px);
+		//padding: math.div($margin, 2);
 
 		@include mq(desktop-up) {
-		  padding: math.div($margin, 3) $margin;
+		  //padding: math.div($margin, 3) $margin;
 		}
 
 		@include mq(mobile-nav) {
@@ -102,8 +105,14 @@
 			}
 		  }
 		}
+		
+		&:last-child {
+			.menu__link {
+				border-right: none;
+			}
+		}
 
-		/* After Chevron */
+		// After Chevron
 		&.has-children {
 		  > .menu__link {
 			@include mq(mobile-nav) {
@@ -138,7 +147,6 @@
 		  }
 		}
 
-		/* // End After Chevron */
 
 		// Mobile only nav items
 
@@ -153,29 +161,37 @@
 
 	  .menu__link {
 		color: $nav-text-color;
+		background-color: $nav-bg-color;
 		padding: ($margin * 0.5) ($margin * 0.25);
 		padding-bottom: $margin;
+		display: block;
+		//border-right: 1px solid $white;
+		
+		
+		
 
 		@include mq(desktop-nav) {
-		  padding: $margin 0 ($margin * 2) 0;
+		  padding: ($margin * .687) $margin;
+		  display: block;
 		}
 
 		&:hover {
 		  color: $nav-text-color-hover;
+		  background-color: $nav-bg-color-hover;
 		}
 
 		@include mq(mobile-nav) {
 		  display: block;
-		  color: $nav-color-mobile;
-		  background-color: $subnav-bg-mobile;
+		  color: $nav-mobile-text-color;
+		  background-color: $subnav-mobile-bg-color;
 		  font-size: 110%;
 		  padding: math.div($margin, 3) math.div($margin, 1.5);
 
 		  &:hover {
-			color: $nav-color-mobile-hover;
-			background-color: $subnav-bg-mobile-hover;
+			color: $nav-mobile-text-color-hover;
+			background-color: $subnav-mobile-bg-color-hover;
 
-			//background-color: $nav-bg-mobile-hover;
+			//background-color: $nav-mobile-bg-color-hover;
 		  }
 		}
 	  }
@@ -195,9 +211,9 @@
 		  visibility: hidden;
 		  position: absolute;
 		  background-color: $subnav-bg;
-		  top: math.div(70, 16) * 1rem;
+		  top: 3.55rem;
 		  width: 240px;
-		  left: $margin * 0.5;
+		  left: 0;
 		  box-shadow: 0 20px 25px 0 rgba($boxshadow-color, 0.08);
 		  transition: all 0.3s ease-in-out;
 		  border-radius: 0 0 3px 3px;
@@ -218,6 +234,11 @@
 			padding: 0;
 			border: none;
 		  }
+		  
+		  &.menu__item--current .menu__link {
+			  background-color: $subnav-bg-hover;
+			  color: $subnav-text-color-hover;
+		  }
 
 		  &:first-child {
 			@include mq(mobile-nav) {
@@ -236,6 +257,8 @@
 
 			.menu__link {
 			  border-radius: 0 0 3px 3px;
+			  
+			
 			}
 		  }
 		}
@@ -248,12 +271,12 @@
 		  @include mq(mobile-nav) {
 			@include font-size(15px);
 
-			color: $subnav-color-mobile;
+			color: $subnav-mobile-text-color;
 			padding: 10px 24px;
 
 			&:hover {
-			  background-color: $subnav-bg-mobile-hover;
-			  color: $subnav-color-mobile-hover;
+			  background-color: $subnav-mobile-bg-color-hover;
+			  color: $subnav-mobile-text-color-hover;
 			}
 		  }
 
