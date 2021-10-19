@@ -175,5 +175,19 @@ add_filter( 'fl_theme_system_fonts', 'my_bb_custom_fonts' );
 add_filter( 'fl_builder_font_families_system', 'my_bb_custom_fonts' );
 
 
+// Disable Full Screen Editor
+if (is_admin()) { 
+    function sd_disable_full_screen() {
+    $script = "jQuery( window ).load(function() { 
+        const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); 
+            if ( isFullscreenMode ) { 
+                wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); 
+            } 
+        });";
+    wp_add_inline_script( 'wp-blocks', $script );
+}
+add_action( 'enqueue_block_editor_assets', 'sd_disable_full_screen' );
+}
+
 
 
