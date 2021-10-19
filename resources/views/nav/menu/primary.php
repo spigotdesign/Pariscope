@@ -16,5 +16,7 @@
 		] ) ?>
 
 	</nav>
+	
+	<?php get_search_form(); ?>
 
 <?php endif ?>

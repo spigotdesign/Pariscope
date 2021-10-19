@@ -41,4 +41,4 @@ Check out the [project wiki](https://github.com/justintadlock/wiki) to learn how
 
 Pariscope is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2018 &copy; Bryan Hoffman.
+2021 &copy; Bryan Hoffman.

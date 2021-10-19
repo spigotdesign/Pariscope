@@ -159,7 +159,7 @@ wp.customize('header_textcolor', function (value) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/bryan/Documents/Work/Sites/neemtreefarms/app/public/wp-content/themes/pariscope/resources/js/customize-preview.js */"./resources/js/customize-preview.js");
+module.exports = __webpack_require__(/*! /Users/bryan/Documents/Work/Sites/insideparkcityrealestate/app/public/wp-content/themes/pariscope/resources/js/customize-preview.js */"./resources/js/customize-preview.js");
 
 
 /***/ })

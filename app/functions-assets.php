@@ -40,13 +40,13 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'pariscope-screen', asset( 'css/screen.css' ), null, null );
 
     // Quantity increment - WooCommerce only
-	wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
+	// wp_enqueue_script( 'woo-quantity', asset( 'js/wc-quantity-increment.js' ), array( 'jquery' ), null, true );
 
     /* Google fonts
      *  Add fonts to WP Editor here: resources/scss/editor.scss
      */
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Rubik:wght@400;500&display=swap', [], null, false );
+	//wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Rubik:wght@400;500&display=swap', [], null, false );
 
 
 

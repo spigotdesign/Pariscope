@@ -28,7 +28,7 @@ $toggle-color-active: $green-dark;
 
   position: absolute;
   right: .25rem;
-  top: math.div(57, 16) * 1rem;
+  top: math.div(25, 16) * 1rem;
 
   @include mq(desktop-nav) {
     display: none;

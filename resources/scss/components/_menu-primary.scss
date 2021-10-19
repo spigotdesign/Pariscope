@@ -7,11 +7,10 @@
 	  display: flex;
 	  align-items: center;
 	  background: $white;
-
-	  //height: 75px;
 	  display: flex;
 	  justify-content: flex-end;
 	  align-items: center;
+	  padding-right: $margin * 3;
 
 	  @include mq(mobile-nav) {
 		position: absolute !important;
@@ -28,7 +27,7 @@
 		.nav-open & {
 		  visibility: visible;
 		  opacity: 1;
-		  top: math.div(100, 16) * 1rem;
+		  top: math.div(80, 16) * 1rem;
 		  display: block;
 		}
 	  }
@@ -82,6 +81,7 @@
 	  .menu__item {
 		position: relative;
 		@include font-size(17px);
+		text-transform: uppercase;
 		//padding: math.div($margin, 2);
 
 		@include mq(desktop-up) {
@@ -171,7 +171,7 @@
 		
 
 		@include mq(desktop-nav) {
-		  padding: ($margin * .687) $margin;
+		  padding: $margin ($margin * .5);
 		  display: block;
 		}
 
@@ -211,24 +211,18 @@
 		  visibility: hidden;
 		  position: absolute;
 		  background-color: $subnav-bg;
-		  top: 3.55rem;
+		  top: convert(76);
 		  width: 240px;
 		  left: 0;
 		  box-shadow: 0 20px 25px 0 rgba($boxshadow-color, 0.08);
 		  transition: all 0.3s ease-in-out;
 		  border-radius: 0 0 3px 3px;
-
-		  .page-template-landing & {
-			border-radius: 3px;
-		  }
-
-		  .detached & {
-			top: 49px;
-		  }
 		}
 
 		.menu__item {
 		  padding: 0;
+		  text-transform: none;
+		  font-weight: $normal-font-weight;
 
 		  @include mq(mobile-nav) {
 			padding: 0;

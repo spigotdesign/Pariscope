@@ -9,39 +9,36 @@
 $fontURI: '../../dist/fonts/';
 
 @font-face {
-    font-family: 'acherusgrotesque-regular';
-    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-@font-face {
-    font-family: 'acherusgrotesque-regularitalic';
-    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regularitalic-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regularitalic-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff');
+    font-weight: 400;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'acherusgrotesque-medium';
-    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-medium-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff');
+    font-weight: 700;
     font-style: normal;
 
 }
 
-
 @font-face {
-    font-family: 'acherusgrotesque-bold';
-    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-black-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/amsipro/amsipronormal-black-webfont.woff') format('woff');
+    font-weight: 900;
     font-style: normal;
-
 }

@@ -1,5 +1,5 @@
-$font-family:     "IBM Plex Serif", sans-serif;
-$alt-font-family: "Rubik", sans-serif;
+$font-family:     "Amsi Pro", sans-serif;
+$alt-font-family: $font-family;
 
 //$med-font-family:			'acherusgrotesque-medium', sans-serif;
 //$bold-font-family:		'acherusgrotesque-bold', sans-serif;
@@ -13,8 +13,8 @@ $base-font-style: normal;
 $base-font-weight: 400;
 
 // Font Weights
-$bold-font-weight: 600;
-$mid-font-weight: 500;
+$bold-font-weight: 900;
+$mid-font-weight: 700;
 $normal-font-weight: 400;
 $light-font-weight: $normal-font-weight;
 

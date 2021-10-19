@@ -9,12 +9,13 @@
   align-items: center;
   flex: 0 1 calc(100% - #{$branding-width});
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
+  
 
   @include mq(phone-only) {
-    flex-basis: 100%;
-    order: 1;
-    height: 24px;
+    flex-basis: calc(100% - #{$branding-width-mobile});
+    //order: 1;
+    //height: 24px;
   }
 
   .menu {
@@ -24,5 +25,6 @@
 }
 
 @import "menu-primary";
-
-@import "menu-account";
+// @import "menu-secondary";
+// @import "menu-account";
+@import "menu-button";

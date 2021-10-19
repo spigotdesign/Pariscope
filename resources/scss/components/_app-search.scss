@@ -11,13 +11,14 @@
 .app-search {
     margin: 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: $margin;
+    top: auto;
 
     @include mq(phone-only) {
         right: 0;
         //top: -85px;
         position: relative;
+        display: none;
     }
 
 

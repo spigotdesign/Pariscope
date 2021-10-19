@@ -11,10 +11,10 @@
 .app-footer {
   //border-top: 1px solid $border-color;
   padding: $margin;
-  background-color: $white;
+  background-color: $blue-darkest;
   position: relative;
   padding-top: $margin * 2;
-  box-shadow: inset 0px 2px 4px rgba($green-dark, .1);
+  box-shadow: inset 0px 2px 4px rgba($green-dark, 0.1);
 
   a {
     color: $footer-link-color;
@@ -22,6 +22,13 @@
     &:hover {
       color: $footer-link-color-hover;
     }
+  }
+
+  &__section-title {
+    color: $footer-text-color;
+    @include font-size(16px);
+    text-transform: uppercase;
+    margin-bottom: $margin * 0.333334;
   }
 
   &__wrap {
@@ -41,28 +48,36 @@
 
     @include mq(tablet-landscape-up) {
       flex-basis: 33.333334%;
+      align-items: flex-start;
     }
 
     &-link {
       margin-bottom: $margin * 0.5;
 
       svg {
-        width: 316px;
-        height: 178px;
+        width: 244px;
+        height: 50px;
+        fill: $white;
+      }
+
+      &-brokerage {
+        svg {
+          fill: $white;
+        }
       }
     }
   }
 
   &__connect {
-
     &-social {
+      h3 {
+      }
       ul {
         list-style: none;
         display: flex;
         justify-content: center;
 
         li {
-
           margin: math.div($margin, 4);
 
           a {
@@ -71,11 +86,30 @@
         }
 
         svg {
-          fill: $link-color;
+          fill: $white;
+          transition: all 0.3s ease-in-out;
 
           &:hover {
-            fill: $link-color-hover;
+            fill: $blue;
           }
+        }
+      }
+    }
+
+    &-link {
+      margin: $margin 0;
+      .btn {
+        border: 3px solid $blue;
+        border: 3px solid #19b1ec;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $blue;
+
+        &:hover {
+          background: $blue;
+          color: $white;
         }
       }
     }
@@ -88,7 +122,6 @@
     @include mq(tablet-landscape-up) {
       flex-basis: 66.666667%;
     }
-
   }
 
   &__nav {
@@ -96,7 +129,7 @@
     flex-flow: row wrap;
     justify-content: center;
     margin-bottom: $margin;
-    
+
     @include mq(tablet-portrait-up) {
       justify-content: space-between;
     }
@@ -117,13 +150,13 @@
         @include mq(tablet-portrait-up) {
           text-align: left;
         }
-
       }
 
       &__title {
         @include font-size(18px);
         text-align: center;
         margin-bottom: math.div($margin, 3);
+        color: $white;
 
         @include mq(tablet-portrait-up) {
           text-align: left;
@@ -132,30 +165,13 @@
     }
   }
 
-  &__disclaimer {
-    border-top: 1px solid $green-dark;
-    border-bottom: 1px solid $green-dark;
-    padding: math.div($margin, 2) 0;
-    margin-bottom: $margin;
-
-    p {
-      @include font-size(13px);
-      color: $olive-light;
-      margin-bottom: 0;
-    }
-  }
-
-
-
-
   &__copyright {
     flex: 0 1 100%;
     color: $footer-copyright-color;
-
-
-    @include font-size(14px);
-
+    @include font-size(12px);
     margin-top: $margin;
+    border-top: 1px solid #0c2340;
+    padding-top: $margin * 0.5;
 
     p {
       display: flex;
@@ -173,8 +189,7 @@
     }
 
     .siteby {
-
-      margin-left: $margin * .5;
+      margin-left: $margin * 0.5;
       display: flex;
 
       @include mq(phone-only) {
@@ -189,14 +204,63 @@
 
       svg {
         path {
-          fill: $green;
+          fill: $footer-link-color;
         }
 
         &:hover {
           path {
-            fill: $yellow;
+            fill: $footer-link-color-hover;
           }
         }
+      }
+    }
+  }
+
+  &__newsletter {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include mq(mobile-nav) {
+      flex-basis: 100%;
+      //order: 3;
+    }
+
+    &-wrap {
+      width: 100%;
+    }
+
+    form {
+      position: relative;
+    }
+    input[type="text"],
+    input[type="email"] {
+      border: 1px solid #17355c;
+      background-color: #0c2340;
+    }
+
+    .gform_body {
+      position: relative;
+    }
+
+    .gform_button {
+      position: absolute;
+      top: 0;
+      right: -40px;
+      padding: 14px;
+    }
+
+    .gform_footer {
+      padding: 0 !important;
+    }
+
+    span {
+      @include font-size(13px);
+      color: rgba($white, 0.7);
+      margin-top: math.div($margin, 3);
+      display: block;
+      @include mq(mobile-nav) {
+        text-align: center;
       }
     }
   }

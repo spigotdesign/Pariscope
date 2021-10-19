@@ -1,0 +1,20 @@
+[wpbb-if post:featured_image]
+<div class="uabb-post-thumbnail uabb-blog-post-section">
+  [wpbb post:featured_image size="post-thumb" display="tag" linked="yes"]
+</div>
+[/wpbb-if]
+<div class="post_content">
+  <h3 class="uabb-post-heading uabb-blog-post-section">
+    [wpbb post:link text="title"]
+  </h3>
+
+  <div
+    class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor"
+  >
+    [wpbb post:excerpt length="25" more="..."]
+  </div>
+
+  <p class="uabb-read-more-text">
+    [wpbb post:link text="custom" custom_text="Read More"]
+  </p>
+</div>
