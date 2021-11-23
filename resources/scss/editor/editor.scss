@@ -63,12 +63,6 @@
 	}
 }
 
-
-
-
-
-
-
 .editor-block-list {
 	&__layout &__block[data-align=full] > &__block-edit figure {
 		width: auto;
@@ -84,7 +78,8 @@
 
 // Overwrite core styles dropped into the footer.
 
-.edit-post-visual-editor .wp-block-paragraph {
+.edit-post-visual-editor .wp-block-paragraph,
+.edit-post-visual-editor .wp-block-code {
 	margin: $spacing-global auto;
 }
 

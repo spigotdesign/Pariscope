@@ -62,6 +62,17 @@
 		}
 
 	}
+	
+	.shop-head__title {
+		color: $white;
+		margin-bottom: $margin;
+		z-index: 10;
+		@include font-size(56px);
+		
+		@include mq(tablet-landscape-up) {
+			@include font-size(80px);
+		}
+	}
 
 	&__content {
 		position: relative;
@@ -82,12 +93,13 @@
 
 
 	&__desc {
-		//color: $white;
-		//@include font-size(13px);
 		max-width: $post-width;
-		text-align: center;
+		text-align: left;
 		margin-top: 12px;
-		color: $gray-dark;
+		
+		p {
+			color: $white;
+		}
 
 	}
 

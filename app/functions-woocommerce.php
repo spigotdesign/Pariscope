@@ -5,15 +5,15 @@
  * This file holds some setup actions for scripts and styles as well as a helper
  * functions for work with WooCommerce.
  *
- * @package   Pariscope
+ * @package    Pariscope
  * @subpackage Includes
  * @author     Bryan Hoffman <bryan@spigotdesign.com>
- * @copyright  Copyright (c) 2018, Bryan Hoffman
+ * @copyright  Copyright (c) 2021, Bryan Hoffman
  * @link       https://spigotdesign.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Pariscope;
+namespace NeemTreeFarms;
 
 use function Hybrid\Template\path;
 
@@ -28,8 +28,8 @@ add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 } );
 
 /**
@@ -118,7 +118,7 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
  * @access public
  * @return aray
  */
-
+// Change class names 
  add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
 
 	  // Remove billing fields
@@ -134,43 +134,53 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
 	  $fields['billing']['billing_address_1']['class'] 			= array('form-row-quarter');
 	  $fields['billing']['billing_address_2']['class'] 			= array('form-row-quarter');
 	  $fields['billing']['billing_state']['class']				= array('form-row-quarter');
-	  $fields['billing']['billing_city']['class']					= array('form-row-quarter');
-	  $fields['billing']['billing_address_2']['label_class'] 		= '';
+	  $fields['billing']['billing_city']['class']				= array('form-row-quarter');
+	  $fields['billing']['billing_address_2']['label_class'] 	= '';
 	  $fields['billing']['billing_postcode']['class'] 			= array('form-row-quarter');
-	  $fields['billing']['billing_country']['class'] 				= array('form-row-quarter');
+	  $fields['billing']['billing_country']['class'] 			= array('form-row-quarter');
 	  $fields['billing']['billing_email']['class'] 				= array('form-row-quarter');
 	  $fields['billing']['billing_phone']['class'] 				= array('form-row-quarter');
 	  $fields['account']['account_password']['class'] 			= array('form-row-last');
 
-	  $fields['shipping']['shipping_address_1']['class'] 			= array('form-row-quarter');
-	  $fields['shipping']['shipping_address_2']['class'] 			= array('form-row-quarter');
-	  $fields['shipping']['shipping_state']['class']				= array('form-row-quarter');
-	  $fields['shipping']['shipping_city']['class']					= array('form-row-quarter');
-	  $fields['shipping']['shipping_address_2']['label_class'] 		= '';
-	  $fields['shipping']['shipping_postcode']['class'] 			= array('form-row-quarter');
-	  $fields['shipping']['shipping_country']['class'] 				= array('form-row-quarter');
-	  $fields['shipping']['shipping_email']['class'] 				= array('form-row-quarter');
-	  $fields['shipping']['shipping_phone']['class'] 				= array('form-row-quarter');
+	  $fields['shipping']['shipping_address_1']['class'] 		= array('form-row-quarter');
+	  $fields['shipping']['shipping_address_2']['class'] 		= array('form-row-quarter');
+	  $fields['shipping']['shipping_state']['class']			= array('form-row-quarter');
+	  $fields['shipping']['shipping_city']['class']				= array('form-row-quarter');
+	  $fields['shipping']['shipping_address_2']['label_class'] 	= '';
+	  $fields['shipping']['shipping_postcode']['class'] 		= array('form-row-quarter');
+	  $fields['shipping']['shipping_country']['class'] 			= array('form-row-quarter');
+	  $fields['shipping']['shipping_email']['class'] 			= array('form-row-quarter');
+	  $fields['shipping']['shipping_phone']['class'] 			= array('form-row-quarter');
 	  $fields['account']['account_password']['class'] 			= array('form-row-last');
 
 
 	  // Labels
 	  $fields['billing']['billing_address_2']['label'] 			= 'Address Line 2';
+	  $fields['billing']['billing_address_2']['placeholder'] 	= 'Address Line 2';
+	  $fields['billing']['billing_address_2']['label_class'] 	= 'temp';
 	  $fields['billing']['billing_state']['label'] 				= 'State';
-	  $fields['billing']['billing_city']['label'] 				= 'Town / City';
+	  $fields['billing']['billing_city']['label'] 				= 'City';
 	  $fields['billing']['billing_phone']['label'] 				= 'Phone';
-	  $fields['shipping']['shipping_address_2']['label'] 			= 'Address Line 2';
-	  $fields['shipping']['shipping_email']['label'] 				= 'Email Address';
-	  $fields['shipping']['shipping_phone']['label'] 				= 'Phone';
+	  $fields['shipping']['shipping_address_2']['label'] 		= 'Address Line 2';
+	  $fields['shipping']['shipping_email']['label'] 			= 'Email Address';
+	  $fields['shipping']['shipping_phone']['label'] 			= 'Phone';
 
 	  // Priority
-	  $fields['billing']['billing_country']['priority'] 			= 100;
+	  $fields['billing']['billing_country']['priority'] 		= 100;
 	  $fields['shipping']['shipping_country']['priority'] 		= 100;
 
 	  return $fields;
 
-  } );
-
+  } , 10 );
+ // Change labels and placeholder
+ add_filter( 'woocommerce_default_address_fields' , function( $address_fields ) {
+	$address_fields['address_1']['placeholder'] = 'Street Address';
+	$address_fields['address_2']['label'] = 'Address Line 2';
+	$address_fields['address_2']['placeholder'] = 'Address Line 2';
+	$adderss_fields['city']['label'] = 'City';
+	return $address_fields; 
+	 
+} , 9999 );	 
 
 /**
  * Change number or products per row to 3
@@ -222,7 +232,7 @@ function activate_gutenberg_product( $can_edit, $post_type ) {
 	return $can_edit;
 }
 
-add_filter( 'use_block_editor_for_post_type', 'Pariscope'. '\activate_gutenberg_product', 10, 2 );
+add_filter( 'use_block_editor_for_post_type', 'NeemTreeFarms'. '\activate_gutenberg_product', 10, 2 );
 
 // enable taxonomy fields for woocommerce with gutenberg on
 function enable_taxonomy_rest( $args ) {
@@ -230,8 +240,8 @@ function enable_taxonomy_rest( $args ) {
 	return $args;
 }
 
-add_filter( 'woocommerce_taxonomy_args_product_cat', 'Pariscope'. '\enable_taxonomy_rest' );
-add_filter( 'woocommerce_taxonomy_args_product_tag', 'Pariscope' . '\enable_taxonomy_rest' );
+add_filter( 'woocommerce_taxonomy_args_product_cat', 'NeemTreeFarms'. '\enable_taxonomy_rest' );
+add_filter( 'woocommerce_taxonomy_args_product_tag', 'NeemTreeFarms' . '\enable_taxonomy_rest' );
 
 
 
@@ -284,7 +294,7 @@ class WooCommerce_Quantity_Increment {
 }
 
 add_action( 'plugins_loaded', array( 'WooCommerce_Quantity_Increment', 'get_instance' ), 0 );
-add_filter( 'woocommerce_add_to_cart_fragments', 'Pariscope' . '\cinch_cart_count_fragments', 10, 1 );
+add_filter( 'woocommerce_add_to_cart_fragments', 'NeemTreeFarms' . '\cinch_cart_count_fragments', 10, 1 );
 
 function cinch_cart_count_fragments( $fragments ) {
 
@@ -308,7 +318,7 @@ add_filter( 'woocommerce_gateway_icon', function( $icon ) {
 /**
  * Change several of the breadcrumb defaults
  */
-add_filter( 'woocommerce_breadcrumb_defaults', 'Pariscope' . '\change_woocommerce_breadcrumbs' );
+add_filter( 'woocommerce_breadcrumb_defaults', 'NeemTreeFarms' . '\change_woocommerce_breadcrumbs' );
 function change_woocommerce_breadcrumbs() {
 	return array(
 			'delimiter'   => ' &rsaquo; ',
@@ -323,14 +333,14 @@ function change_woocommerce_breadcrumbs() {
 /**
  * Replace the breadcrumb home link URL
  */
-add_filter( 'woocommerce_breadcrumb_home_url', 'Pariscope' . '\woo_custom_breadrumb_home_url' );
+add_filter( 'woocommerce_breadcrumb_home_url', 'NeemTreeFarms' . '\woo_custom_breadrumb_home_url' );
 function woo_custom_breadrumb_home_url() {
 	return get_bloginfo('url'). '/shop';
 }
 
 // Pagination 
 
-add_filter( 'woocommerce_pagination_args', 	'Pariscope' . '\custom_pagination' );
+add_filter( 'woocommerce_pagination_args', 	'NeemTreeFarms' . '\custom_pagination' );
 function custom_pagination( $args ) {
 	$args['prev_text'] = '← Previous';
 	$args['next_text'] = 'Next →';

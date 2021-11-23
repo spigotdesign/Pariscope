@@ -86,13 +86,6 @@ input[type="checkbox"] {
   height: auto;
 }
 
-// Set the height of select and file controls to match text inputs
-select,
-input[type="file"] {
-  height: 28px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  line-height: 28px;
-}
-
 // Make select elements obey height by applying a border
 select {
   width: 220px; // default input width + 10px of padding that doesn't get applied

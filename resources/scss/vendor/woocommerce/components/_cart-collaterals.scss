@@ -63,6 +63,15 @@
             font-size: 0.875rem;
             color: $cart-sidebar-highlight-color;
           }
+          
+          th {
+            width: 100%;
+            text-align: left;
+          }
+          
+          td {
+            width: 100%;
+          }
         }
 
         &.recurring-totals {
