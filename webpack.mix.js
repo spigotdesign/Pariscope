@@ -143,28 +143,6 @@ mix.webpackConfig( {
 			{ from : `${devPath}/svg`,   to : 'svg'   },
 			{ from : `${devPath}/fonts`, to : 'fonts' }
 		] ),
-		// @link https://github.com/Klathmon/imagemin-webpack-plugin
-		new ImageminPlugin( {
-			test     : /\.(jpe?g|png|gif|svg)$/i,
-			disable  : process.env.NODE_ENV !== 'production',
-			optipng  : { optimizationLevel : 3 },
-			gifsicle : { optimizationLevel : 3 },
-			pngquant : {
-				quality : '65-90',
-				speed   : 4
-			},
-			svgo : {
-				plugins : [
-					{ cleanupIDs                : false },
-					{ removeViewBox             : false },
-					{ removeUnknownsAndDefaults : false }
-				]
-			},
-			plugins : [
-				// @link https://github.com/imagemin/imagemin-mozjpeg
-				imageminMozjpeg( { quality : 75 } )
-			]
-		} )
 	]
 } );
 
