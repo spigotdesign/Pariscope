@@ -121,6 +121,12 @@
       align-content: center;
     }
   }
+
+  &.logged-out {
+    @include mq(phone-only) {
+      padding: $margin * 0.5;
+    }
+  }
 }
 
 .woocommerce-EditAccountForm {

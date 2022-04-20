@@ -9,36 +9,43 @@
 $fontURI: '../../dist/fonts/';
 
 @font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff');
-    font-weight: 400;
+    font-family: 'Senlot Serif';
+    src: url('#{$fontURI}/senlot/senlotserif-extlig-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/senlot/senlotserif-extlig-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff');
-    font-weight: 400;
+    font-family: 'Senlot Serif';
+    src: url('#{$fontURI}/senlot/senlotserifextlightitalic-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/senlot/senlotserifextlightitalic-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: italic;
-
 }
 
+
+
 @font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff');
-    font-weight: 700;
+    font-family: 'Acherus Grotesque';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regular-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-black-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-black-webfont.woff') format('woff');
-    font-weight: 900;
+    font-family: 'Acherus Grotesque';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regita-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-regita-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Acherus Grotesque';
+    src: url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff2') format('woff2'),
+         url('#{$fontURI}/acherusgrotesque/acherusgrotesque-bold-webfont.woff') format('woff');
+    font-weight: 600;
     font-style: normal;
 }

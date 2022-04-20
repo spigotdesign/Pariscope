@@ -42,9 +42,21 @@
     }
   }
 
+  figure {
+    display: table;
+
+    &.aligncenter {
+      figcaption {
+        text-align: center;
+      }
+    }
+  }
+
   figcaption {
     padding: math.div($margin, 6);
     font-size: 90%;
     font-style: italic;
+    display:table-caption;
+    caption-side:bottom
   }
 }

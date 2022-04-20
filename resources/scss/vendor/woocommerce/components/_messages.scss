@@ -11,7 +11,7 @@
   color: $message-text-color;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   //border-top: 3px solid $primary;
   list-style: none outside;
   width: auto;
@@ -59,6 +59,10 @@
 
   .woocommerce-cart & {
     margin-bottom: 0;
+  }
+
+  .button, a {
+    margin-left: $margin;
   }
 }
 

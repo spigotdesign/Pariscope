@@ -30,7 +30,7 @@ $pariscope = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
-$pariscope->provider( \Pariscope\Providers\AppServiceProvider::class );
+// $pariscope->provider( \Pariscope\Providers\AppServiceProvider::class );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
