@@ -13,7 +13,7 @@
 		"cssmin:screen": "cleancss -o dist/css/screen.css dist/css/screen.css",
 		"cssmin:editor": "cleancss -o dist/css/editor.css dist/css/editor.css",
 		"cssmin": "npm-run-all --parallel cssmin:*",
-		"uglify-js": "uglifyjs -o resources/js/app.js dist/js/app.js",
+		"uglify-js": "uglifyjs resources/js/app.js -o dist/js/app.js",
 		"prod": "npm run cssmin && run uglify-js",
 		"watch:scss": "onchange 'resources/scss/**/*.scss' -- npm run scss",
 		"watch:js": "onchange 'resources/js/*.js' -- npm run uglify-js",

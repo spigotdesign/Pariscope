@@ -16,6 +16,20 @@
     align-items: center;
     box-shadow: 0 0 4px 0 rgba($black, 0.17);
 
+    .admin-bar & {
+        top: 2.875em;
+
+        @include mq(wpadmin-desktop) {
+            top: 2em;
+        }
+
+        @include mq(phone-only) {
+            top: 0;
+        }
+
+        
+    }
+
     &__branding {
         //margin-top: -36px;
         transition: all .3s ease-in-out;

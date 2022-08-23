@@ -10,12 +10,19 @@
   @if $mq == tablet-portrait-up     { @media (min-width: 37.5em)      { @content; } }   // 600px
   @if $mq == tablet-landscape-up    { @media (min-width: 56.25em)     { @content; } }   // 900px
   @if $mq == desktop-up             { @media (min-width: 75em)        { @content; } }   // 1200px
-  @if $mq == big-desktop-up         { @media (min-width: 112.5em)      { @content; } }  // 1800px;
-  @if $mq == super-desktop-up       { @media (min-width: 137.5em)      { @content; } }
+  @if $mq == big-desktop-up         { @media (min-width: 112.5em)     { @content; } }  // 1800px;
+  @if $mq == super-desktop-up       { @media (min-width: 137.5em)     { @content; } }
 
    // Mobile breakpoints
   @if $mq == mobile-nav             { @media (max-width: 56.1875em)   { @content; } }
-  @if $mq == desktop-nav            { @media (min-width: 56.25em)   { @content; } }
+  @if $mq == desktop-nav            { @media (min-width: 56.25em)     { @content; } }
+
+  // WP Admin Bar breakpoints
+  @if $mq == wpadmin-phone          { @media (max-width: 37.5em)      { @content; } }
+  @if $mq == wpadmin-desktop        { @media (min-width: 49em)        { @content; } }
+  // Height based breakpoints
+  @if $mq == big-phone-height       { @media (min-height: 740px )     { @content; } }
+  @if $mq == small-phone-height     { @media (min-height: 570px )     { @content; } }
 
    // WP breakpoints
   @if $mq == wp-mobile              { @media (max-width: 48.875em)   { @content; } }
