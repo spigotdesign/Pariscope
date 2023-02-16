@@ -39,7 +39,7 @@ array_map(
     },
     [
         'functions-assets',
-        'functions-woocommerce',
+        //'functions-woocommerce',
         'functions-filters',
         'functions-page-builder',
         'functions-setup',

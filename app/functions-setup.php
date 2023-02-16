@@ -142,15 +142,7 @@ add_action( 'init', function() {
 	*/
 
 	register_nav_menus( [
-		'footer_1' => esc_html_x( 'Footer Menu 1', 'nav menu location' )
-	] );
-
-	register_nav_menus( [
-		'footer_2' => esc_html_x( 'Footer Menu 2', 'nav menu location' )
-	] );
-
-	register_nav_menus( [
-		'footer_3' => esc_html_x( 'Footer Menu 3', 'nav menu location' )
+		'footer' => esc_html_x( 'Footer Menu', 'nav menu location' )
 	] );
 
 
