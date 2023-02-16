@@ -11,4 +11,9 @@
 .app-content {
   margin: 0 auto;
   padding: 0;
+  padding-top: $app-header-height;
+
+  @include mq(mobile-nav) {
+        padding-top: $app-header-height-mobile;
+    }
 }

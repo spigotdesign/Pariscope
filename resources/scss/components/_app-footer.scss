@@ -14,7 +14,6 @@
   background-color: $blue-darkest;
   position: relative;
   padding-top: $margin * 2;
-  box-shadow: inset 0px 2px 4px rgba($green-dark, 0.1);
 
   a {
     color: $footer-link-color;
@@ -24,13 +23,6 @@
     }
   }
 
-  &__section-title {
-    color: $footer-text-color;
-    @include font-size(16px);
-    text-transform: uppercase;
-    margin-bottom: $margin * 0.333334;
-  }
-
   &__wrap {
     max-width: $site-width;
     margin: 0 auto;
@@ -38,159 +30,159 @@
     flex-flow: row wrap;
   }
 
+  &__nav {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(tablet-landscape-up) {
+      flex-basis: 33.333334%;
+
+    }
+
+    .menu__title {
+      display: none;
+    }
+
+    .menu__items {
+      display: flex;
+      flex-flow: row nowrap;
+      list-style: none;
+
+      .menu__item:last-child {}
+
+    }
+
+    .menu__item {
+
+      &:after {
+        content: "/";
+        padding-left: $margin * .25;
+        padding-right: $margin * .25;
+        color: $white;
+      }
+
+      &:last-child {
+
+        &::after {
+          content: "";
+          padding-left: 0;
+        }
+
+      }
+    }
+
+    .menu__link {
+      color: $white;
+      display: inline-block;
+      padding: ($margin * .25) ($margin * .5);
+      text-transform: uppercase;
+
+    }
+
+  }
+
   &__branding {
     flex: 0 1 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: $margin;
     align-items: center;
+    justify-content: center;
     font-family: $alt-font-family;
+
 
     @include mq(tablet-landscape-up) {
       flex-basis: 33.333334%;
-      align-items: flex-start;
     }
 
     &-link {
       margin-bottom: $margin * 0.5;
 
       svg {
-        width: 244px;
-        height: 50px;
+        width: 203px;
+        height: 69px;
         fill: $white;
       }
-
-      &-brokerage {
-        svg {
-          fill: $white;
-        }
-      }
     }
+
   }
 
-  &__connect {
-    &-social {
-      h3 {
-      }
-      ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-
-        li {
-          margin: math.div($margin, 4);
-
-          a {
-            display: flex;
-          }
-        }
-
-        svg {
-          fill: $white;
-          transition: all 0.3s ease-in-out;
-
-          &:hover {
-            fill: $blue;
-          }
-        }
-      }
-    }
-
-    &-link {
-      margin: $margin 0;
-      .btn {
-        border: 3px solid $blue;
-        border: 3px solid #19b1ec;
-        display: block;
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: $blue;
-
-        &:hover {
-          background: $blue;
-          color: $white;
-        }
-      }
-    }
-  }
-
-  &__content {
-    @include font-size(15px);
+  &__newsletter {
     flex: 0 1 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     @include mq(tablet-landscape-up) {
-      flex-basis: 66.666667%;
+      flex-basis: 33.333334%;
+
+    }
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+
+      span {
+        padding-left: $margin * .25;
+      }
     }
   }
 
-  &__nav {
+  &__social {
+    margin: $margin 0;
+    flex-basis: 100%;
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: $margin;
 
-    @include mq(tablet-portrait-up) {
-      justify-content: space-between;
-    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
 
-    .menu {
-      flex: 0 1 50%;
-      margin-bottom: $margin;
+      li {
+        margin: math.div($margin, 4);
 
-      @include mq(tablet-portrait-up) {
-        flex-basis: 33.33333%;
-        margin-bottom: 0;
-      }
-
-      &__items {
-        list-style: none;
-        text-align: center;
-
-        @include mq(tablet-portrait-up) {
-          text-align: left;
+        a {
+          display: flex;
         }
       }
 
-      &__title {
-        @include font-size(18px);
-        text-align: center;
-        margin-bottom: math.div($margin, 3);
-        color: $white;
+      svg {
 
-        @include mq(tablet-portrait-up) {
-          text-align: left;
+        path {
+          fill: $white;
+          transition: fill 0.3s ease-in-out;
+
+        }
+
+        &:hover {
+          path {
+            fill: $blue;
+          }
         }
       }
     }
   }
 
   &__copyright {
-    flex: 0 1 100%;
-    color: $footer-copyright-color;
-    @include font-size(12px);
-    margin-top: $margin;
-    border-top: 1px solid #0c2340;
-    padding-top: $margin * 0.5;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
 
     p {
-      display: flex;
-      align-items: center;
-      font-family: $alt-font-family;
+      color: $white;
+      @include font-size(11px);
+      text-transform: uppercase;
+      margin-bottom: 0;
 
-      @include font-size(14px);
 
-      @include mq(phone-only) {
-        display: block;
-        text-align: center;
-        margin-bottom: 0;
-        @include font-size(12px);
-      }
     }
 
     .siteby {
       margin-left: $margin * 0.5;
-      display: flex;
+      display: inline-block;
 
       @include mq(phone-only) {
         margin: ($margin * 0.5) auto 0 auto;
@@ -212,55 +204,6 @@
             fill: $footer-link-color-hover;
           }
         }
-      }
-    }
-  }
-
-  &__newsletter {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    @include mq(mobile-nav) {
-      flex-basis: 100%;
-      //order: 3;
-    }
-
-    &-wrap {
-      width: 100%;
-    }
-
-    form {
-      position: relative;
-    }
-    input[type="text"],
-    input[type="email"] {
-      border: 1px solid #17355c;
-      background-color: #0c2340;
-    }
-
-    .gform_body {
-      position: relative;
-    }
-
-    .gform_button {
-      position: absolute;
-      top: 0;
-      right: -40px;
-      padding: 14px;
-    }
-
-    .gform_footer {
-      padding: 0 !important;
-    }
-
-    span {
-      @include font-size(13px);
-      color: rgba($white, 0.7);
-      margin-top: math.div($margin, 3);
-      display: block;
-      @include mq(mobile-nav) {
-        text-align: center;
       }
     }
   }

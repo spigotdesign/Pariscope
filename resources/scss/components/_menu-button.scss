@@ -10,10 +10,12 @@
       border-style: solid;
       border-color: $nav-btn-border-color;
       border-width: $nav-button-border-width;
+      border-radius: $border-radius;
 
       &:hover {
         background: $nav-btn-bg-hover;
         color: $nav-btn-text-color-hover;
+        border-color: $nav-btn-border-color-hover;
         //box-shadow: 0px 0px 10px 0px rgba($blue-dark,0.5) inset;
         //text-shadow: 0 0 10px 0px rgba($blue-dark,0.5);
       }

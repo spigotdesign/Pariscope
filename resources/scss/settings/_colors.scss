@@ -18,11 +18,11 @@ $gray-lighter: #d8d8d8;
 $gray-lightest: #f9f9f9;
 
 // Colors
-$blue: #19b1ec;
+$blue: #0075FF;
 $blue-light: #8896a6;
 $blue-lightest: #8ecce4; // set
 $blue-dark: #0c2340; // set
-$blue-darker: #0c2340; // set
+$blue-darker: #152B45; // set
 $blue-darkest: #07182d;
 $teal: #419db9;
 $teal-light: #52c0e3;
@@ -41,6 +41,7 @@ $yellow: #f9c626;
 $orange: $yellow;
 $tan: #f2ddb8;
 $tan-light: #fefdf8;
+$cream: #E9DFD4;
 
 // Main site colors
 $primary-color: $blue-dark;
@@ -73,11 +74,11 @@ $nav-text-color-current: $nav-text-color-hover;
 
 // Main Nav Button
 $nav-btn-bg: transparent;
-$nav-btn-bg-hover: $blue-dark;
+$nav-btn-bg-hover: $blue;
 $nav-btn-text-color: $blue-dark;
 $nav-btn-text-color-hover: $white;
 $nav-btn-border-color: $blue-dark;
-$nav-btn-border-color-hover: $blue-dark;
+$nav-btn-border-color-hover: $blue;
 
 // Secondary Nav
 $nav-secondary-bg-color: $blue-dark;
@@ -111,10 +112,10 @@ $button-border-color: $primary-color;
 $button-border-color-hover: $button-border-color;
 
 // Footer
-$footer-copyright-color: $blue-light;
-$footer-link-color: $blue-lightest;
+$footer-copyright-color: $white;
+$footer-link-color: $white;
 $footer-link-color-hover: $blue;
-$footer-text-color: $blue-light;
+$footer-text-color: $white;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);

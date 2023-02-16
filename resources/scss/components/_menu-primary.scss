@@ -10,7 +10,7 @@
 	  display: flex;
 	  justify-content: flex-end;
 	  align-items: center;
-	  padding-right: $margin * 3;
+	  padding-right: $margin * .5;
 
 	  @include mq(mobile-nav) {
 		position: absolute !important;
@@ -80,7 +80,7 @@
 
 	  .menu__item {
 		position: relative;
-		@include font-size(17px);
+		@include font-size(14px);
 		text-transform: uppercase;
 		//padding: math.div($margin, 2);
 
@@ -166,9 +166,6 @@
 		padding-bottom: $margin;
 		display: block;
 		//border-right: 1px solid $white;
-		
-		
-		
 
 		@include mq(desktop-nav) {
 		  padding: $margin ($margin * .5);

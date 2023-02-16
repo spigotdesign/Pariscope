@@ -14,7 +14,6 @@
 
 
 (function () {
-
     // Detect for Javascript. Remove .no-js body class added in /app/functions-filters.php
     var el = document.body;
     el.classList.remove("no-js");
@@ -45,18 +44,16 @@
 }());
 
 (function subnavToggle() {
-    var items = document.querySelectorAll('.menu-item-has-children button');
+  var items = document.querySelectorAll('.has-children > .menu__link');
 
-    for (var i = 0; i < items.length; i++) {
-        items[i].addEventListener('click', function () {
-            if (window.innerWidth < 900) {
-                event.preventDefault();
-                this.parentNode.classList.toggle('subnav-open');
-            }
-        });
-
-
-    }
+  for (var i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', function () {
+      if (window.innerWidth < 600) {
+        event.preventDefault();
+        this.parentNode.classList.toggle('subnav-open');
+      }
+    })
+  }
 })();
 
 
@@ -72,7 +69,7 @@ window.addEventListener('touchstart', function () {
 });
 
 
-/* Scroll header
+/* Scroll header */
 const scrollElement = document.querySelector('body');
 const detached = "detached";
 const invisible = "invisible"
@@ -111,10 +108,10 @@ window.addEventListener("scroll", () => {
   }
   previousScroll = currentScroll;
 });
-*/
+
 
 // sticky nav
-
+/* 
 jQuery(window).scroll(function (e) {
     var $el = jQuery('.sticky-menu');
     var isPositionFixed = ($el.css('position') == 'fixed');
@@ -133,7 +130,7 @@ jQuery(window).scroll(function (e) {
         $el.removeClass('stick-to-top')
 
     }
-});
+}); */
 
 // Coverage TABS
 jQuery('.callout-tabs .fl-callout a').click(function (e) {
