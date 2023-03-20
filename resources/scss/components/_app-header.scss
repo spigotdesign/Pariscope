@@ -15,6 +15,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 4px 0 rgba($black, 0.17);
+    padding: 0 ($margin * .5);
 
     @include mq(mobile-nav) {
         height: $app-header-height-mobile;
@@ -40,10 +41,10 @@
     }
 
     .admin-bar & {
-        top: 0;
+        top: 46px;
 
         @include mq(wpadmin-desktop) {
-            top: 0;
+            top: 32px;
         }
 
         @include mq(phone-only) {

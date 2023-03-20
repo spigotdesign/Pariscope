@@ -10,6 +10,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include mq(phone-only) {
+                height: 100vw;
+            }
         }
 
         &.content-item {
@@ -19,9 +23,11 @@
             .fl-module {
 
                 &-heading {
-                    @include font-size(40px);
+                    font-size: 20px !important;
                     position: absolute;
                     padding: $margin * 2;
+
+
                 }
 
                 &-rich-text {
@@ -38,6 +44,15 @@
                 display: flex;
                 justify-content: center;
                 line-height: 1.2;
+                font-size: 30px !important;
+
+                @include mq(tablet-portrait-up) {
+                    font-size: 30px !important;
+                }
+
+                @include mq(desktop-up) {
+                    font-size: 40px !important;
+                }
 
                 &:before {
                     border-top: 1px solid $blue-dark;
@@ -88,25 +103,53 @@
         }
 
         &.content-item.odd {
-            
-                background-color: $blue-dark;
+
+            background-color: $blue-dark;
+
+            .fl-heading {
+                color: $cream;
+
+                &:before,
+                &:after {
+                    border-color: $cream;
+                }
+            }
+
+            .fl-rich-text {
+                color: $blue-dark;
+            }
+
+            &:hover {
+                background-color: lighten($cream, 5%);
 
                 .fl-heading {
-                    color: $cream;
-
-                    &:before, &:after {
-                        border-color: $cream;
-                    }
+                    opacity: 0;
                 }
+            }
 
-                .fl-rich-text {
-                    color: $blue-dark;
-                }
-
-                &:hover {
-                    background-color: $cream;
-                }
-            
         }
+    }
+
+
+
+    .fl-rich-text {
+        p {
+
+            font-size: 16px !important;
+
+            @include mq(tablet-portrait-up) {
+                font-size: 14px !important;
+            }
+
+            @include mq(desktop-up) {
+                font-size: 20px !important;
+            }
+        }
+    }
+}
+
+.fl-button-has-icon {
+    .fl-button {
+        display: flex !important;
     }
 }

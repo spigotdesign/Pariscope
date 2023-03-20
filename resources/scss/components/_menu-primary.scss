@@ -27,7 +27,7 @@
 		.nav-open & {
 		  visibility: visible;
 		  opacity: 1;
-		  top: math.div(80, 16) * 1rem;
+		  top: math.div(75, 16) * 1rem;
 		  display: block;
 		}
 	  }
@@ -168,7 +168,7 @@
 		//border-right: 1px solid $white;
 
 		@include mq(desktop-nav) {
-		  padding: $margin ($margin * .5);
+		  padding: $margin ;
 		  display: block;
 		}
 

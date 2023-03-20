@@ -35,9 +35,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: $margin;
 
     @include mq(tablet-landscape-up) {
       flex-basis: 33.333334%;
+      margin-bottom: 0;
 
     }
 
@@ -55,7 +57,11 @@
     }
 
     .menu__item {
+      @include font-size(13px); 
 
+      @include mq(tablet-portrait-up) {
+        @include font-size(16px);
+      }
       &:after {
         content: "/";
         padding-left: $margin * .25;
@@ -90,10 +96,12 @@
     align-items: center;
     justify-content: center;
     font-family: $alt-font-family;
+    margin-bottom: $margin;
 
 
     @include mq(tablet-landscape-up) {
       flex-basis: 33.333334%;
+      margin-bottom: 0;
     }
 
     &-link {
@@ -176,6 +184,9 @@
       @include font-size(11px);
       text-transform: uppercase;
       margin-bottom: 0;
+      text-align: center;
+
+      
 
 
     }
@@ -185,9 +196,9 @@
       display: inline-block;
 
       @include mq(phone-only) {
-        margin: ($margin * 0.5) auto 0 auto;
-        display: block;
-        padding-left: 0;
+        //margin: ($margin * 0.5) auto 0 auto;
+        //display: block;
+        //padding-left: 0;
       }
 
       span {

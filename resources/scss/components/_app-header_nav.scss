@@ -10,6 +10,7 @@
   flex: 0 1 calc(100% - #{$branding-width});
   flex-flow: row wrap;
   justify-content: flex-end;
+  overflow-x: hidden;
   
 
   @include mq(phone-only) {
