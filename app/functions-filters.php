@@ -114,20 +114,6 @@ add_filter('pre_get_posts', function( $query ) {
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
 
-
-
-// Font Awesome Kit support
-
-add_action( 'wp_enqueue_scripts', function() {
-	wp_dequeue_style( 'font-awesome' );
-	wp_dequeue_style( 'font-awesome-5' );
-	wp_deregister_style( 'font-awesome' );
-	wp_deregister_style( 'font-awesome-5' );
-	wp_enqueue_script( 'fa5-kit', 'https://kit.fontawesome.com/6a7cb3278e.js' ); // replace with actual kit url
-}, 99999 );
-add_filter( 'fl_enable_fa5_pro', '__return_true' );
-
-
 // SEO Framework Titles
 
 add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
