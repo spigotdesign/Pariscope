@@ -114,40 +114,33 @@ add_filter('pre_get_posts', function( $query ) {
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
 
+
 // SEO Framework Titles
 
 add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
 
 	if ( is_post_type_archive( 'exhibit' ) ) {
-		$title = 'Past Exhibits | Park City Museum ';
+		// $title = 'Past Exhibits | Park City Museum ';
 	}
 
 	return $title;
 }, 10, 2 );
 
-add_filter( 'redirect_canonical', 'exibits_disable_redirect_canonical' );
-function exibits_disable_redirect_canonical( $redirect_url ) {
-    if ( is_post_type_archive( 'exhibit' ) ) {
-        $redirect_url = false;
-    }
-    return $redirect_url;
-}
-
 // BB Custom Fonts
 
 function my_bb_custom_fonts ( $system_fonts ) {
 
-      $system_fonts[ 'IBM Plex Serif' ] = array(
+      $system_fonts[ 'Archivo' ] = array(
         'fallback' => ' serif',
         'weights' => array(
-          '400', '600',
+          '400', '500', '600',
         ),
       );
 
-      $system_fonts[ 'Rubik' ] = array(
+      $system_fonts[ 'Archivo Narrow' ] = array(
           'fallback' => 'Helvetica, sans-serif',
           'weights' => array(
-            '400', '500',
+            '400', '600', '700',
           ),
         );
 
