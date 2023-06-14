@@ -20,10 +20,10 @@ $gray-lightest: #f9f9f9;
 // Colors
 $blue: #0075FF;
 $blue-light: #8896a6;
-$blue-lightest: #8ecce4; // set
-$blue-dark: #0c2340; // set
-$blue-darker: #152B45; // set
-$blue-darkest: #07182d;
+$blue-lightest: #8ecce4; 
+$blue-dark: #314354; // set
+$blue-darker: #152B45; 
+$blue-darkest: #002149; // set
 $teal: #419db9;
 $teal-light: #52c0e3;
 $shadow-blue: #354558;
@@ -33,12 +33,12 @@ $red: #c51b0b;
 $red-dark: #812d31;
 $green: #39b121;
 
-$green-dark: #172e26; // set
+$green-dark: #172e26; 
 $green-lightest: #f0f1f0;
-$olive-light: #6d817a; // set
-$yellow: #f9c626;
+$olive-light: #6d817a; 
+$yellow: #FFC528; // set
 
-$orange: $yellow;
+$orange: #FF8908; // set
 $tan: #f2ddb8;
 $tan-light: #fefdf8;
 $cream: #E9DFD4;
@@ -49,7 +49,7 @@ $secondary-color: $blue;
 // Corporate Colors
 
 // Page
-$body-background: $gray-lightest;
+$body-background: $white;
 $alt-body-background: $white;
 $page-head-bg-color: $blue-dark;
 
@@ -63,22 +63,22 @@ $link-color: $blue;
 $link-color-hover: $blue-dark;
 
 // Header Colors
-$header-background: $white;
+$header-background: $blue-dark;
 
 // Main Nav Colors
 $nav-bg-color: transparent;
 $nav-bg-color-hover: transparent;
-$nav-text-color: $blue-dark;
-$nav-text-color-hover: $blue;
+$nav-text-color: $white;
+$nav-text-color-hover: $orange;
 $nav-text-color-current: $nav-text-color-hover;
 
 // Main Nav Button
 $nav-btn-bg: transparent;
-$nav-btn-bg-hover: $blue;
-$nav-btn-text-color: $blue-dark;
+$nav-btn-bg-hover: $orange;
+$nav-btn-text-color: $nav-text-color;
 $nav-btn-text-color-hover: $white;
-$nav-btn-border-color: $blue-dark;
-$nav-btn-border-color-hover: $blue;
+$nav-btn-border-color: $white;
+$nav-btn-border-color-hover: $orange;
 
 // Secondary Nav
 $nav-secondary-bg-color: $blue-dark;
@@ -112,10 +112,10 @@ $button-border-color: $primary-color;
 $button-border-color-hover: $button-border-color;
 
 // Footer
-$footer-copyright-color: $white;
-$footer-link-color: $white;
-$footer-link-color-hover: $blue;
-$footer-text-color: $white;
+$footer-copyright-color: $blue-dark;
+$footer-link-color: $blue-dark;
+$footer-link-color-hover: $orange;
+$footer-text-color: $orange;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);

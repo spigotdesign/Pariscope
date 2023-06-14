@@ -10,10 +10,9 @@
 
 .app-footer {
   //border-top: 1px solid $border-color;
-  padding: $margin;
-  background-color: $blue-darkest;
+  padding: 0 0 $margin 0;
+  background-color: transparent;
   position: relative;
-  padding-top: $margin * 2;
 
   a {
     color: $footer-link-color;
@@ -24,170 +23,123 @@
   }
 
   &__wrap {
-    max-width: $site-width;
+    max-width: 100%;
+    ;
     margin: 0 auto;
     display: flex;
-    flex-flow: row wrap;
-  }
-
-  &__nav {
-    flex: 0 1 100%;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: $margin;
+    background-color: $blue-dark;
 
     @include mq(tablet-landscape-up) {
-      flex-basis: 33.333334%;
-      margin-bottom: 0;
+      flex-direction: row;
+    }
+  }
 
+  &__branding {
+    position: absolute;
+    left: convert(5);
+
+    @include mq(tablet-landscape-up) {
+      position: absolute;
     }
 
-    .menu__title {
-      display: none;
-    }
+    &-link {
 
-    .menu__items {
-      display: flex;
-      flex-flow: row nowrap;
-      list-style: none;
+      svg {
+        width: 96px;
+        height: 77px;
 
-      .menu__item:last-child {}
+        @include mq(tablet-portrait-up) {
+          
+            width: 150px;
+            height: 121px;
+        
+        }
 
-    }
-
-    .menu__item {
-      @include font-size(13px); 
-
-      @include mq(tablet-portrait-up) {
-        @include font-size(16px);
-      }
-      &:after {
-        content: "/";
-        padding-left: $margin * .25;
-        padding-right: $margin * .25;
-        color: $white;
-      }
-
-      &:last-child {
-
-        &::after {
-          content: "";
-          padding-left: 0;
+        @include mq(desktop-up) {
+          
+            width: 172px;
+            height: 138px;
+        
         }
 
       }
     }
 
-    .menu__link {
-      color: $white;
-      display: inline-block;
-      padding: ($margin * .25) ($margin * .5);
-      text-transform: uppercase;
-
-    }
-
   }
 
-  &__branding {
-    flex: 0 1 100%;
+  &__content {
+    // align-self: flex-end;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: $alt-font-family;
-    margin-bottom: $margin;
-
-
-    @include mq(tablet-landscape-up) {
-      flex-basis: 33.333334%;
-      margin-bottom: 0;
-    }
-
-    &-link {
-      margin-bottom: $margin * 0.5;
-
-      svg {
-        width: 203px;
-        height: 69px;
-        fill: $white;
-      }
-    }
-
-  }
-
-  &__newsletter {
-    flex: 0 1 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    @include mq(tablet-landscape-up) {
-      flex-basis: 33.333334%;
-
-    }
-
-    a {
-      color: $white;
-      text-transform: uppercase;
-
-      span {
-        padding-left: $margin * .25;
-      }
-    }
-  }
-
-  &__social {
-    margin: $margin 0;
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 1rem;
 
     ul {
       list-style: none;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
 
-      li {
-        margin: math.div($margin, 4);
-
-        a {
-          display: flex;
-        }
+      @include mq(tablet-landscape-up) {
+        flex-direction: row;
       }
 
-      svg {
+      li {
+        display: flex;
+        align-items: center;
 
-        path {
-          fill: $white;
-          transition: fill 0.3s ease-in-out;
+        a {
+          color: $white;
+          padding: ($margin * .3333) ($margin * .5);
+          border-radius: convert(3);
+          border: 1px solid $orange;
+          margin: ($margin * .125) ($margin * .5);
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          line-height: 1;
+          @include font-size(13px);
 
-        }
-
-        &:hover {
-          path {
-            fill: $blue;
+          @include mq(tablet-portrait-up) {
+            @include font-size(16px);
           }
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+          }
+
+          svg {
+            stroke: $yellow;
+            margin-right: convert(5);
+          }
+
+
         }
       }
     }
   }
+
 
   &__copyright {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
+    padding: $margin * .5;
+
+    @include mq(tablet-landscape-up) {
+      justify-content: flex-end;
+    }
 
     p {
-      color: $white;
-      @include font-size(11px);
+      color: $blue-dark;
+      @include font-size(12px);
       text-transform: uppercase;
       margin-bottom: 0;
       text-align: center;
-
-      
-
+      font-family: $alt-font-family;
 
     }
 
@@ -207,12 +159,12 @@
 
       svg {
         path {
-          fill: $footer-link-color;
+          fill: $blue-dark;
         }
 
         &:hover {
           path {
-            fill: $footer-link-color-hover;
+            fill: $orange;
           }
         }
       }

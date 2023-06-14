@@ -23,7 +23,7 @@ $site-width:					$site-max-width;
 
 $post-width:					math.div(960, 16) * 1rem;
 
-$app-header-height:				math.div(100, 16) * 1rem;
+$app-header-height:				math.div(110, 16) * 1rem;
 $app-header-height-mobile:		$app-header-height * .75;
 
 
@@ -33,8 +33,8 @@ $transition:					all .3s ease-in-out;
 
 
 // Logo dimensions
-$logo-width:            		math.div(203, 16) * 1rem;
-$logo-height:           		math.div(70, 16) * 1rem;
+$logo-width:            		math.div(123, 16) * 1rem;
+$logo-height:           		math.div(100, 16) * 1rem;
 $logo-width-mobile:     		$logo-width * .75;
 $logo-height-mobile:    		$logo-height * .75;
 $logo-width-detached:   		$logo-width;

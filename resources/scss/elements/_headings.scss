@@ -61,16 +61,3 @@ h5 {
 h6 {
   @include font-size(18px);
 }
-
-
-.fl-module-heading  {
-
-  .fl-heading {
-    margin-bottom: $margin !important;
-
-  }
-
-  h5.fl-heading {
-    margin-bottom: 5px !important;
-  }
-}

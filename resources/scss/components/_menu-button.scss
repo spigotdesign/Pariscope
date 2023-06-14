@@ -8,11 +8,13 @@
       background: $nav-btn-bg;
       color: $nav-btn-text-color;
       padding-top: $margin * 0.125;
-      padding-bottom: $margin * 0.25;
+      padding-bottom: $margin * 0.125;
       border-style: solid;
       border-color: $nav-btn-border-color;
       border-width: $nav-button-border-width;
       border-radius: $border-radius;
+      text-transform: uppercase;
+      @include font-size(14px);
 
       &:hover {
         background: $nav-btn-bg-hover;

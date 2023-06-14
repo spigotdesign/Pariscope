@@ -1,5 +1,5 @@
-$font-family:     "Amsi Pro", sans-serif;
-$alt-font-family: $font-family;
+$font-family:     "Archivo", sans-serif;
+$alt-font-family: "Archivo Narrow", sans-serif;
 
 //$med-font-family:			'acherusgrotesque-medium', sans-serif;
 //$bold-font-family:		'acherusgrotesque-bold', sans-serif;
@@ -30,8 +30,8 @@ $body-font-weight: $normal-font-weight;
 $button-font-family: $alt-font-family;
 
 // Navigation
-$nav-font-family: $alt-font-family;
-$nav-font-weight: $mid-font-weight;
+$nav-font-family: $font-family;
+$nav-font-weight: $normal-font-weight;
 
 
 // WooCommerce

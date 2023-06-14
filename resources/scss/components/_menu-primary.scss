@@ -6,7 +6,7 @@
 	  position: relative;
 	  display: flex;
 	  align-items: center;
-	  background: $white;
+	  background: transparent;
 	  display: flex;
 	  justify-content: flex-end;
 	  align-items: center;
@@ -21,7 +21,7 @@
 		width: 100%;
 		background-color: $nav-mobile-bg-color;
 		transition: all 0.3s ease-in-out;
-		height: 100vh;
+		// height: 100vh;
 		padding: 0;
 
 		.nav-open & {
@@ -80,8 +80,8 @@
 
 	  .menu__item {
 		position: relative;
-		@include font-size(14px);
-		text-transform: uppercase;
+		@include font-size(17px);
+		//text-transform: uppercase;
 		//padding: math.div($margin, 2);
 
 		@include mq(desktop-up) {
