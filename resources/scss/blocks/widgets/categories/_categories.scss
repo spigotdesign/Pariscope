@@ -1,0 +1,36 @@
+// Widget Block - Categories List
+
+@use "sass:math";
+
+.widget_categories {
+	margin-bottom: $margin;
+}
+.wp-block-categories{
+	list-style: none;
+	margin-top: 0;
+	
+	.cat-item {
+		font-family: $alt-font-family;
+		a {
+			color: $green-dark;
+			padding: math.div($margin, 4) $margin;
+			display: block;
+			&:hover {
+				background-color: $green-dark;
+				color: $white;
+				padding-left: $margin * 2;
+			}
+		}
+		
+		&.current-cat {
+			
+			a {
+				background-color: $green-dark;
+				color: $white;
+				padding-left: $margin * 2;
+			}
+		}
+	}
+	
+}
+

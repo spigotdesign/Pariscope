@@ -1,0 +1,74 @@
+// Tabs
+
+.woocommerce-tabs {
+  flex-basis: 100%;
+
+  h2 {
+    @include font-size(24px);
+  }
+
+  ul.tabs {
+    list-style: none;
+    padding: 0 0 0 1em;
+    margin: 0 0 1.618em;
+    overflow: hidden;
+    position: relative;
+
+    li {
+
+      background-color: $wc-tab-bg-color;
+      display: inline-block;
+      position: relative;
+      z-index: 0;
+      border-radius: 4px 4px 0 0;
+      margin: 0 -5px;
+      padding: 0 1em;
+
+      a {
+        display: inline-block;
+        padding: 0.5em 0;
+        font-weight: 700;
+        color: $secondarytext;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+          color: lighten($secondarytext, 10%);
+        }
+      }
+
+      &.active {
+        border: 1px solid $wc-tab-border-color;
+        background: $wc-tab-bg-color-active;
+        z-index: 2;
+        border-bottom-color: $wc-tab-bg-color-active;
+
+        a {
+          color: inherit;
+          text-shadow: inherit;
+        }
+      }
+
+      
+    }
+
+    &::before {
+      position: absolute;
+      content: " ";
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid $wc-tab-border-color;
+      z-index: 1;
+    }
+  }
+
+  .panel {
+    margin: 0 0 2em;
+    padding: 0;
+
+    ul {
+      padding-left: $margin;
+    }
+  }
+}

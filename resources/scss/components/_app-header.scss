@@ -1,0 +1,80 @@
+//
+// App Header
+//
+
+.app-header {
+    background-color: $header-background;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: convert(20);
+
+    @include mq(desktop-nav) {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    &__wrap {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq(desktop-nav) {
+            position: sticky;
+            flex-direction: column;
+            top: 3rem; // Solve for this
+        }
+    }
+
+    .admin-bar & {
+        top: 46px;
+
+        @include mq(wpadmin-desktop) {
+            top: 32px;
+        }
+
+        @include mq(phone-only) {
+            top: 0;
+        }
+    }
+
+    &__branding {
+        //margin-top: -36px;
+        transition: all .3s ease-in-out;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        order: 1;
+
+        //background-color: $blue-darker;
+
+        @include mq(desktop-nav) {
+            flex: 0 1 $branding-width;
+            order: 2;
+        }
+
+        &-link {
+            width: $logo-width;
+            height: $logo-height;
+
+            @include mq(phone-only) {
+                width: $logo-width-mobile;
+                height: $logo-height-mobile;
+            }
+
+            svg {
+                width: $logo-width;
+                height: $logo-height;
+                transition: all .3s ease-in-out;
+
+                @include mq(phone-only) {
+                    width: $logo-width-mobile;
+                    height: $logo-height-mobile;
+                }
+
+            }
+        }
+    }
+}

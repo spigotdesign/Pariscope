@@ -1,0 +1,25 @@
+////
+/// Widget block.
+///
+/// @group  Blocks
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+@use "sass:math";
+
+.widget {
+  
+  &--block {
+   
+    
+  }
+  
+  &__title {
+    @include font-size(14px);
+    text-transform: uppercase;
+    margin: $margin;
+    margin-bottom: math.div($margin, 4);
+    color: #85918D;
+  }
+}

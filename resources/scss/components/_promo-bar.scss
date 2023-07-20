@@ -1,0 +1,46 @@
+// Promo Bar Styles
+
+// Header Push
+.app-header {
+  .page-template-landing.admin-bar.dwpb-push-page & {
+    @include mq(desktop-nav) {
+      top: 0;
+    }
+  }
+}
+
+#dwpb {
+  font-family: $font-family !important;
+  font-weight: $mid-font-weight;
+}
+
+.dwpb-push-page {
+  &:not(.dwpb-allow-close):not(.dwpb-open):not(.admin-bar) {
+    @include mq(mobile-nav) {
+      .menu--secondary {
+        padding-right: $margin * 1.5;
+      }
+    }
+
+    @include mq(desktop-nav) {
+      .menu--secondary {
+        padding-right: $margin;
+      }
+    }
+  }
+
+
+}
+
+.dwpb-allow-close {
+}
+
+.dwpb-open {
+}
+
+.fl-builder-edit {
+  .dwpb-action,
+  #dwpb {
+    display: none;
+  }
+}

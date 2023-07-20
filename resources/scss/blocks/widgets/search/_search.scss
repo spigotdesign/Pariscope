@@ -1,0 +1,33 @@
+// Search block widget
+
+.widget_search {
+	margin: $margin;
+}
+
+.wp-block-search {
+
+	&__label {
+		display: none;
+	}
+	
+	&__button {
+		display: none;
+	}
+	
+	@include placeholder {
+		color: $green-dark;
+		font-weight: normal;
+		font-family: $alt-font-family;
+	}
+	
+	input[type=search]{
+		background: transparent url(../svg/search.svg) 10px 50% no-repeat;
+		background-size: 16px 16px;
+		padding-left: $margin * 1.5;
+		font-family: $alt-font-family;
+		@include font-size(14px);
+		border: 1px solid $green-dark;
+		width: 100%;
+		color: $green-dark;
+	}
+}

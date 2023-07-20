@@ -1,0 +1,50 @@
+// Dimensions
+
+@use "sass:math";
+
+$spacing-global:	1.5rem;
+$margin:			$spacing-global;
+$base-line-height:  $spacing-global;
+
+
+
+$width-alignwide : 56rem;
+$width-alignfull : 100vw;
+
+$content-width: math.div(900, 16) * 1rem;
+
+$content-width-padded : $content-width + ( $spacing-global * 2 );
+
+$alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
+
+
+$site-max-width:				math.div(1200, 16) * 1rem;
+$site-width:					$site-max-width;
+
+$post-width:					math.div(960, 16) * 1rem;
+
+$app-header-height:				100%;
+$app-header-height-mobile:		$app-header-height * .75;
+
+
+
+// Global Transition
+$transition:					all .3s ease-in-out;
+
+
+// Logo dimensions
+$logo-width:            		math.div(165, 16) * 1rem;
+$logo-height:           		math.div(115, 16) * 1rem;
+$logo-width-mobile:     		$logo-width * .75;
+$logo-height-mobile:    		$logo-height * .75;
+$logo-width-detached:   		$logo-width;
+$logo-height-detached:  		$logo-height;
+
+$nav-width:						math.div(420, 16) * 1rem; // Unused
+$branding-width:				math.div(220, 16) * 1rem;
+$branding-width-mobile:			math.div(245, 16) * 1rem;
+
+
+@function content-width() {
+	@return $content-width;
+}

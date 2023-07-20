@@ -1,0 +1,13 @@
+// WooCommerce Shipping Calculator
+
+.shipping_calculator {
+  .button {
+    width: 100%;
+    float: none;
+    display: block;
+  }
+
+  .shipping-calculator-button::after {
+    @include iconafter("");
+   }
+}

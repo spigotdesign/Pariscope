@@ -1,0 +1,42 @@
+// Advanced Posts
+
+.uabb-blog-posts-grid {
+  .uabb-post-thumbnail {
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    min-height: 150px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+  .fl-category {
+    list-style: none;
+    padding: 0;
+    margin-bottom: convert(10);
+
+    li {
+      @include font-size(14px);
+      text-transform: uppercase;
+
+      a {
+        color: $blue-dark;
+      }
+    }
+  }
+  .post_content {
+    padding: $margin;
+  }
+
+  .uabb-read-more-text {
+    padding-top: 0;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    a {
+      color: $link-color !important;
+    }
+  }
+}

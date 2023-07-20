@@ -1,0 +1,32 @@
+////
+/// Separator block.
+///
+/// @group  Blocks
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+.wp-block-separator {
+	color: var( --color-border );
+	border-color: currentColor;
+
+	&.has-background {
+		background-color: transparent;
+	}
+
+	&.is-style-wide {
+		border-top-width: 4px;
+	}
+
+	&.is-style-dashed {
+		border-top: 4px dashed currentColor;
+	}
+
+	&.is-style-dots {
+		border-top: 4px dotted currentColor;
+	}
+
+	&.is-style-double {
+		border-top: 6px double currentColor;
+	}
+}

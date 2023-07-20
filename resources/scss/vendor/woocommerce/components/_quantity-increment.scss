@@ -1,0 +1,105 @@
+/**
+ * Styling begins
+ */
+.woocommerce, .woocommerce-page {
+  /**
+   * Quantity inputs
+   */
+}
+
+.woocommerce #quantity input::-webkit-outer-spin-button,
+.woocommerce #quantity input::-webkit-inner-spin-button,
+.woocommerce #content .quantity input::-webkit-outer-spin-button,
+.woocommerce #content .quantity input::-webkit-inner-spin-button, .woocommerce-page #quantity input::-webkit-outer-spin-button,
+.woocommerce-page #quantity input::-webkit-inner-spin-button,
+.woocommerce-page #content .quantity input::-webkit-outer-spin-button,
+.woocommerce-page #content .quantity input::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.woocommerce .quantity, .woocommerce-page .quantity {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  zoom: 1;
+  padding-right: 1.1em;
+  display: inline-block;
+  width: 60px;
+
+  @include mq(phone-only) {
+    margin: 0;
+  }
+
+  /* Hide buttons for opera */
+}
+
+.woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty {
+  width: 35px;
+  height: 2.1em;
+  float: left;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border: 1px solid $border-color;
+  border-right: 0;
+  font-weight: 300;
+  border-radius: 2px 0 0 2px;
+  -moz-appearance: textfield;
+  font-family: inherit;
+
+  /* Hide buttons for Firefox 29 and later */
+}
+
+.woocommerce .quantity noindex:-o-prefocus, .woocommerce .quantity input[type=number], .woocommerce-page .quantity noindex:-o-prefocus, .woocommerce-page .quantity input[type=number] {
+  padding-right: 1.2em;
+}
+
+.woocommerce .quantity .plus,
+.woocommerce .quantity .minus, .woocommerce-page .quantity .plus,
+.woocommerce-page .quantity .minus {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  width: 25px;
+  height: 17px;
+  text-decoration: none;
+  overflow: visible;
+  text-decoration: none;
+  font-weight: 300;
+  cursor: pointer;
+  color: lighten($text-color, 30%);
+  border: 1px solid $border-color;
+  background-color: transparent;
+  text-shadow: none;
+  line-height: 1;
+  background-image: none;
+}
+
+.woocommerce .quantity .plus:hover,
+.woocommerce .quantity .minus:hover, .woocommerce-page .quantity .plus:hover,
+.woocommerce-page .quantity .minus:hover {
+  background-color: $blue-dark;
+  color: $white;
+}
+
+.woocommerce .quantity .plus, .woocommerce-page .quantity .plus {
+  top: 0;
+  right: 0;
+  border-bottom: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.woocommerce .quantity .minus, .woocommerce-page .quantity .minus {
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 2px 2px;
+}

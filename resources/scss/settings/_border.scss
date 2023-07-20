@@ -1,0 +1,19 @@
+// Borders 
+
+// General borders
+$base-radius:       	3px;
+$border-radius: 		$base-radius;
+
+// Button borders
+$button-border-radius:  $base-radius;
+$button-border-width: 1px;
+$button-border-style: solid;
+
+// Nav button borders
+$nav-button-border-width: $button-border-width;
+
+
+
+
+// Pagination buttons
+$pagination-button-border-radius: 100px;

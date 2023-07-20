@@ -1,0 +1,279 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+@use "sass:math";
+
+.entry {
+  // Type of entry/post.
+
+  &--type-post {
+    margin: 0 auto $margin auto;
+    max-width: $post-width;
+    background-color: $white;
+    padding: 0;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 3px 3px;
+
+    .plural & {
+      border-radius: 3px;
+      padding-top: $margin;
+
+      .entry__header {
+        padding: 0 $margin;
+      }
+
+      .entry__summary {
+        padding: 0 $margin;
+      }
+    }
+
+    .single-post.fl-builder & {
+      max-width: 100%;
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .single-post & {
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0 auto;
+      max-width: 100%;
+
+      .entry__content {
+        > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+          max-width: $post-width;
+          width: calc(100% - 4rem);
+        }
+
+        > * {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: $margin;
+        }
+      }
+    }
+  }
+
+  &--type-tribe_events {
+    .single-tribe_events & {
+      margin: 0 auto $margin auto;
+      max-width: $post-width;
+      background-color: $white;
+      padding: ($margin * 2) $margin 0 $margin;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 3px 3px;
+
+      dd,
+      dt {
+        display: inline-block;
+      }
+
+      #tribe-events-footer {
+        padding-bottom: $margin;
+      }
+    }
+  }
+
+  &--error {
+    min-height: 100vh;
+    background-image: url(../img/daniel-gonzalez-KeiUIl9Lzo4-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($black, .4);
+      z-index: 1;
+    }
+    .entry__content {
+      max-width: 1200px;
+      padding: ($margin * 4) $margin;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      h1,
+      p {
+        color: $white;
+      }
+      .searchform {
+        margin: ($margin * 2) auto;
+        .search-text {
+          background-color: rgba($blue-dark, 0.25);
+        }
+      }
+      .app-404 {
+        fill: $white;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  &--type-page {
+    margin: 0 auto $margin auto;
+    max-width: $post-width;
+    //background-color: $white;
+    padding: $margin;
+    //box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    //border-radius: 0 0 3px 3px;
+
+    .plural & {
+      border-radius: 3px;
+      padding-top: $margin;
+    }
+
+    .fl-builder & {
+      max-width: 100%;
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+  }
+
+  // Sticky posts.
+  &.sticky {
+  }
+
+  // Featured image.
+  &__image {
+  }
+
+  // Header wrapper.
+  &__header {
+  }
+
+  // Entry title.
+  &__title {
+  }
+
+  // Full entry content.
+  &__content {
+  }
+
+  // Summary/Excerpt.
+  &__summary {
+    // margin-bottom: $margin * 1.5;
+    line-height: 1.5;
+
+    @include font-size(14px);
+    
+    .readmore {
+      display: block;
+      text-transform: uppercase;
+      margin-top: $margin * .5;
+      font-family: $alt-font-family;
+    }
+    //padding: 0 24px;
+  }
+
+  // Meta wrappers.
+  &__byline {
+  }
+
+  &__footer {
+    border-top: 1px solid $border-color;
+    max-width: $post-width;
+
+    .single-post & {
+      margin: $margin auto;
+      padding: $margin;
+      display: flex;
+      align-items: center;
+    }
+
+    .post-list & {
+      position: absolute;
+      bottom: 0;
+      //margin-left: -$margin;
+      padding: ($margin*0.5) $margin;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include font-size(12px);
+
+      svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Individual metadata items.
+  &__author {
+    color: $white;
+    font-family: $alt-font-family;
+    margin-bottom: $margin * 0.5;
+    @include font-size(18px);
+
+    a,
+    &-link {
+      color: $white;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+
+    .no-bg & {
+      color: $text-color;
+
+      a,
+      &-link {
+        color: $link-color;
+
+        &:hover {
+          color: $link-color-hover;
+        }
+      }
+    }
+  }
+
+  &__published {
+    @include font-size(12px);
+    //color: $white;
+    text-transform: uppercase;
+
+    .page-head--bgimg & {
+      color: $white;
+    }
+  }
+
+  &__comments {
+  }
+
+  &__terms {
+    .single-post & {
+      @include font-size(12px);
+
+      text-transform: uppercase;
+      margin-left: math.div($margin, 3);
+      margin-right: $margin;
+
+      a {
+        color: $gray-dark;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}

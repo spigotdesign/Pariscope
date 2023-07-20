@@ -1,0 +1,30 @@
+// Cards
+
+.post-list {
+    &__card {
+        background-color: $white;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px 0 rgba($shadow-blue, 0.2);
+        padding: $margin;
+        overflow: hidden;
+
+        img {
+            margin-right: -$margin;
+            margin-left: -$margin;
+            margin-top: -$margin;
+            margin-bottom: $margin;
+            max-width: calc(100% + #{$margin * 2.2});
+        }
+
+        .entry {
+            &__summary {
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,16 +1,4 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Pariscope
- */
-
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,39 +9,52 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'pariscope' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content' ) ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$pariscope_description = get_bloginfo( 'description', 'display' );
-			if ( $pariscope_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $pariscope_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<header class="app-header">
+		<div class="app-header__wrap">
+		
+		<div class="app-header__branding">
+			<a class="app-header__branding-link" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'pariscope' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+				<svg id="stereotomic-logo-color" role="img" aria-label="Stereotomic Logo" xmlns="http://www.w3.org/2000/svg" width="165.38" height="115.02" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 165.38 115.02">
+					<defs>
+						<linearGradient id="linear-gradient" x1="72.35" y1="58.78" x2="116.22" y2="49.11" gradientTransform="translate(0 116.42) scale(1 -1)" gradientUnits="userSpaceOnUse">
+						<stop offset="0" stop-color="#972327"/>
+						<stop offset="1" stop-color="#bb2227"/>
+						</linearGradient>
+					</defs>
+					<g id="icon">
+					<path id="p-5" d="m135.33,58.87l-27.9-16.12-50.07,24.27,27.85,16.09,2.03-.98,48.08-23.26Z" style="fill: url(#linear-gradient);"/>
+					<path id="p-4" d="m107.44,42.75l27.92,16.13v-29.66l-27.92,13.53Z" style="fill: #d25256;"/>
+					<path id="p-3" d="m107.52,13.13l-56.3,27.2v29.66l84.13-40.78-27.84-16.09Z" style="fill: #b92b30;"/>
+					<path id="p-2" d="m23.38,24.24v29.66l27.84,16.09v-29.67l-27.84-16.08Z" style="fill: #d25256;"/>
+					<path id="p-1" d="m73.56,0L23.38,24.24l27.85,16.09,50.17-24.24L73.56,0Z" style="fill: #e56b6f;"/>
+					</g>
+					<g id="stereotomic">
+						<path d="m0,113.68l.99-1.34c.67.62,1.52,1.01,2.58,1.01.97,0,1.73-.35,1.73-.94,0-.69-.85-.9-1.87-1.13-1.41-.32-3.16-.76-3.16-2.67,0-1.8,1.59-2.67,3.46-2.67,1.43,0,2.54.53,3.3,1.15l-1.01,1.34c-.6-.51-1.36-.85-2.26-.85s-1.55.3-1.55.88c0,.69.83.88,1.89,1.13,1.41.3,3.14.74,3.14,2.63s-1.59,2.79-3.62,2.79c-1.59,0-2.77-.6-3.62-1.34v.02Z" style="fill: #031521;"/>
+						<path d="m37.51,111.24h-7.04c.3,1.24,1.38,2.05,2.79,2.05,1.13,0,2.12-.55,2.61-1.2l1.29,1.11c-.88,1.11-2.31,1.8-3.94,1.8-2.77,0-4.8-1.98-4.8-4.58s1.98-4.52,4.59-4.52,4.57,1.93,4.57,4.56c0,.23,0,.51-.05.74l-.02.05Zm-7.06-1.57h5.05c-.3-1.22-1.29-2.03-2.54-2.03s-2.21.81-2.51,2.03Z" style="fill: #031521;"/>
+						<path d="m50.98,105.99v1.96h-.32c-1.71,0-2.7,1.04-2.7,2.63v4.22h-1.91v-8.69h1.91v1.27c.65-.88,1.57-1.4,2.7-1.4h.32v.02Z" style="fill: #031521;"/>
+						<path d="m67.47,111.24h-7.04c.3,1.24,1.38,2.05,2.79,2.05,1.13,0,2.12-.55,2.61-1.2l1.29,1.11c-.88,1.11-2.31,1.8-3.94,1.8-2.77,0-4.8-1.98-4.8-4.58s1.98-4.52,4.59-4.52,4.57,1.93,4.57,4.56c0,.23,0,.51-.05.74l-.02.05Zm-7.06-1.57h5.05c-.3-1.22-1.29-2.03-2.54-2.03s-2.21.81-2.51,2.03Z" style="fill: #031521;"/>
+						<path d="m75.47,110.48c0-2.58,1.98-4.54,4.66-4.54s4.66,1.96,4.66,4.54-2.01,4.54-4.66,4.54-4.66-1.96-4.66-4.54Zm7.33,0c0-1.52-1.13-2.7-2.68-2.7s-2.7,1.18-2.7,2.7,1.15,2.7,2.7,2.7,2.68-1.17,2.68-2.7Z" style="fill: #031521;"/>
+						<path d="m95.65,106.12h2.44v1.73h-2.44v4.1c0,.81.46,1.2,1.27,1.2.48,0,.85-.14,1.2-.3v1.8c-.48.23-.95.37-1.59.37-1.87,0-2.77-1.06-2.77-2.74v-4.4h-1.48v-1.73h3.37v-.02Z" style="fill: #031521;"/>
+						<path d="m18.29,106.12h2.44v1.73h-2.44v4.1c0,.81.46,1.2,1.27,1.2.48,0,.85-.14,1.2-.3v1.8c-.48.23-.95.37-1.59.37-1.87,0-2.77-1.06-2.77-2.74v-4.4h-1.48v-1.73h3.37v-.02Z" style="fill: #031521;"/>
+						<path d="m105.8,110.48c0-2.58,1.98-4.54,4.66-4.54s4.66,1.96,4.66,4.54-2.01,4.54-4.66,4.54-4.66-1.96-4.66-4.54Zm7.33,0c0-1.52-1.13-2.7-2.68-2.7s-2.7,1.18-2.7,2.7,1.15,2.7,2.7,2.7,2.68-1.17,2.68-2.7Z" style="fill: #031521;"/>
+						<path d="m137.34,109.19v5.62h-1.91v-5.07c0-1.2-.74-1.98-1.91-1.98s-2.05.81-2.05,2v5.04h-1.91v-5.07c0-1.2-.74-1.98-1.91-1.98s-2.05.81-2.05,2v5.04h-1.91v-8.68h1.91v1.01c.65-.81,1.57-1.22,2.7-1.22,1.27,0,2.26.58,2.79,1.52.69-.99,1.73-1.52,3.04-1.52,1.98,0,3.25,1.29,3.25,3.25l-.02.02Z" style="fill: #031521;"/>
+						<path d="m146.28,106.12h1.91v8.69h-1.91v-8.69Z" style="fill: #031521;"/>
+						<path d="m156.73,110.48c0-2.58,1.98-4.54,4.66-4.54,1.73,0,3.21.85,3.99,2.17l-1.66,1.01c-.46-.81-1.32-1.34-2.33-1.34-1.52,0-2.7,1.18-2.7,2.7s1.15,2.7,2.7,2.7c1.01,0,1.87-.53,2.33-1.34l1.66,1.01c-.78,1.31-2.24,2.17-3.99,2.17-2.65,0-4.66-1.96-4.66-4.54Z" style="fill: #031521;"/>
+					</g>
+				</svg>
+			</a>
+		</div>
+		<div class="app-header__nav">
+
+			<?php get_template_part( 'resources/views/nav/menu', 'primary' ); ?>
+
+			<?php get_template_part( 'resources/views/nav/menu', 'toggle' ); ?>
+
+		</div>
+
+		</div>
+
+	</header>

@@ -1,0 +1,51 @@
+// Product Loops
+
+.products {
+  padding-bottom: 80px;
+  //max-width: $site-width;
+  //margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+
+  .onsale {
+    width: 160px;
+    background: #e43;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: -55px;
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+  }
+
+  .in-stock {
+    text-align: center;
+  }
+
+  .button {
+    height: 40px;
+    max-width: 15rem;
+    margin: 0 auto;
+  }
+
+  &.columns {
+    &-3 {
+      .entry {
+        flex: 0 1 100%;
+        margin: $margin*0.5;
+
+        @include mq(tablet-portrait-up) {
+          flex-basis: calc(50% - #{$margin});
+        }
+
+        @include mq(tablet-landscape-up) {
+          flex-basis: calc(33% - 1.3rem);
+        }
+      }
+    }
+  }
+}

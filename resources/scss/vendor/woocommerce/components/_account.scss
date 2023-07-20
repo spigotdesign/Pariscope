@@ -1,0 +1,141 @@
+/**
+ * Account page
+ */
+.woocommerce-account {
+  .page-head {
+    background-color: $blue;
+
+    &__content {
+      color: $white;
+      padding: $margin;
+      margin: 0 auto;
+      max-width: $site-width;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    &__title {
+      color: $white;
+    }
+
+    p {
+      padding: 0;
+    }
+  }
+
+  .woocommerce-MyAccount-navigation {
+    background-color: $blue-dark;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba($white, 0.1);
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: flex-start;
+
+      li {
+        text-transform: uppercase;
+
+        @include font-size(12px);
+
+        flex: 1 1 50%;
+
+        @include mq(tablet-portrait-up) {
+          flex-basis: 25%;
+        }
+
+        @include mq(tablet-landscape-up) {
+          flex: 1;
+        }
+
+        a {
+          color: $white;
+          display: block;
+          width: 100%;
+          padding: $margin;
+          border-right: 1px solid rgba($white, 0.1);
+          text-align: center;
+
+          &:hover {
+            background-color: $blue;
+            color: $blue-dark;
+          }
+        }
+
+        &:first-child {
+          a {
+            border-left: 1px solid rgba($white, 0.1);
+          }
+        }
+      }
+
+      &.is-active {
+        a {
+          background-color: $blue;
+          color: $blue-dark;
+        }
+      }
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    padding: $margin;
+    margin: 0 auto;
+    max-width: $site-width;
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba($black, 0.1);
+    border-radius: 0 0 3px 3px;
+    min-height: calc(100vh - 700px);
+  }
+
+  .addresses .title {
+    @include clearfix;
+
+    h3 {
+      float: left;
+    }
+
+    .edit {
+      float: right;
+    }
+  }
+
+  ol.commentlist.notes li.note {
+    p.meta {
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .wc-item-meta {
+    li {
+      display: flex;
+      align-content: center;
+    }
+  }
+
+  &.logged-out {
+    @include mq(phone-only) {
+      padding: $margin * 0.5;
+    }
+  }
+}
+
+.woocommerce-EditAccountForm {
+  fieldset {
+    padding: 0;
+    margin: $margin 0;
+  }
+
+  legend {
+    padding: 0;
+  }
+}

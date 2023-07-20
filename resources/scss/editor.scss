@@ -1,0 +1,50 @@
+////
+/// Editor stylesheet.
+///
+/// This is the primary editor stylesheet. It is used for the WordPress 5.0+
+/// block editor (Gutenberg) and is not intended for older versions of the
+/// WordPress edit screen.
+///
+/// @group  Styles
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https:spigotdesign.com
+////
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Rubik:wght@500&display=swap');
+
+
+// Settings
+@import 'settings/_index';
+
+// Tools
+@import 'tools/_index';
+
+
+// Prefixes all of the styles with `.edit-post-visual-editor` for use within the block editor.
+.edit-post-visual-editor {
+
+	// Elements
+	@import 'elements/_index';
+	@import 'components/_index';
+
+	// Blocks
+	@import 'blocks/_index';
+	@import 'blocks/core/button/edit';
+	@import 'blocks/core/code/edit';
+	@import 'blocks/core/columns/edit';
+	@import 'blocks/core/cover/edit';
+	@import 'blocks/core/group/edit';
+	@import 'blocks/core/heading/edit';
+	@import 'blocks/core/html/edit';
+	@import 'blocks/core/image/edit';
+	@import 'blocks/core/media-text/edit';
+	@import 'blocks/core/paragraph/edit';
+	@import 'blocks/core/pullquote/edit';
+	@import 'blocks/core/quote/edit';
+	@import 'blocks/core/separator/edit';
+	@import 'utilities/_index';
+}
+
+// Import editor overrides.
+@import 'editor/editor';

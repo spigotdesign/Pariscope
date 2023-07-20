@@ -1,0 +1,25 @@
+////
+/// Sidebar component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.sidebar {
+
+	&--primary {
+		
+		flex: 0 1 100%;
+		order: 2;
+		background-color: $green-lightest;
+		padding: 0;
+		
+		@include mq(tablet-portrait-up) {
+			flex-basis: 20rem;
+			order: 1;
+		}
+	}
+
+	&__title {}
+}

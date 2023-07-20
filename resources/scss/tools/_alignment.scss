@@ -1,0 +1,20 @@
+.alignleft,
+.left {
+    float: left;
+    margin-right: $margin;
+}
+.alignright,
+.right {
+    float: right;
+    margin-left: $margin;
+}
+.aligncenter,
+.center {
+    display: block;
+    margin: 0 auto $margin auto;
+}
+.alignnone,
+.block {
+    clear: both;
+    margin: 0 0 $margin 0;
+}

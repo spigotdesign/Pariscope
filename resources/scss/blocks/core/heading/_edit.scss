@@ -1,0 +1,31 @@
+////
+/// Heading editor block.
+///
+/// @group  Editor
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+// Bump out width via negative margins for heading block.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&.has-background {
+		margin-left: -#{ $spacing-global };
+		margin-right: -#{ $spacing-global };
+	}
+}
+
+
+// Editor post title.
+
+.editor-post-title__block .editor-post-title__input,
+.editor-post-title__block .editor-post-title__input:focus {
+	font-family: $headings-font-family;
+	color: $headings-color;
+	@extend .h1;
+}

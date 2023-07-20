@@ -1,0 +1,23 @@
+////
+/// App content component.
+///
+/// This component generally wraps the `<main>` section and the sidebar.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+.app-content {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  min-height: 1500px; 
+
+
+
+
+  @include mq(mobile-nav) {
+       // padding-top: $app-header-height-mobile;
+    }
+}

@@ -1,0 +1,11 @@
+// WooCommerce pages app-content
+
+
+.app-content {
+	
+	.woocommerce-page.woocommerce-shop &,
+	.woocommerce-page.taxonomy & {
+		display: flex;
+		flex-flow: row wrap;
+	}
+}

@@ -7,10 +7,9 @@
  * @package Pariscope
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<main id="primary" class="site-main">
+	<main>
 
 		<section class="error-404 not-found">
 			<header class="page-header">
@@ -54,7 +53,7 @@ get_header();
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_footer();

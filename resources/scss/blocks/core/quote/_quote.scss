@@ -1,0 +1,99 @@
+////
+/// Quote block.
+///
+/// @group  Blocks
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+/// @link   https://spigotdesign.com/
+////
+
+@use "sass:math";
+
+.wp-block-quote {
+  margin-bottom: $margin * 1.5;
+  border-left: 8px solid $green;
+  padding-left: $margin * 1.5;
+
+  quotes: "“" "”";
+
+  p {
+    //text-indent: -0.42em;
+    
+    @include font-size(25px);
+    line-height: 1.5;
+    font-weight: $normal-font-weight;
+    font-style: normal;
+    color: $green-dark;
+    //margin-bottom: 1rem;
+
+    &:first-of-type {
+      &:before {
+        content: open-quote;
+      }
+    }
+
+    &:before {
+      content: no-open-quote;
+    }
+
+    &:after {
+      content: no-close-quote;
+    }
+
+    &:last-of-type {
+      margin-bottom: $margin;
+
+      &:after {
+        content: close-quote;
+      }
+    }
+  }
+
+  &.is-style-large {
+    font-size: 1.375em;
+    line-height: 1.5;
+    margin-bottom: $margin * 1.5;
+
+    cite {
+      font-size: 0.7em;
+      font-style: normal;
+    }
+  }
+
+  cite {
+    display: block;
+    // text-align: right;
+    font-size: 90%;
+    font-style: normal;
+    //padding-right: 10%;
+    font-family: $alt-font-family;
+
+    &:before {
+      content: "~ ";
+    }
+  }
+
+  &.has-text-align-center {
+    border-left: none;
+    border-top: 8px solid $yellow;
+    border-bottom: 8px solid $yellow;
+
+    padding: $margin;
+
+    p {
+      text-align: center;
+
+      &:last-of-type {
+        margin-bottom: math.div($margin, 3);
+      }
+    }
+
+    cite {
+      text-align: center;
+    }
+  }
+}
+
+.wp-block-quote__citation {
+  text-align: left;
+  font-style: normal;
+}

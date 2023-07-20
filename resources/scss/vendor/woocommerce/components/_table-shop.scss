@@ -1,0 +1,217 @@
+// Shop Tables
+
+table.shop_table {
+  margin: 0 -1px 24px 0;
+  text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  background: transparent;
+
+  @include mq(phone-only) {
+    order: 3;
+  }
+
+  thead {
+    @include mq(phone-only) {
+      display: none;
+    }
+  }
+
+  &.cart {
+    th {
+      border-bottom: 1px solid $border-color;
+
+      @include font-size(12px);
+
+      color: $gray-light;
+      text-transform: uppercase;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  td,
+  th {
+    vertical-align: top;
+    border-left: 0;
+    border-right: 0;
+    line-height: 1.5em;
+    color: $cart-sidebar-text-color;
+  }
+
+  th {
+    font-weight: normal;
+    padding: 9px 0;
+  }
+
+  tr {
+    &.cart_item {
+      @include mq(phone-only) {
+        display: block;
+        margin: 10px;
+        border: 1px solid $border-color;
+      }
+
+      td {
+        padding: ($margin * 0.5) 0;
+        //border-bottom: 1px solid $border-color;
+
+        @include mq(phone-only) {
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: $margin * 0.5;
+          //border-bottom: 1px solid $border-color;
+
+          &:before {
+            content: attr(data-title) ": ";
+            font-size: 12px;
+          }
+        }
+
+        &:last-child {
+          @include mq(phone-only) {
+            border-bottom: none;
+          }
+        }
+
+        &.product-remove {
+          padding-left: $margin;
+          padding-right: $margin * 0.5;
+
+          @include mq(phone-only) {
+            padding: $margin * 0.5;
+
+            &:before {
+              content: "Remove item: ";
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    &.order-total {
+      border-width: 3px;
+      margin-bottom: $margin;
+    }
+
+    &.cart-subtotal,
+    &.order-total {
+      .amount {
+        font-weight: $bold-font-weight;
+      }
+    }
+
+    &.woocommerce-shipping-totals {
+      display: flex;
+      flex-direction: column;
+
+      .woocommerce-shipping-destination {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  td {
+    padding: 9px 0;
+    vertical-align: middle;
+
+    small {
+      font-weight: normal;
+      color: $cart-sidebar-highlight-color;
+
+      .first-payment-date & {
+        color: $cart-sidebar-highlight-color;
+      }
+    }
+
+    &[data-title="Total"],
+    &[data-title="Recurring Total"] {
+      text-align: right;
+    }
+
+    &.product-name {
+      font-weight: $mid-font-weight;
+      font-size: 0.875rem;
+
+      dl.variation,
+      .wc-item-meta {
+        list-style: none outside;
+        font-size: 0.75rem;
+
+        dt,
+        .wc-item-meta-label {
+          font-weight: $mid-font-weight;
+          float: left;
+          clear: both;
+          margin-right: 0.25em;
+          display: inline-block;
+          list-style: none outside;
+        }
+
+        dd {
+
+          margin: 0;
+          display: inline-block;
+          font-weight: $normal-font-weight;
+
+          p {
+            font-size: 0.75rem;
+          }
+        }
+
+        p {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      p.backorder_notification {
+        font-size: 0.83em;
+      }
+    }
+  }
+
+  tbody:first-child {
+    tr:first-child {
+
+      th,
+      td {
+        border-top: 0;
+      }
+    }
+  }
+
+  tfoot td,
+  tfoot th,
+  tbody th {
+    font-weight: normal;
+  }
+
+  .woocommerce-shipping-methods {
+    list-style: none outside;
+    margin: 0 0 1rem 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0.25em 0 0.25em 22px;
+      text-indent: -22px;
+      list-style: none outside;
+
+      input {
+        margin: 3px 0.5ex;
+      }
+
+      label {
+        display: inline;
+      }
+    }
+
+    .amount {
+      font-weight: 700;
+    }
+  }
+}

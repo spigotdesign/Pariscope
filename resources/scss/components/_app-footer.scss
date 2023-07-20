@@ -1,0 +1,166 @@
+////
+/// App footer component.
+///
+/// @group  Components
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+@use "sass:math";
+
+.app-footer {
+  //border-top: 1px solid $border-color;
+  margin-left: convert(10);
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  @include mq(tablet-portrait-up) {
+    margin-left: convert(20);
+  }
+
+  a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+
+  &__branding {
+    flex: 0 1 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $salmon;
+
+    @include mq(tablet-landscape-up) {
+      flex-basis: 13.25rem;
+    }
+
+    svg {
+      max-width: convert(90);
+      transform: rotate(270deg);
+
+      @include mq(tablet-portrait-up) {
+        transform: rotate(0);
+        max-width: 110px;
+      }
+
+      @include mq(tablet-landscape-up) {
+      
+        max-width: 165px;
+      }
+
+     
+    }
+
+  }
+
+  &__connect {
+    background-color: $blue-dark;
+    flex: 0 1 73%;
+    padding: $margin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include mq(tablet-landscape-up) {
+      flex-basis: calc(100% - 13.25rem - 20px);
+
+    }
+
+
+
+    &-social {
+      width: 25%;
+      margin-bottom: $margin;
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+
+          a {
+            display: flex;
+            margin-right: $margin * .5;
+          }
+        }
+      }
+    }
+
+    &-location {
+      margin-bottom: $margin;
+
+      h3 {
+        text-transform: uppercase;
+        font-weight: $mid-font-weight;
+        @include font-size(16px);
+        color: $footer-text-color;
+        margin-bottom: 0;
+      }
+
+      .location {
+        color: $footer-text-color;
+      }
+    }
+
+    &-copyright {
+      color: $footer-text-color;
+
+      p {
+        @include font-size(14px);
+        margin-bottom: 0;
+      }
+
+      .siteby {
+        margin-left: $margin * 0.5;
+        display: inline-block;
+
+        @include mq(phone-only) {
+          //margin: ($margin * 0.5) auto 0 auto;
+          //display: block;
+          //padding-left: 0;
+        }
+
+        span {
+          display: none;
+        }
+
+        svg {
+          path {
+            fill: $footer-link-color;
+          }
+
+          &:hover {
+            path {
+              fill: $footer-link-color-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  &__copyright {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+
+    p {
+      color: $white;
+      @include font-size(11px);
+      text-transform: uppercase;
+      margin-bottom: 0;
+      text-align: center;
+
+    }
+
+
+  }
+}

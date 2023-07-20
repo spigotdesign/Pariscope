@@ -1,0 +1,58 @@
+// Account Menu
+
+@use "sass:math";
+
+.menu--account {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: .25rem;
+	width: 100%;
+	justify-content: flex-end;
+
+	@include mq(tablet-portrait-up) {
+		top: -.9rem;
+	}
+
+	@include mq(desktop-nav) {
+		padding-right: math.div($margin, 2);
+		padding: 0;
+		width: auto;
+		top: auto;
+		
+		@include mq(desktop-up) {
+			right: 15%;
+		}
+	}
+
+	> div {
+		margin: 0 math.div($margin, 4)
+
+	}
+
+	.cart {
+		margin-right: $margin * 2;
+		position: relative;
+
+		.cart-count {
+			  background-color: $green;
+			  color: $white;
+			  width: 16px;
+			  height: 16px;
+			  border-radius: 100%;
+			  position: absolute;
+			  top: -7px;
+			  right: -5px;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+
+			  @include font-size(10px);
+
+			}
+	}
+
+	.app-search {
+		top: -.25rem;
+	}
+}

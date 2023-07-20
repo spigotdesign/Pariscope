@@ -1,0 +1,23 @@
+// Alignment
+
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 0.25em;
+}
+.alignright {
+    float: right;
+    margin-left: $margin;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto $margin auto;
+}
+.alignnone,
+.block {
+    clear: both;
+    margin: 0 0 $margin 0;
+}
+
+img.alignleft,
+img.alignright { display: inline }

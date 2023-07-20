@@ -1,0 +1,214 @@
+////
+/// Set up and define colors.
+///
+/// @group  Settings
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+// Black, White, and Grays
+$black: black;
+$white: white;
+$gray-darkest: #231f20;
+$gray-darker: #30353a;
+$gray-dark: #4a4a4a;
+$gray: #515d67;
+$gray-light: #ABADB2;
+$gray-lighter: #d8d8d8;
+$gray-lightest: #f9f9f9;
+
+// Colors
+$blue: #0075FF;
+$blue-light: #8896a6;
+$blue-lightest: #8ecce4; // set
+$blue-dark: #2D333F; // set
+$blue-darker: #152B45; // set
+$blue-darkest: #07182d;
+$teal: #419db9;
+$teal-light: #52c0e3;
+$shadow-blue: #354558;
+$purple: #a85ece;
+$purple-darkest: #0f0b2e;
+$red: #B92B30;
+$red-dark: #812d31;
+$green: #39b121;
+
+$green-dark: #172e26; // set
+$green-lightest: #f0f1f0;
+$olive-light: #6d817a; // set
+$yellow: #f9c626;
+
+$orange: $yellow;
+$tan: #f2ddb8;
+$tan-light: #fefdf8;
+$cream: #E9DFD4;
+$salmon: #E56B6F;
+
+// Background Gradient
+$grad-1:  rgba(220,231,229, .5);
+$grad-2:  rgba(214,227,224, .5);
+$grad-3:  rgba(223,210,198, .5);
+$grad-4:  rgba(227,231,230, 1);
+$grad-5:  rgba(208,210,220, 1);
+
+
+
+// Main site colors
+$primary-color: $blue-dark;
+$secondary-color: $salmon;
+// Corporate Colors
+
+// Page
+$body-background: $gray-lightest;
+$alt-body-background: $white;
+$page-head-bg-color: $blue-dark;
+
+// Text
+$text-color: $primary-color;
+$headings-color: $primary-color;
+$footer-text: #557882;
+
+// Links
+$link-color: $salmon;
+$link-color-hover: $red;
+
+// Header Colors
+$header-background: transparent;
+
+// Main Nav Colors
+$nav-bg-color: transparent;
+$nav-bg-color-hover: transparent;
+$nav-text-color: $blue-dark;
+$nav-text-color-hover: $salmon;
+$nav-text-color-current: $nav-text-color-hover;
+
+// Main Nav Button
+$nav-btn-bg: transparent;
+$nav-btn-bg-hover: $blue;
+$nav-btn-text-color: $blue-dark;
+$nav-btn-text-color-hover: $white;
+$nav-btn-border-color: $blue-dark;
+$nav-btn-border-color-hover: $blue;
+
+// Secondary Nav
+$nav-secondary-bg-color: $blue-dark;
+$nav-secondary-bg-color-hover: $red;
+$nav-secondary-text-color: $white;
+$nav-secondary-text-color-hover: $white;
+
+// Subnav Colors
+$subnav-bg: $white;
+$subnav-bg-hover: $primary-color;
+$subnav-text-color: $primary-color;
+$subnav-text-color-hover: $white;
+
+// Mobile Nav Colors
+// $mobile-background: $blue-dark;
+$nav-mobile-text-color: $white;
+$nav-mobile-text-color-hover: $white;
+$nav-mobile-bg-color: $blue-dark;
+$nav-mobile-bg-color-hover: $blue;
+$subnav-mobile-bg-color: transparent;
+$subnav-mobile-bg-color-hover: $blue;
+$subnav-mobile-text-color: $white;
+$subnav-mobile-text-color-hover: $white;
+
+// Buttons
+$button-text-color: $primary-color;
+$button-text-color-hover: $white;
+$button-bg-color: transparent;
+$button-bg-color-hover: $primary-color;
+$button-border-color: $primary-color;
+$button-border-color-hover: $button-border-color;
+
+// Footer
+$footer-copyright-color: $gray-light;
+$footer-link-color: $gray-light;
+$footer-link-color-hover: $salmon;
+$footer-text-color: $gray-light;
+
+// Borders
+$border-color: darken($gray-lightest, 5%);
+$nav-border-color: rgba($blue, 0.75);
+
+// Tooltips
+$tooltip-color: $white;
+$tooltip-bg-color: $salmon;
+
+// Pagination
+$pagination-bg-color: $blue-dark;
+$pagination-bg-color-active: darken($pagination-bg-color, 7.5%);
+$pagination-text-color: $white;
+$pagination-text-color-active: $white;
+$pagination-border-color: lighten($pagination-bg-color, 5%);
+
+// Boxshadow
+$boxshadow-color: $black;
+
+// Search
+$search-bg-color: $green-dark;
+
+/* Event Calendar Pro Colors
+***************************************/
+$ecp-button-bg-color: $link-color;
+$ecp-button-text-color: $button-text-color;
+$ecp-button-border-color: $button-border-color;
+$ecp-link-color: $link-color;
+
+/// Returns an map of colors in name-value format. This function also merges
+/// with the `block-colors()` map to create a map of all colors.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function colors() {
+  $colors: (
+    white: #fff,
+    black: #000,
+  );
+
+  @return map-merge($colors, block-colors());
+}
+
+/// Returns an map of block colors in name-value format. These are the colors
+/// defined via the `editor-color-palette` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function block-colors() {
+  @return (
+    white: $white,
+    blue: $blue,
+    blue-dark: $blue-dark,
+    red: $red-dark,
+    red-stage: #b15330
+  );
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function color($name) {
+  @return map-get(colors(), $name);
+}
+
+/// Returns a single block color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function block-color($name) {
+  @return map-get(block-colors(), $name);
+}
+
+

@@ -1,0 +1,34 @@
+////
+/// Custom mixins.
+///
+/// @group  Tools
+/// @author Bryan Hoffman <bryan@spigotdesign.com>
+
+////
+
+@use "sass:math";
+
+$converted-base-line-height:    ($base-line-height * 16) * 1px;
+
+
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: $font-size;
+    font-size: math.div($font-size, $base-font-size) * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil(math.div($font-size, $converted-base-line-height)) * math.div($converted-base-line-height, $font-size);
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @else if ($line-height != none and $line-height != false) {
+            @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}

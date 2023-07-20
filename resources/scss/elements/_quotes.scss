@@ -1,0 +1,33 @@
+blockquote {
+    quotes: "“" "”";
+
+    p {
+        text-indent: -0.42em;
+        line-height: 1.2;
+
+        &:first-of-type {
+            &:before {
+                content: open-quote;
+            }
+        }
+
+        &:before {
+            content: no-open-quote;
+        }
+
+        &:after {
+            content: no-close-quote;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+
+            &:after {
+                content: close-quote;
+            }
+
+        }
+
+    }
+
+}
