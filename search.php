@@ -20,30 +20,26 @@ get_header(); ?>
 					printf( esc_html__( 'Search Results for: %s', 'pariscope' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
-			</header><!-- .page-header -->
+			</header>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<?php if (have_posts()): ?>
+	
+				<?php while (have_posts()):the_post(); ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+					<?php get_template_part( 'resources/views/content/content', 'search' ); ?>
 
-			endwhile;
+				<?php endwhile; ?>
 
-			the_posts_navigation();
+			<?php endif; ?>
 
-		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			<?php the_posts_navigation(); ?>
 
-		endif;
-		?>
+		<?php else : ?>
+
+			<?php get_template_part( 'resources/views/content/content', 'none' ); ?>
+
+		<?php endif; ?>
 
 	</main>
 
