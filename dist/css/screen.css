@@ -433,7 +433,7 @@ input.button,
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   background-color: transparent;
   display: inline-block;
@@ -465,7 +465,7 @@ html {
 }
 
 body {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   line-height: 1.5rem;
   font-style: normal;
@@ -498,7 +498,7 @@ input[type=password] {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 textarea {
@@ -584,7 +584,7 @@ legend {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 600;
   color: #0c2340;
   text-rendering: optimizelegibility;
@@ -705,7 +705,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 }
 
 .menu-note {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.8461538462;
@@ -747,7 +747,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 
 p {
   margin-bottom: 1.5rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
@@ -758,7 +758,7 @@ p strong {
 }
 p em,
 p i {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
 }
 p:empty {
@@ -888,7 +888,7 @@ table {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 56.25em) {
@@ -1145,7 +1145,7 @@ table {
   list-style: none;
   display: flex;
   margin: 0;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   align-items: center;
   font-weight: 600;
 }
@@ -1389,22 +1389,22 @@ table {
 .app-search ::-webkit-input-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .app-search :-moz-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .app-search ::-moz-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .app-search :-ms-input-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .app-search input[type=submit] {
   display: none;
@@ -1418,7 +1418,7 @@ table {
   border: none;
   padding: 5px;
   padding-left: 15px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: normal;
   background: transparent url(../svg/search.svg) 10px 50% no-repeat;
   background-size: 16px 16px;
@@ -1766,7 +1766,7 @@ table {
   display: block;
   text-transform: uppercase;
   margin-top: 0.75rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .entry__footer {
   border-top: 1px solid #ececec;
@@ -1797,7 +1797,7 @@ table {
 }
 .entry__author {
   color: white;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 0.75rem;
   font-size: 18px;
   font-size: 1.125rem;
@@ -1855,7 +1855,7 @@ table {
 }
 
 h2.tribe-events-schedule__datetime {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .archive-tribe_events .post-list__card {
@@ -1876,7 +1876,7 @@ h2.tribe-events-schedule__datetime {
 .tribe-common-b2,
 .tribe-common-b3,
 .tribe-events-calendar-list__event-date-tag-weekday {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 
 .tribe-common h1,
@@ -1888,12 +1888,12 @@ h2.tribe-events-schedule__datetime {
 .tribe-common h6,
 .tribe-common-h6,
 .tribe-common p {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 
 .tribe-common-c-btn {
   background-color: #0075FF !important;
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 
 @media (max-width: 37.4375em) {
@@ -1974,7 +1974,7 @@ img.emoji {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.7142857143;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .pagination__item:first-child .pagination__anchor {
   border-radius: 100px 0 0 100px;
@@ -2018,7 +2018,7 @@ img.emoji {
   border: 0;
   margin: 0;
   overflow: visible;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
   right: 0.25rem;
   top: 1.5625rem;
@@ -2274,7 +2274,7 @@ img.emoji {
 }
 
 #dwpb {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
   font-weight: 600;
 }
 
@@ -2353,7 +2353,7 @@ img.emoji {
 [tooltip]::after {
   content: attr(tooltip); /* magic! */
   /* most of the rest of this is opinion */
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   /* 
   Let the content set the size of the tooltips 
@@ -2516,7 +2516,7 @@ img.emoji {
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   background-color: transparent;
   display: inline-block;
@@ -3341,7 +3341,7 @@ h6.has-background {
   display: block;
   font-size: 90%;
   font-style: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-quote cite:before {
   content: "~ ";
@@ -3453,7 +3453,7 @@ h6.has-background {
   margin-top: 0;
 }
 .wp-block-categories .cat-item {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-categories .cat-item a {
   color: #172e26;
@@ -3484,28 +3484,28 @@ h6.has-background {
 .wp-block-search ::-webkit-input-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-search :-moz-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-search ::-moz-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-search :-ms-input-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wp-block-search input[type=search] {
   background: transparent url(../svg/search.svg) 10px 50% no-repeat;
   background-size: 16px 16px;
   padding-left: 2.25rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.7142857143;

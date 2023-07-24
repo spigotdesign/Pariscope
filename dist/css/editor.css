@@ -106,7 +106,7 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   background-color: transparent;
   display: inline-block;
@@ -135,7 +135,7 @@
   font-size: 16px;
 }
 .edit-post-visual-editor body {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   line-height: 1.5rem;
   font-style: normal;
@@ -166,7 +166,7 @@
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor textarea {
   height: auto;
@@ -240,7 +240,7 @@
   margin-left: -18px;
 }
 .edit-post-visual-editor h1, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 600;
   color: #0c2340;
   text-rendering: optimizelegibility;
@@ -350,7 +350,7 @@
   color: #0c2340;
 }
 .edit-post-visual-editor .menu-note {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.8461538462;
@@ -389,7 +389,7 @@
 }
 .edit-post-visual-editor p {
   margin-bottom: 1.5rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
@@ -400,7 +400,7 @@
 }
 .edit-post-visual-editor p em,
 .edit-post-visual-editor p i {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
 }
 .edit-post-visual-editor p:empty {
@@ -524,7 +524,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 56.25em) {
@@ -778,7 +778,7 @@
   list-style: none;
   display: flex;
   margin: 0;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   align-items: center;
   font-weight: 600;
 }
@@ -1020,22 +1020,22 @@
 .edit-post-visual-editor .app-search ::-webkit-input-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .app-search :-moz-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .app-search ::-moz-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .app-search :-ms-input-placeholder {
   color: white;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .app-search input[type=submit] {
   display: none;
@@ -1049,7 +1049,7 @@
   border: none;
   padding: 5px;
   padding-left: 15px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: normal;
   background: transparent url(../svg/search.svg) 10px 50% no-repeat;
   background-size: 16px 16px;
@@ -1389,7 +1389,7 @@
   display: block;
   text-transform: uppercase;
   margin-top: 0.75rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .entry__footer {
   border-top: 1px solid #ececec;
@@ -1420,7 +1420,7 @@
 }
 .edit-post-visual-editor .entry__author {
   color: white;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 0.75rem;
   font-size: 18px;
   font-size: 1.125rem;
@@ -1474,7 +1474,7 @@
   width: 100%;
 }
 .edit-post-visual-editor h2.tribe-events-schedule__datetime {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .archive-tribe_events .post-list__card {
   width: 100% !important;
@@ -1491,7 +1491,7 @@
 .edit-post-visual-editor .tribe-common-b2,
 .edit-post-visual-editor .tribe-common-b3,
 .edit-post-visual-editor .tribe-events-calendar-list__event-date-tag-weekday {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 .edit-post-visual-editor .tribe-common h1,
 .edit-post-visual-editor .tribe-common h2,
@@ -1502,11 +1502,11 @@
 .edit-post-visual-editor .tribe-common h6,
 .edit-post-visual-editor .tribe-common-h6,
 .edit-post-visual-editor .tribe-common p {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 .edit-post-visual-editor .tribe-common-c-btn {
   background-color: #0075FF !important;
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 @media (max-width: 37.4375em) {
   .edit-post-visual-editor .tribe-common .tribe-common-g-row--gutters {
@@ -1575,7 +1575,7 @@
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.7142857143;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .pagination__item:first-child .pagination__anchor {
   border-radius: 100px 0 0 100px;
@@ -1612,7 +1612,7 @@
   border: 0;
   margin: 0;
   overflow: visible;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
   right: 0.25rem;
   top: 1.5625rem;
@@ -1863,7 +1863,7 @@
   }
 }
 .edit-post-visual-editor #dwpb {
-  font-family: "Amsi Pro", sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif !important;
   font-weight: 600;
 }
 @media (max-width: 56.1875em) {
@@ -1934,7 +1934,7 @@
 .edit-post-visual-editor [tooltip]::after {
   content: attr(tooltip); /* magic! */
   /* most of the rest of this is opinion */
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   /* 
   Let the content set the size of the tooltips 
@@ -2073,7 +2073,7 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
   background-color: transparent;
   display: inline-block;
@@ -2854,7 +2854,7 @@
   display: block;
   font-size: 90%;
   font-style: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-quote cite:before {
   content: "~ ";
@@ -2953,7 +2953,7 @@
   margin-top: 0;
 }
 .edit-post-visual-editor .wp-block-categories .cat-item {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-categories .cat-item a {
   color: #172e26;
@@ -2982,28 +2982,28 @@
 .edit-post-visual-editor .wp-block-search ::-webkit-input-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-search :-moz-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-search ::-moz-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-search :-ms-input-placeholder {
   color: #172e26;
   font-weight: normal;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .edit-post-visual-editor .wp-block-search input[type=search] {
   background: transparent url(../svg/search.svg) 10px 50% no-repeat;
   background-size: 16px 16px;
   padding-left: 2.25rem;
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.7142857143;
@@ -3283,7 +3283,7 @@
 }
 .edit-post-visual-editor .editor-post-title__block .editor-post-title__input,
 .edit-post-visual-editor .editor-post-title__block .editor-post-title__input:focus {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #0c2340;
 }
 .edit-post-visual-editor .wp-block[data-type=core\/html] {
@@ -3395,7 +3395,7 @@
 }
 
 .edit-post-visual-editor.editor-styles-wrapper {
-  font-family: "Amsi Pro", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #0c2340;
   background: #f9f9f9;

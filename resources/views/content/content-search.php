@@ -8,28 +8,13 @@
  */
 
 ?>
+This is the  search template
+<?php if( is_singular() ) { ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<?php get_template_part( 'resources/views/entry/single/' . get_post_type() ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			pariscope_posted_on();
-			pariscope_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+<?php } else { ?>
 
-	<?php pariscope_post_thumbnail(); ?>
+	<?php get_template_part( 'resources/views/entry/archive/' . get_post_type() ); ?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php pariscope_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<?php } ?>

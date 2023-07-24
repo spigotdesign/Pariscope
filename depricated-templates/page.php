@@ -1,9 +1,8 @@
 <?php
 /**
- * The main template file
+ * The template for displaying pages
  *
  * @package Pariscope
- * 
  */
 
 get_header(); ?>
@@ -14,7 +13,7 @@ get_header(); ?>
 	
 			<?php while (have_posts()):the_post(); ?>
 
-				<?php get_template_part( 'resources/views/content/' . get_post_type() ); ?>
+				<?php get_template_part( 'resources/views/content/page' ); ?>
 
 			<?php endwhile; ?>
 
