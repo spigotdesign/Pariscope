@@ -13,41 +13,9 @@ body {
   font-style: normal;
   min-height: 100%;
   background-color: $body-background;
-  padding: convert(10);
-  background: linear-gradient(165.22deg, $grad-1 5.57%, $grad-2 30.9%, $grad-3 60.78%);
 
-  
-
-  @include mq(desktop-nav) {
-    padding: convert(20);
-    padding-left: 0;
-  }
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background: linear-gradient(206deg, $grad-4 6.5%, transparent 47.65%, $grad-5 98%);
-    z-index: -1;
-  }
-
-  &:after {
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    content: "";
-      background-image: url(../svg/stereopattern-one.svg);
-      background-repeat: no-repeat;
-      background-position-y: 50%;
-     
-      z-index: 1;
+  @include mq(phone-only) {
+  	overflow-x: hidden;
   }
   
 }
-
-

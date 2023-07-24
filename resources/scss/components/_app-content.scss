@@ -11,13 +11,9 @@
 .app-content {
   margin: 0 auto;
   padding: 0;
-  width: 100%;
-  min-height: 1500px; 
-
-
-
+  padding-top: $app-header-height;
 
   @include mq(mobile-nav) {
-       // padding-top: $app-header-height-mobile;
+        padding-top: $app-header-height-mobile;
     }
 }

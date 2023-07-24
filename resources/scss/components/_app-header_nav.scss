@@ -5,9 +5,18 @@
 @use "sass:math";
 
 .app-header__nav {
- order: 2;
-  @include mq(desktop-nav) {
-    order: 1;
+  display: flex;
+  align-items: center;
+  flex: 0 1 calc(100% - #{$branding-width});
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  overflow-x: hidden;
+  
+
+  @include mq(phone-only) {
+    flex-basis: calc(100% - #{$branding-width-mobile});
+    //order: 1;
+    //height: 24px;
   }
 
   .menu {
@@ -19,4 +28,4 @@
 @import "menu-primary";
 // @import "menu-secondary";
 // @import "menu-account";
-// @import "menu-button";
+@import "menu-button";

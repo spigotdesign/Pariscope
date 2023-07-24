@@ -7,30 +7,5 @@
 ////
 
 .app {
-    width: 100%;
-    display: flex;
-	flex-flow: row wrap;
-    // grid-template-columns: 13.25rem 1fr;
-    // grid-template-rows: 100% 100%;
-
-	&-header {
-		flex: 0 1 100%;
-
-        @include mq(desktop-nav) {
-            flex-basis: 13.25rem;
-        }
-	}
-
-	&-content {
-		flex: 0 1 100%;
-
-        @include mq(desktop-nav) {
-            flex-basis: calc(100% - 13.25rem);
-        }
-	}
-
-    &-footer {
-        flex-basis: 100%;
-
-    }
+	width: 100%;
 }

@@ -1,5 +1,5 @@
-$font-family:     "Inter", sans-serif;
-$alt-font-family: 'Space Grotesk', sans-serif;
+$font-family:     "Amsi Pro", sans-serif;
+$alt-font-family: $font-family;
 
 //$med-font-family:			'acherusgrotesque-medium', sans-serif;
 //$bold-font-family:		'acherusgrotesque-bold', sans-serif;
@@ -10,12 +10,12 @@ $mono-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 $base-font-family: $font-family;
 $base-font-size: 16px;
 $base-font-style: normal;
-$base-font-weight: 300;
+$base-font-weight: 400;
 
 // Font Weights
 $bold-font-weight: 700;
-$mid-font-weight: 400;
-$normal-font-weight: 300;
+$mid-font-weight: 600;
+$normal-font-weight: 400;
 $light-font-weight: $normal-font-weight;
 
 // Headings

@@ -13,7 +13,7 @@ $gray-darkest: #231f20;
 $gray-darker: #30353a;
 $gray-dark: #4a4a4a;
 $gray: #515d67;
-$gray-light: #ABADB2;
+$gray-light: #9fa4a8;
 $gray-lighter: #d8d8d8;
 $gray-lightest: #f9f9f9;
 
@@ -21,7 +21,7 @@ $gray-lightest: #f9f9f9;
 $blue: #0075FF;
 $blue-light: #8896a6;
 $blue-lightest: #8ecce4; // set
-$blue-dark: #2D333F; // set
+$blue-dark: #0c2340; // set
 $blue-darker: #152B45; // set
 $blue-darkest: #07182d;
 $teal: #419db9;
@@ -29,7 +29,7 @@ $teal-light: #52c0e3;
 $shadow-blue: #354558;
 $purple: #a85ece;
 $purple-darkest: #0f0b2e;
-$red: #B92B30;
+$red: #c51b0b;
 $red-dark: #812d31;
 $green: #39b121;
 
@@ -42,20 +42,10 @@ $orange: $yellow;
 $tan: #f2ddb8;
 $tan-light: #fefdf8;
 $cream: #E9DFD4;
-$salmon: #E56B6F;
-
-// Background Gradient
-$grad-1:  rgba(220,231,229, .5);
-$grad-2:  rgba(214,227,224, .5);
-$grad-3:  rgba(223,210,198, .5);
-$grad-4:  rgba(227,231,230, 1);
-$grad-5:  rgba(208,210,220, 1);
-
-
 
 // Main site colors
 $primary-color: $blue-dark;
-$secondary-color: $salmon;
+$secondary-color: $blue;
 // Corporate Colors
 
 // Page
@@ -69,17 +59,17 @@ $headings-color: $primary-color;
 $footer-text: #557882;
 
 // Links
-$link-color: $salmon;
-$link-color-hover: $red;
+$link-color: $blue;
+$link-color-hover: $blue-dark;
 
 // Header Colors
-$header-background: transparent;
+$header-background: $white;
 
 // Main Nav Colors
 $nav-bg-color: transparent;
 $nav-bg-color-hover: transparent;
 $nav-text-color: $blue-dark;
-$nav-text-color-hover: $salmon;
+$nav-text-color-hover: $blue;
 $nav-text-color-current: $nav-text-color-hover;
 
 // Main Nav Button
@@ -122,18 +112,18 @@ $button-border-color: $primary-color;
 $button-border-color-hover: $button-border-color;
 
 // Footer
-$footer-copyright-color: $gray-light;
-$footer-link-color: $gray-light;
-$footer-link-color-hover: $salmon;
-$footer-text-color: $gray-light;
+$footer-copyright-color: $white;
+$footer-link-color: $white;
+$footer-link-color-hover: $blue;
+$footer-text-color: $white;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);
 $nav-border-color: rgba($blue, 0.75);
 
 // Tooltips
-$tooltip-color: $white;
-$tooltip-bg-color: $salmon;
+$tooltip-color: $blue-dark;
+$tooltip-bg-color: $blue;
 
 // Pagination
 $pagination-bg-color: $blue-dark;
@@ -210,5 +200,3 @@ $ecp-link-color: $link-color;
 @function block-color($name) {
   @return map-get(block-colors(), $name);
 }
-
-

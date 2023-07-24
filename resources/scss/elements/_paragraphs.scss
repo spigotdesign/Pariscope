@@ -4,9 +4,7 @@ p {
   margin-bottom: 1.5rem;
   font-family: $body-font-family;
   font-weight: $body-font-weight;
-  letter-spacing: 0.025em;
   @include font-size(16px);
-  
 
   .entry__content & {
     &:last-child {
