@@ -11,7 +11,7 @@
 
 array_map(
     function ($file) {
-        require_once get_parent_theme_file_path("app/{$file}.php");
+        require_once get_theme_file_path("app/{$file}.php");
     },
     [
         'functions-assets',
@@ -20,7 +20,7 @@ array_map(
         'functions-setup',
         'functions-template',
         'functions-template-tags',
-        'functions-customizer',
+        //'functions-customizer',
     ]
 );
 
