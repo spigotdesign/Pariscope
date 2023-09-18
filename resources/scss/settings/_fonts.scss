@@ -8,37 +8,3 @@
 
 $fontURI: '../../dist/fonts';
 
-@font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-
-}
-
-@font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Amsi Pro';
-    src: url('#{$fontURI}/amsipro/amsipronormal-semibold-webfont.woff2') format('woff2'),
-         url('#{$fontURI}/amsipro/amsipronormal-seimibold-webfont.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}

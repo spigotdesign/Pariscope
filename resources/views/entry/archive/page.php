@@ -6,7 +6,7 @@
 <?php the_title(); ?>
 	
 	<div class="entry__content">
-		This is the archvie password_get_info
+		This is the start of a page archive
 	</div>
 
 </article>

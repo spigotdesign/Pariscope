@@ -2,9 +2,8 @@
 /**
  * Jetpack Compatibility File
  *
- * @link https://jetpack.com/
- *
  * @package Pariscope
+ * 
  */
 
 /**

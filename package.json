@@ -2,10 +2,10 @@
 	"name": "pariscope",
 	"version": "2.0.0",
 	"description": "A starter theme for WordPress.",
-	"author": "Bryan Hoffman",
+	"author": "Spigot Design",
 	"license": "GPL-2.0+",
 	"homepage": "https://spigotdesign.com/",
-	"main": "resources/js/app.js",
+	
 	"scripts": {
 		"scss:screen": "sass resources/scss/screen.scss dist/css/screen.css",
 		"scss:editor": "sass resources/scss/editor.scss dist/css/editor.css",
@@ -13,12 +13,12 @@
 		"cssmin:screen": "cleancss -o dist/css/screen.css dist/css/screen.css",
 		"cssmin:editor": "cleancss -o dist/css/editor.css dist/css/editor.css",
 		"cssmin": "npm-run-all --parallel cssmin:*",
-		"uglify-js": "uglifyjs resources/js/app.js -o dist/js/app.js",
+		"uglify-js": "uglifyjs resources/js/scripts.js -o dist/js/scripts.js",
 		"prod": "npm run cssmin && run uglify-js",
 		"watch:scss": "onchange 'resources/scss/**/*.scss' -- npm run scss",
 		"watch:js": "onchange 'resources/js/*.js' -- npm run uglify-js",
 		"watch": "npm-run-all --parallel watch:*",
-    "lint:scss": "wp-scripts lint-style 'resources/scss/**/*.scss'",
+    	"lint:scss": "wp-scripts lint-style 'resources/scss/**/*.scss'",
 		"lint:js": "wp-scripts lint-js 'js/*.js'"
 	},
 	"devDependencies": {

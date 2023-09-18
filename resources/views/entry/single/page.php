@@ -1,6 +1,4 @@
-<article class="main-page-content">
-	
-	<?php get_template_part( 'resources/views/header/page' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	
 	<div class="entry__content">
 		<?php the_content() ?>

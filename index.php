@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-	<main>
+	<main id="main">
 
 		<?php if (have_posts()): ?>
 	

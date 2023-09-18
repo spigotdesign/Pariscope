@@ -26,8 +26,21 @@ add_action( 'after_setup_theme', function() {
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add support for WP Block Styles
+	add_theme_support( 'wp-block-styles' );
+
     // Responsive embeds
 	add_theme_support( 'responsive-embeds' );
+
+	// Editor styles
+	add_theme_support( 'editor-styles' );
+
+	// Editor Stylesheet
+	$child_style = get_stylesheet_directory_uri() . '/dist/css/editor.css';
+	add_editor_style( $child_style );
+
+	// Align wide
+	add_theme_support( 'align-wide' );
 
     // Outputs HTML5 markup for core features.
 	add_theme_support( 'html5', [
@@ -47,7 +60,6 @@ add_action( 'after_setup_theme', function() {
 /**
  * Register menus.
  *
- * 
 */
 
 add_action( 'init', function() {

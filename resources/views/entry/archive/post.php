@@ -1,12 +1,14 @@
-<article class="">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-<header class="entry__header">
+	<?php pariscope_post_thumbnail(); ?>
 
-</header>
-<?php the_title(); ?>
+	<h2 class="entry__title">
+		<a class="entry__permlink" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	</h2>
 	
-	<div class="entry__content">
-		This is the archvie password_get_info
+	<div class="entry__summary">
+		<?php $content = get_the_content(); ?>
+		<p><?php echo wp_trim_words( $content , '13' ); ?></p>
 	</div>
 
 </article>

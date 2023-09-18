@@ -8,16 +8,15 @@
 
 get_header(); ?>
 
-	<main>
+	<main id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<?php get_template_part( 'resources/views/header', 'archive-header' ); ?>
 
-
 			<?php while (have_posts()):the_post(); ?>
 				
-				<?php get_template_part( 'resources/views/content/content', get_post_type() ); ?>
+				<?php get_template_part( 'resources/views/content/' . get_post_type() ); ?>
 
 			<?php endwhile; ?>
 

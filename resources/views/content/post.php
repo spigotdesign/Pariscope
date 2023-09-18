@@ -6,8 +6,10 @@
  */
 
 ?>
-This is the main 'post' template
+
 <?php if( is_singular() ) { ?>
+
+	<?php get_template_part( 'resources/views/header/post'); ?>
 
 	<?php get_template_part( 'resources/views/entry/single/post' ); ?>
 

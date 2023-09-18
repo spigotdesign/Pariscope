@@ -14,13 +14,10 @@ array_map(
         require_once get_theme_file_path("app/{$file}.php");
     },
     [
-        'functions-assets',
-        // 'functions-filters',
-        // 'functions-page-builder',
         'functions-setup',
+        'functions-assets',
+        'functions-filters',
         'functions-template',
-        'functions-template-tags',
-        //'functions-customizer',
     ]
 );
 

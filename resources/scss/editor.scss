@@ -10,9 +10,6 @@
 /// @link   https:spigotdesign.com
 ////
 
-// Fonts
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Rubik:wght@500&display=swap');
-
 
 // Settings
 @import 'settings/_index';
@@ -28,7 +25,7 @@
 	@import 'elements/_index';
 	@import 'components/_index';
 
-	// Blocks
+	/* Blocks
 	@import 'blocks/_index';
 	@import 'blocks/core/button/edit';
 	@import 'blocks/core/code/edit';
@@ -43,7 +40,7 @@
 	@import 'blocks/core/pullquote/edit';
 	@import 'blocks/core/quote/edit';
 	@import 'blocks/core/separator/edit';
-	@import 'utilities/_index';
+	@import 'utilities/_index'; */
 }
 
 // Import editor overrides.

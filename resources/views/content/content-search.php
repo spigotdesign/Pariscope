@@ -8,7 +8,7 @@
  */
 
 ?>
-This is the  search template
+This is the  search template which doesn't appear to do anthing ATM.
 <?php if( is_singular() ) { ?>
 
 	<?php get_template_part( 'resources/views/entry/single/' . get_post_type() ); ?>
