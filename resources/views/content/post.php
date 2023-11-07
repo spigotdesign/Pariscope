@@ -7,7 +7,7 @@
 
 ?>
 
-<?php if( is_singular() ) { ?>
+<?php if( is_singular() && !is_front_page() ) { ?>
 
 	<?php get_template_part( 'resources/views/header/post'); ?>
 

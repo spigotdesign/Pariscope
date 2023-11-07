@@ -9,19 +9,17 @@
 ?>
 
 <footer id="colophon" class="site-footer">
-	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'pariscope' ) ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'pariscope' ), 'WordPress' );
-			?>
+	<div class="site-footer__branding">
+		<a class="site-header__branding-link" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+			<img src="<?php echo get_stylesheet_directory_uri() . '/dist/svg/spigot-footer.svg'; ?>" />
 		</a>
-		<span class="sep"> | </span>
-			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'pariscope' ), 'pariscope', '<a href="https://spigotdesign.com/">Spigot</a>' );
-			?>
 	</div>
+
+	<div class="site-footer__nav-copyright">
+		<?php get_template_part( 'resources/views/nav/menu', 'footer' ); ?>
+		<p>&copy; <?php date('Y'); ?> Spigot. <a href="https://creativecommons.org/licenses/by/4.0/">Some rights reserved</a>.</p>
+	</div>
+
 </footer>
 
 

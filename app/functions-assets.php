@@ -2,8 +2,6 @@
 /**
  * Asset-related functions and filters.
  * 
- *  @package    Pariscope
- * 
  */
 
 
@@ -30,3 +28,23 @@ add_action( 'wp_enqueue_scripts', function() {
 
 });
 
+/**
+ * Enqueue styles for editor
+ * 
+ */
+
+ add_action( 'enqueue_block_assets', function() {
+
+	wp_enqueue_style( 'pariscope-editor-style', get_stylesheet_directory_uri() . '/dist/css/editor.css', '');
+
+	/* Unregister core block and theme styles.
+	wp_deregister_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library-theme' );
+
+	// Re-register core block and theme styles with an empty string. This is
+	// necessary to get styles set up correctly.
+	wp_register_style( 'wp-block-library', '' );
+	wp_register_style( 'wp-block-library-theme', '' );
+  */
+
+} );

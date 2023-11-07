@@ -13,76 +13,60 @@ $gray-darkest: #231f20;
 $gray-darker: #30353a;
 $gray-dark: #4a4a4a;
 $gray: #515d67;
-$gray-light: #9fa4a8;
+$gray-light: #AAABBC;
 $gray-lighter: #d8d8d8;
-$gray-lightest: #f9f9f9;
+$gray-lightest: #F9F8FB; // set
 
 // Colors
 $blue: #0075FF;
-$blue-light: #8896a6;
-$blue-lightest: #8ecce4; // set
-$blue-dark: #0c2340; // set
-$blue-darker: #152B45; // set
-$blue-darkest: #07182d;
-$teal: #419db9;
-$teal-light: #52c0e3;
-$shadow-blue: #354558;
-$purple: #a85ece;
-$purple-darkest: #0f0b2e;
-$red: #c51b0b;
-$red-dark: #812d31;
-$green: #39b121;
+$purple-dark: #262136;
+$purple-med: #372941;
+$salmon: #EF626C;
 
-$green-dark: #172e26; // set
-$green-lightest: #f0f1f0;
-$olive-light: #6d817a; // set
-$yellow: #f9c626;
-
-$orange: $yellow;
-$tan: #f2ddb8;
-$tan-light: #fefdf8;
-$cream: #E9DFD4;
 
 // Main site colors
-$primary-color: $blue-dark;
-$secondary-color: $blue;
+$primary-color: $purple-dark;
+$secondary-color: $purple-dark;
+$highlight-color: $salmon;
 // Corporate Colors
 
 // Page
-$body-background: $gray-lightest;
+$body-background: $white;
 $alt-body-background: $white;
-$page-head-bg-color: $blue-dark;
+$page-head-bg-color: transparent;
 
 // Text
 $text-color: $primary-color;
-$headings-color: $primary-color;
-$footer-text: #557882;
+$headings-color: $purple-med;
+$footer-text: $text-color;
 
 // Links
-$link-color: $blue;
-$link-color-hover: $blue-dark;
+$link-color: $highlight-color;
+$link-color-hover: $primary-color;
+$link-color-subtle: $text-color;
+$link-color-subtle-hover: $primary-color;
 
 // Header Colors
-$header-background: $white;
+$header-background: transparent;
 
 // Main Nav Colors
 $nav-bg-color: transparent;
 $nav-bg-color-hover: transparent;
-$nav-text-color: $blue-dark;
-$nav-text-color-hover: $blue;
+$nav-text-color: $purple-dark;
+$nav-text-color-hover: $salmon;
 $nav-text-color-current: $nav-text-color-hover;
 
 // Main Nav Button
 $nav-btn-bg: transparent;
-$nav-btn-bg-hover: $blue;
-$nav-btn-text-color: $blue-dark;
-$nav-btn-text-color-hover: $white;
-$nav-btn-border-color: $blue-dark;
-$nav-btn-border-color-hover: $blue;
+$nav-btn-bg-hover: $primary-color;
+$nav-btn-text-color: $purple-dark;
+$nav-btn-text-color-hover: $salmon;
+$nav-btn-border-color: $nav-btn-text-color;
+$nav-btn-border-color-hover: $primary-color;
 
 // Secondary Nav
-$nav-secondary-bg-color: $blue-dark;
-$nav-secondary-bg-color-hover: $red;
+$nav-secondary-bg-color: $primary-color;
+$nav-secondary-bg-color-hover: $primary-color;
 $nav-secondary-text-color: $white;
 $nav-secondary-text-color-hover: $white;
 
@@ -96,37 +80,44 @@ $subnav-text-color-hover: $white;
 // $mobile-background: $blue-dark;
 $nav-mobile-text-color: $white;
 $nav-mobile-text-color-hover: $white;
-$nav-mobile-bg-color: $blue-dark;
-$nav-mobile-bg-color-hover: $blue;
+$nav-mobile-bg-color: $primary-color;
+$nav-mobile-bg-color-hover: $primary-color;
 $subnav-mobile-bg-color: transparent;
-$subnav-mobile-bg-color-hover: $blue;
+$subnav-mobile-bg-color-hover: $highlight-color;
 $subnav-mobile-text-color: $white;
 $subnav-mobile-text-color-hover: $white;
 
+// Nav Toggle
+$nav-toggle-color: $primary-color;
+$nav-toggle-color-active: $primary-color;
+
+
 // Buttons
-$button-text-color: $primary-color;
+$button-text-color: $white;
 $button-text-color-hover: $white;
-$button-bg-color: transparent;
-$button-bg-color-hover: $primary-color;
-$button-border-color: $primary-color;
-$button-border-color-hover: $button-border-color;
+$button-bg-color: $primary-color;
+$button-bg-color-hover: $highlight-color;
+$button-border-color: $button-bg-color;
+$button-border-color-hover: $button-bg-color-hover;
 
 // Footer
+$footer-bg-color: $purple-dark;
 $footer-copyright-color: $white;
 $footer-link-color: $white;
-$footer-link-color-hover: $blue;
+$footer-link-color-hover: $primary-color;
 $footer-text-color: $white;
 
 // Borders
 $border-color: darken($gray-lightest, 5%);
 $nav-border-color: rgba($blue, 0.75);
+$border-color-form: $purple-med;
 
 // Tooltips
-$tooltip-color: $blue-dark;
-$tooltip-bg-color: $blue;
+$tooltip-color: $white;
+$tooltip-bg-color: $primary-color;
 
 // Pagination
-$pagination-bg-color: $blue-dark;
+$pagination-bg-color: $primary-color;
 $pagination-bg-color-active: darken($pagination-bg-color, 7.5%);
 $pagination-text-color: $white;
 $pagination-text-color-active: $white;
@@ -136,7 +127,24 @@ $pagination-border-color: lighten($pagination-bg-color, 5%);
 $boxshadow-color: $black;
 
 // Search
-$search-bg-color: $green-dark;
+$site-search-bg-color: $primary-color;
+$site-search-bg-color-input: $primary-color;
+$site-search-border-color-input: $primary-color;
+$site-search-bg-color-input-focus: $primary-color;
+$site-search-text-color: $white;
+$site-search-text-color-focus: $site-search-text-color;
+$site-search-placeholder-color: $white;
+
+// Forms
+$form-focus-shadow-color: rgba($purple-dark, .25); 
+$form-focus-border-color: rgba($purple-dark, .5);
+
+// Sidebar
+$sidebar-bg-color: $gray-lightest;
+
+// Comments
+$comment-reply-bg-color: transparent;
+$comment-reply-bg-color-hover: $comment-reply-bg-color;
 
 /* Event Calendar Pro Colors
 ***************************************/
@@ -144,6 +152,11 @@ $ecp-button-bg-color: $link-color;
 $ecp-button-text-color: $button-text-color;
 $ecp-button-border-color: $button-border-color;
 $ecp-link-color: $link-color;
+
+
+
+/******* REMOVE THESE AND REPLACE WITH SOMETHING WE UNDERSTAND *******/
+
 
 /// Returns an map of colors in name-value format. This function also merges
 /// with the `block-colors()` map to create a map of all colors.

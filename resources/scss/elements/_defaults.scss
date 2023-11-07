@@ -18,4 +18,20 @@ body {
   	overflow-x: hidden;
   }
   
+  
+  
 }
+
+#main {
+  min-height: 80vh;;
+}
+
+.spigot-logo {
+    --stop1: red;
+    --stop2: purple;
+    --stop3: blue;
+    --stop4: green;
+    --stop5: yellow;
+    --stop6: orange; 
+	--dur: 40s;
+  }

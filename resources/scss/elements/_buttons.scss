@@ -1,24 +1,120 @@
 // Buttons
 
 a.button,
+a.btn,
 button.button,
 input.button,
 #respond input#submit {
-  @include button;
+    @include font-size(14px);
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: .75rem 2.5rem;
+    font-weight: $normal-font-weight;
+    border-color: $button-border-color;
+    border-width: $button-border-width;
+    border-style: $button-border-style;
+    border-radius: $button-border-radius;
+    font-family: $font-family;
+    color: $button-text-color;
+    background-color: $button-bg-color;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: $button-bg-color-hover;
+        text-decoration: none;
+        background-image: none;
+        color: $button-text-color-hover;
+        border-color: $button-border-color-hover;
+    }
+
+    &.main-cta {
+        background-color: transparent;
+      color: lighten($salmon, 30%);
+      padding: 0 0 0 $margin * .5;
+      border-style: solid;
+      border-color: $salmon;
+      border-width: $nav-button-border-width;
+      cursor: pointer;
+      border-radius: 9px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+	  overflow: hidden;
+      @include font-size(13px);
+
+		&:hover {
+        //background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="a" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="red"><animate attributeName="stop-color" values="red;purple;blue;green;yellow;orange;red;" dur="20s" repeatCount="indefinite"></animate></stop><stop offset=".5" stop-color="purple"><animate attributeName="stop-color" values="purple;blue;green;yellow;orange;red;purple;" dur="20s" repeatCount="indefinite"></animate></stop><stop offset="1" stop-color="blue"><animate attributeName="stop-color" values="blue;green;yellow;orange;red;purple;blue;" dur="20s" repeatCount="indefinite"></animate></stop><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="20s" repeatCount="indefinite" /></linearGradient><linearGradient id="b" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="1"><stop offset="0" stop-color="red"><animate attributeName="stop-color" values="red;purple;blue;green;yellow;orange;red;" dur="20s" repeatCount="indefinite"></animate></stop><stop offset="1" stop-color="purple" stop-opacity="0"><animate attributeName="stop-color" values="purple;blue;green;yellow;orange;red;purple;" dur="20s" repeatCount="indefinite"></animate></stop><animateTransform attributeName="gradientTransform" type="rotate" values="360 .5 .5;0 .5 .5" class="ignore" dur="10s" repeatCount="indefinite" /></linearGradient></defs><rect fill="url(%23a)" width="100%" height="100%" /><rect fill="url(%23b)" width="100%" height="100%" /></svg>');
+        //backround-size: 100%;
+        //background-repeat: no-repeat;
+        color: $purple-dark;
+        border-color: transparent;
+        //box-shadow: 0px 0px 10px 0px rgba($blue-dark,0.5) inset;
+        //text-shadow: 0 0 10px 0px rgba($blue-dark,0.5);
+
+        &:before {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        &:after {
+          width: 6em;
+          background-color: $purple-dark;
+		  border-radius: 0 $border-radius-med $border-radius-med 0;
+        }
+      }
+
+        &:before {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        &:after {
+            width: 6em;
+            background-color: $purple-dark;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $salmon;
+            /* Background color */
+            //opacity: 0;
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.86, 0.18, 0.04, 0.81);
+            z-index: -1;
+
+        }
+
+        &:after {
+            /* Arrow 1 */
+            position: relative !important;
+            background-image: url('data:image/svg+xml,<svg width="23" height="8" viewBox="0 0 23 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.3537 4.27689C22.5489 4.08163 22.5489 3.76505 22.3537 3.56978L19.1717 0.387804C18.9764 0.192542 18.6598 0.192542 18.4646 0.387804C18.2693 0.583066 18.2693 0.899649 18.4646 1.09491L21.293 3.92334L18.4646 6.75177C18.2693 6.94703 18.2693 7.26361 18.4646 7.45887C18.6599 7.65413 18.9764 7.65413 19.1717 7.45887L22.3537 4.27689ZM0.000122114 4.42334L22.0001 4.42334L22.0001 3.42334L0.000122027 3.42334L0.000122114 4.42334Z" fill="white"/></svg>');
+            background-position: center;
+            content: "";
+            width: 3rem;
+            height: 2.5rem !important;
+            padding-right: 1rem;
+            background-repeat: no-repeat;
+            margin-left: 2rem;
+            transform: none;
+            background-color: $salmon;
+            z-index: 1;
+            transition: all 0.5s cubic-bezier(0.86, 0.18, 0.04, 0.81);
+			border: 1px solid $salmon;
+			border-radius: 0 $border-radius-med $border-radius-med 0 ;
+
+        }
+    }
 }
 
-.wp-block-button {
-
-	&.blue-light {
-
-		.wp-block-button__link {
-			border-color: $blue-light;
-			color: $blue-light;
-
-			&:hover {
-				background-color: $blue-light;
-				color: $white;
-			}
-		}
-	}
-}
+.wp-block-button {}

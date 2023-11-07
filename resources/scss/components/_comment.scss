@@ -7,37 +7,50 @@
 ////
 
 .comment {
-  margin-bottom: $margin * 2;
+  margin-bottom: $margin * 3;
 
-  .children & {
-    border-left: 1px solid $border-color;
+  .children {
+    border-left: 7px solid $border-color;
     padding-left: $margin;
+    list-style: none;
   }
 
-  // Type of comment.
-  &--type-comment {}
-
-  &--type-ping {}
-
-  // Comment status.
-  &--status-unapproved {}
+  &-body {
+    margin-bottom: $margin * 1.5;
+  }
 
   // Full comment text/content.
-  &__content {
+  &-content {
     padding-bottom: $margin;
+
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &__footer {
+  &-metadata {
+
+    // Date / Time
+    a {
+      color: $link-color-subtle;
+    }
+  }
+
+  &-author {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid $border-color;
+    align-items: center;
+
+    .fn {
+      padding-right: $margin * .25;
+
+      a {
+        color: $link-color-subtle;
+      }
+    }
   }
 
-  // Comment under moderation message.
-  &__moderation {}
-
-  // Metadata wrapper.
-  &__meta {
+  &-meta {
     font-size: 14px;
     margin-bottom: 1em;
     display: flex;
@@ -45,22 +58,16 @@
     align-items: center;
     justify-content: space-between;
 
-    &-author {
-      display: flex;
-      align-items: center;
-    }
   }
 
   // Individual metadata items.
-  &__avatar {
+  .avatar {
     width: 40px;
     height: 40px;
     margin: 0 $margin 0 0;
     border-radius: 50px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
   }
-
-  &__author {}
 
   &__permalink {
     text-transform: uppercase;
@@ -74,30 +81,29 @@
     }
   }
 
-  &__date {}
-
-  &__time {}
-
-  &__edit {}
-
-  &__reply, &__edit {
+  &-reply-link,
+  &-edit-link {
     text-transform: uppercase;
 
     @include font-size(11px);
 
-    border: 1px solid $border-color;
+    border: 2px solid $border-color;
+    border-radius: $border-radius-small;
     padding: .25em .5em;
     position: relative;
     bottom: -1px;
     color: $text-color;
+    background-color: $comment-reply-bg-color;
+    font-weight: $bold-font-weight;
 
     &:hover {
+      background-color: $highlight-color;
       color: $white;
-      background-color: $blue-dark;
+      border-color: $highlight-color;
     }
 
     //border-bottom: none;
- 
+
   }
 }
 

@@ -6,31 +6,20 @@ $spacing-global:	1.5rem;
 $margin:			$spacing-global;
 $base-line-height:  $spacing-global;
 
-
-
-$width-alignwide : 56rem;
-$width-alignfull : 100vw;
-
 $content-width: math.div(900, 16) * 1rem;
 
-$content-width-padded : $content-width + ( $spacing-global * 2 );
-
-$alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
-
-
-$site-max-width:				math.div(1200, 16) * 1rem;
-$site-width:					$site-max-width;
-
-$post-width:					math.div(960, 16) * 1rem;
-
-$app-header-height:				math.div(100, 16) * 1rem;
-$app-header-height-mobile:		$app-header-height * .75;
+$post-width:					60rem;
+$site-width-wide: 				90vw;
+$site-width-med: 				75rem;
+$site-width-narrow: 			60rem;
+$site-width:					75rem;
 
 
+$site-header-height:			math.div(100, 16) * 1rem;
+$site-header-height-mobile:		$site-header-height * .75;
 
 // Global Transition
 $transition:					all .3s ease-in-out;
-
 
 // Logo dimensions
 $logo-width:            		math.div(203, 16) * 1rem;

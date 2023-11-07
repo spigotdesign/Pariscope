@@ -18,8 +18,10 @@
 @import 'tools/_index';
 
 
+
+
 // Prefixes all of the styles with `.edit-post-visual-editor` for use within the block editor.
-.edit-post-visual-editor {
+.editor-styles-wrapper {
 
 	// Elements
 	@import 'elements/_index';

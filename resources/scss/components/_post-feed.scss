@@ -1,0 +1,57 @@
+// Landing page post feed
+
+.section-feed {
+  .container-content {
+    width: 100%;
+  }
+
+  .section-heading {
+    margin-bottom: $margin * 2;
+
+    @include mq(tablet-portrait-up) {
+      max-width: 69%;
+    }
+  }
+
+  .feed {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .entry {
+      flex: 0 1 100%;
+
+      @include mq(tablet-portrait-up) {
+        flex: 0 1 32%;
+      }
+
+      img {
+        border-radius: $border-radius $border-radius 0;
+        margin-bottom: $margin;
+      }
+
+      &__meta {
+        color: $gray-light;
+        @include font-size(14px);
+        display: block;
+
+        a {
+          color: $gray-light;
+        }
+
+        sep {
+          //color: $text-color;
+        }
+      }
+
+      &__title {
+        font-family: $font-family;
+        font-size: 23px;
+        font-size: 1.4375rem;
+        line-height: 1.125;
+      }
+    
+
+  }
+}
+}

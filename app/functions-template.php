@@ -6,8 +6,6 @@
 
 
 
-
-
 /**
  * Custom Navigation Walker
  */
@@ -155,26 +153,43 @@ if ( ! function_exists( 'pariscope_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'pariscope_post_thumbnail' ) ) :
 
-	function pariscope_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
-		} ?>
+function pariscope_entry_meta() {
 
-		<a class="entry__image-link" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-				the_post_thumbnail(
-					'entry__image',
-					array(
-						'alt' => the_title_attribute(
-							array(
-								'echo' => false,
-							)
-						),
-					)
-				);
-			?>
-		</a>
-		
-<?php } endif;
+  $categories = get_the_category();
+  $cat_name = $categories[0]->cat_name;
+  $cat_link = get_category_link($categories[0]->term_id);
+  
+  $date = get_the_date( 'F j, Y' ); ?>
+
+	<div class="entry__meta">
+
+		<span class="entry__meta-cat"><a href="' <?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></span>
+		<sep><?php echo htmlentities('•'); ?></sep>
+		<span class="entry__meta-published"><?php echo $date; ?></span>
+
+	</div>
+
+
+<?php }
+
+
+
+function pariscope_post_thumbnail($image_size) { ?>
+
+	<a class="entry__image-link" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<?php
+			the_post_thumbnail(
+				$image_size,
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
+		?>
+	</a>
+	
+<?php };

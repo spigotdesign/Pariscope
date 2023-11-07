@@ -1,36 +1,101 @@
 // Menu Button
 
-.menu {
+.menu--primary {
   .menu__item.btn {
-    margin-left: $margin;
+    margin-left: auto;
 
     .menu__link {
-      background: $nav-btn-bg;
-      color: $nav-btn-text-color;
-      padding-top: $margin * 0.125;
-      padding-bottom: $margin * 0.25;
+      background-color: transparent;
+      color: $salmon;
+      padding: 0 0 0 $margin * .5;
       border-style: solid;
-      border-color: $nav-btn-border-color;
+      border-color: $salmon;
       border-width: $nav-button-border-width;
-      border-radius: $border-radius;
+      border-radius: $border-radius-med;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      @include font-size(13px);
+      overflow: hidden;
+      
 
-      &:hover {
-        background: $nav-btn-bg-hover;
-        color: $nav-btn-text-color-hover;
-        border-color: $nav-btn-border-color-hover;
-        //box-shadow: 0px 0px 10px 0px rgba($blue-dark,0.5) inset;
-        //text-shadow: 0 0 10px 0px rgba($blue-dark,0.5);
+      .detached & {
+        color: $purple-dark;
       }
 
+      &:hover {
+        color: $purple-dark;
+        border-color: transparent;
+
+        @include mq(mobile-nav) {
+            background-color: $salmon;
+            color: $purple-dark;
+          }
+
+        &:before {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        &:after {
+          width: 6em;
+          background-color: $purple-dark;
+          //border-radius: $border-radius;
+
+          @include mq(mobile-nav) {
+            background-color: $salmon;
+          }
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $salmon;
+        /* Background color */
+        //opacity: 0;
+        transform: translateX(-100%);
+        transition: transform 0.5s cubic-bezier(0.86, 0.18, 0.04, 0.81);
+        z-index: -1;
+
+      }
+
+      &:after {
+        /* Arrow 1 */
+        position: relative !important;
+        background-image: url('data:image/svg+xml,<svg width="23" height="8" viewBox="0 0 23 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.3537 4.27689C22.5489 4.08163 22.5489 3.76505 22.3537 3.56978L19.1717 0.387804C18.9764 0.192542 18.6598 0.192542 18.4646 0.387804C18.2693 0.583066 18.2693 0.899649 18.4646 1.09491L21.293 3.92334L18.4646 6.75177C18.2693 6.94703 18.2693 7.26361 18.4646 7.45887C18.6599 7.65413 18.9764 7.65413 19.1717 7.45887L22.3537 4.27689ZM0.000122114 4.42334L22.0001 4.42334L22.0001 3.42334L0.000122027 3.42334L0.000122114 4.42334Z" fill="white"/></svg>');
+        background-position: center;
+        content: "";
+        width: 3rem;
+        height: 2.5rem !important;
+        padding-right: 1rem;
+        background-repeat: no-repeat;
+        margin-left: 2rem;
+        transform: none;
+        background-color: $salmon;
+        z-index: 1;
+        //border-radius: 0 $border-radius $border-radius 0 ;
+        transition: all 0.5s cubic-bezier(0.86, 0.18, 0.04, 0.81);
+
+        @include mq(mobile-nav) {
+          margin-left: auto;
+        }
+
+      }
 
     }
 
     .nav-open & {
-      width:95%;
+      width: 95%;
       margin: 10px auto;
+
       .menu__link {
-        background: $nav-btn-bg-hover;
-        text-align: center;
+        //background: $nav-btn-bg-hover;
+        //text-align: center;
       }
     }
 

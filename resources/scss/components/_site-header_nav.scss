@@ -1,0 +1,28 @@
+//
+// Primary menu
+//
+
+@use "sass:math";
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  flex: 0 1 calc(100% - #{$branding-width});
+  flex-flow: row wrap;
+  justify-content: space-between;
+  
+
+  @include mq(phone-only) {
+    flex-basis: calc(100% - #{$branding-width-mobile});
+    //order: 1;
+    //height: 24px;
+  }
+
+  .menu {
+    position: relative;
+
+  }
+}
+
+@import "menu-primary";
+@import "menu-button";

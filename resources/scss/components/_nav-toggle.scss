@@ -8,10 +8,79 @@
 
 $toggle-width: 30px;
 $toggle-height: 3px;
-$toggle-color: $green-dark;
-$toggle-color-active: $green-dark;
 
 .toggle-menu {
+  transform: scale(.45);
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  @include mq(desktop-nav) {
+    display: none;
+  }
+
+
+  span {
+    background: #fff;
+    border-radius: 10px;
+    height: 7px;
+    margin: 7px 0;
+    transition: transform .2s cubic-bezier(0.68, 0.6, 1, 1.6), background .2s ease-in-out;
+
+  }
+
+  span:nth-of-type(1) {
+    width: 50%;
+
+  }
+
+  span:nth-of-type(2) {
+    width: 100%;
+  }
+
+  span:nth-of-type(3) {
+    width: 75%;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked~span {
+    background: red;
+  }
+
+  input[type="checkbox"]:checked~span:nth-of-type(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(8px, 0px);
+    background: red;
+  }
+
+  input[type="checkbox"]:checked~span:nth-of-type(2) {
+
+    transform-origin: top;
+    transform: rotatez(-45deg)
+  }
+
+
+  input[type="checkbox"]:checked~span:nth-of-type(3) {
+
+    transform-origin: bottom;
+    width: 50%;
+    transform: translate(30px, -11px) rotatez(45deg);
+
+  }
+
+}
+
+
+
+.toggle-menu-old {
   display: flex;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -36,7 +105,7 @@ $toggle-color-active: $green-dark;
 
   .nav-open & {
     &:before {
-      color: $toggle-color-active;
+      color: $nav-toggle-color-active;
     }
   }
 
@@ -47,7 +116,7 @@ $toggle-color-active: $green-dark;
     @include font-size($toggle-width * 0.5);
 
     padding-right: 10px;
-    color: $toggle-color;
+    color: $nav-toggle-color;
   }
 
   &:focus {
@@ -61,10 +130,12 @@ $toggle-color-active: $green-dark;
     position: relative;
   }
 
-  &-inner, &-inner::before, &-inner::after {
+  &-inner,
+  &-inner::before,
+  &-inner::after {
     width: $toggle-width;
     height: $toggle-height;
-    background-color: $toggle-color;
+    background-color: $nav-toggle-color;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
@@ -72,7 +143,7 @@ $toggle-color-active: $green-dark;
     transition-timing-function: ease;
 
     .nav-open & {
-      background-color: $red;
+      background-color: $nav-toggle-color-active;
     }
   }
 

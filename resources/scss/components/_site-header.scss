@@ -1,0 +1,104 @@
+//
+// App Header
+//
+
+.site-header {
+    background-color: $header-background;
+    width: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 ($margin * .5);
+    transition: all 0.6s ease-in-out;
+  
+    
+    
+
+    @include mq(mobile-nav) {
+        height: $site-header-height-mobile;
+    }
+
+    .invisible & {
+        @include mq(desktop-nav) {
+            transform: translate(0, -33vh);  
+        }
+    }
+
+    .detached & {
+        height: $site-header-height-mobile;
+        backdrop-filter: blur(13px) ;
+        
+        //background: rgba($white, .75);
+
+        @include mq(desktop-nav) {
+            position: fixed;
+            transition: all .5s;
+            top: 0;
+            border-bottom: none;
+        }
+
+        &::after {
+            // display: none;
+            opacity: 0;
+            z-index: -10;
+        }
+    }
+
+    .admin-bar & {
+        top: 46px;
+
+        @include mq(wpadmin-desktop) {
+            top: 32px;
+        }
+
+        @include mq(phone-only) {
+            top: 0;
+        }
+    }
+
+    .admin-bar.detached & {
+        top: 2.875em;
+
+        @include mq(wpadmin-desktop) {
+            top: 2em;
+        }
+
+        @include mq(phone-only) {
+            top: 0;
+        }
+    }
+
+    .expressbar-open.detached & {
+        @include mq(wpadmin-desktop) {
+            top: 4.5em;
+        }
+    }
+
+    &__branding {
+        //margin-top: -36px;
+        transition: all .3s ease-in-out;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 0 1 $branding-width;
+        z-index: 1;
+        
+
+        img {
+            transform: scale(.6875);
+            transition: all .3s ease-in-out;
+        }
+
+
+        &-link {
+
+        }
+    }
+}
+
+

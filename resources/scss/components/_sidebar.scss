@@ -9,11 +9,12 @@
 .sidebar {
 
 	&--primary {
-		
+		margin: 0 ($margin * 2);
 		flex: 0 1 100%;
 		order: 2;
-		background-color: $green-lightest;
-		padding: 0;
+		background-color: $sidebar-bg-color;
+		padding: $margin;
+		border-radius: $border-radius;
 		
 		@include mq(tablet-portrait-up) {
 			flex-basis: 20rem;
@@ -21,5 +22,15 @@
 		}
 	}
 
-	&__title {}
+	.wp-block-heading {
+		color: $highlight-color;
+		@include font-size(24px);
+		border-bottom: 1px solid darken($gray-lightest, 5%);
+		margin-bottom: $margin * .25;
+		padding-bottom: $margin * .5;
+	}
+
+	.widget {
+		margin-bottom: $margin * 2;
+	}
 }

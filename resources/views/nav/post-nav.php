@@ -1,7 +1,16 @@
+<?php
 
-<?php the_post_navigation(
-	array(
-		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'pariscope' ) . '</span> <span class="nav-title">%title</span>',
-		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'pariscope' ) . '</span> <span class="nav-title">%title</span>',
-	)
-); 
+$prev_post = get_previous_post();
+$next_post = get_next_post();
+
+if (!empty($prev_post)) {
+  echo '<a href="' . get_permalink($prev_post->ID) . '" tooltip="'. $prev_post->post_title .'" rel="prev">Prev</a>'; 
+}
+
+if (!empty($next_post)) {
+  echo '<a href="' . get_permalink($next_post->ID). '" tooltip="'. $next_post->post_title .'" rel="next">Next</a>';
+}
+?>
+
+
+

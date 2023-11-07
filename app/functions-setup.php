@@ -53,6 +53,8 @@ add_action( 'after_setup_theme', function() {
         'script'
 	] );
 
+	
+
 
 });
 
@@ -69,17 +71,8 @@ add_action( 'init', function() {
 	] );
 
 	register_nav_menus( [
-		'footer_1' => esc_html_x( 'Footer Menu 1', 'nav menu location' )
+		'footer' => esc_html_x( 'Footer', 'nav menu location' )
 	] );
-
-	register_nav_menus( [
-		'footer_2' => esc_html_x( 'Footer Menu 2', 'nav menu location' )
-	] );
-
-	register_nav_menus( [
-		'footer_3' => esc_html_x( 'Footer Menu 3', 'nav menu location' )
-	] );
-
 
 }, 5 );
 
@@ -99,10 +92,12 @@ add_action( 'init', function() {
 add_action( 'init', function() {
 
 	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 480, 300, true );
+	set_post_thumbnail_size( 400, 400, true );
 
 	// Post Thumbnails
-	add_image_size( 'post-thumb', 600, 300, array( 'center', 'center' ));
+	add_image_size( 'post-vignette', 550, 420, array( 'center', 'center' ));
+
+	add_image_size( 'post-thumbnail', 400, 400, array( 'center', 'center' ));
 
 }, 5 );
 
@@ -129,6 +124,11 @@ add_action( 'widgets_init', function() {
 	register_sidebar( [
 		'id'   => 'primary',
 		'name' => esc_html_x( 'Primary', 'sidebar' )
+	] + $args );
+
+	register_sidebar( [
+		'id'   => 'single-post',
+		'name' => esc_html_x( 'Single Post', 'sidebar' )
 	] + $args );
 
 

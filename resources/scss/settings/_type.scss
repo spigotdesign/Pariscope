@@ -1,5 +1,5 @@
-$font-family:     Georgia, Helvetica, Arial, sans-serif;
-$alt-font-family: $font-family;
+$font-family: "Amsi Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$alt-font-family: "Quincy CF", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 
 //$med-font-family:			'acherusgrotesque-medium', sans-serif;
 //$bold-font-family:		'acherusgrotesque-bold', sans-serif;
@@ -16,7 +16,8 @@ $base-font-weight: 400;
 $bold-font-weight: 700;
 $mid-font-weight: 600;
 $normal-font-weight: 400;
-$light-font-weight: $normal-font-weight;
+$light-font-weight: 300;
+$light-alt-weight: 400;
 
 // Headings
 $headings-font-family: $alt-font-family;
@@ -24,14 +25,14 @@ $headings-font-weight: $mid-font-weight;
 
 // Body
 $body-font-family: $font-family;
-$body-font-weight: $normal-font-weight;
+$body-font-weight: $light-font-weight;
 
 // Buttons
 $button-font-family: $alt-font-family;
 
 // Navigation
-$nav-font-family: $alt-font-family;
-$nav-font-weight: $mid-font-weight;
+$nav-font-family: $font-family;
+$nav-font-weight: $normal-font-weight;
 
 
 // WooCommerce

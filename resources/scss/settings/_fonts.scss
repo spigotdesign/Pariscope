@@ -8,3 +8,84 @@
 
 $fontURI: '../../dist/fonts';
 
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-light-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-semibold-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsi Pro';
+    src: url('#{$fontURI}/amsipro/amsipronormal-bolditalic-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/amsipro/amsipronormal-bolditalic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Quincy CF';
+    src: url('#{$fontURI}/quincycf/quincycf-medium-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/quincycf/quincycf-medium-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quincy CF';
+    src: url('#{$fontURI}/quincycf/quincycf-regularitalic-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/quincycf/quincycf-regularitalic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    @font-family: 'Quincy CF';
+    src: url('#{$fontURI}/quincycf/quincycf-light-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/quincycf/quincycf-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    @font-family: 'Quincy CF';
+    src: url('#{$fontURI}/quincycf/quincycf-lightitalic-webfont.woff2') format('woff2'),
+    url('#{$fontURI}/quincycf/quincycf-lightitalic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+
+}

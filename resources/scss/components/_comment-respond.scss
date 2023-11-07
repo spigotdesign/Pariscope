@@ -7,6 +7,8 @@
 ////
 
 .comment-respond {
+  max-width: 49rem;
+
   label {
     display: block;
     text-transform: uppercase;
@@ -17,50 +19,38 @@
     }
   }
 
-  textarea {
-  	width: 100%;
-  }
+
 
   // Header/title for the respond section.
   &__reply-title {}
 
   // The comment form.
-  &__form {
-  	display: flex;
-  	flex-flow: row wrap;
-  	justify-content: space-between;
 
-
-    p {
-      margin-bottom: 10px;
-      @include font-size(13px);
-
-      text-transform: uppercase;
-    }
-  }
 
   // Note section at the top of form.
   &__notes {
-  	flex: 0 1 100%;
+    flex: 0 1 100%;
   }
 
   // Logged-in message at the top of the form.
   &__logged-in-as {
-  	flex: 0 1 100%;
+    flex: 0 1 100%;
   }
 
   // The wrapping element around individual form fields.
   &__field {
     &--comment {
-    	flex: 0 1 100%;
+      flex: 0 1 100%;
     }
 
-    &--author, &--email, &--url {
-    	flex: 0 1 32.5%;
+    &--author,
+    &--email,
+    &--url {
+      flex: 0 1 32.5%;
 
-    	input {
-    		width: 100%;
-    	}
+      input {
+        width: 100%;
+      }
     }
 
     &--email {}
@@ -70,11 +60,64 @@
     &--cookies {}
 
     &--submit {
-    	flex: 0 1 100%;
-    	margin: $margin 0;
+      flex: 0 1 100%;
+      margin: $margin 0;
     }
   }
 
   // Comments closed message.
   &__closed {}
+}
+
+.comment-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  &-comment {
+    width: 100%;
+    flex-basis: 100%;
+
+    textarea {
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+
+  &-author, &-email, &-url {
+    //display: flex;
+    width: 32%;
+    flex-basis: 100%;
+    margin-bottom: $margin * 2;
+
+    @include mq(tablet-portrait-up) {
+      flex-basis: 30%;
+    }
+
+    input {
+      max-width: 100%;
+    }
+  }
+
+  &-cookies-consent {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: $margin;
+    margin-bottom: $margin;
+
+    input {
+      margin-right: 5px;
+    }
+  }
+
+
+
+
+  p {
+    margin-bottom: 10px;
+    @include font-size(13px);
+
+    text-transform: uppercase;
+  }
 }

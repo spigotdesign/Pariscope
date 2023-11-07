@@ -1,20 +1,31 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-	
+<div class="container c-medium">
 	<div class="entry__content">
-		<?php the_content(); ?>
+		<div class="entry__content--main">
+			<?php the_content(); ?>
+		</div>
+		
+		<footer class="entry__content--footer">
+		<nav class="entry__content--footer-tax">
+			<?php pariscope_entry_footer(); ?>
+		</nav>
+		
+		<nav class="post-nav">
+			<?php get_template_part( 'resources/views/nav/post', 'nav' ); ?>
+		</nav>
+
+		</footer>
+
 	</div>
 
-	<footer class="entry__footer">
-		<?php pariscope_entry_footer(); ?>
-	</footer>
+	<?php get_template_part( 'resources/views/sidebar/post', 'sidebar' ); ?>
+
+</div>
 
 </article>
 
-<nav class="post-nav">
 
-	<?php get_template_part( 'resources/views/nav/post', 'nav' ); ?>
 
-</nav>
+
 
 <?php if ( comments_open() ) : ?>
 				

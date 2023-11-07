@@ -1,5 +1,6 @@
-<button class="toggle-menu" type="button">
-    <span class="toggle-menu-box">
-        <span class="toggle-menu-inner"></span>
-    </span>
-</button>
+<label class="toggle-menu" for="toggle-menu" area-label="Open the main menu">
+  <input type="checkbox" id="toggle-menu" /> 
+  <span></span>
+  <span></span>
+  <span></span>
+</label>

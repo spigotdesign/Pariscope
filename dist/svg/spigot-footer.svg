@@ -1,0 +1,32 @@
+	<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M69.8445 34.7031C69.8445 53.757 54.3984 69.2031 35.3445 69.2031C16.2906 69.2031 0.844482 53.757 0.844482 34.7031C0.844482 15.6492 16.2906 0.203125 35.3445 0.203125C54.3984 0.203125 69.8445 15.6492 69.8445 34.7031ZM43.9131 22.8649C37.5364 22.8649 31.6637 25.0104 26.9682 28.6083C26.9682 28.6083 26.9649 28.6083 26.9616 28.6083C28.1819 25.6305 28.981 21.429 28.981 19.8374C28.981 17.2608 26.8919 15.175 24.3187 15.175C21.7454 15.175 19.6563 17.2641 19.6563 19.8374C19.6563 21.429 20.4555 25.6305 21.6725 28.6083C18.698 27.3913 14.4933 26.5921 12.9016 26.5921C10.325 26.5921 8.23592 28.6779 8.23592 31.2545C8.23592 33.8277 10.325 35.9168 12.9016 35.9168C14.4933 35.9168 18.6947 35.1176 21.6725 33.8973C21.6658 33.9172 21.6559 33.9371 21.6493 33.957C18.121 38.6293 16.0253 44.4423 16.0253 50.7494H29.9692C29.9692 43.0496 36.2133 36.8055 43.9164 36.8055C47.7862 36.8055 51.2846 38.3806 53.8115 40.924L63.7065 31.0953C58.6529 26.0118 51.6527 22.8583 43.9164 22.8583L43.9131 22.8649Z" fill="url(#a)" />
+		<path d="M69.8445 34.7031C69.8445 53.757 54.3984 69.2031 35.3445 69.2031C16.2906 69.2031 0.844482 53.757 0.844482 34.7031C0.844482 15.6492 16.2906 0.203125 35.3445 0.203125C54.3984 0.203125 69.8445 15.6492 69.8445 34.7031ZM43.9131 22.8649C37.5364 22.8649 31.6637 25.0104 26.9682 28.6083C26.9682 28.6083 26.9649 28.6083 26.9616 28.6083C28.1819 25.6305 28.981 21.429 28.981 19.8374C28.981 17.2608 26.8919 15.175 24.3187 15.175C21.7454 15.175 19.6563 17.2641 19.6563 19.8374C19.6563 21.429 20.4555 25.6305 21.6725 28.6083C18.698 27.3913 14.4933 26.5921 12.9016 26.5921C10.325 26.5921 8.23592 28.6779 8.23592 31.2545C8.23592 33.8277 10.325 35.9168 12.9016 35.9168C14.4933 35.9168 18.6947 35.1176 21.6725 33.8973C21.6658 33.9172 21.6559 33.9371 21.6493 33.957C18.121 38.6293 16.0253 44.4423 16.0253 50.7494H29.9692C29.9692 43.0496 36.2133 36.8055 43.9164 36.8055C47.7862 36.8055 51.2846 38.3806 53.8115 40.924L63.7065 31.0953C58.6529 26.0118 51.6527 22.8583 43.9164 22.8583L43.9131 22.8649Z" fill="url(#b)" />
+		<defs>
+			<linearGradient id='a' gradientUnits='objectBoundingBox' x1='0' y1='0' x2='1' y2='1'>
+				<stop offset='0' stop-color='red'>
+					<animate attributeName="stop-color" values="red;purple;#262136;green;yellow;orange;red;" dur="40s" repeatCount="indefinite">
+					</animate>
+				</stop>
+				<stop offset='.5' stop-color='purple'>
+					<animate attributeName="stop-color" values="purple;#262136;green;yellow;orange;red;purple;" dur="40s" repeatCount="indefinite">
+					</animate>
+				</stop>
+				<stop offset='1' stop-color='#262136'>
+					<animate attributeName="stop-color" values="#262136;green;yellow;orange;red;purple;#262136;" dur="40s" repeatCount="indefinite">
+					</animate>
+				</stop>
+				<animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="40s" repeatCount="indefinite" />
+			</linearGradient>
+			<linearGradient id='b' gradientUnits='objectBoundingBox' x1='0' y1='1' x2='1' y2='1'>
+				<stop offset='0' stop-color='red'>
+					<animate attributeName="stop-color" values="red;purple;#262136;green;yellow;orange;red;" dur="40s" repeatCount="indefinite">
+					</animate>
+				</stop>
+				<stop offset='1' stop-color='purple' stop-opacity="0">
+					<animate attributeName="stop-color" values="purple;#262136;green;yellow;orange;red;purple;" dur="40s" repeatCount="indefinite">
+					</animate>
+				</stop>
+				<animateTransform attributeName="gradientTransform" type="rotate" values="360 .5 .5;0 .5 .5" class="ignore" dur="10s" repeatCount="indefinite" />
+			</linearGradient>
+		</defs>
+	</svg>

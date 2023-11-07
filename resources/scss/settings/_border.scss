@@ -1,11 +1,15 @@
 // Borders 
 
 // General borders
-$base-radius:       	3px;
+$base-radius:       	1.875rem;
 $border-radius: 		$base-radius;
 
+$border-radius-small:   $base-radius * .15;
+$border-radius-med:     $base-radius * .3;
+$border-radius-round:   $base-radius * 20;
+
 // Button borders
-$button-border-radius:  $base-radius;
+$button-border-radius:  $border-radius-med;
 $button-border-width: 1px;
 $button-border-style: solid;
 

@@ -65,18 +65,15 @@
 
 
         &:hover {
-            background-color: darken($green-dark, 10%);
-            color: $white;
+            background-color: $pagination-bg-color-active;
+            color: $pagination-text-color-active;
         }
-
-
-
 
 
         &--link {}
 
         &--current {
-            background-color: darken($green-dark, 10%);
+            background-color: $pagination-bg-color-active;
         }
 
         &--dots {}

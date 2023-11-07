@@ -2,18 +2,18 @@
 
 .entry--error {
 
-	.app-search {
+	.site-search {
 		position: relative;
-		//margin: ($margin * 2) auto;
+		background-color: $site-search-bg-color;
 		
 		input[type=search] {
 			width: convert(320);
-			border-radius: 200px;
-			border: 1px solid rgba($white, .25);
-			background-color: rgba($blue-dark, 0.375);
+			border-radius: $border-radius;
+			border: $site-search-border-color-input;
+			background-color: $site-search-bg-color-input;
 			
 			&:focus {
-				background-color: $blue-dark;
+				background-color: $site-search-bg-color-input-focus;
 			}
 		}
 

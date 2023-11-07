@@ -1,27 +1,35 @@
 // Post Navigation
 
 .post-nav {
-    margin: 0 auto $margin auto;
-    max-width: $post-width;
-    display: flex;
+
     flex-flow: row nowrap;
     justify-content: space-between;
-
-    @include mq(phone-only) {
-        flex-wrap: wrap;
-    }
+    width: 100px;
 
 
     a {
-        flex: 0 1 49%;
-        background-color: $link-color;
-        color: $white;
-        display: block;
-        text-align: center;
-        border-radius: $border-radius;
-        padding: ($margin * 0.5) 0;
-        margin: 0;
-        border-radius: 3px;
+
+        border: 2px solid $border-color;
+        border-radius: $border-radius-small;
+        padding: .25em .5em;
+        position: relative;
+        bottom: -1px;
+        color: $text-color;
+        background-color: $comment-reply-bg-color;
+        font-weight: $bold-font-weight;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $highlight-color;
+            color: $white;
+            border-color: $highlight-color;
+        }
+
+        &:first-child {
+            //margin-left: 5px;
+            left: -5px;
+        }
+
 
         @include mq(phone-only) {
             flex-basis: 100%;
@@ -29,11 +37,7 @@
 
 
         &:hover {
-            background-color: $link-color-hover;
-        }
-
-        @include mq(phone-only) {
-            margin-bottom: 5px;
+            // background-color: $link-color-hover;
         }
     }
 }
